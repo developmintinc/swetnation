@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LeftSidebar.master.cs" Inherits="SwetNation.Web.LeftSidebar" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="SiteContentPlaceHolder" runat="server">
+    <div id="content">
+	    <div class="one">
+            <asp:ContentPlaceHolder ID="TopBodyContent" runat="server" />
+        </div>
+	    <div class="one">
+            <div class="one-fourth">
+                <asp:ContentPlaceHolder ID="LeftBodyContent" runat="server" />
+            </div>
+            <div class="inner-content last">
+                <asp:ContentPlaceHolder ID="RightBodyContent" runat="server" />
+            </div>
+        </div>
+    </div>
+</asp:Content>

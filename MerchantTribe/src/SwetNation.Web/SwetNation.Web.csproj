@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE7BAB01-091C-4FB4-AE43-C1BCE9E28D99}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwetNation.Web</RootNamespace>
+    <AssemblyName>SwetNation.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MerchantTribe.Web, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MerchantTribe.Web.1.4.1.0\lib\net4\MerchantTribe.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3d-slider-2.html" />
+    <Content Include="3d-slider.html" />
+    <Content Include="404-error.html" />
+    <Content Include="about-us.html" />
+    <Content Include="AboutUs.aspx" />
+    <Content Include="accordion-slider-2.html" />
+    <Content Include="accordion-slider.html" />
+    <Content Include="blog-post.html" />
+    <Content Include="blog.html" />
+    <Content Include="buttons.html" />
+    <Content Include="ClientTestimonials.aspx" />
+    <Content Include="columns.html" />
+    <Content Include="contact.html" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="content-slider-2.html" />
+    <Content Include="content-slider.html" />
+    <Content Include="controls\BreadcrumbBar.ascx" />
+    <Content Include="controls\FooterInformation.ascx" />
+    <Content Include="controls\FooterNav.ascx" />
+    <Content Include="controls\HeaderFonts.ascx" />
+    <Content Include="controls\HeaderScripts.ascx" />
+    <Content Include="controls\HeaderStyles.ascx" />
+    <Content Include="controls\LeftSidebarNav.ascx" />
+    <Content Include="controls\PrimaryNav.ascx" />
+    <Content Include="controls\RightSidebarNav.ascx" />
+    <Content Include="controls\SearchBox.ascx" />
+    <Content Include="controls\SocialIcons.ascx" />
+    <Content Include="css\coffe-theme.css" />
+    <Content Include="css\corporate-blue.css" />
+    <Content Include="css\corporate-red.css" />
+    <Content Include="css\dark-blue-wide.css" />
+    <Content Include="css\dark-brown.css" />
+    <Content Include="css\dark-green.css" />
+    <Content Include="css\dark-grey.css" />
+    <Content Include="css\dark-orange.css" />
+    <Content Include="css\dark-theme.css" />
+    <Content Include="css\grey-theme.css" />
+    <Content Include="css\light-blue.css" />
+    <Content Include="css\light-green.css" />
+    <Content Include="css\nivo-slider.css" />
+    <Content Include="css\ocean-blue.css" />
+    <Content Include="css\piecemaker.css" />
+    <Content Include="css\pink-theme.css" />
+    <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\pure-orange.css" />
+    <Content Include="css\purple-theme.css" />
+    <Content Include="css\red-cherry.css" />
+    <Content Include="css\roundabout.css" />
+    <Content Include="css\soft-blue.css" />
+    <Content Include="css\style-wide.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\yellow-theme.css" />
+    <Content Include="CustomerService.aspx" />
+    <Content Include="cycle-slider.html" />
+    <Content Include="dual-sidebar.html" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="faq.html" />
+    <Content Include="forms.html" />
+    <Content Include="GiftCard.aspx" />
+    <Content Include="images\3d-slider\slider-960-01.jpg" />
+    <Content Include="images\3d-slider\slider-960-02.jpg" />
+    <Content Include="images\3d-slider\slider-960-03.jpg" />
+    <Content Include="images\3d-slider\slider-960-04.jpg" />
+    <Content Include="images\admin-login-bg.png" />
+    <Content Include="images\articles\big-circle-img-1.png" />
+    <Content Include="images\articles\big-circle-img-2.png" />
+    <Content Include="images\articles\big-circle-img-3.png" />
+    <Content Include="images\avatar-1.jpg" />
+    <Content Include="images\avatar-2.jpg" />
+    <Content Include="images\avatar-3.jpg" />
+    <Content Include="images\avatar-4.jpg" />
+    <Content Include="images\avatar-5.jpg" />
+    <Content Include="images\avatar-6.jpg" />
+    <Content Include="images\background-patterns\body-bg-1.png" />
+    <Content Include="images\background-patterns\body-bg-10.png" />
+    <Content Include="images\background-patterns\body-bg-11.png" />
+    <Content Include="images\background-patterns\body-bg-12.png" />
+    <Content Include="images\background-patterns\body-bg-13.png" />
+    <Content Include="images\background-patterns\body-bg-14.png" />
+    <Content Include="images\background-patterns\body-bg-15.png" />
+    <Content Include="images\background-patterns\body-bg-16.png" />
+    <Content Include="images\background-patterns\body-bg-17.png" />
+    <Content Include="images\background-patterns\body-bg-18.png" />
+    <Content Include="images\background-patterns\body-bg-19.png" />
+    <Content Include="images\background-patterns\body-bg-2.png" />
+    <Content Include="images\background-patterns\body-bg-20.png" />
+    <Content Include="images\background-patterns\body-bg-21.png" />
+    <Content Include="images\background-patterns\body-bg-22.png" />
+    <Content Include="images\background-patterns\body-bg-23.png" />
+    <Content Include="images\background-patterns\body-bg-24.png" />
+    <Content Include="images\background-patterns\body-bg-25.png" />
+    <Content Include="images\background-patterns\body-bg-26.png" />
+    <Content Include="images\background-patterns\body-bg-27.png" />
+    <Content Include="images\background-patterns\body-bg-28.png" />
+    <Content Include="images\background-patterns\body-bg-29.png" />
+    <Content Include="images\background-patterns\body-bg-3.png" />
+    <Content Include="images\background-patterns\body-bg-30.png" />
+    <Content Include="images\background-patterns\body-bg-31.png" />
+    <Content Include="images\background-patterns\body-bg-32.png" />
+    <Content Include="images\background-patterns\body-bg-33.png" />
+    <Content Include="images\background-patterns\body-bg-34.png" />
+    <Content Include="images\background-patterns\body-bg-35.png" />
+    <Content Include="images\background-patterns\body-bg-36.png" />
+    <Content Include="images\background-patterns\body-bg-37.png" />
+    <Content Include="images\background-patterns\body-bg-38.png" />
+    <Content Include="images\background-patterns\body-bg-39.png" />
+    <Content Include="images\background-patterns\body-bg-4.png" />
+    <Content Include="images\background-patterns\body-bg-40.png" />
+    <Content Include="images\background-patterns\body-bg-41.png" />
+    <Content Include="images\background-patterns\body-bg-42.png" />
+    <Content Include="images\background-patterns\body-bg-43.png" />
+    <Content Include="images\background-patterns\body-bg-44.png" />
+    <Content Include="images\background-patterns\body-bg-45.png" />
+    <Content Include="images\background-patterns\body-bg-46.png" />
+    <Content Include="images\background-patterns\body-bg-47.png" />
+    <Content Include="images\background-patterns\body-bg-48.png" />
+    <Content Include="images\background-patterns\body-bg-49.png" />
+    <Content Include="images\background-patterns\body-bg-5.png" />
+    <Content Include="images\background-patterns\body-bg-50.png" />
+    <Content Include="images\background-patterns\body-bg-51.png" />
+    <Content Include="images\background-patterns\body-bg-52.png" />
+    <Content Include="images\background-patterns\body-bg-53.png" />
+    <Content Include="images\background-patterns\body-bg-54.png" />
+    <Content Include="images\background-patterns\body-bg-55.png" />
+    <Content Include="images\background-patterns\body-bg-56.png" />
+    <Content Include="images\background-patterns\body-bg-6.png" />
+    <Content Include="images\background-patterns\body-bg-7.png" />
+    <Content Include="images\background-patterns\body-bg-8.png" />
+    <Content Include="images\background-patterns\body-bg-9.png" />
+    <Content Include="images\background-patterns\grid.png" />
+    <Content Include="images\background-patterns\grid_2.png" />
+    <Content Include="images\bg-fade.png" />
+    <Content Include="images\blog-image-holder.png" />
+    <Content Include="images\blog-images\01.jpg" />
+    <Content Include="images\blog-images\02.jpg" />
+    <Content Include="images\blog-images\03.jpg" />
+    <Content Include="images\blog-images\04.jpg" />
+    <Content Include="images\blog-images\05.jpg" />
+    <Content Include="images\colors\coffe-theme\search-place-border.jpg" />
+    <Content Include="images\colors\coffe-theme\slider-pag-grey.png" />
+    <Content Include="images\colors\coffe-theme\slider-pag.png" />
+    <Content Include="images\colors\coffe-theme\slider-prev-next.png" />
+    <Content Include="images\colors\corporate-blue\search-place-border.jpg" />
+    <Content Include="images\colors\corporate-blue\slider-pag-grey.png" />
+    <Content Include="images\colors\corporate-blue\slider-pag.png" />
+    <Content Include="images\colors\corporate-blue\slider-prev-next.png" />
+    <Content Include="images\colors\corporate-red\search-place-border.jpg" />
+    <Content Include="images\colors\corporate-red\slider-pag-grey.png" />
+    <Content Include="images\colors\corporate-red\slider-pag.png" />
+    <Content Include="images\colors\corporate-red\slider-prev-next.png" />
+    <Content Include="images\colors\dark-blue\search-place-border.jpg" />
+    <Content Include="images\colors\dark-blue\slider-pag-grey.png" />
+    <Content Include="images\colors\dark-blue\slider-pag.png" />
+    <Content Include="images\colors\dark-blue\slider-prev-next.png" />
+    <Content Include="images\colors\dark-brown\search-place-border.jpg" />
+    <Content Include="images\colors\dark-brown\slider-pag-grey.png" />
+    <Content Include="images\colors\dark-brown\slider-pag.png" />
+    <Content Include="images\colors\dark-brown\slider-prev-next.png" />
+    <Content Include="images\colors\dark-green\search-place-border.jpg" />
+    <Content Include="images\colors\dark-green\slider-pag-grey.png" />
+    <Content Include="images\colors\dark-green\slider-pag.png" />
+    <Content Include="images\colors\dark-green\slider-prev-next.png" />
+    <Content Include="images\colors\dark-grey\search-place-border.jpg" />
+    <Content Include="images\colors\dark-grey\slider-pag-grey.png" />
+    <Content Include="images\colors\dark-grey\slider-pag.png" />
+    <Content Include="images\colors\dark-grey\slider-prev-next.png" />
+    <Content Include="images\colors\dark-orange\search-place-border.jpg" />
+    <Content Include="images\colors\dark-orange\slider-pag-grey.png" />
+    <Content Include="images\colors\dark-orange\slider-pag.png" />
+    <Content Include="images\colors\dark-orange\slider-prev-next.png" />
+    <Content Include="images\colors\dark-theme\search-place-border.jpg" />
+    <Content Include="images\colors\dark-theme\slider-pag-grey.png" />
+    <Content Include="images\colors\dark-theme\slider-pag.png" />
+    <Content Include="images\colors\dark-theme\slider-prev-next.png" />
+    <Content Include="images\colors\default-red\search-place-border.jpg" />
+    <Content Include="images\colors\default-red\slider-pag-grey.png" />
+    <Content Include="images\colors\default-red\slider-pag.png" />
+    <Content Include="images\colors\default-red\slider-prev-next.png" />
+    <Content Include="images\colors\grey-theme\search-place-border.jpg" />
+    <Content Include="images\colors\grey-theme\slider-pag-grey.png" />
+    <Content Include="images\colors\grey-theme\slider-pag.png" />
+    <Content Include="images\colors\grey-theme\slider-prev-next.png" />
+    <Content Include="images\colors\light-blue\search-place-border.jpg" />
+    <Content Include="images\colors\light-blue\slider-pag-grey.png" />
+    <Content Include="images\colors\light-blue\slider-pag.png" />
+    <Content Include="images\colors\light-blue\slider-prev-next.png" />
+    <Content Include="images\colors\light-green\search-place-border.jpg" />
+    <Content Include="images\colors\light-green\slider-pag-grey.png" />
+    <Content Include="images\colors\light-green\slider-pag.png" />
+    <Content Include="images\colors\light-green\slider-prev-next.png" />
+    <Content Include="images\colors\ocean-blue\search-place-border.jpg" />
+    <Content Include="images\colors\ocean-blue\slider-pag-grey.png" />
+    <Content Include="images\colors\ocean-blue\slider-pag.png" />
+    <Content Include="images\colors\ocean-blue\slider-prev-next.png" />
+    <Content Include="images\colors\pink-theme\search-place-border.jpg" />
+    <Content Include="images\colors\pink-theme\slider-pag-grey.png" />
+    <Content Include="images\colors\pink-theme\slider-pag.png" />
+    <Content Include="images\colors\pink-theme\slider-prev-next.png" />
+    <Content Include="images\colors\pure-orange\search-place-border.jpg" />
+    <Content Include="images\colors\pure-orange\slider-pag-grey.png" />
+    <Content Include="images\colors\pure-orange\slider-pag.png" />
+    <Content Include="images\colors\pure-orange\slider-prev-next.png" />
+    <Content Include="images\colors\purple-theme\search-place-border.jpg" />
+    <Content Include="images\colors\purple-theme\slider-pag-grey.png" />
+    <Content Include="images\colors\purple-theme\slider-pag.png" />
+    <Content Include="images\colors\purple-theme\slider-prev-next.png" />
+    <Content Include="images\colors\red-cherry\search-place-border.jpg" />
+    <Content Include="images\colors\red-cherry\slider-pag-grey.png" />
+    <Content Include="images\colors\red-cherry\slider-pag.png" />
+    <Content Include="images\colors\red-cherry\slider-prev-next.png" />
+    <Content Include="images\colors\soft-blue\search-place-border.jpg" />
+    <Content Include="images\colors\soft-blue\slider-pag-grey.png" />
+    <Content Include="images\colors\soft-blue\slider-pag.png" />
+    <Content Include="images\colors\soft-blue\slider-prev-next.png" />
+    <Content Include="images\colors\yellow-theme\search-place-border.jpg" />
+    <Content Include="images\colors\yellow-theme\slider-pag-grey.png" />
+    <Content Include="images\colors\yellow-theme\slider-pag.png" />
+    <Content Include="images\colors\yellow-theme\slider-prev-next.png" />
+    <Content Include="images\contact-map-holder.png" />
+    <Content Include="images\default-slider\1.png" />
+    <Content Include="images\default-slider\10.jpg" />
+    <Content Include="images\default-slider\2.png" />
+    <Content Include="images\default-slider\3.png" />
+    <Content Include="images\default-slider\4.jpg" />
+    <Content Include="images\default-slider\5.jpg" />
+    <Content Include="images\default-slider\6.jpg" />
+    <Content Include="images\default-slider\7.jpg" />
+    <Content Include="images\default-slider\8.jpg" />
+    <Content Include="images\default-slider\9.jpg" />
+    <Content Include="images\divider-fancy.png" />
+    <Content Include="images\find-us.png" />
+    <Content Include="images\google_map.gif" />
+    <Content Include="images\header-footer-pattern.png" />
+    <Content Include="images\icons\content\advanced.png" />
+    <Content Include="images\icons\content\cancel.png" />
+    <Content Include="images\icons\content\category.png" />
+    <Content Include="images\icons\content\check-box-big.png" />
+    <Content Include="images\icons\content\check-box.png" />
+    <Content Include="images\icons\content\check.png" />
+    <Content Include="images\icons\content\checklist-icon-no.png" />
+    <Content Include="images\icons\content\checklist-icon.png" />
+    <Content Include="images\icons\content\checklist-star.png" />
+    <Content Include="images\icons\content\color.png" />
+    <Content Include="images\icons\content\comment.png" />
+    <Content Include="images\icons\content\computer-On.png" />
+    <Content Include="images\icons\content\computer.png" />
+    <Content Include="images\icons\content\Control Panel.png" />
+    <Content Include="images\icons\content\display.png" />
+    <Content Include="images\icons\content\gear.png" />
+    <Content Include="images\icons\content\icon-1.png" />
+    <Content Include="images\icons\content\icon-2.png" />
+    <Content Include="images\icons\content\icon-3.png" />
+    <Content Include="images\icons\content\icon-4.png" />
+    <Content Include="images\icons\content\icon-5.png" />
+    <Content Include="images\icons\content\icon-6.png" />
+    <Content Include="images\icons\content\icon-7.png" />
+    <Content Include="images\icons\content\icon-8.png" />
+    <Content Include="images\icons\content\icon-9.png" />
+    <Content Include="images\icons\content\idea.png" />
+    <Content Include="images\icons\content\info.png" />
+    <Content Include="images\icons\content\Internet.png" />
+    <Content Include="images\icons\content\marked.png" />
+    <Content Include="images\icons\content\mobile-phone.png" />
+    <Content Include="images\icons\content\no.png" />
+    <Content Include="images\icons\content\pdf-icon.png" />
+    <Content Include="images\icons\content\pencil.png" />
+    <Content Include="images\icons\content\play.png" />
+    <Content Include="images\icons\content\plus.png" />
+    <Content Include="images\icons\content\smiley.png" />
+    <Content Include="images\icons\content\tag.png" />
+    <Content Include="images\icons\content\tools.png" />
+    <Content Include="images\icons\content\unread-mail.png" />
+    <Content Include="images\icons\content\user.png" />
+    <Content Include="images\icons\content\yes.png" />
+    <Content Include="images\icons\dribbble.png" />
+    <Content Include="images\icons\facebook.png" />
+    <Content Include="images\icons\rss.png" />
+    <Content Include="images\icons\social\delicious.png" />
+    <Content Include="images\icons\social\digg.png" />
+    <Content Include="images\icons\social\dribbble.png" />
+    <Content Include="images\icons\social\facebook.png" />
+    <Content Include="images\icons\social\flickr.png" />
+    <Content Include="images\icons\social\google.png" />
+    <Content Include="images\icons\social\linkedin.png" />
+    <Content Include="images\icons\social\rss.png" />
+    <Content Include="images\icons\social\skype.png" />
+    <Content Include="images\icons\social\twitter.png" />
+    <Content Include="images\icons\social\vimeo.png" />
+    <Content Include="images\icons\social\youtube.png" />
+    <Content Include="images\icons\tumblr.png" />
+    <Content Include="images\icons\twitter.png" />
+    <Content Include="images\icons\vimeo.png" />
+    <Content Include="images\intro-pages-bg.png" />
+    <Content Include="images\label-free.png" />
+    <Content Include="images\label-new.png" />
+    <Content Include="images\label-popular.png" />
+    <Content Include="images\logo-bottom.png" />
+    <Content Include="images\logo-with-border.gif" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\map-holder.png" />
+    <Content Include="images\orbit-slider\pause-black.png" />
+    <Content Include="images\orbit-slider\rotator-black.png" />
+    <Content Include="images\orbit-slider\timer-black.png" />
+    <Content Include="images\paper-bg.png" />
+    <Content Include="images\portfolio-images\portfolio-img-01.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-02.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-03.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-04.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-05.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-06.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-07.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-08.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-09.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-10.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-11.jpg" />
+    <Content Include="images\portfolio-images\portfolio-img-12.jpg" />
+    <Content Include="images\portfolio-slider-bg.png" />
+    <Content Include="images\portfolio\four-columns\img-holder-2.png" />
+    <Content Include="images\portfolio\four-columns\img-holder.png" />
+    <Content Include="images\portfolio\gallery\img-holder-2.png" />
+    <Content Include="images\portfolio\gallery\img-holder.png" />
+    <Content Include="images\portfolio\one-column\img-holder-1.png" />
+    <Content Include="images\portfolio\one-column\img-holder-2.png" />
+    <Content Include="images\portfolio\three-columns\img-holder-2.png" />
+    <Content Include="images\portfolio\three-columns\img-holder.png" />
+    <Content Include="images\portfolio\two-columns\img-holder-2.png" />
+    <Content Include="images\portfolio\two-columns\img-holder.png" />
+    <Content Include="images\post-header-shadow.png" />
+    <Content Include="images\pre-footer-shadow.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="images\prettyPhoto\default\loader.gif" />
+    <Content Include="images\prettyPhoto\default\sprite.png" />
+    <Content Include="images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="images\products\portfolio-img-01.jpg" />
+    <Content Include="images\products\portfolio-img-02.jpg" />
+    <Content Include="images\products\portfolio-img-03.jpg" />
+    <Content Include="images\products\portfolio-img-04.jpg" />
+    <Content Include="images\products\portfolio-img-05.jpg" />
+    <Content Include="images\quote.png" />
+    <Content Include="images\rays.png" />
+    <Content Include="images\roundabout\pic1.jpg" />
+    <Content Include="images\roundabout\pic2.jpg" />
+    <Content Include="images\roundabout\pic3.jpg" />
+    <Content Include="images\roundabout\pic4.jpg" />
+    <Content Include="images\roundabout\pic5.jpg" />
+    <Content Include="images\roundabout\pic6.jpg" />
+    <Content Include="images\roundabout\pic7.jpg" />
+    <Content Include="images\search-bg.png" />
+    <Content Include="images\sidebar-img-holder.png" />
+    <Content Include="images\simple-nav-arrow.png" />
+    <Content Include="images\slider-bg.png" />
+    <Content Include="images\slider-txt-bg.png" />
+    <Content Include="images\slideshow-images\slide-small-01.jpg" />
+    <Content Include="images\slideshow-images\slide-small-02.jpg" />
+    <Content Include="images\slideshow-images\slide-small-03.jpg" />
+    <Content Include="images\slideshow-images\slide-small-04.jpg" />
+    <Content Include="images\slideshow-images\slider-960-01.jpg" />
+    <Content Include="images\slideshow-images\slider-960-01_thumb.jpg" />
+    <Content Include="images\slideshow-images\slider-960-02.jpg" />
+    <Content Include="images\slideshow-images\slider-960-02_thumb.jpg" />
+    <Content Include="images\slideshow-images\slider-960-03.jpg" />
+    <Content Include="images\slideshow-images\slider-960-03_thumb.jpg" />
+    <Content Include="images\slideshow-images\slider-960-04.jpg" />
+    <Content Include="images\slideshow-images\slider-960-04_thumb.jpg" />
+    <Content Include="images\slideshow-images\slider-960-05.jpg" />
+    <Content Include="images\slideshow-images\slider-960-05_thumb.jpg" />
+    <Content Include="images\slideshow-nav.png" />
+    <Content Include="images\small-slider-bg.png" />
+    <Content Include="images\team\member-1.jpg" />
+    <Content Include="images\team\member-2.jpg" />
+    <Content Include="images\team\member-3.jpg" />
+    <Content Include="images\team\work-1.jpg" />
+    <Content Include="images\team\work-2.jpg" />
+    <Content Include="images\team\work-3.jpg" />
+    <Content Include="images\thumb-hover-bg.png" />
+    <Content Include="images\tipsy.gif" />
+    <Content Include="images\top.png" />
+    <Content Include="images\twitter-feed.png" />
+    <Content Include="images\two-third-img-holder.png" />
+    <Content Include="Default.aspx" />
+    <Content Include="index.html" />
+    <Content Include="inner-corporate-page.html" />
+    <Content Include="InviteFriend.aspx" />
+    <Content Include="JobOpportunities.aspx" />
+    <Content Include="js\accordian\jquery.accordion.js" />
+    <Content Include="js\cufon-fonts\cufon-settings.js" />
+    <Content Include="js\cufon-fonts\cufon.js" />
+    <Content Include="js\cufon-fonts\Vegur_300-Vegur_700.font.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\cycle-slider\cycle.js" />
+    <Content Include="js\easing\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\kwicks\jquery.kwicks-1.5.1.pack.js" />
+    <Content Include="js\nivo-slider\jquery.nivo.slider.js" />
+    <Content Include="js\orbit-slider\jquery.orbit.js" />
+    <Content Include="js\piecemaker-2\piecemaker.swf" />
+    <Content Include="js\piecemaker-2\piecemaker.xml" />
+    <Content Include="js\piecemaker-2\piecemakerCSS.css" />
+    <Content Include="js\piecemaker-2\piecemakerNoShadow.swf" />
+    <Content Include="js\piecemaker-2\piecemakerXML.xml" />
+    <Content Include="js\portfolio\filterable.js" />
+    <Content Include="js\prettyPhoto\jquery.prettyPhoto.js" />
+    <Content Include="js\roundabout-slider\jquery.roundabout-shapes.min.js" />
+    <Content Include="js\roundabout-slider\jquery.roundabout.js" />
+    <Content Include="js\scrolltop\scrolltopcontrol.js" />
+    <Content Include="js\slides\slides.min.jquery.js" />
+    <Content Include="js\swfobject\expressinstall.swf" />
+    <Content Include="js\swfobject\settings.js" />
+    <Content Include="js\swfobject\swfobject.js" />
+    <Content Include="js\tabify\jquery.tabify.js" />
+    <Content Include="js\tipsy\jquery.tipsy.js" />
+    <Content Include="js\twitter\jquery.tweet.js" />
+    <Content Include="left-sidebar.html" />
+    <Content Include="lists.html" />
+    <Content Include="login.html" />
+    <Content Include="nivo-slider-thumb.html" />
+    <Content Include="nivo-slider.html" />
+    <Content Include="orbit-slider-2.html" />
+    <Content Include="OurServices.aspx" />
+    <Content Include="OurTeam.aspx" />
+    <Content Include="pricing-boxes.html" />
+    <Content Include="pricing-tables.html" />
+    <Content Include="PrivacyPolicy.aspx" />
+    <Content Include="product-page-item.html" />
+    <Content Include="product-page.html" />
+    <Content Include="Products.aspx" />
+    <Content Include="registration.html" />
+    <Content Include="ReturnPolicy.aspx" />
+    <Content Include="right-sidebar.html" />
+    <Content Include="roundabout-slider.html" />
+    <Content Include="simple-slider.html" />
+    <Content Include="static-page.html" />
+    <Content Include="styled-boxes.html" />
+    <Content Include="tabs-accordions.html" />
+    <Content Include="team.html" />
+    <Content Include="TermsOfUse.aspx" />
+    <Content Include="typography.html" />
+    <Content Include="video-block.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientTestimonials.aspx.cs">
+      <DependentUpon>ClientTestimonials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientTestimonials.aspx.designer.cs">
+      <DependentUpon>ClientTestimonials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\BreadcrumbBar.ascx.cs">
+      <DependentUpon>BreadcrumbBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\BreadcrumbBar.ascx.designer.cs">
+      <DependentUpon>BreadcrumbBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FooterInformation.ascx.cs">
+      <DependentUpon>FooterInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\FooterInformation.ascx.designer.cs">
+      <DependentUpon>FooterInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FooterNav.ascx.cs">
+      <DependentUpon>FooterNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\FooterNav.ascx.designer.cs">
+      <DependentUpon>FooterNav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\HeaderFonts.ascx.cs">
+      <DependentUpon>HeaderFonts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\HeaderFonts.ascx.designer.cs">
+      <DependentUpon>HeaderFonts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\HeaderScripts.ascx.cs">
+      <DependentUpon>HeaderScripts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\HeaderScripts.ascx.designer.cs">
+      <DependentUpon>HeaderScripts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\HeaderStyles.ascx.cs">
+      <DependentUpon>HeaderStyles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\HeaderStyles.ascx.designer.cs">
+      <DependentUpon>HeaderStyles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\LeftSidebarNav.ascx.cs">
+      <DependentUpon>LeftSidebarNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\LeftSidebarNav.ascx.designer.cs">
+      <DependentUpon>LeftSidebarNav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\PrimaryNav.ascx.cs">
+      <DependentUpon>PrimaryNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\PrimaryNav.ascx.designer.cs">
+      <DependentUpon>PrimaryNav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\RightSidebarNav.ascx.cs">
+      <DependentUpon>RightSidebarNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\RightSidebarNav.ascx.designer.cs">
+      <DependentUpon>RightSidebarNav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\SearchBox.ascx.cs">
+      <DependentUpon>SearchBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\SearchBox.ascx.designer.cs">
+      <DependentUpon>SearchBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\SocialIcons.ascx.cs">
+      <DependentUpon>SocialIcons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\SocialIcons.ascx.designer.cs">
+      <DependentUpon>SocialIcons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerService.aspx.cs">
+      <DependentUpon>CustomerService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerService.aspx.designer.cs">
+      <DependentUpon>CustomerService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiftCard.aspx.cs">
+      <DependentUpon>GiftCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiftCard.aspx.designer.cs">
+      <DependentUpon>GiftCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InviteFriend.aspx.cs">
+      <DependentUpon>InviteFriend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InviteFriend.aspx.designer.cs">
+      <DependentUpon>InviteFriend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobOpportunities.aspx.cs">
+      <DependentUpon>JobOpportunities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobOpportunities.aspx.designer.cs">
+      <DependentUpon>JobOpportunities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LeftSidebar.master.cs">
+      <DependentUpon>LeftSidebar.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeftSidebar.master.designer.cs">
+      <DependentUpon>LeftSidebar.master</DependentUpon>
+    </Compile>
+    <Compile Include="Main.master.cs">
+      <DependentUpon>Main.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.master.designer.cs">
+      <DependentUpon>Main.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurServices.aspx.cs">
+      <DependentUpon>OurServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurServices.aspx.designer.cs">
+      <DependentUpon>OurServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OurTeam.aspx.cs">
+      <DependentUpon>OurTeam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurTeam.aspx.designer.cs">
+      <DependentUpon>OurTeam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.designer.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.master.cs">
+      <DependentUpon>Product.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.master.designer.cs">
+      <DependentUpon>Product.master</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnPolicy.aspx.cs">
+      <DependentUpon>ReturnPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReturnPolicy.aspx.designer.cs">
+      <DependentUpon>ReturnPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RightSidebar.master.cs">
+      <DependentUpon>RightSidebar.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RightSidebar.master.designer.cs">
+      <DependentUpon>RightSidebar.master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TermsOfUse.aspx.cs">
+      <DependentUpon>TermsOfUse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermsOfUse.aspx.designer.cs">
+      <DependentUpon>TermsOfUse.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="js\piecemaker-2\piecemaker.fla" />
+    <None Include="js\piecemaker-2\piecemakerNoShadow.fla" />
+    <Content Include="Site.Master" />
+    <Content Include="Main.master" />
+    <Content Include="LeftSidebar.master" />
+    <Content Include="RightSidebar.master" />
+    <Content Include="Product.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\MerchantTribe.Billing\MerchantTribe.Billing.csproj">
+      <Project>{39CB3B9D-94B5-46B1-9C5F-E1C3348565D9}</Project>
+      <Name>MerchantTribe.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.CommerceDTO\MerchantTribe.CommerceDTO.csproj">
+      <Project>{C47A3A58-D11F-4D67-92FC-3E95B5DD6221}</Project>
+      <Name>MerchantTribe.CommerceDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.Commerce\MerchantTribe.Commerce.csproj">
+      <Project>{4EFF0D3E-99D4-4A8D-A672-B88E5E47CBAA}</Project>
+      <Name>MerchantTribe.Commerce</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50129</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

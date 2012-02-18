@@ -1,0 +1,11 @@
+hgdbackup 	/S:localhost\sqlexpress /D:MerchantTribe
+          	/U:SecondStrategyLogin /P:Password123
+          	/O:C:\backups\mydb
+          	/T:Server={0},1433;Database={1};User ID={2};Password={3};Trusted_Connection=False;Encrypt=True;
+
+hgdrestore 	/S:localhost\sqlexpress /D:SwetNation
+          	/U:SecondStrategyLogin /P:Password123
+           	/I:C:\Dev\SS\SwetNation\trunk\Database\Data
+           	/T:"Data Source={0};Initial Catalog={1};Integrated Security=SSPI;"
+
+

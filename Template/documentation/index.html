@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Launch Pad documentation by ThemeCatcher.net</title>
+<link rel="stylesheet" type="text/css" href="attachments/styles.css" />
+<script type="text/javascript" src="attachments/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="attachments/scripts.js"></script>
+</head>
+<body>
+<div class="outside">
+<!-- Begin Wrapper -->
+<div id="wrapper">
+    <!-- Begin Header -->
+    <div id="header">
+        <div class="intro">Launch Pad documentation by ThemeCatcher.net</div>
+        <div class="theme">Launch Pad</div>
+        <div class="about clearfix">
+            <div class="about-left">
+                <table>
+                    <tr>
+                        <td class="about-col-1">Created</td>
+                        <td class="about-col-2">12th Aug 2011</td>
+                    </tr>
+                    <tr>
+                        <td class="about-col-1">Version</td>
+                        <td class="about-col-2">1.0 (12th Aug 2011)</td>
+                    </tr>
+                    <tr>
+                        <td class="about-col-1">Author</td>
+                        <td class="about-col-2"><a href="http://www.themecatcher.net">ThemeCatcher.net</a></td>
+                    </tr>
+                    <tr>
+                        <td class="about-col-1">Contact us</td>
+                        <td class="about-col-2"><a href="http://themeforest.net/user/ThemeCatcher">via ThemeForest</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="about-right">
+                <p>Thank you for purchasing Launch Pad. If you have any questions that are not answered
+                in this help file, please feel free to email us via our user page contact form
+                <a class="popup" href="http://themeforest.net/user/ThemeCatcher">here</a>.
+                Thanks so much!</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Header -->    
+    <div id="content" class="clearfix">
+      <h1 class="thin"><a name="toc"></a>Table of contents</h1>
+      <div class="menu clearfix">
+        <ol>
+            <li><a href="#start">Getting started</a></li>
+            <li><a href="#global">Global customisation</a></li>
+            <li><a href="#bg">Background customisation</a></li>
+            <li><a href="#page">Page customisation</a></li>
+            <li><a href="#portfolio">Portfolio customisation</a></li>
+            <li><a href="#video">Video customisation</a></li>
+            <li><a href="#contact">Contact customisation</a></li>
+            <li><a href="#third">Third party scripts</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#support">Further support</a></li>
+        </ol>
+      </div>
+      <h1><a name="start" id="start"></a>Getting started<a class="top-link" href="#toc">Top</a></h1>
+      <h2 class="toggler toggler-closed">Quick start guide</h2>
+      <div>
+        <p>The quick start guide only covers the most important steps to get your template up as quickly as possible.</p>
+        <h3>1. Change your logo in <strong>index.html</strong></h3>
+        <p>The existing logo is located at <code>images/logo.png</code>, you can replace that file with your
+        own logo file with the same name.</p>
+        <p>If your logo has a different file extension you will need to change the HTML code of the page, so
+        do a search in the code for the term <span class="find">&lt;!--Logo--&gt;</span> and you should find
+        the <code>&lt;img&gt;</code> tag for the logo.  Change the <code>src=""</code> attribute to point to your
+        new logo.</p>
+        <p>You may need to adjust the padding around your logo to centre it within the logo area. To do this go
+        into <code>styles.css</code> and in section 1 locate <span class="find">.logo-img</span>, adjust the
+        padding to suite your logo.</p>
+        <h3>2. Configure the forms to send form data to your email address</h3>
+        <p><strong>Note:</strong> these steps should be completed for both the <strong>config.php</strong> and <strong>config-register.php</strong> files</p>
+        <p>The contact form is an <strong>iPhorm</strong>, which is one of our CodeCanyon items that we sell separately.  The documentation for the iPhorm is in the
+          <code>documentation/form-documentation</code> folder, there is also a link to it at the bottom of this section.</p>
+          <p>To set up the form the only step you need to do is <strong>Step 4</strong> of the form installation guide which is to change the form to send enquiries to your email address. 
+          I've copied these instructions below.</p>
+      <p>To configure the contact form, open <code>contact-form/config.php</code> and on <strong>line 19</strong> you will find the 
+      current email address that will be receiving the enquiries.  Change that to your email address as shown below.</p>
+<pre>$recipients = array(
+    'spam@themecatcher.net'
+);</pre>
+      <p>becomes</p>
+<pre>$recipients = array(
+    'your@emailaddress.com'
+);</pre>
+      <p>While you are in <code>contact-form/config.php</code> you can also change the success message if you wish, which is 
+      displayed when the form is successfully submitted.  The code for that is on <strong>line 6</strong>.</p>
+      <p>To customise the form further or for form troubleshooting, see the <a href="form-documentation" class="popup">form help</a>.</p>
+        <h3>3. Enter your launch date in <strong>js/scripts.js</strong></h3>
+        <p>You can change the launch date shown inside the slider by locating the comment <span class="find">// Enter your launch date</span> in <strong>js/scripts.js</strong>. The default code is shown below, you can just
+        change the relevant numbers of the date to match your launch date.</p>
+        <pre>launchDate = {
+    day: 18,
+    month: 3,
+    year: 2012,
+    hour: 12,
+    min: 0,
+    sec: 0  
+};</pre>
+        <p>That is all for the Quick start guide, for further customisation help see the more detailed instructions in the sections below.</p>
+      </div>
+      <h2 class="toggler toggler-closed">HTML files</h2>
+      <div>
+      <p>The HTML file for the template is in the <code>template</code> folder. Each part of the file is commented to help you find
+      the section you want to make changes to. The content area for each page begins with <code>&lt;div class="content-inner"&gt;</code>.</p>
+      </div>
+      <h2 class="toggler toggler-closed">CSS files</h2>
+      <div>
+      <p>Launch Pad has one main style sheet <code>css/styles.css</code> and this is the file that you should be
+      making any changes to. The file is split into sections by numbered comments and the file has a table
+      of contents to help you find the right section.</p>
+      </div>
+      <h2 class="toggler toggler-closed">JavaScript files</h2>
+      <div>
+      <p>There are 3 JavaScript files used in most of the HTML files, located in the <code>js</code> folder:</p>
+      <ul>
+        <li>1. <strong>jQuery</strong> - js/jquery-1.5.2.min.js - The jQuery JavaScript library</li>
+        <li>2. <strong>Plugins</strong> - js/plugins.js - All third-party plugins &amp; scripts</li>
+        <li>3. <strong>Custom scripts</strong> - js/scripts.js - Custom JavaScript</li>
+      </ul>
+      <h3>Adding your own JavaScript</h3>
+      <p>If you want to add your own JavaScript, you can do so in <code>js/scripts.js</code>, if you need
+      to add code that executes after the DOM is ready you can add it after this line:</p>
+      <pre>$(document).ready(function() {</pre>
+      <p>To add your own third party plugin just add a link to the JavaScript file in the head of the document.
+      If you placed your plugin in the js folder, you would add this code inside the <code>&lt;head&gt;</code>
+      tags of the document:</p>
+      <pre>&lt;script type="text/javascript" src="js/<strong>your_plugin.js</strong>"&gt;&lt;/script&gt;</pre>
+      </div>
+      <h2 class="toggler toggler-closed">PSD files</h2>
+      <div>
+      <p>You will find the PSD files in <code>resources/photoshop</code>, each element is grouped neatly in their own folders within the PSD. There are 2 main PSDs, one for light design and the other for dark. You will also find 2 more PSDs required if you decided to make your own colour scheme, the file names represent the image file name.  </p>
+      </div>
+<h2 class="toggler toggler-closed">Fonts</h2>
+      <div>
+      <h3>Google Fonts</h3>
+      <p>It is easy to add your own font from Google fonts, just visit <a href="http://www.google.com/webfonts#HomePlace:home" class="popup">Google fonts</a>. We have made some of the best suited fonts available for you, the default heading font is <code>'Droid Sans'</code> and the numbers for "Launch date" and "how long to go" we used <code>'Arvo'</code> , to change to one of the following font faces open the <code>styles.css</code>. Find and replace either <code>'Droid Sans' or 'Arvo'</code> with one of these fonts.</p>
+      <strong>For numbers</strong>
+      <ul>
+     	<li>'Arvo'</li>
+     	<li>'Coustard'</li>
+     	<li>'Kelly Slab'</li>
+      	<li>'Philosopher'</li>
+      </ul>
+      <strong>For headings</strong>
+      <ul>
+     	<li>'Istok Web'</li>
+     	<li>'Abel'</li>
+     	<li>'Podkova'</li>
+      	<li>'Droid Sans'</li>
+      </ul>
+      <p><strong>Note:</strong> To help improve the speed of your site loading remove or comment out the links to the unused fonts. To do this search for <span class="find">&lt;!--Google fonts--&gt;</span> and remove the unused font links (remember to keep the one you are using).</p>
+      </div>
+      <h1><a name="global" id="global"></a>Global customisation<a class="top-link" href="#toc">Top</a></h1>
+<h2 class="toggler toggler-closed">Changing the logo</h2>
+      <div>
+        <p>The existing logo is located at <code>images/logo.png</code>, you can replace that file with your
+        own logo file with the same name.</p>
+        <p>If your logo has a different file extension you will need to change the HTML code of the page, so
+        do a search in the code for the term <span class="find">&lt;!--Logo--&gt;</span> and you should find
+        the <code>&lt;img&gt;</code> tag for the logo.  Change the <code>src=""</code> attribute to point to your
+        new logo.</p>
+        <p>You may need to adjust the padding around your logo to centre it within the logo area. To do this go
+        into <code>styles.css</code> and in section 1 locate <span class="find">.logo-img</span>, adjust the
+        padding to suite your logo.</p>
+      </div>
+<h2 class="toggler toggler-closed">Changing the navigation / Tabs</h2>
+      <div>
+        <p>To find the navigation in <code>index.html</code> search for <span class="find">&lt;!--Tab links--&gt;</span>.
+        On the lines below that you'll see the navigation links that you can change or remove to suit. </p>
+        <h3>Add new Tab</h3>
+        <p>To add a new tab you will need to firstly create a new tab button. Each tab button is numbered to correlate with the <code>div</code> which it triggers. If you are adding the another tab you would add into the list a new <code>li</code> like this: </p>
+        <pre>&lt;ul&gt;<br />&lt;li&gt;&lt;a href="#content"&gt;Info&lt;/a&gt;&lt;/li&gt; <br />&lt;li&gt;&lt;a href="#tasks"&gt;Tasks&lt;/a&gt;&lt;/li&gt; <br />&lt;li&gt;&lt;a href="#video"&gt;Video&lt;/a&gt;&lt;/li&gt; <br />&lt;li&gt;&lt;a href="#gallery"&gt;Gallery&lt;/a&gt;&lt;/li&gt;<br />&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt; <br /><strong>&lt;li&gt;&lt;a href="#custom"&gt;Custom&lt;/a&gt;&lt;/li&gt;</strong>  <br />&lt;/ul&gt;</pre>
+        <p>You will now need to add a new content area for the <code>#custom</code> tab with an ID of <code>custom</code>. Create a new <code>div</code> with these parameters and add your content inside.</p>
+        <pre>&lt;div <strong>id="custom"</strong>&gt;your content here&lt;/div&gt;</pre>
+        <h3>Remove a Tab</h3>
+        <p>To remove a tab simply remove the relevent <code>li</code> line from the list/ menu of tabs like below. Then find the <code>div</code> with the matching ID name and delete the <code>div</code> and its contents.</p>
+        <pre>&lt;ul&gt;<br />&lt;li&gt;&lt;a href="#content"&gt;Info&lt;/a&gt;&lt;/li&gt; <br />&lt;li&gt;&lt;a href="#tasks"&gt;Tasks&lt;/a&gt;&lt;/li&gt; <br /><span class="strike">&lt;li&gt;&lt;a href="#video"&gt;Video&lt;/a&gt;&lt;/li&gt;</span> <br />&lt;li&gt;&lt;a href="#gallery"&gt;Gallery&lt;/a&gt;&lt;/li&gt;<br />&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;  <br />&lt;/ul&gt;</pre>
+        
+      </div>
+      <h2 class="toggler toggler-closed">Changing the launch date / launch countdown</h2>
+      <div>
+		<p>You can change the launch date shown inside the slider by locating the comment <span class="find">// Enter your launch date</span> in <strong>js/scripts.js</strong>. The default code is shown below, you can just
+        change the relevant numbers of the date to match your launch date.</p>
+        <pre>launchDate = {
+    day: 31,
+    month: 11,
+    year: 2011,
+    hour: 12,
+    min: 0,
+    sec: 0  
+},</pre>
+      <h3>Translating or changing the month names</h3>
+      <p>If you need to change the text for the month for any reason you can do so
+      by locating the comment <span class="find">// Months</span> in <strong>js/scripts.js</strong>. Below
+      this you will find the list of month names.</p>
+      </div>
+	  <h2 class="toggler toggler-closed">Configuring the progress bar</h2>
+      <div>
+		<p>You can change the progress percentage amount to change how far the bar animates inside the bar container. Open <code>js/scripts.js</code> and search for the term <span class="find">progressPercentage</span> and change the number to the percentage you would like.</p>
+		<h3>Changing the animation speed</h3>
+		<p>You can also change the speed of the progress bar animation.  Find the term <span class="find">progressAnimationSpeed</span> in <code>js/scripts.js</code> change <code>progressAnimationSpeed = 2000</code> to the speed you would like.  The speed is measured in milliseconds, so 2000 means the animation takes 2 seconds from start to finish.  Increasing the number will mean the animation takes longer and vice versa.</p>
+	 </div>
+		
+<h2 class="toggler toggler-closed">Changing the footer menu</h2>
+      <div>
+        <p>There is a menu inside the left footer column which are links to activate information pop ups.</p>
+        <h3>Adding a footer popup box</h3>
+        <p>You will need to first add a new menu item to the footer menu for your new box, you will need a unique lowercase name for it. For example,
+        I will call my new popup box "guestbook". To add the menu item, search for the <code>ul</code> with the class <span class="find">footer-menu</span>
+        and add a new list item to it, just copy and paste an existing <code>&lt;li&gt;</code>:</p>
+        <pre>&lt;li&gt;&lt;a class="footer-pop-out-trigger" title="Show / Hide" id="pop-out-trigger-<strong>guestbook</strong>" href="#"&gt;
+    &lt;span class="up-ico"&gt;<strong>Guestbook</strong>&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</pre>
+        <p>Note: the first highlighted text I have change the word to my unique name for the popup box. The second highlighted text is
+        what you want to appear in the footer menu that visitors will see.</p>
+        <p>Next, you need to add the popup box itself. It's easier to copy the HTML for an existing popup box, if you search for
+        the term <span class="find">footer-pop-out-box</span> you will find one. Once you have copied the code, you should change the two highlighted
+        areas below to your unique popup box name:</p>
+        <pre>&lt;div id="<strong>guestbook</strong>-pop-out" class="footer-pop-out-box <strong>guestbook</strong>-pop-out-box"&gt;</pre>
+        <h3>Removing a footer popup box</h3>
+        <p>Search for the <code>ul</code> with the class <span class="find">footer-menu</span> and remove the <code>li</code> and the link within them which you do not require.</p>
+        <p>It is not essential to remove the pop up boxes if you have removed the link. However, if you would like to then locate the comment tag containing the pop up box and delete all the content between the comments. For example to remove the Twitter locate the <span class="find">&lt;!--Hidden pop out boxes - Twitter--&gt;</span> and remove everything under it until the next pop up box comment.</p>
+      </div>
+<h2 class="toggler toggler-closed">Adding your social networking links</h2>
+      <div>
+        <p>To find the HTML code for the social networking "Connect with me" popup box, search <code>index.html</code>
+        for the term <span class="find">&lt;!--Hidden pop out boxes - Social icons--&gt;</span>, this will land you at the list of icons.</p>
+        <p>To find the HTML code for the social networking mini icons on the content footer (which may be hidden - see design options above), search <code>index.html</code>
+        for the term <span class="find">&lt;!-- CONTENT FOOTER </span>, this will land you at the list of icons. </p>
+        <p>There is one social networking link and icon per line. You should be able to tell what this link is for by looking at the name of the image file or the alt tags.</p>
+        <h3>Removing a link</h3>
+        <p>To remove a link, delete the entire line with the link and image on it.</p>
+        <h3>Adding a link</h3>
+        <p>To add a link, copy the code for an existing icon and paste it onto a new line, then change the image <code>src</code> attribute
+        to point to the icon of the social network or service. We have included a lot of icons in
+        the <code>images/social-icons/</code> folder. You should also change the <code>href</code>
+        attribute of the <code>&lt;a&gt;</code> tag to point to the URL of your account. Here is a complete line for example (only
+        on multiple lines for readability):</p>
+        <pre>&lt;div class="one-icon-wrap"&gt;&lt;a href="http://www.facebook.com/your-username"&gt;
+&lt;img src="images/social-icons/facebook.png" width="32" height="32"
+alt="Facebook" /&gt;&lt;/a&gt;&lt;/div&gt;</pre>
+        <p><strong>Note:</strong> you will need to make the change to the HTML source code on all the other pages you will
+        be using on your site.</p>  
+      </div>
+<h2 class="toggler toggler-closed">Adding your Twitter feed</h2>
+      <div>
+        <p>In the file <code>js/scripts.js</code>, near the top of the file you should find the code for
+        the Twitter settings. To help you find it, you can search for the term <span class="find">twitterUsername</span>.
+        Change the Twitter username to yours.</p>
+        <pre>twitterUsername = 'your_username',</pre>
+        <p>You can also change the number of Tweets to suit. Change the code:</p>
+        <pre>tweetCount = 2,</pre>
+        <p>to whatever number you want. The Twitter feed popup box should now show your own tweets.</p> 
+      </div>
+<h2 class="toggler toggler-closed">Changing the colour scheme</h2>
+      <div>
+        <p>We have 9 colour schemes and made it very easy to change between them. Firstly you have a choice between light template colour and dark template colour. To change to one or the other change the class on <code>body</code> inside <code>index.html</code> with either <code>dark</code> or <code>light</code>. The default will be set to dark. 
+        </p>
+        <pre>&lt;body class="<strong>dark</strong>"&gt;</pre>
+        <p>You can change the colour scheme by searching for <span class="find">&lt;!--Start Outside--&gt;</span> in <code>index.html</code>, in class of the <code>div</code> below the comment you can add your colour class from the following list. <code>lime</code> is the default so replace it with another.</p>
+        <ul>
+        <li>green</li>
+        <li>blue</li>
+        <li>red</li>
+        <li>orange</li>
+        <li>purple</li>
+        <li>sky</li>
+        <li>lime</li>
+        <li>gold</li>
+        <li>pink</li>
+        </ul>
+        <strong>Example:</strong>
+        <pre>&lt;div class="outside <strong>sky</strong>"&gt;</pre>
+      </div>
+<h2 class="toggler toggler-closed">Adding your Facebook feed</h2>
+      <div>
+      <p>We have added a Facebook 'Like Box' to our footer facebook pop up. Facebook allows other ways of connecting your Facebook media and profile with your website. To adapt this element we suggest you go to Facebook developers plugin page on their website - <a class="popup" href="https://developers.facebook.com/docs/plugins/">developers.facebook.com/docs/plugins/</a>. All you need to do is make sure you set the <strong>width</strong> of the plug-in to <strong>216px</strong> and paste the code inside the <span class="find">&lt;!--Paste Facebook code here--&gt;</span> comments on the footer HTML. 
+      </p>
+      <p><strong>Note:</strong> To ensure the border does not conflict with the background colour, we recommend making the border color on your plug in <code>#f7f7f7</code> which is the same as the background colour.</p>
+      </div>
+<h2 class="toggler toggler-closed">Align left / right / center</h2>
+		<div>
+        <p>You can choose to align your template either in the center (default) to the left or to the right. You can change the alignment by simply adding the class <code>center</code>, <code>left</code> or <code>right</code> into the <code>body</code> tag on the <code>index.html</code> page.</p>
+        <pre>&lt;body class="dark <strong>right</strong>"&gt;</pre>
+        </div>
+<h2 class="toggler toggler-closed">Rounded corners</h2>
+		<div>
+        <p>You can choose to have CSS3 rounded corners on your template. You can change to rounded corners by simply adding the class <code>rounded</code> into the <code>body</code> tag on the <code>index.html</code> page.</p>
+        <pre>&lt;body class="dark right <strong>rounded</strong>"&gt;</pre>
+        </div>
+<h2 class="toggler toggler-closed">Show / hide content footer</h2>
+		<div>
+        <p>You choose to show or hide the footer beneath the content area with mini social network icons within it. To show it  add the class <code>show-footer</code> into the <code>body</code> tag on the <code>index.html</code> page. If you do not want it there do not add anything - it is hidden by default.</p>
+        <pre>&lt;body class="dark right rounded <strong>show-footer</strong>"&gt;</pre>
+        </div>
+      
+      <h1><a name="bg" id="bg"></a>Background customisation<a class="top-link" href="#toc">Top</a></h1>   
+<h2 class="toggler toggler-closed">Image overlay options</h2>
+		<div>
+        <p>There are 3 options for background image overlays. In <strong>index.html</strong> search for <span class="find">&lt;!-- Effects to go over your BG image</span>, you will see the class on <code>img-overlay-effects</code> <code>div</code> is set to <code>none</code>. Change this to either of the following classes for new effects.</p>
+        <ul>
+            <li>square</li>
+            <li>stripe</li>
+            <li>dots</li>
+            <li>none</li>
+        </ul>
+        <strong>Example:</strong>
+        <pre>&lt;div id="img-overlay-effects" <strong>class="square"</strong>&gt;</pre>
+       
+        </div>
+   
+<h2 class="toggler toggler-closed">Adding background images</h2>
+      <div>
+        <p>The backgrounds on the preview version of Launch Pad are not included in the downloadable version due to copyright
+        reasons, so you will need to add your own background images. You are free to download the images
+        that we used and use them yourself, see the section below called <strong>Our live preview background images</strong>.
+        We suggest making the background images around <strong>1680px width</strong> x <strong>1050px height</strong>.
+        This will ensure that the image looks great in almost all screen resolutions.  To keep the download
+        size relatively small we found that choosing a jpeg quality between 40 - 60% meant that the file size
+        was about 250kb - 300kb each.</p>
+        <p>Add your background images to the folder <code>images/backgrounds/</code>.  After that you will
+        need to add links to your images in <code>js/scripts.js</code>, at the top of that file you will find
+        the following code:</p>
+        <pre>var backgrounds = [
+    'images/backgrounds/placeholder.jpg'
+],</pre>
+        <p>Add the paths to your images one on each line with a comma at the end of every line except the last one, the file name itself
+        is not important as long as it points to the background, e.g.:</p>
+        <pre>var backgrounds = [
+   'images/backgrounds/your_background1.jpg',
+   'images/backgrounds/your_background2.jpg',
+   'images/backgrounds/your_background3.jpg',
+   'images/backgrounds/your_background4.jpg',
+   'images/backgrounds/your_background5.jpg',
+   'images/backgrounds/your_background6.jpg'
+],</pre>
+        <p>We have included a CSS based full screen background fallback for users with JavaScript disabled.  You will need
+        to change <code>index.html</code>, search for the term <span class="find">&lt;!-- Non-JavaScript background --&gt;</span>
+        you'll see an <code>&lt;img&gt;</code> tag that is pointing to the placeholder background.  Change this to
+        point to your background image e.g.</p>
+        <pre>&lt;img src="images/backgrounds/your_background1.jpg" alt="" /&gt;</pre>
+      </div>
+<h2 class="toggler toggler-closed">Background script options</h2>
+      <div>
+        <p>There are some options you have to change the functionality of the background image script:</p>
+        <table class="options">
+            <tr><th>Key</th><th>Default</th><th>Description</th></tr>
+            <tr><td>speedIn</td><td>3000</td><td>Speed of the "fade in" transition between background images in milliseconds.</td></tr>
+            <tr><td>speedOut</td><td>3000</td><td>Speed of the "fade out" transition between background images in milliseconds.</td></tr>
+            <tr><td>sync</td><td>true</td><td>If true - both fade animations happen at the same time, if false - "fade in" waits for "fade out" to complete.</td></tr>
+            <tr><td>minimiseSpeedIn</td><td>1000</td><td>Speed that the website fades in when the close button is clicked.</td></tr>
+            <tr><td>minimiseSpeedOut</td><td>1000</td><td>Speed that the website fades out when the maximise button is clicked.</td></tr>
+            <tr><td>controlSpeedIn</td><td>500</td><td>Speed that the controls fade in at in fullscreen mode.</td></tr>
+            <tr><td>fadeIE</td><td>false</td><td>Fade the website when the minimise button is clicked in IE 7,8.</td></tr>
+            <tr><td>preload</td><td>true</td><td>Preload the background images for faster loading.</td></tr>
+            <tr><td>save</td><td>true</td><td>Save the current background image across pages in a cookie.</td></tr>
+            <tr><td>slideshow</td><td>true</td><td>Enable the slideshow functionality (play/pause button).</td></tr>
+            <tr><td>slideshowAuto</td><td>true</td><td>Start the slideshow automatically.</td></tr>
+            <tr><td>slideshowSpeed</td><td>7000</td><td>The time that each background image is displayed in the slideshow.</td></tr>
+            <tr><td>random</td><td>false</td><td>Display the background images in random order each time, forces "save: false".</td></tr>
+            <tr><td>keyboard</td><td>true</td><td>Use the keyboard to control the background images. Left arrow = prev, right arrow = next, esc = close fullscreen mode.</td></tr>
+            <tr><td>centerX</td><td>true</td><td>If true, the background will be horizontally centered in the window. If false it will be left aligned.</td></tr>
+            <tr><td>centerY</td><td>true</td><td>If true, the background will be vertically centered in the window. If false it will be top aligned.</td></tr>
+            <tr><td>onLoad</td><td>false</td><td>Callback that fires right before loading a background image.</td></tr>
+            <tr><td>onComplete</td><td>false</td><td>Callback that fires when the background image has finished loading (and animating).</td></tr>
+        </table>
+        <p>To use the options, open <code>scripts.js</code> and find the code <span class="find">backgroundOptions = {</span>, it's near the top of the file.
+        You should see code looking like the following:</p>
+        <pre>backgroundOptions = {
+
+},</pre>
+        <p>Add your own options between the curly brackets as shown below, each option you add should end in a comma, except the last one, for example</p>
+        <pre>backgroundOptions = {
+    <strong>speedOut: 0,
+    slideshow: false</strong>
+},</pre>
+        <p><strong>Note:</strong> make sure to end each line of your options with a comma (except the last line), or the script will break!</p>
+        <p><strong>Note:</strong> the website fade in / fade out effect has been changed to a show / hide effect in Internet Explorer
+        since the way the browser handles the fading of some positioned elements is not pretty.</p>
+      </div>
+<h2 class="toggler toggler-closed">Random background images</h2>
+      <div>
+        <pre>backgroundOptions = {
+    <strong>random: true</strong>
+},</pre>
+                <p>See "Background script options" section above for where to add this code.</p>
+              </div>
+               <h2 class="toggler toggler-closed">Disable the slideshow</h2>
+               <div>
+               <pre>backgroundOptions = {
+    <strong>slideshow: false</strong>
+},</pre>
+                <p>See "Background script options" section above for where to add this code.</p>
+                </div>
+                <h2 class="toggler toggler-closed">Disable keyboard navigation</h2>
+                <div>
+                <pre>backgroundOptions = {
+    <strong>keyboard: false</strong>
+},</pre>
+                <p>See "Background script options" section above for where to add this code.</p>
+                </div>                
+<h2 class="toggler toggler-closed">Different default background per page</h2>
+      <div>
+        <p>It's possible to set a different default background on a per page basis. You will need to find out the index of
+        the image in your list of background images that you added to <code>scripts.js</code>. The first background in your list
+        has the index 0, the second one has the index 1, the third image has index 2, and so on. Once you have the index, add the code
+        below to your page (use your number instead of 3):</p>
+        <pre>&lt;script type="text/javascript"&gt;var backgroundIndex = 3;&lt;/script&gt;</pre>        
+        <p>Add your code <strong>before</strong> this line in the <code>&lt;head&gt;</code> of the page:</p>
+        <pre>&lt;script type="text/javascript" src="js/scripts.js"&gt;&lt;/script&gt;</pre>
+      </div>
+<h2 class="toggler toggler-closed">Different backgrounds per page</h2>
+      <div>
+        <p>It's possible have an entirely different set of background images on a per page basis. The code you need to create the backgrounds
+        is the same as inside <code>scripts.js</code> but you need to add it in the <code>&lt;head&gt;</code> of page instead.</p>
+        <pre>&lt;script type="text/javascript"&gt;var backgrounds = [
+   'images/backgrounds/your_background1.jpg',
+   'images/backgrounds/your_background2.jpg',
+   'images/backgrounds/your_background3.jpg',
+   'images/backgrounds/your_background4.jpg',
+   'images/backgrounds/your_background5.jpg',
+   'images/backgrounds/your_background6.jpg'
+];&lt;/script&gt;</pre>        
+        <p>Add your code <strong>before</strong> this line in the <code>&lt;head&gt;</code> of the page:</p>
+        <pre>&lt;script type="text/javascript" src="js/scripts.js"&gt;&lt;/script&gt;</pre>
+      </div>      
+      <h1><a name="portfolio" id="portfolio"></a>Gallery customisation<a class="top-link" href="#toc">Top</a></h1>
+      
+<h2 class="toggler toggler-closed">Changing image height</h2>
+		<div>
+        <p><strong>Note:</strong> We highly recommend not altering the width of the gallery. However you may wish to change the height in which case you will need to locate and change the heights of two elements in the <code>styles.css</code> the Gallery section.</p>
+        <p>You will need to change the hover image height and the image wrapper height. Locate <span class="find">.threecol-portfolio .one-portfolio-item</span> and <span class="find">.threecol-portfolio .portfolio-hover</span>.</p>
+        <p>Take note of your new image height and do the following sum to calculate the new heights of these CSS elements:</p>
+        <p><span class="find">.one-portfolio-item</span> - Image height (px) + 6px = height | 
+        <strong>Eg: </strong>Img height = 92px (+ 6px) = <strong>98px</strong></p>
+        <p><span class="find">.portfolio-hover</span> - Image height = same as image height.</p>
+        </div>
+<h2 class="toggler toggler-closed">Fancybox</h2>
+      <div>
+        <p>You will need to create 2 sizes of image for each of the images you want to display in your
+        portfolio, one for the thumbnail and one for the popup size. We recommend that you make the
+        popup size have a maximum height of <strong>500px</strong>. As a guide, our placeholder images
+       are <strong>800px wide</strong>. The size of the thumbnail is:</p>
+        <ul>
+            <li>148px width by 92px height</li>
+        </ul>
+        <p>You should save your thumbnail images into the folder <code>images/gallery/</code> and pop up images to <code>images/gallery/popup</code></p>
+        <p>Now open the <code>index.html</code> file and search for
+        the term <span class="find">&lt;!--Gallery content--&gt;</span>, this should take you to just before the list
+        of images. Each portfolio item looks similar to this:</p>
+        <pre>&lt;li class="one-portfolio-item"&gt;
+    &lt;a class="portfolio-thumb-link" href="images/gallery/popup/placeholder.jpg" rel="portfolio"&gt;
+        &lt;img src="images/gallery/placeholder.png" alt="" /&gt;
+    &lt;/a&gt;
+&lt;/li&gt;</pre>
+        <p>As you can see, it consists of an image surrounded by a link, the image is the thumbnail,
+        and the link points to the popup image. You now need to change the 
+        <code>src=""</code> attribute of the <code>&lt;img&gt;</code> to point to your thumbnail image. Then change the
+        <code>href=""</code> of the <code>&lt;a&gt;</code> to point to the popup image. For example, your
+        code might look like this once you've made the change, if your thumbnail and popup image were both
+        called photo1.jpg:</p>
+        <pre>&lt;li class="one-portfolio-item"&gt;
+    &lt;a class="portfolio-thumb-link" href="images/gallery/popup/photo1.jpg" rel="portfolio"&gt;
+        &lt;img src="images/gallery/photo1.jpg" alt="" /&gt;
+    &lt;/a&gt;
+&lt;/li&gt;</pre>
+        <p>Repeat these steps for each portfolio item you want to add.  You may need to delete some
+        placeholder images, so just delete the entire <code>&lt;li&gt;&lt;/li&gt;</code> surrounding it.</p>
+        <h3>JavaScript options (optional)</h3>
+        <p>The Fancybox gallery has a lot of options, you can find out more from the <a class="popup" href="http://fancybox.net/">Fancybox website</a>.
+        The file you need to add any options to is <code>js/scripts.js</code>, just search for the term <span class="find">fancybox</span> and you should find it.</p>        
+      </div>
+      <h1><a name="video" id="video"></a>Video customisation<a class="top-link" href="#toc">Top</a></h1>
+      <h2 class="toggler toggler-closed">How to change the video</h2>
+      <div>
+        <p>To change the video, in <strong>index.html</strong> search for the term <span class="find">id="video"</span>.
+        You'll end up at a &lt;div&gt; surrounding an &lt;iframe&gt;. You can delete the &lt;iframe&gt;
+        to delete the video, then you can copy and paste the embed code of your video in it's place. The dimensions
+        of the video included with the template is <strong>488px width</strong> by <strong>274px height</strong>.</p>
+      </div>
+      <h1><a name="contact" id="contact"></a>Contact customisation<a class="top-link" href="#toc">Top</a></h1>
+      <h2 class="toggler toggler-closed">Contact form installation</h2>
+      <div>
+        <p>The contact form is an <strong>iPhorm</strong>, which is one of our CodeCanyon items that we sell separately.  The documentation for the iPhorm is in the
+          <code>documentation/form-documentation</code> folder, there is also a link to it at the bottom of this section.</p>
+          <p>To set up the form the only step you need to do is <strong>Step 4</strong> of the form installation guide which is to change the form to send enquiries to your email address. 
+          I've copied these instructions below.</p>
+          <h3>4. Configure the contact form to send enquiries to your email address</h3>
+      <p>To configure the contact form, open <code>contact-form/config.php</code> and on <strong>line 19</strong> you will find the 
+      current email address that will be receiving the enquiries.  Change that to your email address as shown below.</p>
+<pre>$recipients = array(
+    'spam@themecatcher.net'
+);</pre>
+      <p>becomes</p>
+<pre>$recipients = array(
+    'your@emailaddress.com'
+);</pre>
+      <p>While you are in <code>contact-form/config.php</code> you can also change the success message if you wish, which is 
+      displayed when the form is successfully submitted.  The code for that is on <strong>line 6</strong>.</p>
+      <p>To customise the form further or for form troubleshooting, see the <a href="form-documentation" class="popup">form help</a>.</p>
+      </div>    
+      <h2 class="toggler toggler-closed">Customising the contact form</h2>
+      <div>
+      <p>To customise the form further or for form troubleshooting, see the <a href="form-documentation" class="popup">form help</a>.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Form field toggle values</h2>
+      <div>
+      <p>The theme uses the Toggleval jQuery plugin, which is configured to set the value of the form element to the text inside the <code>&lt;label&gt;</code>
+      tag for that field and the labels are hidden using CSS. If you do add another form field as described in the <a href="form-documentation" class="popup">form help</a>,
+      you can add this behaviour to your new field by adding the class <code>hide-js</code> to the <code>&lt;label&gt;</code> and by adding the class <code>toggle-val</code>
+      to the actual form element (input, textarea etc).</p>
+      </div>
+      <h2 class="toggler toggler-closed">Register form installation</h2>
+      <div>
+      <p>In the first tab area <code>&lt;div id="content"&gt;</code> there is a register form, this is set configured in exactly the same way as the contact form
+      described above, the only difference is the configuration file is <code>contact-form/config-register.php</code>.</p>
+      </div>      
+      
+      <h1><a name="third" id="third"></a>Third party scripts<a class="top-link" href="#toc">Top</a></h1>
+<h2 class="toggler toggler-closed">Third party scripts</h2>
+      <div>
+        <ul>
+            <li><a href="http://jquery.com" class="popup">jQuery JavaScript library</a></li>
+            <li><a href="http://fancybox.net/" class="popup">Fancybox</a></li>
+            <li><a href="https://github.com/carhartl/jquery-cookie" class="popup">jQuery Cookie</a></li>
+            <li><a href="http://jquery.kuzemchak.net/toggleval.php" class="popup">Toggleval</a></li>
+            <li><a href="http://jqueryui.com/demos/tabs/" class="popup">jQuery UI Tabs</a></li>
+            <li><a href="http://gsgd.co.uk/sandbox/jquery/easing/" class="popup">jQuery Easing equations</a></li>
+            <li><a href="https://github.com/ProLoser/AnythingSlider/" class="popup">AnythingSlider</a></li>
+            <li><a href="http://www.littlewebthings.com/projects/countdown/" class="popup">jQuery Countdown plugin</a></li>
+        </ul>
+      </div>
+      <h1><a name="#troubleshooting" id="#troubleshooting"></a>Troubleshooting<a class="top-link" href="#toc">Top</a></h1>
+<h2 class="toggler toggler-closed">Background shows a blank screen</h2>
+      <div>
+        <p>Most likely the background image does not exist, check the path to the image in <code>scripts.js</code> and check that it exists on the server.</p>
+      </div>
+<h2 class="toggler toggler-closed">Poor background animation performance</h2>
+      <div>
+        <p>Old browsers may not be able to handle the animation between background images at the default settings.
+        You can change the JavaScript options (in <code>js/scripts.js</code> near the top) to be more forgiving as shown below.</p>
+        <pre>backgroundOptions = {
+    speedOut: 0,
+    sync: false
+},</pre>
+        <p>The options make it so that when you click next or prev, it hides the current background instantly
+        and then starts fading in the next background, instead of fading in and out
+        both images at the same.</p>
+      </div>
+      <h1><a name="support" id="support"></a>Further support<a class="top-link" href="#toc">Top</a></h1>
+      <p>For additional help you may contact us using the form on our <a class="popup" href="http://themeforest.net/user/ThemeCatcher">ThemeForest profile page</a>.  If you would like us to
+      customise your form for you, we will be happy to do this at our hourly rate of &pound;30 per hour.  Contact us if you would like to hire us!</p>
+    </div><!-- /#content -->
+</div>
+</div>
+<!-- End Wrapper -->
+
+</body>
+</html>

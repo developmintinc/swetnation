@@ -1,0 +1,11 @@
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\MerchantTribe.Shipping.USPostal.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\MerchantTribe.Shipping.USPostal.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\EcmaScript.NET.modified.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\MerchantTribe.Shipping.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\MerchantTribe.Web.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\Yahoo.Yui.Compressor.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\MerchantTribe.Shipping.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\bin\Release\MerchantTribe.Web.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\obj\Release\ResolveAssemblyReference.cache
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\obj\Release\MerchantTribe.Shipping.USPostal.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.USPostal\obj\Release\MerchantTribe.Shipping.USPostal.pdb

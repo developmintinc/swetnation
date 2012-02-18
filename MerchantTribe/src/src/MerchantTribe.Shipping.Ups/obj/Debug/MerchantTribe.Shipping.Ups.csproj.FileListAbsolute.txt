@@ -1,0 +1,13 @@
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\MerchantTribe.Shipping.Ups.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\MerchantTribe.Shipping.Ups.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\BVSoftware.Shipping.Ups.Keys.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\EcmaScript.NET.modified.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\MerchantTribe.Shipping.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\MerchantTribe.Web.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\Yahoo.Yui.Compressor.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\MerchantTribe.Shipping.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\BVSoftware.Shipping.Ups.Keys.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Debug\MerchantTribe.Web.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Debug\MerchantTribe.Shipping.Ups.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Debug\MerchantTribe.Shipping.Ups.pdb

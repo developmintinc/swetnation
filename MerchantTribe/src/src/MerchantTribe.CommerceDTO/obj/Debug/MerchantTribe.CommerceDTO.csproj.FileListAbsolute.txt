@@ -1,0 +1,9 @@
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\bin\Debug\MerchantTribe.CommerceDTO.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\bin\Debug\MerchantTribe.CommerceDTO.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\bin\Debug\EcmaScript.NET.modified.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\bin\Debug\MerchantTribe.Web.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\bin\Debug\Yahoo.Yui.Compressor.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\bin\Debug\MerchantTribe.Web.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\obj\Debug\MerchantTribe.CommerceDTO.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.CommerceDTO\obj\Debug\MerchantTribe.CommerceDTO.pdb

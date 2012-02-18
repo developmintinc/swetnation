@@ -1,0 +1,1105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iPhorm Ajax Contact Form v1.5 - Help Guide</title>
+<link rel="stylesheet" type="text/css" href="attachments/styles.css" />
+<script type="text/javascript" src="attachments/jquery-1.5.min.js"></script>
+<script type="text/javascript" src="attachments/scripts.js"></script>
+</head>
+<body>
+<div class="outside">
+<!-- Begin Wrapper -->
+<div id="wrapper">
+    <div class="menu clearfix">
+        <ul>
+            <li><a href="#one">Installation</a></li>
+            <li><a href="#two">Customising your form</a></li>
+            <li><a href="#three">Advanced form settings</a></li>
+            <li><a href="#four">Troubleshooting</a></li>
+            <li><a href="#five">Further support</a></li>
+        </ul>
+    </div>
+    <!-- Begin Header -->
+    <div id="header">
+      <h1>Helping you adapt your iPhorm Ajax contact form</h1>
+      <h3>Thanks for purchasing the iPhorm Ajax contact form!</h3>
+      <p>Thank you for purchasing Pearl. If you have any questions that are not answered
+        in this help file, please feel free to email us via our user page contact form
+        <a class="popup" href="http://themeforest.net/user/ThemeCatcher">here</a>.</p>
+    </div>
+    <!-- End Header -->    
+    <div id="content" class="clearfix">
+      <p>NOTE: Click section headings to show help content.</p>
+      <h1><a name="one" id="one"></a>Installation</h1>
+      <h2 class="toggler toggler-closed">How to install</h2>
+      <div>
+      <p>To install the contact form into your web page, there are 6 things you must do:</p>
+      <ul>
+        <li>1. Copy the HTML code for the contact form into your web page</li>
+        <li>2. Copy the CSS stylesheet link(s) into your web page</li>
+        <li>3. Copy the JavaScript links into your web page</li>
+        <li>4. Configure the contact form to send enquiries to your email address</li>
+        <li>5. Choose a character encoding</li>
+        <li>6. Upload the <code>contact-form</code> folder to your web server via FTP</li>
+      </ul>
+      <p>Each step is explained in more detail below.</p>
+      <h3>1. Copy the HTML code for the contact form into your web page</h3>
+      <p>Open the <code>index.php</code> file and locate the HTML code for the
+      contact form on <strong>lines 17 - 94</strong> (it is commented in the file).  Select all of this code then copy and paste
+      it into the body of your web page.</p>
+      <h3>2. Copy the link to the CSS stylesheet into your web page</h3>
+      <p>There are two stylesheets used by the contact form, which are in the folder contact-form/css:</p>
+      <ul>
+        <li>1. A CSS reset / general stylesheet (pagestyles.css)</li>
+        <li>2. A layout specific stylesheet, one of:
+        	<ul>
+        		<li>inline.css</li>
+        		<li>block.css</li>
+        		<li>standard.css</li>
+        		<li>twocol.css</li>
+        	</ul>
+        </li>
+      </ul>
+      <p>If you have already styled your web page, you probably do not need pagestyles.css so you do not need
+      to copy the link to it.  However if you want your web page to look like the live preview of the
+      contact form, feel free to copy the link to this stylesheet from <strong>line 7 of index.php</strong> and paste it into the &lt;head&gt; section of your web page.</p>
+<pre>&lt;link rel="stylesheet" type="text/css" href="contact-form/css/pagestyles.css" /&gt;</pre>
+     <p>You will need to choose a layout from the 4 we have designed for you (inline.css, block.css, standard.css, twocol.css).
+      You can find an example of each layout in the live preview on CodeCanyon.  Once you have chosen a layout, copy the
+      code from <strong>line 8 of index.php</strong> and enter the name of the stylesheet layout you would like at the end of the <code>href</code> attribute for example, to choose the standard.css layout, copy
+       the code below and paste it into the &lt;head&gt; section of your web page.
+      </p>
+      <pre>&lt;link rel="stylesheet" type="text/css" href="contact-form/css/standard.css" /&gt;</pre>
+      <h3>3. Copy the JavaScript links into your PHP page</h3>
+      <p>The form requires the 4 JavaScript files shown below, to include them in your web page, copy <strong>lines 10 - 13 inclusive from index.php</strong> and
+      paste them into your PHP page. Note: if your web page already uses the jQuery library you can skip copying the first line.</p>
+<pre>&lt;script type="text/javascript" src="contact-form/js/jquery-1.5.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="contact-form/js/plugins.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="contact-form/js/iphorm.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="contact-form/js/scripts.js"&gt;&lt;/script&gt;
+</pre>
+      <h3>4. Configure the contact form to send enquiries to your email address</h3>
+      <p>To configure the contact form, open <code>contact-form/config.php</code> and on <strong>line 19</strong> you will find the 
+      current email address that will be receiving the enquiries.  Change that to your email address as shown below.</p>
+<pre>$recipients = array(
+    'spam@themecatcher.net'
+);</pre>
+      <p>becomes</p>
+<pre>$recipients = array(
+    'your@emailaddress.com'
+);</pre>
+      <p>While you are in <code>contact-form/config.php</code> you can also change the success message if you wish, which is 
+      displayed when the form is successfully submitted.  The code for that is on <strong>line 6</strong>.</p>  
+      <h3>5. Choosing a character encoding</h3>
+      <p>You should also make sure the form is using the same character encoding as your website.  By default the
+      iPhorm works with UTF-8 encoding and will expect form data sent from your web page to be in this
+      encoding.</p>
+      <h4>Using UTF-8 encoding (recommended)</h4>
+      To set your web page to use UTF-8 encoding, insert the following meta tag just after the opening <code>&lt;head&gt;</code>
+      tag of the web page your form is on:
+      <pre>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</pre>
+      <h4>Using another encoding such as ISO-8859-1</h4>
+      <p>If your web page uses another charset and you want the iPhorm to use the same charset, you must add the line of PHP code below to <code>config.php</code> (for example to use the ISO-8859-1 charset):</p>
+      <pre>$form-&gt;setCharset('ISO-8859-1');</pre>
+      <p>For a list of all valid character encodings, see the charset section of <a href="http://php.net/manual/en/function.htmlentities.php" class="popup">this page</a>.</p>
+      <h3>6. Upload the <code>contact-form</code> folder to your web server via FTP</h3>
+      <p>You should now upload the <code>contact-form</code> folder so that it resides in the same
+      place as your PHP/HTML file containing the form.  The <code>contact-form</code> <strong>folder</strong> and <strong>your PHP/HTML file</strong> should be in the same folder on your web server.
+      If this setup is not possible, just change the <code>action=""</code> attribute of the <code>&lt;form&gt;</code> tag to point to the <code>contact-form/process.php</code> file.</p>
+      <p>Now visit your PHP/HTML page via your web browser, the form should appear and the contact form should work correctly.  See the <a href="#four">troubleshooting</a> section below if
+      you are having problems.</p>
+      </div>    
+      <h1><a name="two" id="two"></a>Customising your form</h1>
+      <h2 class="toggler toggler-closed">Adding a form element</h2>
+      <div><p>To add a form element, there are two steps.</p>
+      <ul>
+        <li>1. Add the HTML for the form element in your web page</li>
+        <li>2. Add the form element to the <code>config.php</code> file to make the PHP script aware of the
+        new form element</li>
+      </ul>
+      <p>Both steps are explained in more detail below.</p>
+      <h3>1. Add the HTML for the form element in your web page</h3>
+      <p>The easiest way to add another form element is to copy the existing HTML code from another element, including
+      all surrounding wrappers.  Each element included with the form has comments surrounding it and the file <code>contact-form/examples/example-all-elements.php</code> has example code
+      for most form elements you will ever need to use. So to copy the entire element,
+      you would select the all the HTML code between the comments.  For example, lets say we wanted
+      to add a new required field called "Fax".  We would copy the HTML for the "Name" field by copying
+      <strong>lines 27 - 34 of index.php</strong> and pasting the code in between the form elements that you would like your new element
+      to be between.  You would then change all occurences of "name" in your copied code with "fax" (except the actual name attribute key i.e. it should be <code>name="fax"</code> not <code>fax="fax"</code> on the input), to give us:</p>
+<pre>&lt;!-- Begin Fax element --&gt; 
+&lt;div class="element-wrapper fax-element-wrapper clearfix"&gt;
+    &lt;label for="fax"&gt;Fax &lt;span class="red"&gt;*&lt;/span&gt;&lt;/label&gt;
+    &lt;div class="input-wrapper fax-input-wrapper"&gt;
+        &lt;input class="fax-element" id="fax" type="text" name="fax" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- End Fax element --&gt;</pre>
+      <h3>2. Add the form element to the <code>config.php</code> file to make the PHP script aware of the
+        new form element</h3>
+      <p>To make the PHP script aware of the new field, you will need to edit the <code>contact-form/config.php</code> file.
+      You will need to create a new iPhorm_Element object for your new field, if you don't know how to do that just copy the existing code
+      for the name element as on <strong>lines 41 - 44</strong> then change everything that says "name" to "fax", giving us.</p>
+<pre>$fax = new iPhorm_Element('<strong>fax</strong>');
+$fax-&gt;addFilter('trim');
+$fax-&gt;addValidator('required');
+$form-&gt;addElement($fax);</pre>
+      <p>IMPORTANT: The part in red above must match the <code>name=""</code> attribute of the form element in the HTML. This tells the PHP script
+      what element you are referring to.  If we had given the input field the attribute <code>name="fax_number"</code> in the HTML, then the part in red above would also have to be <strong>fax_number</strong>.
+      So that the form works perfectly, we recommend setting the name attribute in the HTML with all lower case with underscores where there should be spaces, e.g. if
+      adding a field called "National insurance number" set the name attribute to be "national_insurance_number" in the HTML for the form element.</p>
+      <p>The filter you are adding to the element in the code above will trim whitespace from the start
+      and end of the value submitted by the form user.  The validator you are adding in the code above will make the field required.  If you do not want
+      those filters or validators for the element just delete the line that adds them. For more help on Filters and Validators see the <a href="#three">Advanced form customisation section</a>
+      below.</p>
+      <p>You can also pass in a second
+      argument when creating an element which sets the label for the element - what will be displayed above the field in the email. For example, if in the HTML your field
+      was called "fax", by default the label would be "Fax" but you could change the label to be just "Fax number" with this code:</p>
+      <pre>$fax = new iPhorm_Element('fax', '<strong>Fax number</strong>');</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Adding a multiple form element</h2>
+      <div><p>There are a couple of elements that can have multiple values, for example, a group of checkboxes or a multiple select element.
+      When adding these elements, you need to add a pair of square brackets to the name attribute of the element <code>[]</code>.
+      To add a multiple form element, there are two steps.</p>
+      <ul>
+        <li>1. Add the HTML for the form element in your web page</li>
+        <li>2. Add the form element to the config.php file to make the PHP script aware of the
+        new form element</li>
+      </ul>
+      <p>Both steps are explained in more detail below.</p>
+      <h3>1. Add the HTML for the form element in your web page</h3>
+      <p>The easiest way to add another form element is to copy the existing HTML code for the element, including
+      all surrounding wrappers. There is an example of most HTML form elements and the code you should use in the
+      file <code>contact-form/examples/example-all-elements.php</code>. Each element included with the form has comments surrounding it. So to copy the entire element
+      you would select the all the HTML code between the comments.  For example, lets say we wanted
+      to add a multi checkbox field.  We would copy the HTML for the "Multi checkbox" element by copying lines 
+      <strong>68 - 79 of contact-form/examples/example-all-elements.php</strong> and pasting the code in between the form elements that you would like your new element
+      to be between.  You would then change all occurences of "multi_checkbox" in your copied code with the name you want to give your new element, below I have given
+      it the name "number_of_kids" so I've updated all surrounding wrappers aswell to reflect this and so you can style
+      the element individually.</p>
+<pre>&lt;!-- Number of kids element --&gt;
+&lt;div class="element-wrapper number_of_kids-element-wrapper clearfix"&gt;
+    &lt;label&gt;Number of kids &lt;span class="red"&gt;*&lt;/span&gt;&lt;/label&gt;
+    &lt;div class="input-wrapper number_of_kids-input-wrapper clearfix"&gt;                               
+        &lt;input id="number_of_kids-One" name="number_of_kids[]" 
+            value="One" type="checkbox" /&gt; 
+            &lt;label for="number_of_kids-One"&gt;One&lt;/label&gt;&lt;br /&gt;
+        &lt;input id="number_of_kids-Two" name="number_of_kids[]" 
+            value="Two" type="checkbox" /&gt; 
+            &lt;label for="number_of_kids-Two"&gt;Two&lt;/label&gt;&lt;br /&gt;
+        &lt;input id="number_of_kids-Three" name="number_of_kids[]" 
+            value="Three" type="checkbox" /&gt; 
+            &lt;label for="number_of_kids-Three"&gt;Three&lt;/label&gt;&lt;br /&gt;
+        &lt;input id="number_of_kids-Four" name="number_of_kids[]" 
+            value="Four" type="checkbox" /&gt; 
+            &lt;label for="number_of_kids-Four"&gt;Four&lt;/label&gt;&lt;br /&gt;
+        &lt;input id="number_of_kids-Five" name="number_of_kids[]" 
+            value="Five" type="checkbox" /&gt; 
+            &lt;label for="number_of_kids-Five"&gt;Five&lt;/label&gt;&lt;br /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- End Number of kids element --&gt;</pre>
+      <h3>2. Add the form element to the config.php file to make the PHP script aware of the
+        new form element</h3>
+      <p>To make the PHP script aware of the new field, you will need to edit the file <code>contact-form/config.php</code>.
+      You will need to create a new iPhorm_Element object for your new field, if you don't know how to do that just copy the existing code
+      for the one of the existing elements then change the name to suit your new element. <strong>The difference with multiple elements
+      is the you need to add <code>[]</code> to the end of the name in config.php also. Continuing the above example would give us:</strong></p>
+<pre>$numberOfKids = new iPhorm_Element('<strong>number_of_kids[]</strong>');
+$form-&gt;addElement($numberOfKids);</pre>
+      <p>IMPORTANT: The part in red above must match the <code>name=""</code> attribute of the form element in the HTML. This tells the PHP script
+      what element you are referring to.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Removing a form element</h2>
+      <div>
+	      <p>To remove a form element, there are two steps.</p>
+	      <ul>
+	        <li>1. Remove the HTML for the form element in your web page</li>
+	        <li>2. Remove the form element from the config.php file to make the PHP script aware that
+	        the form element is no longer there</li>
+	      </ul>
+	      <p>Both steps are explained in more detail below.</p>
+          <h3>1. Remove the HTML for the form element in your web page</h3>
+          <p>Each form element and it's associated wrappers are commented individually in index.php.  Find
+          the form element you want to remove by looking at the class names of the elements, each element
+          has their own class names that should help you identify them.  Once you've found it, delete
+          the HTML code between the comments surrounding the element. A common request is to remove the phone element.
+          To do that, delete <strong>lines 43 - 50 of index.php</strong> then proceed to step 2.</p>
+          <h3>2. Remove the form element from the config.php file to make the PHP script aware that
+            the form element is no longer there</h3>
+          <p>In <code>contact-form/config.php</code>, locate the code that creates the form element you want to remove.
+          If you wanted to delete the phone element (<strong>lines 63 - 65 of config.php</strong>), the code you are looking for would be:</p>
+          <pre>$phone = new iPhorm_Element('phone');
+$phone-&gt;addFilter('trim');
+$form-&gt;addElement($phone);</pre>
+          <p>Remove (or just comment out) these lines.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Making a field required</h2>
+      <div>
+          <p>A required field simply has a validator called 'required' added to it.  You can use the
+          method <code>addValidator()</code> on your element to add the required validator.
+          In <code>config.php</code> if the element already has the code for addValidators() next to it, then just add 'required' as
+          the next element in the array.  Otherwise you will need to enter code on a new line to
+          add the validator, for example if you wanted to make the phone field required add your new line of code to <strong>line 65</strong>:</p>
+          <pre>$phone = new iPhorm_Element('phone');
+$phone-&gt;addFilter('trim');
+<strong>$phone-&gt;addValidator('required');</strong>
+$form-&gt;addElement($phone);</pre>
+          <p>It might also be a good idea to add an asterisk to the element label on your web page to let
+          users know that the element is now required.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Making a field not required</h2>
+      <div>
+        <p>To make a field not required you need to remove the 'required' validator.  Open <code>config.php</code>
+        and find the PHP code for the element you want to change.  There should be code that looks like the following:</p>
+        <pre>
+$element-&gt;addValidator('required'); // Single validator        
+or
+$element-&gt;addValidators(array('required', 'email')); // Multiple validators
+</pre>
+        <p>If the element has the single validator line of code, simply delete or comment out the line adding the required validator.
+        If the element has the multiple validators line, remove the 'required' string and the comma after it.  The multiple
+        validators line would now look like this:</p>
+<pre>
+$element-&gt;addValidators(array('email')); // Multiple validators (required removed)
+</pre>        
+        <p>It might also be a good idea to remove the asterisk from the field label on your web page to let users know that the field is no longer required.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Changing layout</h2>
+      <div>
+        <p>To change layout all you need to do is change the name of the stylesheet you are linking to.  
+        We have included 4 layouts with the form.</p>
+        <ul>
+            <li>standard.css - Standard layout, each label and field on it's own line</li>
+            <li>block.css - Block layout, each label to the left and field on the right</li>
+            <li>inline.css - Inline layout, smaller fields are placed side by side</li>
+            <li>twocol.css - Two column layout, similar to block but without the borders</li>
+        </ul>
+        <p>You can look at each layout on the live preview of the form on CodeCanyon.  Once you have
+        decided on a layout, change the link to the CSS stylesheet file in the &lt;head&gt; section 
+        of your web page to the filename of the layout you have chosen.  To choose the two column layout
+        see example below.</p>
+        <pre>&lt;link rel="stylesheet" type="text/css" href="contact-form/css/twocol.css" /&gt;</pre>
+        <h3>Non-JavaScript layout</h3>
+        <p>We have minimally styled a page that non JavaScript users will see errors and success messages on using neutral colours.
+        If you want to change the style of this page edit the file <code>contact-form/nojs.php</code>. To see what the page
+        looks like, <a class="popup" href="http://www.google.co.uk/search?q=disable+JavaScript+in+your+browser">disable JavaScript in your browser</a> and submit the form. 
+        </p>
+      </div>
+      <h2 class="toggler toggler-closed">Changing the tooltips</h2>
+      <div>
+        <p>The form tooltips are created using the <a href="http://craigsworks.com/projects/qtip/" class="popup">qTip jQuery plugin</a>. See the sections
+        below on changing the tooltips.</p>
+        <h3>Changing the text of a tooltip</h3>
+        <p>The tooltips become active when the form element has the class <strong>iphorm-tooltip</strong> and it uses the
+        content of the <code>title=""</code> attribute of the form element.  If you want to change the text of a 
+        tooltip, locate the form element in the HTML and change the <code>title=""</code> attribute to the text you want to
+        display.</p>
+        <h3>Adding or removing a tooltip</h3>
+        <p>The tooltips become active when the form element has the class <strong>iphorm-tooltip</strong> and it uses the
+        content of the <code>title=""</code> attribute of the form element.  If you want to show
+        a tooltip on an element that doesn't have one already, add the class <strong>iphorm-tooltip</strong> to
+        the form element and add a <code>title=""</code> attribute containing the text you
+        want to display in the tooltip.</p>
+        <p>To remove a tooltip from an element that already has one, remove the class <strong>iphorm-tooltip</strong> from the form element and remove the <code>title=""</code> attribute.</p>
+        <h3>Changing the look of the tooltips</h3>
+        <p>The tooltip settings are contained in <code>contact-form/js/scripts.js</code> <strong>lines 5 - 21</strong>.
+        The current style is "blue" (one of the built in ones of qTip).  If you want to change these settings
+        then consult the documentation of qTip available <a href="http://craigsworks.com/projects/qtip/docs/" class="popup">here</a>.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Changing the success message</h2>
+      <div>
+        <p>The success message is the message that is displayed to the user when the form has been
+        submitted.  To change it open <code>config.php</code> and go to <strong>line 6</strong>.  By default there
+        is a mixture of HTML and text.  You can add or remove as much HTML or text as you want there
+        and it will not break the form in any way.  Since the string is enclosed in single quotes <code>'</code>, if
+        you want to include a single quote in your text or HTML you will need to escape it, by adding a
+        backslash before it e.g. <code>\'</code></p>
+      </div>
+      <h2 class="toggler toggler-closed">Changing / adding email recipients</h2>
+      <div>
+        <p>Email recipients are the list of email addresses who will be sent the content of the form when
+        it is submitted by the user.  Some people may want this to go to multiple people so we have added
+        the facility to do that.  To add or change the recipients, open <code>config.php</code> and go
+        to <strong>lines 18 - 20</strong>.  You will find the array of current recipients.  If you just want the email
+        to go to one email address, then just change the email address that is there to your email address.
+        </p>
+        <h3>Single recipient</h3>
+        <pre>$recipients = array(
+    'email@example.com'
+);</pre>
+        <h3>Multiple recipients</h3>
+        <pre>$recipients = array(
+    'email@example.com',
+    'another@email.com',
+    'spam@themecatcher.net'
+);</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Different email recipients based on chosen subject</h2>
+      <div>
+        <p>You might want to change the recipients of the email based on the subject chosen by the form user.  To do this you will need to change the recipients array
+        depending on which subject was chosen.  The code below shows an example of how you would do this and this code will replace <strong>lines 18 - 20 of config.php</strong>. The
+        string after <code>case</code> should match the <code>value</code> attribute of the option in the HTML of the form.</p>
+        <h3>Different recipients per subject</h3>
+        <pre>switch($_POST['subject']) {
+    case 'General enquiry':
+        $recipients = array(
+            'email1@mydomain.com',
+            'email2@mydomain.com',
+            'email3@mydomain.com'
+	);
+	break;
+    case 'Sales enquiry':
+        $recipients = array(
+            'email4@mydomain.com',
+            'email5@mydomain.com',
+            'email6@mydomain.com'
+        );
+        break;
+    case 'Support enquiry':
+        $recipients = array(
+            'email7@mydomain.com',
+            'email8@mydomain.com',
+            'email9@mydomain.com'
+        );
+        break;
+    default:
+        // These will be the recipients if the subject does not match any above
+        $recipients = array(
+            'email1@mydomain.com',
+            'email4@mydomain.com',
+            'email7@mydomain.com'
+        );
+        break;
+}</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Changing the CAPTCHA image</h2>
+      <div>
+        <p>It is possible that the captcha (Type the word) image that is included with the form does
+        not match your design and you can change it quite simply. You will need to make your own image
+        and there are 2 requirements you must follow.</p>
+        <ul>
+            <li>1.  The image must be placed in the <code>contact-form/images/</code> folder</li>
+            <li>2.  The images should be png format and the filename should be be captcha.png</li>
+            <li>3.  You will need to change the <code>config.php</code> file to change the token of the captcha validator
+            to match the word contained in your new image. See below for more information.</li>
+        </ul>
+        <p>In <code>config.php</code> location the configuration for the CAPTCHA field, you will see the code
+        below</p>
+        <pre>$captcha-&gt;addValidator('identical', array('token' =&gt; 'light'));</pre>
+        <p>Change the text <strong>light</strong> to match the word or letters that are in your new CAPTCHA image.</p>
+        <p>NOTE: The CAPTCHA system is very simple and will prevent random form submissions by bots roaming around
+        the internet (which happens a lot). It will not prevent targeted attacks however, but the chances of
+        that happening are small and most other CAPTCHAs are not safe against targeted attacks either. We beleive
+        that an easy, simple CAPTCHA is a good trade off between the spam,
+        usability and browser compatability of the form. Since at the end of the day you don't want to miss
+        enquiries for new business by users being put off or unable to pass a complex CAPTCHA challenge.
+        If you do need a more complex CAPTCHA field, see the section below for general guidelines.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Changing the email subject</h2>
+      <div>
+        <p>You can change the email subject to something that is more relevant to your form.  To do this, open <code>contact-form/config.php</code>
+        and go to <strong>line 29</strong>.  Change the text inside the single quotes to the subject you want.  You can use placeholder values inside % signs to have the
+        value replaced by the form value of that name, such as in the default subject <code>%name%</code> will be replaced by the submitted value of the field
+        with the name "name".</p>
+      </div>
+      <h2 class="toggler toggler-closed">Changing the label of an element</h2>
+      <div>
+        <p>The element's label is shown in two places:</p>
+        <ul>
+            <li>The error page for non-JavaScript users (nojs.php)</li>
+            <li>The email</li>
+        </ul>
+        <p>By default the element's label is generated from the name of the element in the HTML be replacing underscores with spaces and capitalising the first
+        letter.  So for example, "type_the_word" becomes "Type the word".  If you want to change the label you can pass a second argument in when creating
+        the element in <code>config.php</code>. If you wanted to change the type_the_word element to say Security code in the non-JavaScript page for example, then do this:</p>
+        <pre>$captcha = new iPhorm_Element('type_the_word', 'Security code');</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Changing the "Please wait..." text</h2>
+      <div>
+        <p>About two and a half seconds after the form has been submitted, the text "Please wait..." fades in on the form.  You may want to change this
+        to show different text or an animated loading gif, so that your users know that the form is working (e.g. uploading a file
+        and not crashed) and so they don't try to refresh.</p>
+        <h3>Changing the text</h3>
+        <p>The "Please wait..." text is located on <strong>line 83</strong> of <code>index.php</code>, change the text to suit.</p>
+        <h3>Changing the text to an animated loading gif</h3>
+        <p>The "Please wait..." text is located on <strong>line 83</strong> of <code>index.php</code>, replace the text with your <code>&lt;img&gt;</code> tag pointing
+        to your loading gif.</p>
+      </div>      
+      <h2 class="toggler toggler-closed">Redirecting to another page after the form is submitted</h2>
+      <div>
+       <p>You may want to have the user redirected to another page after submitting the form instead of the thank you message fading in.  To achieve this you will need to
+       do two things:</p>
+       <ul>
+        <li>1. Add a JavaScript redirect for users with JavaScript enabled</li>
+        <li>2. Add a PHP redirect for users with JavaScript disabled</li>
+       </ul>
+       <p>Both steps are explained in more detail below.</p>
+       <h3>1. Add a JavaScript redirect for users with JavaScript enabled</h3>
+       <p>Open <code>contact-form/js/scripts.js</code> and change the code on <strong>line 2</strong> to read:</p>
+       <pre>$('form.iphorm').iPhorm({
+    successRedirect: function() {
+        window.location = 'your_thanks_page.html';
+    }
+});</pre>
+       <p>To reload the same page, use:</p>
+<pre>$('form.iphorm').iPhorm({
+    successRedirect: function() {
+        window.location.reload();
+    }
+});</pre>
+       <h3>2. Add a PHP redirect for users with JavaScript disabled</h3>
+       <p>Open <code>contact-form/config.php</code> and add the following code:</p>
+       <pre>$form-&gt;setSuccessRedirect('your_thanks_page.html');</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Custom JavaScript success function</h2>
+      <div>
+        <p>If you want to perform a custom JavaScript function when the form is submitted, use the following code in
+        <code>contact-form/js/scripts.js</code> and change the code on <strong>line 2</strong>:</p>
+        <pre>$('form.iphorm').iPhorm({
+    success: function() {
+        // Your custom JS
+    }
+});</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Custom JavaScript error function</h2>
+      <div>
+        <p>If you want to perform a custom JavaScript function when the form has errors use the following code in <code>contact-form/js/scripts.js</code> and change the code on <strong>line 2</strong>.</p>
+        <pre>$('form.iphorm').iPhorm({
+    error: function() {
+        // Your custom JS
+    }
+});</pre>
+        <p>For example to show a message after the submit button if the form has errors, use the following code in
+        <code>contact-form/js/scripts.js</code> and change the code on <strong>line 2</strong>:</p>
+        <pre>$('form.iphorm').iPhorm({
+    error: function() {
+        $('.submit-button-wrapper').after('&lt;div class="error-message"&gt;There was an error in the form&lt;/div&gt;');
+    }
+});</pre>
+      </div>
+      <h1><a name="three" id="three"></a>Advanced form customisation</h1>
+      <h2 class="toggler toggler-closed">Multiple forms</h2>
+      <div>
+       <p>You may want to have more than one form on the same site but with different fields.  Such as 
+       a register form and a contact form.  To do that, set up the first form as instructed in the
+       installation guide at the start of this document.  To make the second form, copy the HTML for
+       the iPhorm again into the body of the page that you want your second form on and customise your new
+       form as described in the <a href="#two">Customising your form</a> section above. Then make a copy of the
+       <code>contact-form/config.php</code> file and call it something like <code>contact-form/config-register.php</code>.
+       That file you should customise with the fields for your register form as described in the <a href="#two">Customising your form</a> section above.  You should then
+       change the <code>action</code> attribute of your register form so that it now includes a variable called
+       <code>form</code> that has a value of the file you want to load excluding "config-" and ".php". For example in the register example set the action
+       attribute to <code>&lt;form class="iphorm" action="contact-form/process.php?form=register" ...</code>.</p>
+       <p>More examples...</p>
+       <ul>
+        <li>contact-form/process.php?form=register will load the config file <strong>config-register.php</strong></li>
+        <li>contact-form/process.php?form=subscribe will load the config file <strong>config-subscribe.php</strong></li>
+        <li>contact-form/process.php?form=sign_up will load the config file <strong>config-sign_up.php</strong></li>
+        <li>contact-form/process.php will load the config file <strong>config.php</strong></li>
+        <li>and so on...</li>
+       </ul>
+      </div>
+      <h2 class="toggler toggler-closed">Multiple forms on the same page</h2>
+      <div>
+       <p>To have more than one iPhorm on the same page, just copy the HTML for the iPhorm again and paste it into another area of your page. You will then need
+       to create a new config file and change the form <code>action</code> attribute as described in the section <strong>Multiple forms</strong> above. There is only
+       one issue and that is that the form elements in the iPhorm have an <code>id=""</code> attribute, so when you have more than one element with the same id on
+       a page, it is no longer valid HTML, however the form will still work. If you want your page to pass W3C validation then you should change or remove the id
+       attributes for the elements in the second form.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Email settings</h2>
+      <div>
+       <p>The emails sent out by the system are sent by the SwiftMailer library, a powerful set of
+       classes that will allow you to do pretty much anything you need to do with sending emails from
+       PHP.</p>
+       <p>The email success handler is responsible for generating the email content and sending the
+       email via the library.  To edit the code for this, you should check out the file <code>contact-form/classes/iPhorm/SuccessHandler/Email.php</code>.
+       The <code>run()</code> method starting on <strong>line 200</strong> contains the code to configure
+       the email, if you need to make a change then that is the place to do it.  You should check out the
+       <a href="http://swiftmailer.org/docs/introduction" class="popup">SwiftMailer documenation</a> to help you
+       customise the settings.</p>
+       <p>The email is sent using PHP's <code>mail()</code> function by default, if your host does not
+       support this, you can change it to use an SMTP server instead.  See the section below on how to do this.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Customising the email</h2>
+      <div>
+       <p>The email is sent out in both an HTML version and a plain text version, your email software
+       will usually show you the HTML version unless it doesn't support HTML and then it will show the 
+       plain text version (the content is the same).  You can customise the
+        emails to suit your needs.  The HTML version of the email is contained in the file <code>contact-form/emails/email-html.php</code>,
+        and the plain text version is in <code>contact-form/emails/email-plain.php</code>. It is recommended to
+        use tables and inline CSS to style HTML emails for maximum compatibility.  Check out <a href="http://articles.sitepoint.com/article/code-html-email-newsletters" class="popup">this page</a>
+        for help.
+       </p>       
+      </div>
+      <h2 class="toggler toggler-closed">Sending the form user an autoreply email</h2>
+      <div>
+       <p>You may want to send the form user an email to let them know that their enquiry was sent successfully.  To do this you will need
+       to open the file <code>contact-form/config.php</code>. On <strong>line 30</strong> add the following code.</p>
+       <pre>$emailSuccessHandler-&gt;setAutoReply('Thanks for your enquiry %name%',
+       'autoreply-html.php', 'autoreply-plain.php');</pre>
+       <p>The first argument is the email subject, the second argument is the filename of the HTML version of the email, the third argument is the filename of
+       the plain text version of the email.  The email files should be placed in <code>contact-form/emails/</code> to be found.  The subject can contain placeholder
+       variables, surrounded by <code>%</code> signs.  The submitted value of the form element with that name will be used in its place. If you use the code above
+       the auto reply feature will load these files:</p>
+       <ul>
+        <li><code>contact-form/emails/autoreply-html.php</code> - HTML version of the email</li>
+        <li><code>contact-form/emails/autoreply-plain.php</code> - plain text version of the email</li>
+       </ul>
+       <p>It is recommended to complete both HTML and plain text versions so that the email can be
+       read by all email software.</p>
+       <h3>Different autoreply emails per form</h3>
+       <p>If you want another form to have another auto reply, you should make a copy of <code>autoreply-html.php</code> and <code>autoreply-plain.php</code>
+       and name them something different then customise the content.  Then in the <code>config.php</code> file for your new form, use the new filenames instead. For
+       example if you have named the HTML version for your second form <code>autoreply-register-html.php</code> and the plain text version <code>autoreply-register-plain.php</code> </p>
+       <pre>$emailSuccessHandler-&gt;setAutoReply('Thanks for your enquiry %name%',
+       'autoreply-register-html.php', 'autoreply-register-plain.php');</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Sending emails via an SMTP server</h2>
+      <div>
+       <p>To use an SMTP server to send the emails you will need to make a change to the email success
+       handler.  The file you need to change is <code>contact-form/classes/iPhorm/SuccessHandler/Email.php</code>.
+       On <strong>line 203</strong> there is the code telling SwiftMailer to use the PHP's <code>mail()</code>
+       function.  Comment out the line by inserting <code>//</code> at the start.  You should now
+       uncomment <strong>line 206</strong> which will tell SwiftMailer to use an SMTP server instead.
+       You will need to replace the host, username and password values with the correct ones for your
+       SMTP server.  For further information refer to the <a href="http://swiftmailer.org/docs/introduction" class="popup">SwiftMailer documenation</a>.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Saving form data to a database</h2>
+      <div>
+       <p>iPhorm comes with a Mysql database success handler that allows you to save the form information
+       to a Mysql database.  Below is an example of how to use this, the code should be placed in <code>config.php</code></p>
+       <pre>$dbConfig = array(
+    'host' =&gt; 'localhost',
+    'username' =&gt; 'your_username',
+    'password' =&gt; 'your_password',
+    'dbname' =&gt; 'your_dbname',
+    'table' =&gt; 'your_table'
+);
+
+$fieldMap = array(
+    'name' =&gt; 'name',
+    'email' =&gt; 'email_address',
+    'phone' =&gt; 'phone_number'
+);
+
+$mysqlSuccessHandler = new iPhorm_SuccessHandler_Mysql($form);
+$mysqlSuccessHandler-&gt;setConfig($dbConfig);
+$mysqlSuccessHandler-&gt;setFieldMap($fieldMap);</pre>
+		<p>The <code>$dbConfig</code> array must contain the settings for your database.  The <code>$fieldMap</code>
+		array is a mapping of the form element name to the database table field name.  So in the above
+		example the data in the form element <code>name</code> will save to the database table field <code>name</code>,
+		the form element <code>email</code> will save to the database table field <code>email_address</code>,
+		the form element <code>phone</code> will save to the database table field <code>phone_number</code>.  Any
+		other fields will be ignored unless they are specified in the field map.  If the form element
+		value is an array from a multiple field for example, it will be saved as each value joined
+		with commas.  All data entered in to the database is escaped using <code>mysql_real_escape_string()</code>
+		so it is safe.</p>
+		<p>For more customisation than this, you would be better editing the code of the file
+		<code>contact-form/classes/iPhorm/SuccessHandler/Mysql.php</code> and changing the
+		code to suit your needs.  Alternatively you can write your own success handler - see the section below.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Creating your own success handler</h2>
+      <div>
+       <p>A success handler is a PHP class containing code that will be run when the form is successfully
+       submitted.  You can created your own success handler to run custom code on the form values when
+       the form is submitted and you can have as many success handlers on the form as you need.  The
+       success handler class has some requirements to work correctly:</p>
+       <ul>
+        <li>1.  Your class name must begin with iPhorm_SuccessHandler_</li>
+        <li>2.  Your class file must be placed in the folder <code>contact-form/classes/iPhorm/SuccessHandler/</code></li>
+        <li>3.  Your class filename must be the last part of the class name and end with .php</li>
+        <li>4.  Your class must extend <code>iPhorm_SuccessHandler_Abstract</code></li>
+        <li>5.  Your class must have a method called <code>run()</code>, which will automatically be called by the form when submitted successfully</li>
+        <li>6.  When creating a new instance of your success handler in config.php you should pass in the <code>$form</code> as the constructor argument</li>
+       </ul>
+       <p>If in doubt, check or copy the existing success handlers.  In your run method you can enter
+       what ever PHP code you want to maniplulate the form data.  You have access to the form
+       instance and you can iterate through the fields using the method <code>$this-&gt;_form-&gt;getElements()</code>.
+       For more information on available class methods consult the iPhorm class documentation in the documentation folder.</p>
+      </div>
+      <h2 class="toggler toggler-closed">File uploads</h2>
+      <div>
+       <p>You can add file upload form elements to your form and you can attach the uploaded files to the email that is sent out to you.
+       You will need to do two things to get file uploads working:</p>
+       <ul>
+        <li>1.  Add your file upload HTML element to your form</li>
+        <li>2.  Add code to <code>config.php</code> to make the PHP code aware of your file element</li>
+       </ul>
+       <p>Each step is explained in more detail below:</p>
+       <h3>1.  Add your file upload HTML element to your form</h3>
+       <p>Below is sample HTML for a file upload field with standard iPhorm wrappers:</p>
+       <pre>&lt;div class="element-wrapper upload-element-wrapper clearfix"&gt;
+    &lt;label for="upload"&gt;Upload &lt;span class="red"&gt;*&lt;/span&gt;&lt;/label&gt;
+    &lt;div class="input-wrapper upload-input-wrapper"&gt;
+        &lt;input class="upload-element" id="upload" type="file" name="upload" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+       <p>NOTE: The PHP manual recommends that you add a hidden input before your file input with the maximum allowed file size in bytes, this way users
+       do not have to wait for files to be uploaded before being told that they are too large. The code you need to add is below and should be placed before your 
+       file input element.  The number is the maximum file size in bytes (1048576 bytes = 1MB) so if you wanted to allow a 10MB file set the value to
+       1048576 x 10 = 10485760.</p>
+       <pre>&lt;input type="hidden" name="MAX_FILE_SIZE" value="10485760" /&gt;</pre>
+       <h3>2.  Add code to <code>config.php</code> to make the PHP code aware of your file element</h3>
+       <p>Now you need to make the PHP script aware of your new file upload field.  The code you need to do that is shown below.</p>
+       <pre>$upload = new iPhorm_Element_File('upload');
+$form-&gt;addElement($upload);
+$emailSuccessHandler-&gt;addAttachmentElement($upload);</pre>
+        <p>See the troubleshooting section if you are having problems with the file uploads.</p>
+        <h3>Making the upload required</h3>
+        <p>To make the upload required use the following code:</p>
+        <pre>$upload-&gt;setRequired(true);</pre>
+        <h3>Setting allowed file extensions</h3>
+        <p>You can set the allowed file extensions so that any other files will be rejected by the form. You should pass in an array of lowercase file extensions e.g.:</p>
+        <pre>$upload-&gt;setAllowedExtensions(array('gif', 'jpeg', 'jpg', 'png'));</pre>
+        <h3>Setting a maximum file size</h3>
+        <p>You can also limit the upload by file size. The default upload limit is 10MB since many email providers do not support attachments larger than that. To set the 
+        maximum upload size, use this code:</p>
+        <pre>$upload-&gt;setMaximumFileSize(10485760);</pre>
+        <p>The maximum file size is in bytes which is (Size in MB x 1048576)</p>              
+        <p>NOTE: The file upload size can be limited by 4 things:</p>
+        <ul>
+            <li>Your hidden input MAX_FILE_SIZE as shown above</li>
+            <li>The iPhorm max size setting <code>$yourElement-&gt;setMaximumFileSize(10485760);</code>, you can set this to no limit by using <code>$yourElement-&gt;setMaximumFileSize(0);</code></li>
+            <li>The PHP configuration setting <a class="popup" href="http://php.net/manual/en/ini.core.php#ini.post-max-size">post_max_size</a></li>
+            <li>The PHP configuration setting <a class="popup" href="http://php.net/manual/en/ini.core.php#ini.upload-max-filesize">upload_max_filesize</a></li>
+        </ul>
+        <h3>Grouping multiple file uploads</h3>
+        <p>If you have multiple upload fields you can group them under the same element using the multiple field syntax e.g. <code>element_name[]</code>. This way you
+        do not need to create an iPhorm_Element_Files's in the PHP code for each upload element. For example you could have the following code to group 3 uploads:</p>
+        <pre>&lt;div class="element-wrapper upload-element-wrapper clearfix"&gt;
+     &lt;label&gt;Grouped file upload &lt;span class="red"&gt;*&lt;/span&gt;&lt;/label&gt;
+     &lt;div class="input-wrapper upload-input-wrapper clearfix"&gt;
+         &lt;input type="file" class="upload-element" id="uploads-1" name="uploads[]" /&gt;
+     &lt;/div&gt;
+     &lt;div class="input-wrapper upload-input-wrapper clearfix"&gt;
+         &lt;input type="file" class="upload-element" id="uploads-2" name="uploads[]" /&gt;
+     &lt;/div&gt;
+     &lt;div class="input-wrapper upload-input-wrapper clearfix"&gt;
+         &lt;input type="file" class="upload-element" id="uploads-3" name="uploads[]" /&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;</pre>
+ 		<p>And in your config.php the code would look like:</p>
+ 		<pre>$uploads = new iPhorm_Element_File('uploads[]');
+$form-&gt;addElement($uploads);
+$emailSuccessHandler-&gt;addAttachmentElement($uploads);</pre>
+        <h3>Require a specific number of uploads for a multiple element</h3>
+        <p>If you used the grouped upload code above and you set the field to be required using <code>$uploads-&gt;setRequired(true);</code> then all 3 uploads would be
+        required.  If you wanted only one upload to be required from the group then you should add the code below:</p>
+        <pre>$uploads-&gt;setRequired(true);     // The element is required
+$uploads-&gt;setRequiredCount(1);   // At least 1 upload is required</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Storing file uploads</h2>
+      <div>
+        <p>We have added a new success handler to store file uploads on the server. 
+        I'm going to walk through an example of having a screenshot upload field in your form and storing the uploaded files in the contact-form/screenshots/ folder.
+        There are three things you need to do to get this working.</p>
+        <ul>
+            <li>1.  Add the HTML for the file upload field to your form</li>
+            <li>2.  Add the file element to <code>config.php</code></li>
+            <li>3.  Configure the file storage success handler in <code>config.php</code></li>
+        </ul>
+        <h3>1.  Add the HTML for the file upload field to your form</h3>
+        <p>Here's the HTML for a file upload field called <code>screenshot</code>, you should add this inside your form.</p>
+        <pre>&lt;div class="element-wrapper screenshot-element-wrapper clearfix"&gt;
+  &lt;label for="screenshot"&gt;Screenshot&lt;/label&gt;
+  &lt;div class="input-wrapper screenshot-input-wrapper"&gt;
+   &lt;input class="screenshot-element" id="screenshot" type="file" name="screenshot" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <h3>2.  Add the file element to <code>config.php</code></h3>
+        <p>Open <code>config.php</code> and add the code to create the file element, you can put this anywhere in the file.</p>
+        <pre>$screenshot = new iPhorm_Element_File('screenshot');
+$screenshot-&gt;setAllowedExtensions(array('gif', 'jpeg', 'jpg', 'png'));
+$form-&gt;addElement($screenshot);</pre>
+        <h3>3.  Configure the file storage success handler in <code>config.php</code></h3>
+        <p>Now we need to add the file storage success handler and configure it. The element map shown below is set up as follows.
+        The array key is the name of the element in the HTML (exclude the [] if its a multiple
+        field) and the array value is the folder that the files should be stored in.</p>
+        <pre>$elementMap = array(
+    'screenshot' =&gt; IPHORM_ROOT . '/screenshots/'
+);
+$fileStorageSuccessHandler = new iPhorm_SuccessHandler_FileStorage($form);
+$fileStorageSuccessHandler-&gt;setElementMap($elementMap);</pre>
+       <p>For more customisation than this you will need to edit the file <code>classes/iPhorm/SuccessHandler/FileStorage.php</code> or create your own
+       success handler.</p>
+       <h3>More than one upload field</h3>
+       <p>If you have more than one upload field in your form the process is the same but the $elementMap array will change slightly, the array will have another row for
+       each field:</p>
+       <pre>$elementMap = array(
+    'screenshot' =&gt; IPHORM_ROOT . '/screenshots/',
+    'upload_field_2_name' =&gt; IPHORM_ROOT . '/uploads/',
+    'upload_field_3_name' =&gt; IPHORM_ROOT . '/uploads2/'
+);</pre>
+      </div>      
+      <h2 class="toggler toggler-closed">Using a more complex CAPTCHA</h2>
+      <div>
+        <p>I will explain briefly how to make a CAPTCHA field that will generate a random image, store the result
+        using PHP sessions, then use an iPhorm validator to check if the entered result is correct. There are
+        three things you will need to do:</p>
+        <ul>
+            <li>1. Create a PHP file that will generate the CAPTCHA image and store the expected result</li>
+            <li>2. Change the existing CAPTCHA image to link to the PHP file above</li>
+            <li>3. Customise the supplied CAPTCHA validator to check the submitted result against the expected result</li>
+            <li>4. Add the CAPTCHA validator to the form element</li>
+        </ul>
+        <p>Each step is explained in more detail below.</p>
+        <h3>1. Create a PHP file that will generate the CAPTCHA image and store the expected result</h3>
+        <p>Create a random CAPTCHA image using PHP and the GD image extension. There are many examples
+        on the internet on how to do this, for example, Step 1 of <a class="popup" href="http://www.encaps.net/software/php-captcha/">this page</a>.
+        Make sure to save the expected result in <code>$_SESSION['captcha']</code>. Save the file as captcha.php</p>
+        <h3>2. Change the existing CAPTCHA image to link to the PHP file above</h3>
+        <p>Change the img <code>src=""</code> attribute of the existing CAPTCHA to point to your new captcha.php file.</p>
+        <h3>3. Customise the supplied CAPTCHA validator to check the submitted result against the expected result</h3>
+        <p>Open the file classes/iPhorm/Validator/Captcha.php an make sure the code looks to suit your requirements, e.g.
+        your security code expected result is stored in <code>$_SESSION['captcha']</code>.  You should also add
+        <code>&lt;?php session_start(); ?&gt;</code> to the web page with your form on it, and also at the top of
+        <code>contact-form/process.php</code>.</p>
+        <h3>4. Add the CAPTCHA validator to the form element</h3>
+        <p>In <code>contact-form/config.php</code> add the 'captcha' validator to your CAPTCHA element.</p>
+        <pre>$captcha-&gt;addValidator('captcha');</pre>
+        <p>The instructions are probably too difficult for a novice web designer to do, so if that's you then
+        you should either stick with the basic CAPTCHA field or hire a professional web developer to set it up
+        for you.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Filters</h2>
+      <div>
+       <p>You can use Filters to strip data from the user submitted value such as HTML tags (which may
+        be harmful) and useless white space and the start and end of the value.  There are filters
+        included with the form that do just that and more, although you can add your own too - see Adding a new filter below.</p>
+        <h3>Included filters</h3>
+        <ul>            
+            <li><strong>trim</strong> - strips whitespace and other characters from the start and end</li>
+            <li><strong>stripTags</strong> - strips all HTML tags</li>
+            <li><strong>digits</strong> - filters everything except digits</li>
+            <li><strong>alphaNumeric</strong> - filters everything except alphanumeric characters</li>
+            <li><strong>alpha</strong> - filters everything except alphabet characters</li>
+        </ul>
+        <p>So if you assign a Filter to an Element then the value that will appear in the email
+        will be the filtered value.  The values are filtered before they are validated too.</p>
+        <p>As an extreme
+        example, a value like ' &lt;script&gt;&lt;/script&gt;  ' with the <strong>stripTags</strong> and <strong>trim</strong> filter and the <strong>required</strong> validator
+        will actually fail validation, because once the tags are stripped and the white space is trimmed
+        the value is empty so it fails the <strong>required</strong> validator.</p>
+       </div>
+      <h2 class="toggler toggler-closed">Adding a filter to a form element</h2>
+      <div>
+        <p>To add a filter to an element, you will need to open <code>config.php</code> and find the
+        code that creates the element you want to add the filter to.  It may already have a line below it
+        that is calling <code>addFilters()</code>, in that case just add the name of the filter you want to add at the
+        end of the array that is passed in.  If the element had the following code.</p>
+        <pre>$yourElement-&gt;addFilter('trim');</pre>
+        <p>You can just add another line below that adds the new filter. For example if you wanted to add the
+        <strong>alphaNumeric</strong> filter also you can make the code:</p>
+        <pre>$yourElement-&gt;addFilter('trim');
+$yourElement-&gt;addFilter('alphaNumeric');</pre>
+        <p>You could also use the following code</p>      
+        <pre>$yourElement-&gt;addFilter<strong>s</strong>(array('trim', 'alphaNumeric'));</pre>
+        <p>For the geeks out there you can also instantiate the filter directly then add it to the element.
+        Which may help with your own custom filters if you need to make any that you need to pass options to, for example.</p>
+        <pre>$trimFilter = new iPhorm_Filter_Trim();
+$yourElement-&gt;addFilter($trimFilter);</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Removing a filter from a form element</h2>
+      <div>
+        <p>To remove a filter from a form element, find the code that creates and configures the element
+        in <code>config.php</code>.  Look for the line that is adding the filters e.g.</p>
+        <pre>$yourElement-&gt;addFilters(array('stripTags', 'trim'));</pre>
+        <p>To remove only the stripTags filter:</p>
+        <pre>$yourElement-&gt;addFilters(array('trim'));</pre>
+        <p>To remove both the filters delete or comment out the entire line.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Filter options (Advanced)</h2>
+      <div>
+        <p>You can pass in options to filters to change the way they operate.  You can pass in options using the <code>addFilter()</code> method on
+        an element. Pass in an array as the second argument containing the array keys that are options of the filter.  See the documentation below on
+        each filter or the code for the filters in the <code>contact-form/classes/iPhorm/Filter/</code> folder to see the options you can use.</p>
+        <pre>$yourElement-&gt;addFilter('stripTags', array('allowableTags' =&gt; array('&lt;br&gt;', '&lt;p&gt;')));</pre>
+        <p>You can also pass in options at instantiation and then add the filter object to your element.</p>
+        <pre>$stripTagsFilter = new iPhorm_Filter_StripTags(array('allowableTags' =&gt; array('&lt;br&gt;')));
+$yourElement-&gt;addFilter($stripTagsFilter);</pre>
+        <h3>Trim filter</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addFilter('trim');</pre>
+        <h3>StripTags filter</h3>
+        <p>Options</p>
+        <ul>
+            <li><strong>allowableTags</strong> - an array of strings of the tags you do not want to be stripped</li>
+        </ul>
+        <pre>$yourElement-&gt;addFilter('stripTags', array('allowableTags' =&gt; array('&lt;br&gt;', '&lt;p&gt;')));</pre>
+        <h3>Digits filter</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addFilter('digits');</pre>
+        <h3>Alphanumeric filter</h3>
+        <p>Options</p>
+        <ul>
+            <li><strong>allowWhiteSpace</strong> - boolean true or false, if true white space is not filtered, default false</li>
+        </ul>
+        <pre>$yourElement-&gt;addFilter('alphaNumeric', array('allowWhiteSpace' =&gt; true));</pre>
+        <h3>Alpha filter</h3>
+        <p>Options</p>
+        <ul>
+            <li><strong>allowWhiteSpace</strong> - boolean true or false, if true white space is not filtered, default false</li>
+        </ul>
+        <pre>$yourElement-&gt;addFilter('alpha', array('allowWhiteSpace' =&gt; true));</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Validators</h2>
+      <div>
+        <p>Validators check the user submitted values against a set of rules to see if
+        they are valid.  If the value is valid nothing happens, the next validator and form element will be checked for validity.  
+        If the value is not valid, the error messages generated
+        by the Validator will be returned back to the user and the form will not be submitted.  If the value
+        submitted to every form element passes that form element's validators then the entire
+        form is valid and it is submitted.</p>
+        <p>There are 11 validators included with the form, although you are free to add as many as you want - see Adding a 
+        new validator below.</p>
+        <ul>
+            <li><strong>required</strong> - The value is required and it cannot be empty</li>
+            <li><strong>email</strong> - The value must be a valid email address</li>
+            <li><strong>captcha</strong> - The value must match the letters set by captcha.php</li>
+            <li><strong>stringLength</strong> - The length of the value must be between the set min and max</li>
+            <li><strong>lessThan</strong> - The value must be less than the set max (numerically)</li>
+            <li><strong>greaterThan</strong> - The value must be greater than the set min (numerically)</li>
+            <li><strong>digits</strong> - The value must be only digits</li>
+            <li><strong>alphaNumeric</strong> - The value must have only alphanumeric characters</li>
+            <li><strong>alpha</strong> - The value must have only alphabet characters</li>
+            <li><strong>fileUpload</strong> - Validates the file upload against set options</li>
+            <li><strong>identical</strong> - The value must be identical to the set token</li>
+        </ul>
+      </div>
+      <h2 class="toggler toggler-closed">Adding a validator to a form element</h2>
+      <div>
+        <p>To add a validator to an element, you will need to open <code>config.php</code> and find the
+        code that creates the element you want to add the validator to.  It may already have a line below it
+        that is calling <code>addValidators()</code>, in that case just add the name of the validator you want to add at the
+        end of the array that is passed in.  If the element had the following code.</p>
+        <pre>$yourElement-&gt;addValidator('required');</pre>
+        <p>You can just add another line below that adds the new validator. For example if you wanted to add the
+        <strong>digits</strong> validator also you can make the code:</p>
+        <pre>$yourElement-&gt;addValidator('required');
+$yourElement-&gt;addValidator('digits');</pre>
+        <p>You could also use the following code</p>      
+        <pre>$yourElement-&gt;addValidator<strong>s</strong>(array('required', 'digits'));</pre>
+        <p>For the geeks out there you can also instantiate the validator directly then add it to the element.
+        Which may help with your own custom validators if you need to make any that you need to pass options to, for example.</p>
+        <pre>$emailValidator = new iPhorm_Validator_Email();
+$yourElement-&gt;addValidator($emailValidator);</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Removing a validator from a form element</h2>
+      <div>
+        <p>To remove a validator from an element, you will need to open <code>config.php</code> and find the
+        code that creates and configures the element you want to remove the validator from. Look for the
+        line that has code similar to the code below.</p>
+        <pre>$yourElement-&gt;addValidators(array('required', 'email'));</pre>
+        <p>To remove only the email validator make it like so.</p>
+        <pre>$yourElement-&gt;addValidators(array('required'));</pre>
+        <p>To remove all validators, delete or comment out the entire line.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Changing the error message generated by a validator</h2>
+      <div>
+        <p>Locate the validator you want to change the error message for in the folder <code>contact-form/classes/iPhorm/Validator/</code> and find the 
+        file for the Validator you want to change.  Once you've found it, open the file and look
+        inside the <code>isValid()</code> method for code that looks like this:</p>
+        <pre>$this-&gt;addMessage('This field is required');</pre>
+        <p>These are the messages that are returned to the form when validation fails, change them to whatever you like.</p>
+      </div>
+      <h2 class="toggler toggler-closed">Validator options (Advanced)</h2>
+      <div>
+        <p>You can pass in options to validators to change the way they operate.  You can pass in options using the <code>addValidator()</code> method on
+        an element. Pass in an array as the second argument containing the array keys that are options of the validator.  See the documentation below on
+        each validator or the code for the validators in the files in the <code>contact-form/classes/iPhorm/Validator/</code> folder to see the options you can use.</p>
+        <pre>$yourElement-&gt;addValidator('stringLength', array('min' =&gt; 5, 'max' =&gt; 10));</pre>
+        <p>You can also pass in options at instantiation and then add the validator object to your element.</p>
+        <pre>$stringLengthValidator = new iPhorm_Validator_StringLength(array('min' =&gt; 5,
+            'max' =&gt; 10));
+$yourElement-&gt;addValidator($stringLengthValidator);</pre>
+        <h3>Email validator</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addValidator('email');</pre>
+        <h3>Required validator</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addValidator('required');</pre>
+        <h3>Captcha validator</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addValidator('captcha');</pre>
+        <h3>StringLength validator</h3>        
+        <p>Options</p>
+        <ul>
+            <li><strong>min</strong> - (integer) the minumum length of the string</li>
+            <li><strong>max</strong> - (integer) the maximum length of the string, if not specified there is no maximum</li>
+        </ul>
+        <pre>$yourElement-&gt;addValidator('stringLength', array('min' =&gt; 5, 'max' =&gt; 10));</pre>
+        <h3>LessThan validator</h3>        
+        <p>Options</p>
+        <ul>
+            <li><strong>max</strong> - (integer|string) the value must be less than max (numerically)</li>
+        </ul>
+        <pre>$yourElement-&gt;addValidator('lessThan', array('max' =&gt; 10));</pre>
+        <h3>GreaterThan validator</h3>        
+        <p>Options</p>
+        <ul>
+            <li><strong>min</strong> - (integer|string) the value must be greater than min (numerically)</li>
+        </ul>
+        <pre>$yourElement-&gt;addValidator('greaterThan', array('min' =&gt; 3));</pre>
+        <h3>Digits validator</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addValidator('digits');</pre>
+        <h3>AlphaNumeric validator</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addValidator('alphaNumeric');</pre>
+        <h3>Alpha validator</h3>
+        <p>No options.</p>
+        <pre>$yourElement-&gt;addValidator('alpha');</pre>
+        <h3>FileUpload validator</h3>
+        <p>The validator is automatically registered with your file upload elements, see the file uploads section above for options.</p>
+        <h3>Identical validator</h3>        
+        <p>Options</p>
+        <ul>
+            <li><strong>token</strong> - (mixed) the token to compare the value against</li>
+            <li><strong>strict</strong> - (boolean) whether to also check for identical types (i.e. uses === instead of == if true), default true</li>
+        </ul>
+        <pre>$yourElement-&gt;addValidator('identical', array('token' =&gt; 'light', 'strict' =&gt; false));</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Adding a new filter (Advanced)</h2>
+      <div>
+        <p>If you want to add a new filter you should first check out the files in the folder <code>contact-form/classes/iPhorm/Filter/</code>.
+        You will find the code for existing filters which should give you an idea of how to make your
+        own.  What you need to do is add a new class in that folder for your new filter, however there are a few things you should note.</p>
+        <ul>
+            <li>Your filter must have it's own class with a name that begins with iPhorm_Filter_</li>
+            <li>The name of the file should be the part after iPhorm_Filter_ ending with .php</li>
+            <li>Your filter class must implement iPhorm_Filter_Interface</li>
+            <li>Your filter class must have a method called <code>filter()</code> that takes the given
+            value and returns the filtered value</li>
+        </ul>
+        <h3>Naming your filter</h3>
+        <p>Filters have a special naming system in order to add them to an element.  If you notice two of the 
+        existing filter classes called iPhorm_Filter_StripTags and iPhorm_Filter_Trim which are added to element using
+        the names <strong>stripTags</strong> and <strong>trim</strong>. The conversion between short name and
+        class name happens automatically. To convert from short name to class name, make the first letter
+        uppercase and add iPhorm_Filter_ to the beginning.  To convert from class name to short name make the first letter
+        lowercase and remove iPhorm_Filter_ from the beginning.  If you made a new filter with the class name <code>iPhorm_Filter_MyNewFilter</code>
+        you could add it to an element using:</p>
+        <pre>$yourElement-&gt;addFilters(array('myNewFilter'));</pre>
+        <p>You can also add the filter to the element by passing in an instance of it:</p>
+        <pre>$yourElement-&gt;addFilter(new iPhorm_Filter_MyNewFilter());</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Adding a new validator (Advanced)</h2>
+      <div>
+        <p>Before adding a new validator you should take a look at the files in the folder <code>contact-form/classes/iPhorm/Validator/</code>.
+        You will find the code for existing validators which should give you an idea of how to make your own.
+        What you need to do is add a new class in that folder for your new validator, however there are a few things you should note.</p>
+        <ul>
+            <li>Your validator must have it's own class with a name that begins with iPhorm_Validator_</li>
+            <li>The name of the file should be the part after iPhorm_Validator_ ending with .php</li>
+            <li>Your validator class must extend iPhorm_Validator_Abstract</li>
+            <li>Your validator class must have a method called <code>isValid()</code> that takes the given
+            value and returns true if the value is valid and false otherwise.</li>
+            <li>Inside the <code>isValid()</code> method you can add messages to display back to the user
+            to tell them why the value failed validation by using the code <code>$this-&gt;addMessage('Message to send to user');</code>.
+            That message will appear under the form element by default.</li>
+        </ul>
+        <h3>Naming your validator</h3>
+        <p>Validators have a special naming system in order to add them to an element.  If you notice two of the 
+        existing validator classes called iPhorm_Validator_Required and iPhorm_Validator_Email which are added to element using
+        the names <strong>required</strong> and <strong>email</strong>. The conversion between short name and
+        class name happens automatically. To convert from short name to class name, make the first letter
+        uppercase and add iPhorm_Validator_ to the beginning.  To convert from class name to short name make the first letter
+        lowercase and remove iPhorm_Validator_ from the beginning.  If you made a new validator with the class name <code>iPhorm_Validator_MyNewValidator</code>
+        you could add it to an element using:</p>
+        <pre>$yourElement-&gt;addValidators(array('myNewValidator'));</pre>
+        <p>You can also add the validator to the element by passing in an instance of it:</p>
+        <pre>$yourElement-&gt;addValidator(new iPhorm_Validator_MyNewValidator());</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Working with forms with deep nested arrays (Advanced)</h2>
+      <div>
+       <p>If you have set up your form elements such that they are using deep nested array structure in their names as shown below.</p>
+       <pre>&lt;input type="text" name="customer_info[delivery_details][postcode]" /&gt;</pre>
+       <p>You will need to call the following code during form element configuration:</p>
+       <pre>$yourElement-&gt;setIsArray(true);</pre>
+       <p>This will tell the form to expect an array for the value submitted and the element will not work properly without it. NOTE: Single level arrays
+       such as multiple value elements:</p>
+       <pre>&lt;input type="checkbox" name="toppings[]" /&gt;</pre>
+       <p>DO NOT need the <code>setIsArray(true);</code> code. One level deeper than that and things will not work (the value will not be passed correctly to the form
+       element so it may appear blank in the email) and you WILL NEED to use <code>setIsArray(true);</code>.</p>
+       </div> 
+      <h1><a name="four" id="four"></a>Troubleshooting</h1>
+      <h2 class="toggler toggler-closed">You do not receive the email</h2>
+      <div>
+      <p>The iPhorm uses PHP's <code>mail()</code> function (via the <a href="http://swiftmailer.org/" class="popup">SwiftMailer library</a>) to send the email by default.  Some web hosts may
+      not allow you to use this function or require that you set certain headers. So we need to find out if you can send a simple email using your web server.
+       We have created a test script so that you can check to see if you can do that.  The script is located <code>contact-form/mail-check.php</code>, to set up
+      the script:</p>
+      <ul>
+        <li>1. Open the file and read the introductory comment</li>
+        <li>2. Change the email address on <strong>line 26</strong> to your email address</li>
+        <li>3. Upload the file to your web server</li>
+        <li>4. Visit the page in your web browser</li>
+      </ul>
+      <p>If the script indicates there is a problem with the <code>mail()</code> function and your hosting company
+      then you can try and set up the form to send the email via an SMTP server instead, such as your
+      ISP's server.  See the section called <strong>Sending emails via an SMTP server</strong> in the <a href="#three">Advanced form customisation</a> section above.</p>
+      <h3>Finding out what you need to do to use mail() with your web host</h3>
+      <p>Search Google for "[your hosting company] php mail", usually there are forum posts by other people who are having trouble with the host and mail() and there
+      is usually a solution in the forum.  For example some hosts require that the "From:" address is an email address from your domain that is hosted with them.  In
+      this case you can set use the code below on <strong>line 30</strong> of <code>contact-form/config.php</code>.</p>
+      <pre>$emailSuccessHandler-&gt;setFromAddress('email@yourdomain.com');</pre>
+      </div>
+      <h2 class="toggler toggler-closed">Form does not submit</h2>
+      <div>
+      <p>This could happen for a lot of reasons.  Look for JavaScript errors in the status bar of your web browser, if there is an error with another script it may also
+      break the contact form.</p>
+      <p>We recommend using the <a href="http://getfirebug.com/">Firebug</a> extension for debugging if you do not already.  If you enable the Net tab you will be able
+      to see the Ajax requests being sent and received by the form and this can help to debug any problems you have in the PHP code because it isn't obvious when
+      working with an Ajax application.</p>
+      <p>A good way to check for errors is to <a href="http://www.google.co.uk/search?q=disable+JavaScript+in+your+browser" class="popup">disable JavaScript in your browser</a> and submit the form, any errors that are in your PHP code will be sent to the browser instead of silently back to the JavaScript so
+      this might help you find some problems.</p>      
+      </div>
+      <h2 class="toggler toggler-closed">File upload troubleshooting</h2>
+      <div>
+        <h3>Email does not arrive</h3>
+        <p>If your email doesn't arrive, try it again without the file upload field. If it still doesn't arrive
+        then try the suggestions in the "You do not recieve email" section above. If the email only doesn't
+        arrive when you have a file upload field, you might be exceeding email size limits of your web
+        host or one of the relays, so try a really small attachment.  If it still does not work, contact
+        us and we'll try and help you fix it.</p>
+        <h3>Email does not have attachments</h3>
+        <p>Double check you have added the file upload element to the form and added the element to 
+        the email success handler in <code>config.php</code>, as described in the file uploads section above.</p>
+        <h3>Maximum file size problems</h3>
+        <p>By default PHP only allows an <code>upload_max_filesize</code> of 2MB.  You will need to change this setting
+        in php.ini to your value, if you don't have access to change php.ini check with your web host
+        about how to change PHP settings.  Many hosts will allow you to make changes to these values.  The other
+        value you will need to check is <code>post_max_size</code>, which is needs to be larger than your
+        <code>upload_max_filesize</code> value.</p>
+        <h3>Form returns this field is required for all fields</h3>
+        <p>You may be exceeding limit the PHP ini directive <code>post_max_size</code> which apparently
+        sets $_POST and $_FILES to empty arrays, thus your form will say that these fields are required. So
+        increase the limit.</p>        
+      </div>
+      <h2 class="toggler toggler-closed">Conflicts with other JavaScript libraries (prototype or Mootools etc)</h2>
+       <div>
+        <p>If your web page uses another JavaScript library such as prototype or Mootools etc your form might not submit so you may need to
+        set jQuery into noConflict mode for the form to still work correctly.  To do this, open <code>js/scripts.js</code> and on
+        <strong>line 1</strong> add this code before anything else:</p>
+        <pre>jQuery.noConflict();</pre>
+       </div>
+      <h2 class="toggler toggler-closed">Solutions to error messages</h2>
+       <div>
+        <h3>Address in mailbox given [] does not comply with RFC 2822 , 3.6.2.</h3>
+        <p>The recipient email address you have set in config.php is not valid.  Enter a valid
+        email address or see <a href="http://stackoverflow.com/questions/1490042/swift-mailer-error-swift-rfccomplianceexception-on-an-email-that-actually-works" class="popup">here</a> for a workaround.</p>
+       </div>       
+      <div>The troubleshooting section will be updated as the form develops.</div>
+      <div><a href="http://demos.themecatcher.net/iphorm/sales/changelog.html" class="popup">Full changelog</a></div>
+      <h1><a name="five" id="five"></a>Further support</h1>
+      <p>For additional help you may contact us using the form on our <a class="popup" href="http://themeforest.net/user/ThemeCatcher">ThemeForest profile page</a>.  If you would like us to
+      customise your form for you, we will be happy to do this at our hourly rate of &pound;30 per hour.  Contact us if you would like to hire us!</p>
+    </div>    
+</div>
+</div>
+<!-- End Wrapper -->
+
+</body>
+</html>
