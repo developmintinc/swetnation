@@ -1,0 +1,614 @@
+2012-01-25 08:34:51,374 [12] DEBUG Products_Edit.cs - OnLoad : Sanity Check
+2012-01-25 08:35:19,294 [12] DEBUG Products_Edit.cs - OnLoad : Sanity Check
+2012-01-25 08:40:19,560 [5] DEBUG Products_Edit.cs - OnLoad : Sanity Check
+2012-01-25 08:42:02,007 [13] DEBUG Products_Edit.cs - OnLoad : Sanity Check
+2012-01-25 08:42:46,954 [15] DEBUG Products_Edit.cs - OnLoad : Sanity Check
+2012-01-25 23:12:53,618 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:12,679 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:16,229 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:16,240 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:16,241 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:16,243 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:16,244 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:16,246 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:16,247 [11] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:13:34,117 [14] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-25 23:15:36,540 [15] DEBUG Products_Edit.cs / UploadImage() - Enter
+2012-01-25 23:15:36,544 [15] DEBUG DiskStorage.cs / UploadProductImage() - Enter
+2012-01-25 23:15:36,568 [15] DEBUG DiskStorage.cs / UploadProductImage() - File.Exists(saveLocation) = false, saveLocation = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\49a3651e-a9fd-4e15-8dc9-a4501ee1ed95\bracelet_blue.jpg
+2012-01-25 23:15:36,570 [15] DEBUG DiskStorage.cs / WriteFileToPath() - Enter
+2012-01-25 23:15:36,572 [15] DEBUG DiskStorage.cs / WriteFileToPath() - file != null
+2012-01-25 23:15:37,832 [15] DEBUG DiskStorage.cs / WriteFileToPath() - Directory.Exists(Path.GetDirectoryName(saveLocation)) == false
+2012-01-25 23:15:37,837 [15] DEBUG DiskStorage.cs / UploadProductImage() - result1 = true
+2012-01-25 23:15:43,284 [15] DEBUG ImageProcessing.cs / ShrinkImage() - !Directory.Exists(pathOfOutput), pathOfOutput = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\49a3651e-a9fd-4e15-8dc9-a4501ee1ed95\small
+2012-01-25 23:15:44,797 [15] DEBUG ImageProcessing.cs / ShrinkImage() - Path.Combine(pathOfOutput, Path.GetFileName(originalFile), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\49a3651e-a9fd-4e15-8dc9-a4501ee1ed95\small\bracelet_blue.jpg
+2012-01-25 23:15:45,575 [15] DEBUG ImageProcessing.cs / ShrinkImage() - outputFile.Replace('/', ''), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\49a3651e-a9fd-4e15-8dc9-a4501ee1ed95\small\bracelet_blue.jpg
+2012-01-25 23:16:19,742 [15] DEBUG DiskStorage.cs / UploadProductImage() - result2 = true
+2012-01-25 23:16:24,753 [15] DEBUG ImageProcessing.cs / ShrinkImage() - !Directory.Exists(pathOfOutput), pathOfOutput = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\49a3651e-a9fd-4e15-8dc9-a4501ee1ed95\medium
+2012-01-25 23:16:26,314 [15] DEBUG ImageProcessing.cs / ShrinkImage() - Path.Combine(pathOfOutput, Path.GetFileName(originalFile), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\49a3651e-a9fd-4e15-8dc9-a4501ee1ed95\medium\bracelet_blue.jpg
+2012-01-25 23:16:26,889 [15] DEBUG ImageProcessing.cs / ShrinkImage() - outputFile.Replace('/', ''), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\49a3651e-a9fd-4e15-8dc9-a4501ee1ed95\medium\bracelet_blue.jpg
+2012-01-25 23:16:27,731 [15] DEBUG DiskStorage.cs / UploadProductImage() - result2 = True
+2012-01-25 23:16:27,734 [15] DEBUG Products_Edit.cs / UploadImage() - p.ImageFileSmall = bracelet_blue.jpg
+2012-01-25 23:16:41,494 [5] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-26 16:52:48,525 [4] DEBUG TestImageUpload.cs / Page_Load() - !Page.IsPostBack
+2012-01-26 17:02:20,636 [14] DEBUG TestImageUpload.cs / Page_Load() - !Page.IsPostBack
+2012-01-26 17:03:28,073 [17] DEBUG DiskStorage.cs / UploadProductImage() - Enter
+2012-01-26 17:03:28,125 [17] DEBUG DiskStorage.cs / UploadProductImage() - File.Exists(saveLocation) = false, saveLocation = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\sneakers-1.jpg
+2012-01-26 17:03:28,127 [17] DEBUG DiskStorage.cs / WriteFileToPath() - Enter
+2012-01-26 17:03:28,127 [17] DEBUG DiskStorage.cs / WriteFileToPath() - file != null
+2012-01-26 17:03:28,128 [17] DEBUG DiskStorage.cs / WriteFileToPath() - Directory.Exists(Path.GetDirectoryName(saveLocation)) == true
+2012-01-26 17:03:28,130 [17] DEBUG DiskStorage.cs / UploadProductImage() - result1 = true
+2012-01-26 17:03:28,131 [17] DEBUG ImageProcessing.cs / ShrinkImage() - Directory.Exists(pathOfOutput), pathOfOutput = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small
+2012-01-26 17:03:28,131 [17] DEBUG ImageProcessing.cs / ShrinkImage() - Path.Combine(pathOfOutput, Path.GetFileName(originalFile), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-1.jpg
+2012-01-26 17:03:28,132 [17] DEBUG ImageProcessing.cs / ShrinkImage() - outputFile.Replace('/', ''), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-1.jpg
+2012-01-26 17:03:28,195 [17] DEBUG DiskStorage.cs / UploadProductImage() - result2 = true
+2012-01-26 17:03:28,210 [17] DEBUG ImageProcessing.cs / ShrinkImage() - Directory.Exists(pathOfOutput), pathOfOutput = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\medium
+2012-01-26 17:03:28,211 [17] DEBUG ImageProcessing.cs / ShrinkImage() - Path.Combine(pathOfOutput, Path.GetFileName(originalFile), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\medium\sneakers-1.jpg
+2012-01-26 17:03:28,211 [17] DEBUG ImageProcessing.cs / ShrinkImage() - outputFile.Replace('/', ''), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\medium\sneakers-1.jpg
+2012-01-26 17:03:28,222 [17] DEBUG DiskStorage.cs / UploadProductImage() - result2 = True
+2012-01-26 17:03:28,223 [17] DEBUG Products_Edit.cs / UploadImage() - p.ImageFileSmall = sneakers-1.jpg
+2012-01-26 17:05:09,397 [17] DEBUG TestImageUpload.cs / Page_Load() - !Page.IsPostBack
+2012-01-26 17:06:13,883 [13] DEBUG DiskStorage.cs / UploadProductImage() - Enter
+2012-01-26 17:07:29,061 [13] DEBUG DiskStorage.cs / UploadProductImage() - File.Exists(saveLocation) = false, saveLocation = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\sneakers-1.jpg
+2012-01-26 17:07:32,499 [13] DEBUG DiskStorage.cs / WriteFileToPath() - Enter
+2012-01-26 17:07:34,659 [13] DEBUG DiskStorage.cs / WriteFileToPath() - file != null
+2012-01-26 17:07:36,920 [13] DEBUG DiskStorage.cs / WriteFileToPath() - Directory.Exists(Path.GetDirectoryName(saveLocation)) == true
+2012-01-26 17:08:00,098 [13] DEBUG DiskStorage.cs / UploadProductImage() - result1 = true
+2012-01-26 17:08:08,202 [13] DEBUG ImageProcessing.cs / ShrinkImage() - Directory.Exists(pathOfOutput), pathOfOutput = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small
+2012-01-26 17:08:09,688 [13] DEBUG ImageProcessing.cs / ShrinkImage() - Path.Combine(pathOfOutput, Path.GetFileName(originalFile), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-1.jpg
+2012-01-26 17:08:10,629 [13] DEBUG ImageProcessing.cs / ShrinkImage() - outputFile.Replace('/', ''), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-1.jpg
+2012-01-26 17:08:24,867 [13] DEBUG DiskStorage.cs / UploadProductImage() - result2 = true
+2012-01-26 17:08:27,538 [13] DEBUG ImageProcessing.cs / ShrinkImage() - Directory.Exists(pathOfOutput), pathOfOutput = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\medium
+2012-01-26 17:08:27,951 [13] DEBUG ImageProcessing.cs / ShrinkImage() - Path.Combine(pathOfOutput, Path.GetFileName(originalFile), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\medium\sneakers-1.jpg
+2012-01-26 17:08:28,247 [13] DEBUG ImageProcessing.cs / ShrinkImage() - outputFile.Replace('/', ''), outputFile = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\medium\sneakers-1.jpg
+2012-01-26 17:08:32,022 [13] DEBUG DiskStorage.cs / UploadProductImage() - result2 = True
+2012-01-26 17:08:41,531 [13] DEBUG Products_Edit.cs / UploadImage() - p.ImageFileSmall = sneakers-1.jpg
+2012-01-27 08:26:04,199 [6] DEBUG TestImageUpload.cs / Page_Load() - !Page.IsPostBack
+2012-01-27 08:26:52,889 [6] DEBUG TestImageUpload - ContentType = image/jpeg
+2012-01-27 08:26:59,151 [6] DEBUG TestImageUpload - ContentLength = 8056
+2012-01-27 08:26:59,728 [6] DEBUG TestImageUpload - filename = sneakers-2.jpg
+2012-01-27 08:27:00,115 [6] DEBUG TestImageUpload - filename with mappath = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\sneakers-2.jpg
+2012-01-27 08:27:01,548 [6] DEBUG TestImageUpload - Directory exists
+2012-01-27 08:27:03,258 [6] DEBUG TestImageUpload - Saving file
+2012-01-27 08:27:07,790 [6] DEBUG TestImageUpload - Combined file and path = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-2.jpg
+2012-01-27 08:27:09,415 [6] DEBUG TestImageUpload - Replacing forward slash with back slash = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-2.jpg
+2012-01-27 09:02:55,023 [6] DEBUG TestImageUpload.cs / Page_Load() - !Page.IsPostBack
+2012-01-27 09:04:19,781 [14] DEBUG TestImageUpload.cs / Page_Load() - !Page.IsPostBack
+2012-01-27 09:04:59,167 [12] DEBUG TestImageUpload - ContentType = image/jpeg
+2012-01-27 09:04:59,175 [12] DEBUG TestImageUpload - ContentLength = 8056
+2012-01-27 09:04:59,177 [12] DEBUG TestImageUpload - filename = sneakers-2.jpg
+2012-01-27 09:04:59,177 [12] DEBUG TestImageUpload - filename with mappath = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\sneakers-2.jpg
+2012-01-27 09:04:59,178 [12] DEBUG TestImageUpload - Directory exists
+2012-01-27 09:04:59,178 [12] DEBUG TestImageUpload - Saving file
+2012-01-27 09:04:59,180 [12] DEBUG TestImageUpload - Combined file and path = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-2.jpg
+2012-01-27 09:04:59,181 [12] DEBUG TestImageUpload - Replacing forward slash with back slash = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\7c57ac98-b639-4bf4-8ba5-a63d0bfbcfc3\small\sneakers-2.jpg
+2012-01-29 10:53:05,898 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,906 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,910 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,916 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,921 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,925 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,930 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,933 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:05,935 [6] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:53:15,376 [13] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:55:43,781 [17] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 10:59:45,061 [13] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 11:02:52,760 [20] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,454 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,464 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,466 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,468 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,470 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,472 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,473 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,475 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:11:57,476 [30] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:12:27,539 [27] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,111 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,113 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,115 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,124 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,129 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,136 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,141 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,145 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:19:35,147 [32] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:20:01,463 [17] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:22:52,209 [28] DEBUG Products_Edit.cs - ProductImageUrlSmall : Enter
+2012-01-29 12:34:08,660 [15] DEBUG TestImageUpload.cs / Page_Load() - !Page.IsPostBack
+2012-01-29 12:34:23,394 [13] DEBUG TestImageUpload - ##############################################
+2012-01-29 12:34:23,397 [13] DEBUG TestImageUpload - STARTING IMAGE UPLOAD PROCESS
+2012-01-29 12:34:23,405 [13] DEBUG TestImageUpload - ##############################################
+2012-01-29 12:34:23,407 [13] DEBUG TestImageUpload - ContentType = image/jpeg
+2012-01-29 12:34:23,413 [13] DEBUG TestImageUpload - ContentLength = 4822
+2012-01-29 12:34:23,414 [13] DEBUG TestImageUpload - filename = brown-fedora.jpg
+2012-01-29 12:34:23,417 [13] DEBUG TestImageUpload - filename with mappath = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\12345678-b639-4bf4-8ba5-a63d0bfbcfc3\brown-fedora.jpg
+2012-01-29 12:34:23,421 [13] DEBUG TestImageUpload - Directory doesn't exists
+2012-01-29 12:34:23,423 [13] DEBUG TestImageUpload - Combined file and path = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\12345678-b639-4bf4-8ba5-a63d0bfbcfc3\small\brown-fedora.jpg
+2012-01-29 12:34:23,425 [13] DEBUG TestImageUpload - Replacing forward slash with back slash = C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\Images\sites\1\products\12345678-b639-4bf4-8ba5-a63d0bfbcfc3\small\brown-fedora.jpg
+2012-01-29 12:34:23,426 [13] DEBUG TestImageUpload - Entering Shrink medium image method
+2012-01-29 15:08:04,009 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=1, EntitySetName=bvc_Product, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:50:45,009 [14] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:50:45,359 [14] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:50:45,613 [14] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:50:45,903 [14] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:50:46,181 [14] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:50:46,425 [14] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:51:38,078 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:51:38,350 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:51:38,594 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:51:38,860 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:51:39,107 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:51:39,392 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:58:49,516 [16] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:58:49,692 [16] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:58:49,853 [16] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:58:50,017 [16] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:58:50,184 [16] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:58:50,339 [16] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:20,930 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:21,091 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:21,262 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:21,441 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:21,613 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:21,778 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:33,361 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:33,522 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:33,674 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:33,846 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:34,000 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 21:59:34,159 [13] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:12:06,073 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:12:06,345 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:12:06,574 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:12:06,826 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:12:07,066 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:12:07,331 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:14:55,669 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:14:55,962 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:14:56,208 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:14:56,468 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:14:56,687 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:14:56,950 [18] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:17:04,431 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:17:04,589 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:17:04,761 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:17:04,922 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:17:05,105 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-01-29 22:17:05,264 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:16,731 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:17,263 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:17,531 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:17,804 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:18,100 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:18,379 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:18,639 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:18,894 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:19,161 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:53,263 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:53,538 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:53,805 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:54,076 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:54,350 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:54,623 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:54,890 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:55,155 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:29:55,449 [19] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:24,910 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:25,211 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:25,489 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:25,782 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:26,080 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:26,415 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:26,783 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:27,141 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:41:27,464 [12] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:05,258 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:05,559 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:05,860 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:06,158 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:06,437 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:06,710 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:07,002 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:07,302 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:07,599 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:33,552 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:33,824 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:34,120 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:34,421 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:34,685 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:34,947 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:35,235 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:35,510 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:42:35,802 [10] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:11,344 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:11,579 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:11,795 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:12,020 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:12,249 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:12,481 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:12,706 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:12,943 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:50:13,157 [21] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:44,233 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:44,469 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:44,700 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:44,920 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:45,139 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:45,373 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:45,600 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:45,831 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 11:53:46,052 [22] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:24,347 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:24,575 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:24,785 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:25,006 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:25,244 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:25,468 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:25,690 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:26,012 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81
+2012-02-14 12:04:26,246 [23] DEBUG MerchantTribe.Web.Data - Find by Primary Key Failure: KEY=, EntitySetName=bvc_User, EXCEPTION=System.Data.ObjectNotFoundException: An object with the specified EntityKey value could not be found.
+   at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81    at System.Data.Objects.ObjectContext.GetObjectByKey(EntityKey key)
+   at MerchantTribe.Web.Data.EntityFrameworkRepository`1.FindByPrimaryKey(PrimaryKey id) in C:\git\MerchantTribe.Web\src\MerchantTribe.Web\Data\EntityFrameworkRepository.cs:line 81

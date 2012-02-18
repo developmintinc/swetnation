@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class iPhorm_Element_File</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> iPhorm_Element_File</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_iPhorm---Element---File.php.html">/iPhorm/Element/File.php</a> (line <span class="field">3</span>)
+		</p>
+		
+				
+		<pre><a href="../default/iPhorm_Element.html">iPhorm_Element</a>
+   |
+   --iPhorm_Element_File</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../default/iPhorm_Validator_FileUpload.html">iPhorm_Validator_FileUpload</a></span>
+					<a href="#$_fileUploadValidator" title="details" class="var-name">$_fileUploadValidator</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_skipRender" title="details" class="var-name">$_skipRender</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																								<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">iPhorm_Element_File</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#getAllowedExtensions" title="details" class="method-name">getAllowedExtensions</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../default/iPhorm_Validator_FileUpload.html">iPhorm_Validator_FileUpload</a></span>
+										<a href="#getFileUploadValidator" title="details" class="method-name">getFileUploadValidator</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int|float</span>
+										<a href="#getMaximumFileSize" title="details" class="method-name">getMaximumFileSize</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#getRequired" title="details" class="method-name">getRequired</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">int</span>
+										<a href="#getRequiredCount" title="details" class="method-name">getRequiredCount</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#isValid" title="details" class="method-name">isValid</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setAllowedExtensions" title="details" class="method-name">setAllowedExtensions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$allowedExtensions</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setMaximumFileSize" title="details" class="method-name">setMaximumFileSize</a>
+											(<span class="var-type">int|float</span>&nbsp;<span class="var-name">$maximumFileSize</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setRequired" title="details" class="method-name">setRequired</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setRequiredCount" title="details" class="method-name">setRequiredCount</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$count</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_fileUploadValidator" id="$_fileUploadValidator"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../default/iPhorm_Validator_FileUpload.html">iPhorm_Validator_FileUpload</a></span>
+			<span class="var-name">$_fileUploadValidator</span>
+						(line <span class="line-number">17</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">File upload validator</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_skipRender" id="$_skipRender"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_skipRender</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number">10</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Success handlers should skip this element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/iPhorm_Element.html#var$_skipRender">iPhorm_Element::$_skipRender</a></dt>
+						<dd>Should the element be skipped by success handlers</dd>
+					</dl>
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../default/iPhorm_Element.html">iPhorm_Element</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_errors">iPhorm_Element::$_errors</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_filters">iPhorm_Element::$_filters</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_form">iPhorm_Element::$_form</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_isArray">iPhorm_Element::$_isArray</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_isMultiple">iPhorm_Element::$_isMultiple</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_label">iPhorm_Element::$_label</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_name">iPhorm_Element::$_name</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_validators">iPhorm_Element::$_validators</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../default/iPhorm_Element.html#var$_value">iPhorm_Element::$_value</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">19</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">iPhorm_Element_File</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$label</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/iPhorm_Element.html#method__construct">iPhorm_Element::__construct()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodgetAllowedExtensions" id="getAllowedExtensions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getAllowedExtensions</span> (line <span class="line-number">56</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the allowed extensions</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The array of allowed extensions</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getAllowedExtensions
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFileUploadValidator" id="getFileUploadValidator"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getFileUploadValidator</span> (line <span class="line-number">129</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get this elements file upload validator</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../default/iPhorm_Validator_FileUpload.html">iPhorm_Validator_FileUpload</a></span>
+		<span class="method-name">
+			getFileUploadValidator
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMaximumFileSize" id="getMaximumFileSize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getMaximumFileSize</span> (line <span class="line-number">79</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the maximum allowable file size in bytes</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The maximum size</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int|float</span>
+		<span class="method-name">
+			getMaximumFileSize
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRequired" id="getRequired"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getRequired</span> (line <span class="line-number">99</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Is this element required?</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getRequired
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRequiredCount" id="getRequiredCount"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getRequiredCount</span> (line <span class="line-number">119</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the number of required uploads</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getRequiredCount
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodisValid" id="isValid"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">isValid</span> (line <span class="line-number">141</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Is the uploaded file valid?</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if valid, false otherwise</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isValid
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to check</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$context</span><span class="var-description">: The other submitted form values</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/iPhorm_Element.html#methodisValid">iPhorm_Element::isValid()</a></dt>
+						<dd>Is the given value valid?</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetAllowedExtensions" id="setAllowedExtensions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setAllowedExtensions</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the allowed extensions</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAllowedExtensions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$allowedExtensions</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$allowedExtensions</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMaximumFileSize" id="setMaximumFileSize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setMaximumFileSize</span> (line <span class="line-number">69</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the maximum allowable file size in bytes</p>
+<p class="description"><p>Default is 10MB (10485760 bytes)  Set to 0 for no limit</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMaximumFileSize
+		</span>
+					(<span class="var-type">int|float</span>&nbsp;<span class="var-name">$maximumFileSize</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int|float</span>
+				<span class="var-name">$maximumFileSize</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRequired" id="setRequired"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setRequired</span> (line <span class="line-number">89</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set if the element is required</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRequired
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$flag</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/iPhorm_Element.html#methodsetRequired">iPhorm_Element::setRequired()</a></dt>
+						<dd>Sets whether the element is required or not</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetRequiredCount" id="setRequiredCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">setRequiredCount</span> (line <span class="line-number">109</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the number of required uploads for a multiple upload element</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRequiredCount
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$count</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$count</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../default/iPhorm_Element.html">iPhorm_Element</a></span></p>
+					<blockquote>
+													<img src="../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#method__construct">iPhorm_Element::__construct()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodaddFilter">iPhorm_Element::addFilter()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodaddFilters">iPhorm_Element::addFilters()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodaddValidator">iPhorm_Element::addValidator()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodaddValidators">iPhorm_Element::addValidators()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodclearFilters">iPhorm_Element::clearFilters()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodclearValidators">iPhorm_Element::clearValidators()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetErrors">iPhorm_Element::getErrors()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetFilter">iPhorm_Element::getFilter()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetFilters">iPhorm_Element::getFilters()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetForm">iPhorm_Element::getForm()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetFullyQualifiedName">iPhorm_Element::getFullyQualifiedName()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetIsArray">iPhorm_Element::getIsArray()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetIsMultiple">iPhorm_Element::getIsMultiple()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetLabel">iPhorm_Element::getLabel()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetName">iPhorm_Element::getName()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetSkipRender">iPhorm_Element::getSkipRender()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetValidator">iPhorm_Element::getValidator()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetValidators">iPhorm_Element::getValidators()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetValue">iPhorm_Element::getValue()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodgetValueUnfiltered">iPhorm_Element::getValueUnfiltered()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodhasErrors">iPhorm_Element::hasErrors()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodhasFilter">iPhorm_Element::hasFilter()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodhasFilters">iPhorm_Element::hasFilters()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodhasValidator">iPhorm_Element::hasValidator()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodhasValidators">iPhorm_Element::hasValidators()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodisValid">iPhorm_Element::isValid()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodremoveFilter">iPhorm_Element::removeFilter()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodremoveValidator">iPhorm_Element::removeValidator()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetFilters">iPhorm_Element::setFilters()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetForm">iPhorm_Element::setForm()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetIsArray">iPhorm_Element::setIsArray()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetIsMultiple">iPhorm_Element::setIsMultiple()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetLabel">iPhorm_Element::setLabel()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetName">iPhorm_Element::setName()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetRequired">iPhorm_Element::setRequired()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetSkipRender">iPhorm_Element::setSkipRender()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetValidators">iPhorm_Element::setValidators()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#methodsetValue">iPhorm_Element::setValue()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#method_filterValue">iPhorm_Element::_filterValue()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#method_filterValueRecursive">iPhorm_Element::_filterValueRecursive()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#method_loadFilter">iPhorm_Element::_loadFilter()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#method_loadValidator">iPhorm_Element::_loadValidator()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../default/iPhorm_Element.html#method_prettyName">iPhorm_Element::_prettyName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 24 Feb 2011 22:19:37 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

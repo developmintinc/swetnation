@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 10.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="10.0">
+ <Targets>
+  <Target Name="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\bin\MerchantTribeStore.dll">
+   <Modules>
+    <Module Name="merchanttribestore.dll">
+     <Namespaces>
+      <Namespace Name="MerchantTribeStore">
+       <Types>
+        <Type Name="BVAdmin_Catalog_Categories_Edit" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#PopulateStoreLink(MerchantTribe.Commerce.Catalog.Category)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Categories_Edit.aspx.cs" Line="186">In method 'BVAdmin_Catalog_Categories_Edit.PopulateStoreLink(Category)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Catalog_Categories_EditCustom" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#PopulateStoreLink(MerchantTribe.Commerce.Catalog.Category)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Categories_EditCustom.aspx.cs" Line="111">In method 'BVAdmin_Catalog_Categories_EditCustom.PopulateStoreLink(Category)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Catalog_FileVault" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ImportLinkButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="FileVault.aspx.cs" Line="113">Object 'fileStream' can be disposed more than once in method 'BVAdmin_Catalog_FileVault.ImportLinkButton_Click(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 113</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Catalog_ProductChoices_Variants" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#btnNew_Click(System.Object,System.Web.UI.ImageClickEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="ProductChoices_Variants.aspx.cs" Line="175">In method 'BVAdmin_Catalog_ProductChoices_Variants.btnNew_Click(object, ImageClickEventArgs)', call System.IDisposable.Dispose on object 'ddl' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PopulateEditorControls()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="ProductChoices_Variants.aspx.cs" Line="51">In method 'BVAdmin_Catalog_ProductChoices_Variants.PopulateEditorControls()', object 'ddl' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'ddl' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Catalog_Products_Edit" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenerateProductTypePropertyFields()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Products_Edit.aspx.cs" Line="592">In method 'BVAdmin_Catalog_Products_Edit.GenerateProductTypePropertyFields()', call System.IDisposable.Dispose on object 'input' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Products_Edit.aspx.cs" Line="615">In method 'BVAdmin_Catalog_Products_Edit.GenerateProductTypePropertyFields()', call System.IDisposable.Dispose on object 'input' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Products_Edit.aspx.cs" Line="638">In method 'BVAdmin_Catalog_Products_Edit.GenerateProductTypePropertyFields()', call System.IDisposable.Dispose on object 'input' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Products_Edit.aspx.cs" Line="661">In method 'BVAdmin_Catalog_Products_Edit.GenerateProductTypePropertyFields()', call System.IDisposable.Dispose on object 'input' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Products_Edit.aspx.cs" Line="699">In method 'BVAdmin_Catalog_Products_Edit.GenerateProductTypePropertyFields()', call System.IDisposable.Dispose on object 'input' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Products_Edit.aspx.cs" Line="585">In method 'BVAdmin_Catalog_Products_Edit.GenerateProductTypePropertyFields()', call System.IDisposable.Dispose on object 'sw' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Configuration_MailServer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#btnSendTest_Click(System.Object,System.Web.UI.ImageClickEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Configuration" File="MailServer.aspx.cs" Line="121">In method 'BVAdmin_Configuration_MailServer.btnSendTest_Click(object, ImageClickEventArgs)', call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Controls_CategoryBreadCrumbTrail" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddCategoryLink(MerchantTribe.Commerce.Catalog.CategorySnapshot)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Controls" File="CategoryBreadCrumbTrail.ascx.cs" Line="85">In method 'BVAdmin_Controls_CategoryBreadCrumbTrail.AddCategoryLink(CategorySnapshot)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadTrail(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Controls" File="CategoryBreadCrumbTrail.ascx.cs" Line="39">In method 'BVAdmin_Controls_CategoryBreadCrumbTrail.LoadTrail(string)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Controls_ContentColumnEditor" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GridView1_RowDataBound(System.Object,System.Web.UI.WebControls.GridViewRowEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Controls" File="ContentColumnEditor.ascx.cs" Line="108">In method 'BVAdmin_Controls_ContentColumnEditor.GridView1_RowDataBound(object, GridViewRowEventArgs)', object '&lt;&gt;g__initLocal0' is not disposed along all exception paths. Call System.IDisposable.Dispose on object '&lt;&gt;g__initLocal0' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Controls_DateRangePicker" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#RangeTypeChanged" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'BVAdmin_Controls_DateRangePicker.RangeTypeChangedDelegate' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'BVAdmin_Controls_DateRangePicker.RangeTypeChangedDelegate' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Controls_SimpleProductFilter" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#FilterChanged" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'BVAdmin_Controls_SimpleProductFilter.FilterChangedDelegate' as an object named 'sender'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GoPressed" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'BVAdmin_Controls_SimpleProductFilter.GoPressedDelegate' as an object named 'sender'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Controls_UserPicker" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#UserSelected" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'BVAdmin_Controls_UserPicker.UserSelectedDelegate' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'BVAdmin_Controls_UserPicker.UserSelectedDelegate' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Orders_ViewOrder" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#btnSendStatusEmail_Click(System.Object,System.Web.UI.ImageClickEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Orders" File="ViewOrder.aspx.cs" Line="364">In method 'BVAdmin_Orders_ViewOrder.btnSendStatusEmail_Click(object, ImageClickEventArgs)', call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_People_MailingLists_Edit" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CustomValidator1_ServerValidate(System.Object,System.Web.UI.WebControls.ServerValidateEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\People" File="MailingLists_Edit.aspx.cs" Line="178">In method 'BVAdmin_People_MailingLists_Edit.CustomValidator1_ServerValidate(object, ServerValidateEventArgs)', call System.IDisposable.Dispose on object 'sw' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Plugins_Default" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Upload(System.IO.FileInfo,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Plugins\BV Froogle Feed" File="Default.aspx.cs" Line="443">Object 'fs' can be disposed more than once in method 'BVAdmin_Plugins_Default.Upload(FileInfo, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 443</Issue>
+             <Issue Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Plugins\BV Froogle Feed" File="Default.aspx.cs" Line="430">Object 'rs' can be disposed more than once in method 'BVAdmin_Plugins_Default.Upload(FileInfo, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 430</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_Reports_Default" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#dgList_ItemDataBound(System.Object,System.Web.UI.WebControls.DataGridItemEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Sales By Date" File="View.aspx.cs" Line="212">In method 'BVAdmin_Reports_Default.dgList_ItemDataBound(object, DataGridItemEventArgs)', object 'cell' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'cell' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Sales By Date" File="View.aspx.cs" Line="221">In method 'BVAdmin_Reports_Default.dgList_ItemDataBound(object, DataGridItemEventArgs)', object 'cell' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'cell' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVAdmin_WeeklySalesChart" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenerateChart(MerchantTribe.Commerce.Reporting.WeeklySummary,System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin" File="WeeklySalesChart.aspx.cs" Line="152">In method 'BVAdmin_WeeklySalesChart.GenerateChart(WeeklySummary, string, int, int)', object 'img' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'img' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin" File="WeeklySalesChart.aspx.cs" Line="39">In method 'BVAdmin_WeeklySalesChart.GenerateChart(WeeklySummary, string, int, int)', call System.IDisposable.Dispose on object 'c' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetDataPoint(System.Decimal,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin" File="WeeklySalesChart.aspx.cs" Line="160">In method 'BVAdmin_WeeklySalesChart.SetDataPoint(decimal, string)', object 'p' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'p' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVModules_ContentBlocks_Side_Menu_adminview" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddSingleLink(MerchantTribe.Commerce.Content.ContentBlockSettingListItem)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\ContentBlocks\SideMenu" File="adminview.ascx.cs" Line="49">In method 'BVModules_ContentBlocks_Side_Menu_adminview.AddSingleLink(ContentBlockSettingListItem)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVModules_Controls_CategoryBreadCrumbTrail" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddCategoryLink(MerchantTribe.Commerce.Catalog.CategorySnapshot)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Controls" File="CategoryBreadCrumbTrail.ascx.cs" Line="98">In method 'BVModules_Controls_CategoryBreadCrumbTrail.AddCategoryLink(CategorySnapshot)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadTrail(MerchantTribe.Commerce.Catalog.CategorySnapshot)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Controls" File="CategoryBreadCrumbTrail.ascx.cs" Line="61">In method 'BVModules_Controls_CategoryBreadCrumbTrail.LoadTrail(CategorySnapshot)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVModules_Controls_MessageBox" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ShowMessage(System.String,MerchantTribe.Commerce.Content.DisplayMessageType)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Controls" File="MessageBox.ascx.cs" Line="57">In method 'BVModules_Controls_MessageBox.ShowMessage(string, DisplayMessageType)', object 'MessageLabel' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'MessageLabel' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Controls" File="MessageBox.ascx.cs" Line="54">In method 'BVModules_Controls_MessageBox.ShowMessage(string, DisplayMessageType)', object 'divMessage' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'divMessage' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Controls" File="MessageBox.ascx.cs" Line="50">In method 'BVModules_Controls_MessageBox.ShowMessage(string, DisplayMessageType)', object 'img' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'img' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Controls" File="MessageBox.ascx.cs" Line="45">In method 'BVModules_Controls_MessageBox.ShowMessage(string, DisplayMessageType)', object 'li' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'li' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BVModules_Reports_Customer_List_View" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AlreadyPurchased(System.String,System.Collections.Specialized.StringCollection)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Customer List" File="View.aspx.cs" Line="235">In method 'BVModules_Reports_Customer_List_View.AlreadyPurchased(string, StringCollection)', object 'conn' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'conn' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Customer List" File="View.aspx.cs" Line="254">In method 'BVModules_Reports_Customer_List_View.AlreadyPurchased(string, StringCollection)', call System.IDisposable.Dispose on object 'adapt' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Customer List" File="View.aspx.cs" Line="251">In method 'BVModules_Reports_Customer_List_View.AlreadyPurchased(string, StringCollection)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Customer List" File="View.aspx.cs" Line="253">In method 'BVModules_Reports_Customer_List_View.AlreadyPurchased(string, StringCollection)', call System.IDisposable.Dispose on object 'dt' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Customer List" File="View.aspx.cs" Line="251">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'BVModules_Reports_Customer_List_View.AlreadyPurchased(string, StringCollection)' could contain the following variables 'skus[i]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadUsers()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVModules\Reports\Customer List" File="View.aspx.cs" Line="40">In method 'BVModules_Reports_Customer_List_View.LoadUsers()', call System.IDisposable.Dispose on object 'conn' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TestImageUpload" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ShrinkImageFileOnUpload(System.String,System.String,System.Int32,System.Int32,System.Web.UI.WebControls.FileUpload)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore" File="TestImageUpload.aspx.cs" Line="50">In method 'TestImageUpload.ShrinkImageFileOnUpload(string, string, int, int, FileUpload)', object 'newBMP' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'newBMP' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="MerchantTribeStore.BVAdmin.Catalog">
+       <Types>
+        <Type Name="Categories_EditDrillDown" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#PopulateStoreLink(MerchantTribe.Commerce.Catalog.Category)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\BVAdmin\Catalog" File="Categories_EditDrillDown.aspx.cs" Line="112">In method 'Categories_EditDrillDown.PopulateStoreLink(Category)', object 'm' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="MerchantTribeStore.Helpers">
+       <Types>
+        <Type Name="Html" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#RenderPartialToString(System.String,System.Object)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\code\Helpers" File="Html.cs" Line="363">In method 'Html.RenderPartialToString(string, object)', call System.IDisposable.Dispose on object '&lt;&gt;g__initLocal0' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2012-01-27 14:03:37Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\MerchantTribeStore\code\Helpers" File="Html.cs" Line="375">Object 'sw' can be disposed more than once in method 'Html.RenderPartialToString(string, object)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 375</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+   <Name>Declare event handlers correctly</Name>
+   <Description>By convention, .NET events have two parameters that specify the event sender and event data. Event handler signatures should follow this form: void MyEventHandler(object sender, EventArgs e). The 'sender' parameter is always of type System.Object, even if it is possible to employ a more specific type. The 'e' parameter is always of type System.EventArgs. Events that do not provide event data should use the System.EventHandler delegate type. Event handlers return void so that they can send each event to multiple target methods. Any value returned by a target would be lost after the first call.</Description>
+   <Resolution Name="First">Declare the first parameter of {0} as an object named 'sender'.</Resolution>
+   <Resolution Name="Second">Declare the second parameter of {0} as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182133(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Dispose objects before losing scope</Name>
+   <Description>If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.</Description>
+   <Resolution Name="ExceptionEdge">In method {0}, object {1} is not disposed along all exception paths. Call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Resolution Name="NonExceptionEdge">In method {0}, call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 375</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0060" Kind="Engine" TreatAsWarning="True">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>The indirectly-referenced assembly 'Yahoo.Yui.Compressor, Version=1.6.0.1, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2' could not be found. This assembly is not required for analysis, however, analysis results could be incomplete. This assembly was referenced by: C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\packages\MerchantTribe.Web.1.4.1.0\lib\net4\MerchantTribe.Web.dll.</ExceptionMessage>
+  </Exception>
+ </Exceptions>
+</FxCopReport>

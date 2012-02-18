@@ -1,0 +1,19 @@
+<Modules>
+  <Module PersistentId="42A2E75B-4DAA-4024-B82F-E5128091C83A" ModuleId="MerchantTribeStore.Tests" />
+  <Module PersistentId="4EFF0D3E-99D4-4A8D-A672-B88E5E47CBAA" ModuleId="MerchantTribe.Commerce" />
+  <Module PersistentId="6DDD0B1F-5395-4045-8FD1-3A1893BB7DC7" ModuleId="MerchantTribeStore" />
+  <Module PersistentId="6E00638C-0C75-4CC7-9E89-F185355F696B" ModuleId="MerchantTribe.Payment.Tests" />
+  <Module PersistentId="4C223AD8-685A-4AAC-8610-1BEC50636203" ModuleId="MerchantTribe.Payment" />
+  <Module PersistentId="90DA5B3D-F044-4FC3-A428-56AC87724D80" ModuleId="MerchantTribe.Commerce.Tests" />
+  <Module PersistentId="39CB3B9D-94B5-46B1-9C5F-E1C3348565D9" ModuleId="MerchantTribe.Billing" />
+  <Module PersistentId="40FCF14A-F903-4BF1-B4E0-FC5CB623BDF2" ModuleId="MerchantTribe.PaypalWebServices" />
+  <Module PersistentId="C47A3A58-D11F-4D67-92FC-3E95B5DD6221" ModuleId="MerchantTribe.CommerceDTO" />
+  <Module PersistentId="99A252BB-D844-4581-B924-4E59AE19857F" ModuleId="MerchantTribe.Shipping" />
+  <Module PersistentId="9B00258D-45D2-43BD-8178-A6F2AAFF5090" ModuleId="MerchantTribe.Shipping.FedEx" />
+  <Module PersistentId="A7F1EBBC-53E6-43AE-902E-8B8EF5082C54" ModuleId="MerchantTribe.Shipping.USPostal" />
+  <Module PersistentId="68FF27BE-6296-4A8B-B20F-6480A491D092" ModuleId="MerchantTribe.Shipping.Ups" />
+  <Module PersistentId="B5DDC02D-27DB-4D93-8BF2-5BA9854CB54A" ModuleId="MerchantTribe.Commerce.ApiSample" />
+  <Module PersistentId="EE651FCB-FE6E-4940-B887-60C54369DB6C" ModuleId="MerchantTribe.GoogleCheckout" />
+  <Module PersistentId="24A4744E-6A96-4DED-B4D9-018C3171C8DA" ModuleId="MerchantTribe.SilverlightFileUpload" />
+  <Module PersistentId="DE7BAB01-091C-4FB4-AE43-C1BCE9E28D99" ModuleId="SwetNation.Web" />
+</Modules>

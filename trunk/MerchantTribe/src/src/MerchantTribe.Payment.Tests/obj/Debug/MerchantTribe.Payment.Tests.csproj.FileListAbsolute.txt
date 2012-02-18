@@ -1,0 +1,16 @@
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.Payment.Tests.dll.config
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.Payment.Tests.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.Payment.Tests.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.Payment.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.PaypalWebServices.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\paypal_base.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.Web.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\Payflow_dotNET.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\log4net.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.Payment.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.PaypalWebServices.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\MerchantTribe.Web.pdb
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\bin\Debug\log4net.xml
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\obj\Debug\MerchantTribe.Payment.Tests.dll
+C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Payment.Tests\obj\Debug\MerchantTribe.Payment.Tests.pdb
