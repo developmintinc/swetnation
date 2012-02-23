@@ -62,7 +62,7 @@ namespace MerchantTribeStore
                 {
                     if (WebAppSettings.IsIndividualMode)
                     {
-                        this.MessageBox1.ShowInformation("Default username: admin@merchanttribe.com<br />Default Password: password");
+                        this.MessageBox1.ShowInformation("Default username: admin@swetnation.com<br />Default Password: password");
                     }
                     else
                     {

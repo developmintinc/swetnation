@@ -15,7 +15,7 @@ namespace MerchantTribeStore.BVAdmin
             if (WebAppSettings.IsIndividualMode)
             {
                 // Simple pci check for default admin username
-                if (MTApp.CurrentRequestContext.CurrentAdministrator(MTApp).Email == "admin@merchanttribe.com") Response.Redirect("ChangeEmail.aspx?pci=1");
+                if (MTApp.CurrentRequestContext.CurrentAdministrator(MTApp).Email == "admin@swetnation.com") Response.Redirect("ChangeEmail.aspx?pci=1");
             }
         }
 

@@ -28,10 +28,10 @@ namespace MerchantTribeStore
             StringBuilder sb = new StringBuilder();
             sb.Append("https://twitter.com/share");
             sb.Append("?url=" + HttpUtility.UrlEncode(MTApp.CurrentStore.RootUrl()));
-            sb.Append("&via=" + HttpUtility.UrlEncode("merchanttribe"));
+            sb.Append("&via=" + HttpUtility.UrlEncode("swetnation"));
             sb.Append("&text=" + defaultText);
             sb.Append("&related=");
-            sb.Append(HttpUtility.UrlEncode("merchanttribe"));
+            sb.Append(HttpUtility.UrlEncode("swetnation"));
             sb.Append(":");
             sb.Append(HttpUtility.UrlEncode(","));                
             sb.Append("&count=horizontal");

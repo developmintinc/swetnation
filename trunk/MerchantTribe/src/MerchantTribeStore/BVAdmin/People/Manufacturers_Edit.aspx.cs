@@ -1,14 +1,25 @@
-
 using MerchantTribe.Commerce;
 using System.Collections.Generic;
 using MerchantTribe.Commerce.Contacts;
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Collections.ObjectModel;
+using System.Web.UI.WebControls;
+using MerchantTribe.Commerce.Catalog;
+using MerchantTribe.Commerce.Membership;
+using MerchantTribe.Commerce.Content;
+using MerchantTribe.Web.Logging;
 
 namespace MerchantTribeStore
 {
-
     partial class BVAdmin_People_Manufacturers_Edit : BaseAdminPage
     {
-
         protected override void OnLoad(System.EventArgs e)
         {
             base.OnLoad(e);
@@ -73,10 +84,17 @@ namespace MerchantTribeStore
                     this.EmailField.Text = m.EmailAddress;
                     this.AddressEditor1.LoadFromAddress(m.Address);
                     this.EmailTemplateDropDownList.SelectedValue = m.DropShipEmailTemplateId;
+                    LoadImagePreview(m);
                 }
             }
 
             LoadGroups(m);
+        }
+
+        private void LoadImagePreview(VendorManufacturer vm)
+        {
+            string imageUrl = MerchantTribe.Commerce.Storage.DiskStorage.ManufacturerImageUrlSmall(MTApp.CurrentStore.Id, vm.Bvin, vm.ImageFileSmall, true);
+            this.imgPreviewSmall.ImageUrl = imageUrl;
         }
 
         protected override void OnPreInit(System.EventArgs e)
@@ -113,6 +131,9 @@ namespace MerchantTribeStore
                 m.EmailAddress = this.EmailField.Text.Trim();
                 m.Address = this.AddressEditor1.GetAsAddress();
                 m.DropShipEmailTemplateId = this.EmailTemplateDropDownList.SelectedValue;
+                string fileName = UploadImage(m);
+                m.ImageFileSmall = fileName;
+                m.ImageFileMedium = fileName;
                 if (this.BvinField.Value == string.Empty)
                 {
                     result = MTApp.ContactServices.Manufacturers.Create(m);
@@ -173,6 +194,115 @@ namespace MerchantTribeStore
                 MTApp.ContactServices.Manufacturers.Update(m);
             }
             LoadGroups(m);
+        }
+
+        private string UploadImage(VendorManufacturer m)
+        {
+            string fileNameResult = "";
+            if (imgupload.HasFile)
+            {
+                if (imgupload.PostedFile.ContentType == "image/jpeg" || imgupload.PostedFile.ContentType == "image/png" || imgupload.PostedFile.ContentType == "image/gif")
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(imgupload.FileName);
+                    string ext = Path.GetExtension(imgupload.FileName);
+
+                    if (m != null)
+                    {
+                        // Construct filename
+                        string filename = Path.GetFileName(imgupload.FileName);
+                        filename = Server.MapPath("~/Images/sites/1/manufacturers/" + m.Bvin + "/") + filename;
+
+                        // Delete the old one if it exists
+                        if (File.Exists(filename))
+                        {
+                            File.SetAttributes(filename, FileAttributes.Normal);
+                            File.Delete(filename);
+                        }
+
+                        if (imgupload != null)
+                        {
+                            if (Directory.Exists(Path.GetDirectoryName(filename)) == false)
+                                Directory.CreateDirectory(Path.GetDirectoryName(filename));
+                            imgupload.SaveAs(filename);
+                        }
+
+                        // Starting the process of saving the small image
+                        string pathOfOriginal = Path.GetDirectoryName(filename);
+                        string pathOfOutputSmall = Path.Combine(pathOfOriginal, "small");
+                        if (!Directory.Exists(pathOfOutputSmall))
+                        {
+                            Directory.CreateDirectory(pathOfOutputSmall);
+                        }
+
+                        string pathOfOutputMedium = Path.Combine(pathOfOriginal, "medium");
+                        if (!Directory.Exists(pathOfOutputMedium))
+                        {
+                            Directory.CreateDirectory(pathOfOutputMedium);
+                        }
+
+                        ShrinkImageFileOnUpload(filename, "medium", 440, 440, imgupload);
+                        ShrinkImageFileOnUpload(filename, "small", 240, 240, imgupload);
+
+                        fileNameResult = fileName + ext;
+                        m.ImageFileSmall = fileName + ext;
+                        m.ImageFileMedium = fileName + ext;
+
+                        if (this.BvinField.Value != string.Empty)
+                        {
+                            bool result = MTApp.ContactServices.Manufacturers.Update(m);
+                        }
+
+                        //StatusLabel.Text = File.Exists(filename) ? "Upload status: File uploaded!" : "Upload status: File not uploaded!";
+                        //this.MessageBox1.ShowError("Only .PNG, .JPG, .GIF file types are allowed for icon images");
+                    }
+                }
+                else
+                    this.MessageBox1.ShowError("Only .PNG, .JPG, .GIF file types are allowed for icon images");                
+            }
+
+            return fileNameResult;
+        }
+
+        public void ShrinkImageFileOnUpload(string originalFile, string outputDirectory, int maxWidth, int maxHeight, FileUpload file)
+        {
+            string pathOfOriginal = Path.GetDirectoryName(originalFile);
+            string pathOfOutput = Path.Combine(pathOfOriginal, outputDirectory);
+
+            if (!Directory.Exists(pathOfOutput))
+                Directory.CreateDirectory(pathOfOutput);
+
+            string outputFile = Path.Combine(pathOfOutput, Path.GetFileName(originalFile));
+            outputFile = outputFile.Replace("/", @"\");
+
+            // Create a bitmap of the content of the fileUpload control in memory
+            Bitmap originalBMP = new Bitmap(file.FileContent);
+
+            // Calculate the new image dimensions
+            int origWidth = originalBMP.Width;
+            int origHeight = originalBMP.Height;
+            int sngRatio = origWidth / origHeight;
+            int newWidth = maxWidth;
+            int newHeight = newWidth / (sngRatio == 0 ? 1 : sngRatio);
+
+            // Create a new bitmap which will hold the previous resized bitmap
+            Bitmap newBMP = new Bitmap(originalBMP, newWidth, newHeight);
+
+            // Create a graphic based on the new bitmap
+            Graphics oGraphics = Graphics.FromImage(newBMP);
+
+            // Set the properties for the new graphic file
+            oGraphics.SmoothingMode = SmoothingMode.AntiAlias; oGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            // Draw the new graphic based on the resized bitmap
+            oGraphics.DrawImage(originalBMP, 0, 0, newWidth, newHeight);
+
+            // Save the new graphic file to the server
+            newBMP.Save(outputFile);
+
+            // Once finished with the bitmap objects, we deallocate them.
+            originalBMP.Dispose();
+            newBMP.Dispose();
+            oGraphics.Dispose();
         }
 
     }
