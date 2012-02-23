@@ -1,5 +1,0 @@
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.GoogleCheckout\bin\Debug\MerchantTribe.GoogleCheckout.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.GoogleCheckout\bin\Debug\MerchantTribe.GoogleCheckout.pdb
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.GoogleCheckout\obj\Debug\ResolveAssemblyReference.cache
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.GoogleCheckout\obj\Debug\MerchantTribe.GoogleCheckout.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.GoogleCheckout\obj\Debug\MerchantTribe.GoogleCheckout.pdb
