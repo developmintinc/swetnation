@@ -71,7 +71,7 @@ table {
 /*-------------------------------------------------------*/
 body {
 	background:#FFF;
-	background-image:url(../images/background-patterns/body-bg-32.png);
+	/* background-image:url(../images/background-patterns/body-bg-32.png); */
 	color:#888;
 	font:12px/20px 'Droid Sans',arial,serif;
 	line-height:20px;

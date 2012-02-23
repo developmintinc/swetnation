@@ -524,6 +524,7 @@
     <Content Include="PrivacyPolicy.aspx" />
     <Content Include="product-page-item.html" />
     <Content Include="product-page.html" />
+    <Content Include="ProductDetail.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="registration.html" />
     <Content Include="ReturnPolicy.aspx" />
@@ -733,6 +734,13 @@
     </Compile>
     <Compile Include="Product.master.designer.cs">
       <DependentUpon>Product.master</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
