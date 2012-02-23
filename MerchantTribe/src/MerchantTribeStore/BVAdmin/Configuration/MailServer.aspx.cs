@@ -118,7 +118,7 @@ namespace MerchantTribeStore
 
             msg.ClearMessage();
 
-            System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage("testemail@merchanttribe.com", this.TestToField.Text.Trim());
+            System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage("testemail@swetnation.com", this.TestToField.Text.Trim());
             m.Subject = "Mail Server Test Message";
             m.Body = "Your mail server appears to be correctly configured!";
             m.IsBodyHtml = false;

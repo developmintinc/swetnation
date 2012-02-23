@@ -26,7 +26,7 @@ namespace MerchantTribeStore
             if (WebAppSettings.IsIndividualMode)
             {
                 // Simple pci check for default admin username
-                if (MTApp.CurrentRequestContext.CurrentAdministrator(MTApp).Email == "admin@merchanttribe.com") Response.Redirect("ChangeEmail.aspx?pci=1");
+                if (MTApp.CurrentRequestContext.CurrentAdministrator(MTApp).Email == "admin@swetnation.com") Response.Redirect("ChangeEmail.aspx?pci=1");
             }
 
             this.pnlGettingStarted.Visible = !MTApp.CurrentStore.Settings.HideGettingStarted;
@@ -59,7 +59,7 @@ namespace MerchantTribeStore
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("https://merchanttribe.com/news");
+            sb.Append("https://swetnation.com/news");
             sb.Append("?uid=" + HttpUtility.UrlEncode(MTApp.CurrentStore.StoreUniqueId(MTApp)));
             sb.Append("&host=" + HttpUtility.UrlEncode(MTApp.CurrentStore.RootUrl()));
             sb.Append("&ver=" + HttpUtility.UrlEncode(WebAppSettings.SystemVersionNumber));

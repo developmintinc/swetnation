@@ -27,7 +27,7 @@
 <table width="100%">
 <tr>
     <td align="left">
-        <a href="http://www.merchanttribe.com">I do NOT agree (Cancel Install)</a>
+        <a href="http://www.swetnation.com">I do NOT agree (Cancel Install)</a>
     </td>
     <td align="right"><input type="checkbox" id="chkagree" /><label for="chkagree">I agree to the end user license agreement. </label>
         <a id="lnkcontinue" href="WizardTheme.aspx" style="display:none"><asp:Image ID="imgContinue" runat="server" ImageUrl="~/BVAdmin/Images/Buttons/Continue.png"/></a>   
