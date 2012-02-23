@@ -1,2 +1,0 @@
-C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.SilverlightFileUpload
-Generated_Code\MerchantTribeStore.g.cs
