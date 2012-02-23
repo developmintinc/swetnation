@@ -45,6 +45,8 @@ namespace MerchantTribe.Commerce.Contacts
             model.Bvin = data.bvin;
             model.DisplayName = data.DisplayName;
             model.DropShipEmailTemplateId = data.DropShipEmailTemplateId;
+            model.ImageFileSmall = data.ImageFileSmall;
+            model.ImageFileMedium = data.ImageFileMedium;
             model.EmailAddress = data.EmailAddress;
             model.LastUpdated = data.LastUpdated;
             model.StoreId = data.StoreId;
@@ -56,6 +58,8 @@ namespace MerchantTribe.Commerce.Contacts
             data.bvin = model.Bvin;
             data.DisplayName = model.DisplayName;
             data.DropShipEmailTemplateId = model.DropShipEmailTemplateId;
+            data.ImageFileSmall = model.ImageFileSmall;
+            data.ImageFileMedium = model.ImageFileMedium;
             data.EmailAddress = model.EmailAddress;
             data.LastUpdated = model.LastUpdated;
             data.StoreId = model.StoreId;

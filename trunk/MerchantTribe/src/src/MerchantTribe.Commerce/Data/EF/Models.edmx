@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EfModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="EfModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="EfModelsStoreContainer">
           <EntitySet Name="ApiKeys" EntityType="EfModels.Store.ApiKeys" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="bv_SearchLexicon" EntityType="EfModels.Store.bv_SearchLexicon" store:Type="Tables" Schema="dbo" />
@@ -540,6 +540,8 @@
           <Property Name="DropShipEmailTemplateId" Type="varchar" Nullable="false" MaxLength="36" />
           <Property Name="LastUpdated" Type="datetime" Nullable="false" />
           <Property Name="StoreId" Type="bigint" Nullable="false" />
+          <Property Name="ImageFileSmall" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="ImageFileMedium" Type="nvarchar" Nullable="false" MaxLength="512" />
         </EntityType>
         <EntityType Name="bvc_Order">
           <Key>
@@ -2136,6 +2138,8 @@
           <Property Type="String" Name="DropShipEmailTemplateId" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="LastUpdated" Nullable="false" />
           <Property Type="Int64" Name="StoreId" Nullable="false" />
+          <Property Type="String" Name="ImageFileSmall" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Type="String" Name="ImageFileMedium" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="bvc_Policy">
           <Key>
@@ -3651,6 +3655,8 @@
           <EntitySetMapping Name="bvc_Manufacturer">
             <EntityTypeMapping TypeName="EfModels.bvc_Manufacturer">
               <MappingFragment StoreEntitySet="bvc_Manufacturer">
+                <ScalarProperty Name="ImageFileMedium" ColumnName="ImageFileMedium" />
+                <ScalarProperty Name="ImageFileSmall" ColumnName="ImageFileSmall" />
                 <ScalarProperty Name="StoreId" ColumnName="StoreId" />
                 <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
                 <ScalarProperty Name="DropShipEmailTemplateId" ColumnName="DropShipEmailTemplateId" />
@@ -4623,7 +4629,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Models" ZoomLevel="59" ShowGrid="true">
+      <Diagram Name="Models" ZoomLevel="47" ShowGrid="true">
         <EntityTypeShape EntityType="EfModels.bv_SearchLexicon" Width="1.875" PointX="7.75" PointY="14.375" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="EfModels.bv_SearchObjects" Width="1.875" PointX="7.375" PointY="17" Height="2.3648893229166106" />
         <EntityTypeShape EntityType="EfModels.bv_SearchObjectWords" Width="2" PointX="10.25" PointY="16.875" Height="2.1725878906249818" />

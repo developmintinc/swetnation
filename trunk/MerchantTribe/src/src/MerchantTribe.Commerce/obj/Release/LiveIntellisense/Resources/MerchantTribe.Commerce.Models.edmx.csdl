@@ -472,6 +472,8 @@
     <Property Type="String" Name="DropShipEmailTemplateId" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="LastUpdated" Nullable="false" />
     <Property Type="Int64" Name="StoreId" Nullable="false" />
+    <Property Type="String" Name="ImageFileSmall" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="String" Name="ImageFileMedium" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="bvc_Policy">
     <Key>

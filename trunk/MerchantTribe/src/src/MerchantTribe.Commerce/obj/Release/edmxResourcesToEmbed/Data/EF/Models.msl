@@ -232,6 +232,8 @@
     <EntitySetMapping Name="bvc_Manufacturer">
       <EntityTypeMapping TypeName="EfModels.bvc_Manufacturer">
         <MappingFragment StoreEntitySet="bvc_Manufacturer">
+          <ScalarProperty Name="ImageFileMedium" ColumnName="ImageFileMedium" />
+          <ScalarProperty Name="ImageFileSmall" ColumnName="ImageFileSmall" />
           <ScalarProperty Name="StoreId" ColumnName="StoreId" />
           <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
           <ScalarProperty Name="DropShipEmailTemplateId" ColumnName="DropShipEmailTemplateId" />
