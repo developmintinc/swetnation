@@ -13,6 +13,15 @@ namespace SwetNation.Web {
     public partial class Main {
         
         /// <summary>
+        /// MainHeadContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainHeadContent;
+        
+        /// <summary>
         /// MainBodyContent control.
         /// </summary>
         /// <remarks>

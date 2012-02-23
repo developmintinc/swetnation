@@ -6,9 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainBodyContent" runat="server">
     <asp:Repeater ID="rptProducts" EnableViewState="False" runat="server">
         <ItemTemplate>
-            <div class="one">
-		        <div class="horizontal-line">
-		        </div>
+            <div class="one">		        
 		        <div class="one-fourth">
 			        <div class="sidebar-image-holder">
 				        <div class="slide-down-gallery">
@@ -28,8 +26,10 @@
 			        <p>
 				        <%# Eval("LongDescription")%>
 			        </p>
-			        <a href="#" class="button cube grey small">View Product</a>
+			        <a href='ProductDetail.aspx?bvin=<%# Eval("Bvin") %>' class="button cube grey small">View Product</a>
 			        <a href="#" class="button cube green small">Buy This Item</a>
+		        </div>
+                <div class="horizontal-line">
 		        </div>
 	        </div>        
         </ItemTemplate>
