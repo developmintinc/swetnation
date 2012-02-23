@@ -1,8 +1,0 @@
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\bin\Debug\MerchantTribe.PaypalWebServices.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\bin\Debug\MerchantTribe.PaypalWebServices.pdb
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\bin\Debug\log4net.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\bin\Debug\paypal_base.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\bin\Debug\log4net.xml
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\obj\Debug\ResolveAssemblyReference.cache
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\obj\Debug\MerchantTribe.PaypalWebServices.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.PaypalWebServices\obj\Debug\MerchantTribe.PaypalWebServices.pdb

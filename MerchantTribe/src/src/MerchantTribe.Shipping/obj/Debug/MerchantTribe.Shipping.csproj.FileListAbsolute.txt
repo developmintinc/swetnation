@@ -1,9 +1,0 @@
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\bin\Debug\MerchantTribe.Shipping.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\bin\Debug\MerchantTribe.Shipping.pdb
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\bin\Debug\EcmaScript.NET.modified.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\bin\Debug\MerchantTribe.Web.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\bin\Debug\Yahoo.Yui.Compressor.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\bin\Debug\MerchantTribe.Web.pdb
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\obj\Debug\ResolveAssemblyReference.cache
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\obj\Debug\MerchantTribe.Shipping.dll
-C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping\obj\Debug\MerchantTribe.Shipping.pdb
