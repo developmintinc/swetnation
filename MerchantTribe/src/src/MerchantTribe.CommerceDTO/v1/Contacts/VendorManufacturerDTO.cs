@@ -24,6 +24,10 @@ namespace MerchantTribe.CommerceDTO.v1.Contacts
         [DataMember]
         public string DropShipEmailTemplateId { get; set; }
         [DataMember]
+        public string ImageFileSmall { get; set; }
+        [DataMember]
+        public string ImageFileMedium { get; set; }
+        [DataMember]
         public List<VendorManufacturerContactDTO> Contacts { get; set; }
         [DataMember]
         public VendorManufacturerTypeDTO ContactType { get; set; }
@@ -37,6 +41,8 @@ namespace MerchantTribe.CommerceDTO.v1.Contacts
             EmailAddress = string.Empty;
             Address = new AddressDTO();
             DropShipEmailTemplateId = string.Empty;
+            ImageFileSmall = string.Empty;
+            ImageFileMedium = string.Empty;
             Contacts = new List<VendorManufacturerContactDTO>();
             ContactType = VendorManufacturerTypeDTO.Vendor;
         }

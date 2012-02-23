@@ -9,3 +9,14 @@ C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bi
 C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\obj\Release\ResolveAssemblyReference.cache
 C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\obj\Release\MerchantTribe.Shipping.FedEx.dll
 C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\obj\Release\MerchantTribe.Shipping.FedEx.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\MerchantTribe.Shipping.FedEx.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\MerchantTribe.Shipping.FedEx.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\EcmaScript.NET.modified.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\MerchantTribe.Shipping.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\MerchantTribe.Web.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\Yahoo.Yui.Compressor.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\MerchantTribe.Shipping.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\bin\Release\MerchantTribe.Web.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\obj\Release\ResolveAssemblyReference.cache
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\obj\Release\MerchantTribe.Shipping.FedEx.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.FedEx\obj\Release\MerchantTribe.Shipping.FedEx.pdb

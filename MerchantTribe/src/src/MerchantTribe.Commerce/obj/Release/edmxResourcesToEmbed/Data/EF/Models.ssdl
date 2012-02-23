@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EfModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="EfModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="EfModelsStoreContainer">
     <EntitySet Name="ApiKeys" EntityType="EfModels.Store.ApiKeys" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="bv_SearchLexicon" EntityType="EfModels.Store.bv_SearchLexicon" store:Type="Tables" Schema="dbo" />
@@ -535,6 +535,8 @@
     <Property Name="DropShipEmailTemplateId" Type="varchar" Nullable="false" MaxLength="36" />
     <Property Name="LastUpdated" Type="datetime" Nullable="false" />
     <Property Name="StoreId" Type="bigint" Nullable="false" />
+    <Property Name="ImageFileSmall" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="ImageFileMedium" Type="nvarchar" Nullable="false" MaxLength="512" />
   </EntityType>
   <EntityType Name="bvc_Order">
     <Key>

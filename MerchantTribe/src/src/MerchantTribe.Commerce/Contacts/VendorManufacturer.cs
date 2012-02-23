@@ -18,6 +18,8 @@ namespace MerchantTribe.Commerce.Contacts
 		public string EmailAddress {get;set;}
 		public Contacts.Address Address {get;set;}
 		public string DropShipEmailTemplateId {get;set;}
+        public string ImageFileSmall { get; set; }
+        public string ImageFileMedium { get; set; }
         public List<VendorManufacturerContact> Contacts { get; set; }
         public VendorManufacturerType ContactType { get; set; }
 
@@ -29,6 +31,8 @@ namespace MerchantTribe.Commerce.Contacts
             this.EmailAddress = string.Empty;
             this.Address = new Contacts.Address();
             this.DropShipEmailTemplateId = string.Empty;
+            this.ImageFileSmall = string.Empty;
+            this.ImageFileMedium = string.Empty;
             this.Contacts = new List<VendorManufacturerContact>();
             this.ContactType = VendorManufacturerType.Unknown;
         }
@@ -76,6 +80,8 @@ namespace MerchantTribe.Commerce.Contacts
             this.EmailAddress = string.Empty;
             this.Address = new Contacts.Address();
             this.DropShipEmailTemplateId = string.Empty;
+            this.ImageFileSmall = string.Empty;
+            this.ImageFileMedium = string.Empty;
             this.Contacts = new List<VendorManufacturerContact>();
             this.ContactType = VendorManufacturerType.Unknown;
 
@@ -91,6 +97,8 @@ namespace MerchantTribe.Commerce.Contacts
             this.EmailAddress = dto.EmailAddress;
             this.Address.FromDto(dto.Address);
             this.DropShipEmailTemplateId = dto.DropShipEmailTemplateId;
+            this.ImageFileSmall = dto.ImageFileSmall;
+            this.ImageFileMedium = dto.ImageFileMedium;
             this.Contacts.Clear();
             foreach (VendorManufacturerContactDTO c in dto.Contacts)
             {

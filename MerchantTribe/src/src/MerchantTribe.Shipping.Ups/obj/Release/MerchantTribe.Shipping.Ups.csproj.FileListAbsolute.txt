@@ -11,3 +11,16 @@ C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\
 C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Release\ResolveAssemblyReference.cache
 C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Release\MerchantTribe.Shipping.Ups.dll
 C:\Dev\SS\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Release\MerchantTribe.Shipping.Ups.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\MerchantTribe.Shipping.Ups.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\MerchantTribe.Shipping.Ups.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\BVSoftware.Shipping.Ups.Keys.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\EcmaScript.NET.modified.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\MerchantTribe.Shipping.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\MerchantTribe.Web.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\Yahoo.Yui.Compressor.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\MerchantTribe.Shipping.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\BVSoftware.Shipping.Ups.Keys.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\bin\Release\MerchantTribe.Web.pdb
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Release\ResolveAssemblyReference.cache
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Release\MerchantTribe.Shipping.Ups.dll
+C:\Users\rmartin\Desktop\temp\SwetNation\trunk\MerchantTribe\src\src\MerchantTribe.Shipping.Ups\obj\Release\MerchantTribe.Shipping.Ups.pdb

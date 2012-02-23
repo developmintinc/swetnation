@@ -8911,7 +8911,9 @@ namespace MerchantTribe.Commerce.Data.EF
         /// <param name="dropShipEmailTemplateId">Initial value of the DropShipEmailTemplateId property.</param>
         /// <param name="lastUpdated">Initial value of the LastUpdated property.</param>
         /// <param name="storeId">Initial value of the StoreId property.</param>
-        public static bvc_Manufacturer Createbvc_Manufacturer(global::System.String bvin, global::System.String displayName, global::System.String emailAddress, global::System.String address, global::System.String dropShipEmailTemplateId, global::System.DateTime lastUpdated, global::System.Int64 storeId)
+        /// <param name="imageFileSmall">Initial value of the ImageFileSmall property.</param>
+        /// <param name="imageFileMedium">Initial value of the ImageFileMedium property.</param>
+        public static bvc_Manufacturer Createbvc_Manufacturer(global::System.String bvin, global::System.String displayName, global::System.String emailAddress, global::System.String address, global::System.String dropShipEmailTemplateId, global::System.DateTime lastUpdated, global::System.Int64 storeId, global::System.String imageFileSmall, global::System.String imageFileMedium)
         {
             bvc_Manufacturer bvc_Manufacturer = new bvc_Manufacturer();
             bvc_Manufacturer.bvin = bvin;
@@ -8921,6 +8923,8 @@ namespace MerchantTribe.Commerce.Data.EF
             bvc_Manufacturer.DropShipEmailTemplateId = dropShipEmailTemplateId;
             bvc_Manufacturer.LastUpdated = lastUpdated;
             bvc_Manufacturer.StoreId = storeId;
+            bvc_Manufacturer.ImageFileSmall = imageFileSmall;
+            bvc_Manufacturer.ImageFileMedium = imageFileMedium;
             return bvc_Manufacturer;
         }
 
@@ -9097,6 +9101,54 @@ namespace MerchantTribe.Commerce.Data.EF
         private global::System.Int64 _StoreId;
         partial void OnStoreIdChanging(global::System.Int64 value);
         partial void OnStoreIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ImageFileSmall
+        {
+            get
+            {
+                return _ImageFileSmall;
+            }
+            set
+            {
+                OnImageFileSmallChanging(value);
+                ReportPropertyChanging("ImageFileSmall");
+                _ImageFileSmall = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ImageFileSmall");
+                OnImageFileSmallChanged();
+            }
+        }
+        private global::System.String _ImageFileSmall;
+        partial void OnImageFileSmallChanging(global::System.String value);
+        partial void OnImageFileSmallChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ImageFileMedium
+        {
+            get
+            {
+                return _ImageFileMedium;
+            }
+            set
+            {
+                OnImageFileMediumChanging(value);
+                ReportPropertyChanging("ImageFileMedium");
+                _ImageFileMedium = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ImageFileMedium");
+                OnImageFileMediumChanged();
+            }
+        }
+        private global::System.String _ImageFileMedium;
+        partial void OnImageFileMediumChanging(global::System.String value);
+        partial void OnImageFileMediumChanged();
 
         #endregion
     

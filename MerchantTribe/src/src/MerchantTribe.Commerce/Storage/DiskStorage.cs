@@ -276,6 +276,7 @@ namespace MerchantTribe.Commerce.Storage
             }
             return u;
         }
+
         public static string ProductImageUrlSmall(long storeId, string productId, string productImage, bool isSecure)
         {
             //EventLog.LogEvent("Products_Edit.cs", "ProductImageUrlSmall : Enter", EventLogSeverity.Debug);
@@ -301,6 +302,37 @@ namespace MerchantTribe.Commerce.Storage
                 u = u.Replace("/shop", "");
 
             if (productImage.Trim().Length < 1)
+            {
+                u = "/Content/admin/images/MissingImage.png";
+            }
+
+            return u;
+        }
+
+        public static string ManufacturerImageUrlSmall(long storeId, string manufacturerId, string manufacturerImage, bool isSecure)
+        {
+            // return outside image references without rewriting
+            if (manufacturerImage.StartsWith("http"))
+            {
+                return manufacturerImage;
+            }
+
+            string u = BaseImageUrl().ToString();
+            if (isSecure)
+            {
+                u = u.Replace("http://", "https://");
+            }
+
+            u += storeId.ToString() + "/manufacturers/" + manufacturerId + "/small/";
+            u += manufacturerImage;
+
+            /////////////////////////////////////////////////////////////////////////////
+            // TECHNICAL DEBT - THIS SHOULD BE CHECKED ON THE PRODUCTION SERVER
+            /////////////////////////////////////////////////////////////////////////////
+            if (WebAppSettings.IsDebugMode)
+                u = u.Replace("/shop", "");
+
+            if (manufacturerImage.Trim().Length < 1)
             {
                 u = "/Content/admin/images/MissingImage.png";
             }
