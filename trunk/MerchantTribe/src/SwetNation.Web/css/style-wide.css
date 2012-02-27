@@ -1145,7 +1145,7 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	background:-ms-linear-gradient(top,#bc1e04 0%,#b01a04 44%,#a71603 100%);
 	background:linear-gradient(top,#bc1e04 0%,#b01a04 44%,#a71603 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc1e04',endColorstr='#a71603',GradientType=0 );
-	margin-bottom:30px;
+	/* margin-bottom:30px; */
 	float:left;
 }
 .inner-pages h3 {

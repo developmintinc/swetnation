@@ -1,4 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Product.master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="SwetNation.Web.ProductDetail" %>
+<asp:Content ID="ContentHead" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .fullprice { text-decoration: line-through !important; font-weight: bold;}
+    </style>
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainBodyContent" runat="server">
@@ -18,8 +23,11 @@
 			</div>
 		</div>
 		<div class="inner-content last">
-			<h4><asp:Literal ID="litProductNameContent" runat="server"></asp:Literal> - <asp:Literal ID="litListPriceContent" runat="server"></asp:Literal></h4>
+			<h4><asp:Literal ID="litProductNameContent" runat="server"></asp:Literal> <span style="color:Maroon; font-weight: bold;;"><asp:Literal ID="litSalePriceContent" runat="server"></asp:Literal></span></h4>
 			<p>
+                Retail Price <span class="fullprice"><asp:Literal ID="litListPriceContent" runat="server"></asp:Literal></span>
+            </p>
+            <p>
 				<asp:Literal ID="litLongDescription" runat="server"></asp:Literal>
 			</p>
 			<a href="#" class="button cube green small">Buy This Item</a>

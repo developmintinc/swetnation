@@ -14,27 +14,44 @@ namespace SwetNation.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetProducts();
+            
+            if (!Page.IsPostBack)
+            {
+                GetProducts();
+                BindCategoryDropDown();
+            }
+        }
+
+        private void BindCategoryDropDown()
+        {
+            List<MerchantTribe.Commerce.Catalog.CategorySnapshot> categories = new List<CategorySnapshot>();
+            categories = MTApp.CatalogServices.Categories.FindAll();
+            ddlCategories.DataSource = categories;
+            ddlCategories.DataTextField = "Name";
+            ddlCategories.DataValueField = "bvin";
+            ddlCategories.DataBind();
         }
 
         private void GetProducts()
         {
+            ProductSearchCriteria productSearchCriteria = new ProductSearchCriteria();
+            productSearchCriteria.Status = ProductStatus.Active;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["ManufacturerId"]))
+                productSearchCriteria.ManufacturerId += Request.QueryString["ManufacturerId"];
+
+            if (ddlCategories.SelectedValue != "")
+                productSearchCriteria.CategoryId = ddlCategories.SelectedValue;
+
             List<MerchantTribe.Commerce.Catalog.Product> resultItems = new List<MerchantTribe.Commerce.Catalog.Product>();
-            resultItems = MTApp.CatalogServices.Products.FindAllPaged(1, 10);
+            resultItems = MTApp.CatalogServices.Products.FindByCriteria(productSearchCriteria);
             rptProducts.DataSource = resultItems;
             rptProducts.DataBind();
-
-            /*
-            foreach (MerchantTribe.Commerce.Catalog.Product product in resultItems)
-            {
-                string id = product.Bvin;
-                string productName = product.ProductName;
-                string shortDesc = product.ShortDescription;
-                string longDesc = product.LongDescription;
-                decimal price = product.ListPrice;
-                string imageUrl = product.ImageFileSmall;
-            }
-            */
         }
+
+        protected void ddlCategories_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            GetProducts();
+        }  
     }
 }

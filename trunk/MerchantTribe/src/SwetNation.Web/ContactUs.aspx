@@ -5,20 +5,21 @@
     <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Contact Us" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftBodyContent" runat="server">
-    <span class="colored">SIMPLE CREATIVE TEMPLATE</span>
+    <uc:LeftSidebarNav ID="ucLeftSidebarNav" runat="server" ContactUsSelected="current" />
+    <br />
+    <h4>CONTACT US</h4>
 	<p>
-		Arripuit plorabis filiam vel regio hinc indica enim materiam. Crede respiciens forsitan Apollonius ut libertatem accipies. Addicitur quid populi civitatis ne videret famis perisse naufrago in lucem in modo genito in lucem exitum atque album Apolloni sed.
+        Swet Nation LLC<br />
+        49 Lincoln Blvd.<br />
+        Abington, MA 02351<br />
+        support@swetnation.com<br />
+        888-888-8888<br />
 	</p>
-	<h4>Category</h4>
-	<uc:LeftSidebarNav ID="ucLeftSidebarNav" runat="server" ContactUsSelected="current" />
+	
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">
-	<div class="contact-map-holder">
-		<iframe width="700" height="165" src="http://maps.google.com/maps?f=d&amp;hl=en&amp;geocode=&amp;saddr=Perth&amp;daddr=-12.554564,130.869141+to:Bishop+Dr+%40-27.371780,+153.185980+to:Wanganderry+Rd+%40-34.310430,+150.262350+to:Unknown+road+%40-37.993930,+144.580460+to:Fremantle&amp;mrcr=0,1&amp;mrsp=1&amp;sz=4&amp;mra=dme&amp;sll=-24.20689,136.582031&amp;sspn=47.972215,66.708984&amp;ie=UTF8&amp;om=1&amp;s=AARTsJrOrTNCi3R5hglWCxsahY3qKUX7Ig&amp;ll=-24.20689,136.582031&amp;spn=46.989399,52.734375&amp;z=3&amp;output=embed">
-		</iframe>
-	</div>
 	<p>
-			Arripuit plorabis filiam vel regio hinc indica enim materiam. Crede respiciens forsitan Apollonius ut libertatem accipies. Addicitur quid populi civitatis ne videret famis perisse naufrago.
+		Questions? Comments? Suggestions? Want to request a brand?
 	</p>
 	<div id="contact-form">
 		<div class="one-third-big">

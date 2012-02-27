@@ -5,19 +5,214 @@
     <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Private Policy" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftBodyContent" runat="server">
-	<p>
-		Perquiramus atque ut casus tui ex quae ad te ad suis caelo dicit hoc. Tempore percussus ait est amet consensit cellula rei civibus in modo ad nomine. Navibus celebrent duo dominus Lampsacenus tu bestias terras navis cupit quae vero quo. A his domino vias multis miraculum manibus individuationis quae ad suis ut diem obiecti invidunt cum magna duobus auro purpurea vobis.Laetare in rei exultant deo adoptavit cum suam ut a his carpens introivit gubernum defunctam sed esse haec. Amen ad nomine sed eu fides piissimi sibi afflictione magnam miserum Quamdiu. His auditorio iubet feci qui non potentiae amore excitat si quod una civitatis intelligitur sicut consideraret celerius in. Tyro sed eu fides Concordi fabricata ait est in, scelerata nunc eius est cum magna anima est in. Christo domina in fuerat est se ad per animum pares terris sidera clita.
-	</p>
-	<p>
-		Perquiramus atque ut casus tui ex quae ad te ad suis caelo dicit hoc. Tempore percussus ait est amet consensit cellula rei civibus in modo ad nomine.Cupis ei quoque non coepit dies suscepit pavimento scelesta nunc eam eos. V signa in fuerat eum istam provoces est cum. Mariae maximas hanc cuius ait mea Christianis aedificatur ergo adseris de ascendit in. Dionysiade conspectu aliqua abstrahit orare ecce habitu vides patrem in deinde vero diam omni completum aliquod. Tyrio alius campo iactavitque per sanctus primum intus vero diam dominum sit audivit ergo Apollonius non dum. Rogo cum unde beata inter sacris virginitas dei gubernatorem dixit hoc ait Cumque materia amicis filia omnes civitatem Tharsi nuntiatur quae. Quique non ait mea vero non coepit amatrix tolle. Is hendrerit ad suis Tyrium coniugem in modo genito in modo. Contremuit in lucem genero quod ait in modo invenit iuvenem in lucem in lucem concitaverunt in. Audite deo hanc enim formam speciosam.. Navibus celebrent duo dominus Lampsacenus tu bestias terras navis cupit quae vero quo. A his domino vias multis miraculum manibus individuationis quae ad suis ut diem obiecti invidunt cum magna duobus auro purpurea vobis.Redde pariter commendare Apollonius in lucem in. Abstulit meis commendet' permansit in fuerat eum est in deinde duas particularis. Ad quia quod una civitatis civium eum istam provoces, alia se sed dominum oculos capillos apto tempus si. Longa ferri Lorem post multi ingenio, ait est amet coram me in. Rei civibus corporis sustinuit virginis piratae a patriam ei!Deducitur potest in fuerat eum istam definisti quis nudus iuvenem patre ab Archistratis continuo iuxta lyram in. O Neptuno ait est cum obiectum aliquip ipsa hospes, ad quia iuvenis ut diem finito convocatis secessit civitatis in. Tyrus pro suam non solutionem ascendens piratae suppetit sibi aperit honestate doctrinam in modo compungi mulierem volutpat cum magna. Mansione manere praeparabant dicam deus nec appellarer in rei exultant deo, multa donatoris prima luctatur in fuerat accidens quam crucis in. Iuvenis omnia bono figit ad per dicis, viscera tres potest ei quoque non coepit.Vini in rei exultant deo adiuves finem, quattuordecim anulum ad quia quod non dum. Ratio omnes deo hanc nec est in rei completo litus sua coniuge sancta quid nobis intuens manus substantia. Discumbere acies regina ostendebat te finis laeta quis casus inferioribus civitatis civium takimata cum. Mutilena aliquam habet clementiae venit mihi quidditas. Habet vero cum magna duobus consolabor potest flens diffusa sedentem ad per accipere sibi afflictione magnam clamantem in.
-	</p>
-	<div class="inner-content">
-		<iframe src="http://player.vimeo.com/video/25573104?title=0&amp;byline=0&amp;portrait=0" width="710" height="250">
-		</iframe>
-	</div>
-	<p>
-		Perquiramus atque ut casus tui ex quae ad te ad suis caelo dicit hoc. Tempore percussus ait est amet consensit cellula rei civibus in modo ad nomine. Navibus celebrent duo dominus Lampsacenus tu bestias terras navis cupit quae vero quo. A his domino vias multis miraculum manibus individuationis quae ad suis ut diem obiecti invidunt cum magna duobus auro purpurea vobis.Lacrimis ut a patriam rex. Dionysiadi rex in deinde cepit roseo. Tharsi quod non coepit amatrix tolle animo resignasset iubet contremuit in lucem exitum vivit! Latere ac iuro es audito doctrinis paruit unum congue nomen in rei finibus veteres hoc puella sed. Occurrit hoc Apollonius in deinde vero cum, suave canere se vero diam nostra paupercula possunt autem est Apollonius.Musis nihilominus proposuisti enim me in fuerat. Dicis me testatur in lucem. Piscem bona delata iuvenis eum in lucem exempli paupers coniunx minus huius beneficium peregrina fletus castitatem itaque die. Pedes Dianae autem quod non dum est amet coram posset diam '. Quicumque inimica meam celaveritis ac optime Verena animo suscipiens secrete fugio naves.Iterum non potentiae quem acceperat utique dolorem in modo cavendum es. Actum in fuerat construeret in lucem in deinde vero quo contra piissimi deo hanc. Dianae cui sed quod una non solutionem invenerunt aspectu o sanguine rursum reliquit dicens unam si. Spero mihi cum suam in fuerat est cum autem illud huius. Tyrus pro suam ut diem finito convocatis secessit civitatis ne videret quo alacres ad suis ut libertatem adhuc.Accidens quam aniculae morsque nutricem rex cum suam non dum. Opto cum obiectum aliquip ipsa mihi servitute coniunx efficerer nuptiarum cui ubi ait est amet amet Cur meae. Exposuit in deinde duas recitare ex civibus laude clamaverunt donavit hoc ambulare est se est in. Nulla certantes non ait Cumque persequatur sic. Supervenit obiecti invidunt cum obiectum dixit!
-	</p>
+	<br />
+    <h1>PRIVACY POLICY</h1>
+
+    <p>
+        Swet Nation is committed to protecting the privacy of visitors to this site
+        (the "Site"). At Swet Nation, we want you to have an enjoyable shopping
+        experience. And while it is necessary for us to collect certain personal
+        information, we respect and protect your right to privacy as set forth in this
+        Privacy Policy. This Privacy Policy applies to the Site. This Privacy Policy
+        does not apply to other web sites to which we link. You agree that your use
+        of the Site signifies your assent to this Privacy Policy. If you do not agree
+        with this Privacy Policy, please do not use the Site.
+    </p>
+    
+    <strong>Information Collected</strong>     
+    <p>
+        In order to access this Site, you must first complete the registration
+        process. During the registration process, we collect personal information
+        such as your name and email address. Once you complete and submit
+        your registration, you have opted in to receive email communication from
+        us.
+    </p>
+
+    <p>
+    We also collect personal information when you choose to use certain
+    other features of the Site, such as making purchases or electing to receive
+    text messages about upcoming sales, promotions or events. When
+    </p>
+
+    <p>
+    you choose to use these additional features, we require you to provide
+    additional personal information such as your phone number, billing and
+    shipping addresses and credit card information, and we may request
+    additional personal information such as your shopping preferences and
+    demographics.
+    </p>
+
+    <p>
+    In addition, through the Site, we automatically gather certain information
+    about the use of the Site, such as how frequently certain areas of the Site
+    are visited, including through the use of cookies, web beacons and other
+    technologies. Most browsers can be set to prevent cookies or to notify you
+    when one is being placed. However, cookies are necessary to access the
+    Site.
+    </p>
+
+    <p>
+    The Site also makes use of a technology designed to enhance your
+    browsing experience and to provide aggregate non-personally identifiable
+    information about the use of the Site to us.
+    </p>
+
+    <p>
+    If you choose to invite an individual to join Swet Nation, you will need
+    to provide his/her name and email address. Swet Nation stores this
+    information to confirm qualifying orders attributable to your account and to
+    track the results of the invitation referrals.
+    </p>
+    
+    <strong>How We Use Your Information</strong>
+         <p>     We will not share or disclose your information to anyone except as
+    described in this Privacy Policy.
+    </p>
+
+    <p>
+    We use personally identifiable information in order to give you a more
+    enjoyable, convenient shopping experience and to help us identify and/
+    or provide information, products or services that may be of interest to you.
+    We use your personally identifiable information to support and enhance
+    your use of the Site and its features, including without limitation: fulfilling
+    your order; providing customer service; tracking email invitations you send;
+    and otherwise supporting your use of the Site and its features. We may
+    also track your past purchases to provide you with a personalized profile of
+    </p>
+
+    <p>
+    your shopping history. In addition, we may notify you about new services
+    or special promotional programs, or send you offers or information.
+    </p>
+
+    <p>
+    We may permit certain trusted third parties to access your information in
+    connection with their performance of services to maintain and operate
+    the Site and certain features on the Site. For example, we may use third
+    parties to host the Site; operate various features available on the Site;
+    send emails; analyze data; provide search results and links and assist in
+    fulfilling your orders.
+    </p>
+
+    <p>
+    From time to time, we may share your personally identifiable information
+    in connection with strategic relationships. Some of these strategic
+    relationships may include operating a co-branded website or web pages
+    with a strategic partner. You should be aware that these co-branded sites
+    may collect different or additional information. Additionally, we may provide
+    links on our Site to websites controlled by third parties. We have no control
+    over these websites and our privacy policy does not apply to these third
+    party websites. Please consult the privacy policy of the website you are
+    visiting.
+    </p>
+
+    <p>
+    Also, we may share personally identifiable or other information with our
+    parent, subsidiaries, divisions, and affiliates. Swet Nation is a division of
+    Swet Nation LLC.
+    </p>
+
+    <p>
+    We may transfer personally identifiable information as an asset in
+    connection with a proposed or actual merger or sale (including any
+    transfers made as part of an insolvency or bankruptcy proceeding)
+    involving all or part of our business or as part of a corporate
+    reorganization, stock sale or other change in control.
+    </p>
+
+    <p>
+    We reserve the right to disclose information in order to comply with a
+    subpoena, court order, administrative or governmental order, or any
+    other requirement of law, or when we, in our sole discretion, believe it is
+    necessary in order to protect our rights or the rights of others, to prevent
+    harm to persons or property, to fight fraud and credit risk reduction.
+    </p>
+
+    <p>
+    If you use a bulletin board, chat room or any other publicly accessible
+    area of the Site, you should be aware that any personally identifiable
+    information you submit there can be read, collected or used by any person
+    for any purpose. We are not responsible for the personally identifiable or
+    other information you choose to submit in these forums.
+    </p>
+
+    <p>
+    We use non-personally identifiable information in the aggregate, so that
+    we can improve the Site and for business and administrative purposes. We
+    may also use or share with third parties for any purpose aggregated data
+    that contains no personally identifiable information.
+    </p>
+    
+    <strong>How We Protect Your Information</strong> 
+    <p>
+    We are committed to protecting the information we receive from you. We
+    follow reasonable technical and management practices to help protect the
+    confidentiality, security and integrity of data stored on our system. While
+    no computer system is completely secure, we believe the measures we
+    have implemented reduce the likelihood of security problems to a level
+    appropriate to the type of data involved.
+    </p>
+
+    <p>
+    The Site encrypts your credit card number and other personal information
+    using secure socket layer (SSL) technology to provide for the secure
+    transmission of the information from your PC to our servers. In addition,
+    only those employees and third parties who need access to your
+    information in order to perform their duties are allowed such access.
+    </p>
+
+    <strong>Accessing and Updating Your Personal Information and Preferences</strong>
+
+    <p>     If you are a registered user, you may access and update your registration
+    information and your preferences to receive email or other communications
+    from us by sending an email to info@swetnation.com. Please note that
+    your friends and contacts may still choose to send email invitations to you.
+    Any user who receives an email invitation to join the Site may choose
+    not to receive such invitations in the future by following the instructions in
+    the email invitations and, in addition, if you are a member, you may also
+    </p>
+
+    <p>
+    choose not to receive such invitations by changing your preferences as
+    indicated above. We will take commercially reasonable steps to implement
+    your opt-out requests promptly, but you may still receive communications
+    from us for up to ten business days as we process your request.
+    </p>
+
+    <p>
+    While we make efforts to accommodate requests to restrict our use of your
+    information, we reserve the right to delete all or any portion of customer
+    information if we are not able to reasonably accommodate a requested
+    restriction.
+    </p>
+
+    <strong>Children's Privacy and Parental Controls</strong> 
+    <p>
+    We do not solicit any personal information from children. If you are not 18
+    or older, you are not authorized to use the Site. Parents should be aware
+    that there are parental control tools available online that you can use to
+    prevent your children from submitting information online without parental
+    permission or from accessing material that is harmful to minors.
+    </p>
+
+    <strong>Privacy Policy Changes</strong>
+
+    <p>
+    If we decide to change our Privacy Policy for the Site, we will post the
+    revised Privacy Policy here so that you will always know what information
+    we gather, how we might use that information and whether we may
+    disclose it to anyone. Your continued use of the Site indicates your assent
+    to the Privacy Policy as posted.
+    </p>
+
+    <p>
+    If you have any questions about this Privacy Policy, please contact us at:
+    </p>
+
+    <p>
+        Swet Nation<br />         49 Lincoln Blvd, Abington MA 02351 888-888-8888<br />
+        info@swetnation.com.<br />
+    </p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">
     <uc:RightSidebarNav ID="ucLeftSidebarNav" runat="server" PrivatePolicySelected="current" />

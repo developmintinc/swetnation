@@ -74,6 +74,7 @@
     <Content Include="blog-post.html" />
     <Content Include="blog.html" />
     <Content Include="buttons.html" />
+    <Content Include="Cart.aspx" />
     <Content Include="ClientTestimonials.aspx" />
     <Content Include="columns.html" />
     <Content Include="contact.html" />
@@ -556,6 +557,16 @@
     </Compile>
     <Compile Include="BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientTestimonials.aspx.cs">
       <DependentUpon>ClientTestimonials.aspx</DependentUpon>

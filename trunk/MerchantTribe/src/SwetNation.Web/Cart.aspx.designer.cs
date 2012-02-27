@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SwetNation.Web.controls {
+namespace SwetNation.Web {
     
     
-    public partial class PrimaryNav {
+    public partial class Cart {
         
         /// <summary>
-        /// litProductNavigation control.
+        /// cartactioncheckout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litProductNavigation;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cartactioncheckout;
     }
 }
