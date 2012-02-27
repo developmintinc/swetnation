@@ -11,54 +11,58 @@
 	<div class="one-fourth">
 		<!-- COLUMN STARTS-->
 		<img src="images/icons/content/idea.png" alt=" " class="img-align-left" width="66" height="66"/>
-		<h4>Our Vision</h4>
+		<h4>Who We Are</h4>
 		<p>
-		    Lorem ipsum dolor sit amet, tollite fit manibus individuationis omnibus civitas ad quia. Quaere allocutus ait regem ut sua etiam quantitas non solutionem invenisti.
+			Swet Nation was created by sporting enthusiasts for sporting enthusiasts. 
+        </p>
+        <p>
+            We understand the importance of staying healthy, fit and active while also realizing that doing 
+            so can be extremely costly.
+        </p>
+        <p>
+            Our mission is to offer the best solution for sports enthusiasts, athletes and the every day person to
+            purchase high quality athletic products at the lowest possible prices.
 		</p>
-		<br/>
-		<ul class="round-list">
-			<li>Site Redesign</li>
-			<li>Custom CMS Developmet</li>
-			<li>Custom Booking System</li>
-			<li>SEO Optimization</li>
-			<li>Our Web Hosting Solution</li>
-		</ul>
+        <p>
+            The bottom line: to provide a no SWET shopping experience.
+        </p>
 	</div>
 	<!-- COLUMN ENDS-->
 	<div class="one-fourth">
 		<!-- COLUMN STARTS-->
 		<img src="images/icons/content/check-box-big.png" alt=" " class="img-align-left" width="66" height="66"/>
-		<h4>Our Team</h4>
+		<h4>What We Do</h4>
 		<p>
-				Lorem ipsum dolor sit amet, tollite fit manibus individuationis omnibus civitas ad quia. Quaere allocutus ait regem ut sua etiam quantitas non solutionem invenisti.
+		    On a weekly basis, we host sales for exclusive sporting and outdoor brands offering discounts of up to
+            70% below retail.  
 		</p>
-		<br/>
-		<ul class="round-list">
-			<li>Site Redesign</li>
-			<li>Custom CMS Developmet</li>
-			<li>Custom Booking System</li>
-			<li>SEO Optimization</li>
-			<li>Our Web Hosting Solution</li>
-		</ul>
+        <p>
+            Sales are timed and will last from 72 hours up to 1 week long.
+        </p>
+        <p>
+            Only our members will have exclusive access to these sales. Request your FREE membership today!
+        </p>
+        <p>
+            Items are limited and sold on a first come first serve basis, so be sure to log on early before items are
+            sold out.
+        </p>
 	</div>
 	<!-- COLUMN ENDS-->
 	<div class="one-fourth last">
 		<!-- COLUMN STARTS-->
 		<img src="images/icons/content/display.png" alt=" " class="img-align-left" width="66" height="66"/>
-		<h4>How to Apply?</h4>
+		<h4>Be A Member</h4>
 		<p>
-				Lorem ipsum dolor sit amet, tollite fit manibus individuationis omnibus civitas ad quia. Quaere allocutus ait regem ut sua etiam quantitas non solutionem invenisti.
-		</p>
-		<br/>
-		<ul class="round-list">
-			<li>Site Redesign</li>
-			<li>Custom CMS Developmet</li>
-			<li>Custom Booking System</li>
-			<li>SEO Optimization</li>
-			<li>Our Web Hosting Solution</li>
-		</ul>
+            Becoming a Swet Nation member is easy. Join today for FREE by filling out the online form: Name,
+            Email, Gender and Password.
+        </p>
+        <p>
+            You can also invite friends by clicking the invite button and sending out e-invites or through posting your
+            personal URL link on Facebook, Twitter, etc. 
+        </p>
+        <p>
+            Once your referral’s first order has shipped we will thank you with a $10 credit – there is NO LIMIT to 
+            the amount of credits you can receive!
+        </p>
 	</div>
-	<p>
-		Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.
-	</p>
 </asp:Content>

@@ -19,17 +19,23 @@ namespace SwetNation.Web
 
         private void GetProduct()
         {
-            string bvin = Request.QueryString["bvin"];
-            MerchantTribe.Commerce.Catalog.Product resultItem = new MerchantTribe.Commerce.Catalog.Product();
-            resultItem = MTApp.CatalogServices.Products.Find(bvin);
-            if (resultItem != null)
+            if (!String.IsNullOrEmpty(Request.QueryString["bvin"]))
             {
-                litListPriceContent.Text = String.Format("{0:C}", resultItem.ListPrice);
-                litListPriceSlider.Text = String.Format("{0:C}", resultItem.ListPrice);
-                litLongDescription.Text = resultItem.LongDescription;
-                litProductNameContent.Text = resultItem.ProductName;
-                litProductNameSlider.Text = resultItem.ProductName;
-                imgProductImageSmall.ImageUrl = "https://swetnation.com/shop/Images/sites/1/products/" + resultItem.Bvin + "/" + resultItem.ImageFileSmall;
+                string bvin = Request.QueryString["bvin"];
+                MerchantTribe.Commerce.Catalog.Product resultItem = new MerchantTribe.Commerce.Catalog.Product();
+                resultItem = MTApp.CatalogServices.Products.Find(bvin);
+                if (resultItem != null)
+                {
+                    string listPrice = String.Format("{0:C}", resultItem.ListPrice);
+                    string salePrice = String.Format("{0:C}", resultItem.SitePrice);
+                    litListPriceContent.Text = listPrice;
+                    litSalePriceContent.Text = salePrice;
+                    litListPriceSlider.Text = salePrice;
+                    litLongDescription.Text = resultItem.LongDescription;
+                    litProductNameContent.Text = resultItem.ProductName;
+                    litProductNameSlider.Text = resultItem.ProductName;
+                    imgProductImageSmall.ImageUrl = "https://swetnation.com/shop/Images/sites/1/products/" + resultItem.Bvin + "/" + resultItem.ImageFileSmall;
+                }
             }
         }
     }

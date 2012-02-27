@@ -49,6 +49,15 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.Literal litProductNameContent;
         
         /// <summary>
+        /// litSalePriceContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litSalePriceContent;
+        
+        /// <summary>
         /// litListPriceContent control.
         /// </summary>
         /// <remarks>

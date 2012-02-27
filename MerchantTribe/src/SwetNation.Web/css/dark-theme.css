@@ -877,7 +877,7 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	width:100%;
 	margin:30px auto;
 	float:left;
-	border-top:1px solid #efefef;
+	border-top:1px solid silver;
 }
 .fancy-divider {
 	width:960px;
@@ -1137,7 +1137,7 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	background:-ms-linear-gradient(top,#282828 0%,#232323 44%,#191919 100%);
 	background:linear-gradient(top,#282828 0%,#232323 44%,#191919 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#282828',endColorstr='#191919',GradientType=0 );
-	margin-bottom:30px;
+	margin-bottom:25px;
 	float:left;
 }
 .inner-pages h3 {
@@ -3650,17 +3650,27 @@ ul.blog-category li {
 /*-------------------------------------------------------*/
 ul#breadcrumbs {
 	float:left;
-	text-transform:capitalize;
-	color:#808080;
+	text-transform: uppercase;
+	color:#000;
 	list-style:none;
-	margin-top:-20px;
 	margin-bottm:20px;
+	background-color: #9ED452;
+	background-color: #E64135;
+	background-color: lemonchiffon;
+	background-color: silver;
+	width:948px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding:5px;
+	font-weight: 100;
 }
 ul#breadcrumbs li {
 	float:left;
 }
 ul#breadcrumbs li a {
-	color:#808080;
+	color:000;
 	text-decoration:none;
 }
 ul#breadcrumbs li a:hover {
@@ -4060,27 +4070,13 @@ ul.list-box li:hover {
 .text-price.red {
 	border-bottom:1px solid #ad0303;
 	background-color:#d81f27;
-	background-image:linear-gradient(top,#d81f27,#bf0101);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d81f27',endColorstr='#bf0101');
-	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d81f27',endColorstr='#bf0101');
-	background:-ms-linear-gradient(top,#d81f27,#bf0101);
-	background:-moz-linear-gradient(top,#d81f27,#bf0101);
-	background:-o-linear-gradient(top,#d81f27,#bf0101);
-	background:-webkit-linear-gradient(top,#d81f27,#bf0101);
-	background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#d81f27),color-stop(1,#bf0101));
+	background-image: linear-gradient(top,#d81f27,#bf0101);
 }
 .box-header.red,.box-footer.red {
 	border-bottom:1px solid #a30101;
 	border-top:1px solid #bf0101;
 	background-color:#d81f27;
-	background-image:linear-gradient(top,#d81f27,#bf0101);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d81f27',endColorstr='#bf0101');
-	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d81f27',endColorstr='#bf0101');
-	background:-ms-linear-gradient(top,#d81f27,#bf0101);
-	background:-moz-linear-gradient(top,#d81f27,#bf0101);
-	background:-o-linear-gradient(top,#d81f27,#bf0101);
-	background:-webkit-linear-gradient(top,#d81f27,#bf0101);
-	background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#d81f27),color-stop(1,#bf0101));
+	background-image: linear-gradient(top,#d81f27,#bf0101);
 }
 .pricing-box-container {
 	background:#FFF;

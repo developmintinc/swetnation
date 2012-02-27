@@ -35,12 +35,12 @@
 
                     <div class="record">
                         <div class="recordimage">
-                            <a href='ProductDetail.aspx?Bvin=<%# Eval("Bvin") %>'>
+                            <a href='Products.aspx?ManufacturerId=<%# Eval("Bvin") %>'>
                                 <img src='https://swetnation.com/shop/images/sites/1/manufacturers/<%# Eval("Bvin") %>/small/<%# Eval("ImageFileSmall") %>' border="0" alt="<%# Eval("DisplayName") %>" />
                             </a>
                         </div>
                         <div class="recordname">
-                            <a href='ProductDetail.aspx?Bvin=<%# Eval("Bvin") %>'><%# Eval("DisplayName") %></a>
+                            <a href='Products.aspx?Bvin=<%# Eval("Bvin") %>'><%# Eval("DisplayName") %></a>
                         </div>
                     </div>
                 </ItemTemplate>
