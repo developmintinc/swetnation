@@ -123,6 +123,12 @@
     <Content Include="FAQ.aspx" />
     <Content Include="faq.html" />
     <Content Include="forms.html" />
+    <Content Include="fullwidth-sidebar.html" />
+    <Content Include="fullwidth.html" />
+    <Content Include="gallery-1.html" />
+    <Content Include="gallery-2.html" />
+    <Content Include="gallery-3.html" />
+    <Content Include="gallery-4.html" />
     <Content Include="GiftCard.aspx" />
     <Content Include="images\3d-slider\slider-960-01.jpg" />
     <Content Include="images\3d-slider\slider-960-02.jpg" />
@@ -438,6 +444,7 @@
     <Content Include="images\products\portfolio-img-03.jpg" />
     <Content Include="images\products\portfolio-img-04.jpg" />
     <Content Include="images\products\portfolio-img-05.jpg" />
+    <Content Include="images\python-logo.png" />
     <Content Include="images\quote.png" />
     <Content Include="images\rays.png" />
     <Content Include="images\roundabout\pic1.jpg" />
@@ -448,6 +455,7 @@
     <Content Include="images\roundabout\pic6.jpg" />
     <Content Include="images\roundabout\pic7.jpg" />
     <Content Include="images\search-bg.png" />
+    <Content Include="images\search.png" />
     <Content Include="images\sidebar-img-holder.png" />
     <Content Include="images\simple-nav-arrow.png" />
     <Content Include="images\slider-bg.png" />
