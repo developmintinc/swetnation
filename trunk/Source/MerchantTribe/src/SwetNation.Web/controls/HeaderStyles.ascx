@@ -3,3 +3,4 @@
 <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="css/style-wide.css" type="text/css" media="screen"/>
 <link href="css/dark-theme.css" rel="stylesheet" type="text/css"/>
+<link href="css/custom.css" rel="stylesheet" type="text/css" />

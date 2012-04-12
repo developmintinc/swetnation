@@ -48,6 +48,7 @@ namespace MerchantTribe.Commerce.Contacts
             model.ImageFileSmall = data.ImageFileSmall;
             model.ImageFileMedium = data.ImageFileMedium;
             model.EmailAddress = data.EmailAddress;
+            model.Description = data.Description;
             model.LastUpdated = data.LastUpdated;
             model.StoreId = data.StoreId;
             model.ContactType = VendorManufacturerType.Manufacturer;
@@ -61,6 +62,7 @@ namespace MerchantTribe.Commerce.Contacts
             data.ImageFileSmall = model.ImageFileSmall;
             data.ImageFileMedium = model.ImageFileMedium;
             data.EmailAddress = model.EmailAddress;
+            data.Description = model.Description;
             data.LastUpdated = model.LastUpdated;
             data.StoreId = model.StoreId;
         }

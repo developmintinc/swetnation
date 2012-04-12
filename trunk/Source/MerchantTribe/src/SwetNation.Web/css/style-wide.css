@@ -73,7 +73,7 @@ body {
 	background-color:#FFF;
 	background-image:url(../images/background-patterns/body-bg-1.png);
 	color:#888;
-	font:12px/20px 'Droid Sans',arial,serif;
+	/*font:12px/20px 'Droid Sans',arial,serif;*/
 	line-height:20px;
 	font-size:12px;
 	/* Prevents Mobile Safari from bumping up font sizes in landscape */
@@ -118,7 +118,7 @@ p,ul,ol,pre,code {
 	margin-bottom:10px;
 }
 h1,h2,h3,h4,h5,h6 {
-	font-family:'Crimson Text',arial,serif;
+	/*font-family:'Crimson Text',arial,serif;*/
 	font-weight:normal;
 	font-variant:normal;
 	white-space:normal;
@@ -151,12 +151,12 @@ h6 {
 }
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
 	color:#282828;
-	font-family:'Crimson Text',arial,serif;
+	/*font-family:'Crimson Text',arial,serif;*/
 	font-size:100%;
 }
 h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
 	color:#556074;
-	font-family:'Crimson Text',arial,serif;
+	/*font-family:'Crimson Text',arial,serif;*/
 	font-size:100%;
 	text-decoration:none;
 }
@@ -228,9 +228,11 @@ tbody.colorfull td:hover {
 }
 /*------------------TABLE STYLES ENDS------------------*/
 /*-------------------------------------------------------*/
+
 /*-------------------------------------------------------*/
 /*------------------05 - FORMS STYLE------------------*/
 /*-------------------------------------------------------*/
+/*
 label {
 	font-weight:normal;
 	display:block;
@@ -333,6 +335,8 @@ form.inline p {
 	color:#FFF;
 	background: -webkit-gradient( linear,left top,left bottom,from(#246eab),to(#65b1f0));
 }
+*/
+
 /*-------------------------------------------------------*/ /*-------------------------------------------------------*/
 /*---06 - SIMPLE NOTIFICATIONS & FANCY NOTIFICATIONS-----*/
 /*-------------------------------------------------------*/
@@ -1145,7 +1149,7 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	background:-ms-linear-gradient(top,#bc1e04 0%,#b01a04 44%,#a71603 100%);
 	background:linear-gradient(top,#bc1e04 0%,#b01a04 44%,#a71603 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc1e04',endColorstr='#a71603',GradientType=0 );
-	/* margin-bottom:30px; */
+	margin-bottom:30px;
 	float:left;
 }
 .inner-pages h3 {

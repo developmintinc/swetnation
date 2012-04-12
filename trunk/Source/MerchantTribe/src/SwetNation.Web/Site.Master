@@ -2,6 +2,7 @@
 <%@ Register Src="~/controls/HeaderStyles.ascx" TagName="HeaderStyles" TagPrefix="uc" %>
 <%@ Register Src="~/controls/HeaderScripts.ascx" TagName="HeaderScripts" TagPrefix="uc" %>
 <%@ Register Src="~/controls/HeaderFonts.ascx" TagName="HeaderFonts" TagPrefix="uc" %>
+<%@ Register Src="~/controls/PersonalProfileLinks.ascx" TagName="PersonalProfileLinks" TagPrefix="uc" %>
 <%@ Register Src="~/controls/SearchBox.ascx" TagName="SearchBox" TagPrefix="uc" %>
 <%@ Register Src="~/controls/SocialIcons.ascx" TagName="SocialIcons" TagPrefix="uc" %>
 <%@ Register Src="~/controls/PrimaryNav.ascx" TagName="PrimaryNav" TagPrefix="uc" %>
@@ -10,35 +11,26 @@
 <html lang="en">
 <head id="Head1" runat="server">
     <title>Swet Nation - Huge discount on top sports apparel</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <!--META STARTS-->
     <meta name="description" content="SwetNation - SNOW + SWEAT + SKI + ROCK"/>
     <meta name="keywords" content=""/>
     <meta name="author" content="SecondStrategy.com"/>
-    <!--META ENDS-->
     <link rel="shortcut icon" type="image/gif" href="images/favicon.gif"/>
-    <!--CSS FILES STARTS-->
-    <uc:HeaderStyles ID="ucHeaderStyles" runat="server" />
-    <!--CSS FILES ENDS-->
-    <!--CHOOSE WICH FONT YOU WANT TO USE AND DELETE THE REST FOR FASTER LOADING-->
-    <!--GOOGLE FONTS STARTS-->
     <uc:HeaderFonts ID="ucHeaderFonts" runat="server" />
-    <!--GOOGLE FONTS ENDS-->
-    <!--JS FILES STARTS-->
+    <uc:HeaderStyles ID="ucHeaderStyles" runat="server" />
     <uc:HeaderScripts ID="ucHeaderScripts" runat="server" />
-    <!--JS FILES ENDS-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="wrapper">
-	    <a href="./m" class="find-us"></a>
+	    <!-- <a href="InviteFriend.aspx" class="invite-a-friend"></a> -->
 	    <div class="center-page">
 		    <div id="container">
 			    <div id="header-intro-panel">
 				    <div class="center">
 				        <!-- SITE SEARCH STARTS -->
-					    <uc:SearchBox ID="ucSearchBox" runat="server" />
+					    <uc:PersonalProfileLinks ID="ucPersonalProfileLinks" runat="server" />
                         <!-- SITE SEARCH ENDS -->
                         <!-- SOCIAL NETWORKS ICONS STARTS -->
 				        <uc:SocialIcons ID="ucSocialIcons" runat="server" />

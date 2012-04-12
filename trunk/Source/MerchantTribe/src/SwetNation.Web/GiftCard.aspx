@@ -20,5 +20,5 @@
 	</p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">
-    <uc:RightSidebarNav ID="ucLeftSidebarNav" runat="server" GiftCardSelected="current" />
+    <uc:RightSidebarNav ID="ucRightSidebarNav" runat="server" GiftCardSelected="current" />
 </asp:Content>

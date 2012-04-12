@@ -7,3 +7,8 @@ Security Code
 --------------------------------
 3357
 
+FTP User
+--------------------------------
+host: swetnation.com
+user: swetnationuser
+pass: Sammi0303

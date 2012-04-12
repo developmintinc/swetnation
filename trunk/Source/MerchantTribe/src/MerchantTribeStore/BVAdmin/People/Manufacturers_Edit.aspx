@@ -1,15 +1,14 @@
-<%@ Page Language="C#" MasterPageFile="~/BVAdmin/BVAdmin.master" AutoEventWireup="True"Inherits="MerchantTribeStore.BVAdmin_People_Manufacturers_Edit" Title="Untitled Page" CodeBehind="Manufacturers_Edit.aspx.cs" %>
+<%@ Page ValidateRequest="false" Language="C#" MasterPageFile="~/BVAdmin/BVAdmin.master" AutoEventWireup="True"Inherits="MerchantTribeStore.BVAdmin_People_Manufacturers_Edit" Title="Untitled Page" CodeBehind="Manufacturers_Edit.aspx.cs" %>
 <%@ Register Src="../Controls/MessageBox.ascx" TagName="MessageBox" TagPrefix="uc3" %>
 <%@ Register Src="../Controls/UserPicker.ascx" TagName="UserPicker" TagPrefix="uc2" %>
 <%@ Register Src="../Controls/AddressEditor.ascx" TagName="AddressEditor" TagPrefix="uc1" %>
+<%@ Register Src="../Controls/HtmlEditor.ascx" TagName="HtmlEditor" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
-    
     <script type="text/javascript">
         $(document).ready(function () {
             $('#imgupload').change(function () { $('.autoactivatebutton').click(); });
         }); 
     </script>
-
     <h1>Edit Manufacturer</h1>
     <div>
         <uc3:MessageBox ID="MessageBox1" runat="server" />
@@ -54,6 +53,14 @@
                 <td class="formfield">
                     <asp:DropDownList ID="EmailTemplateDropDownList" runat="server">
                     </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">
+                    Description:
+                </td>
+                <td class="formfield">
+                    <uc1:HtmlEditor ID="DescriptionField" runat="server" EditorHeight="150" EditorWidth="300" EditorWrap="true" TabIndex="2005" />
                 </td>
             </tr>
         </table>

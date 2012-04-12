@@ -84,6 +84,7 @@ namespace MerchantTribeStore
                     this.EmailField.Text = m.EmailAddress;
                     this.AddressEditor1.LoadFromAddress(m.Address);
                     this.EmailTemplateDropDownList.SelectedValue = m.DropShipEmailTemplateId;
+                    this.DescriptionField.Text = m.Description;
                     LoadImagePreview(m);
                 }
             }
@@ -126,32 +127,27 @@ namespace MerchantTribeStore
 
             VendorManufacturer m = MTApp.ContactServices.Manufacturers.Find(this.BvinField.Value);
             if (m == null) m = new VendorManufacturer();            
-            
-                m.DisplayName = this.DisplayNameField.Text.Trim();
-                m.EmailAddress = this.EmailField.Text.Trim();
-                m.Address = this.AddressEditor1.GetAsAddress();
-                m.DropShipEmailTemplateId = this.EmailTemplateDropDownList.SelectedValue;
-                string fileName = UploadImage(m);
+            m.DisplayName = this.DisplayNameField.Text.Trim();
+            m.EmailAddress = this.EmailField.Text.Trim();
+            m.Address = this.AddressEditor1.GetAsAddress();
+            m.DropShipEmailTemplateId = this.EmailTemplateDropDownList.SelectedValue;
+            string fileName = UploadImage(m);
+            if (fileName != "")
+            {
                 m.ImageFileSmall = fileName;
                 m.ImageFileMedium = fileName;
-                if (this.BvinField.Value == string.Empty)
-                {
-                    result = MTApp.ContactServices.Manufacturers.Create(m);
-                }
-                else
-                {
-                    result = MTApp.ContactServices.Manufacturers.Update(m);
-                }
+            }                
+            m.Description = this.DescriptionField.Text.Trim();
+            if (this.BvinField.Value == string.Empty)
+                result = MTApp.ContactServices.Manufacturers.Create(m);
+            else
+                result = MTApp.ContactServices.Manufacturers.Update(m);
 
-                if (result == false)
-                {
-                    this.lblError.Text = "Unable to save manufacturer. Uknown error.";
-                }
-                else
-                {
-                    // Update bvin field so that next save will call updated instead of create
-                    this.BvinField.Value = m.Bvin;
-                }
+            if (result == false)
+                this.lblError.Text = "Unable to save manufacturer. Uknown error.";
+            else
+                // Update bvin field so that next save will call updated instead of create
+                this.BvinField.Value = m.Bvin;
             
             return result;
         }

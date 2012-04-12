@@ -268,7 +268,7 @@ namespace MerchantTribe.Commerce.Storage
                 u = u.Replace("http://", "https://");
             }
             u += storeId.ToString() + "/products/" + productId + "/medium/";
-            u += productImage;
+            u += productImage.Trim();
 
             if (productImage.Trim().Length < 1)
             {
