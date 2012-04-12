@@ -54,3 +54,7 @@
 <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'/>
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif:400,400italic' rel='stylesheet' type='text/css'/>
 <link href="http://fonts.googleapis.com/css?family=Terminal+Dosis:300,400,500" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Cantata+One:400normal&subset=all' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>

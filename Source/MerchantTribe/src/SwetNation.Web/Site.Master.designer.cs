@@ -22,13 +22,13 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// head control.
+        /// ucHeaderFonts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::SwetNation.Web.controls.HeaderFonts ucHeaderFonts;
         
         /// <summary>
         /// ucHeaderStyles control.
@@ -40,15 +40,6 @@ namespace SwetNation.Web {
         protected global::SwetNation.Web.controls.HeaderStyles ucHeaderStyles;
         
         /// <summary>
-        /// ucHeaderFonts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SwetNation.Web.controls.HeaderFonts ucHeaderFonts;
-        
-        /// <summary>
         /// ucHeaderScripts control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace SwetNation.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::SwetNation.Web.controls.HeaderScripts ucHeaderScripts;
+        
+        /// <summary>
+        /// head control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
         /// form1 control.
@@ -67,13 +67,13 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ucSearchBox control.
+        /// ucPersonalProfileLinks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SwetNation.Web.controls.SearchBox ucSearchBox;
+        protected global::SwetNation.Web.controls.PersonalProfileLinks ucPersonalProfileLinks;
         
         /// <summary>
         /// ucSocialIcons control.

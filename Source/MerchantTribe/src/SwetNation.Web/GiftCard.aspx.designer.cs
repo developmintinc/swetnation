@@ -22,12 +22,12 @@ namespace SwetNation.Web {
         protected global::SwetNation.Web.controls.Breadcrumbs ucBreadcrumbBar;
         
         /// <summary>
-        /// ucLeftSidebarNav control.
+        /// ucRightSidebarNav control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SwetNation.Web.controls.RightSidebarNav ucLeftSidebarNav;
+        protected global::SwetNation.Web.controls.RightSidebarNav ucRightSidebarNav;
     }
 }

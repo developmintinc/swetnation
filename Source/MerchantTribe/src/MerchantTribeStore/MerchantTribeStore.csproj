@@ -4300,8 +4300,8 @@
     <Folder Include="content\themes\theme-bv-simplegreen\assets\" />
     <Folder Include="content\themes\theme-bv-simplepurple\assets\" />
     <Folder Include="content\themes\theme-bv-simplered\assets\" />
-    <Folder Include="Files\" />
     <Folder Include="Log\" />
+    <Folder Include="Scripts\Files\" />
     <Folder Include="Scripts\tinymce\plugins\autosave\images\" />
   </ItemGroup>
   <ItemGroup>

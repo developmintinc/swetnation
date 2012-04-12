@@ -112,6 +112,15 @@ namespace MerchantTribeStore {
         protected global::System.Web.UI.WebControls.DropDownList EmailTemplateDropDownList;
         
         /// <summary>
+        /// DescriptionField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MerchantTribeStore.BVAdmin_Controls_HtmlEditor DescriptionField;
+        
+        /// <summary>
         /// MemberList control.
         /// </summary>
         /// <remarks>

@@ -15,7 +15,7 @@ made by:trendyWebStarDecember - 2011
 							10-GRID CSS
 							11-NAVIGATION CSS
 							12-INTRO PAGES & SEARCH CSS
-							13-SLIDERS CSS
+							13-SLIDERS breadcrumbsSS
 							14-FOOTER CSS
 							15-BLOG CSS
 							16-PORTFOLIO CSS
@@ -30,10 +30,9 @@ made by:trendyWebStarDecember - 2011
 							25-TABS & ACCORDIONS CSS
 							26-PRICING BOXES CSS
 							27-PRICING TAVLE CSS
-
-
 */
 /*-------------------------------------------------------*/
+
 /*-------------------------------------------------------*/
 /*---------------01 - RESET CSS---------------*/
 /*-------------------------------------------------------*/
@@ -66,6 +65,7 @@ table {
 	border-collapse:collapse;
 	border-spacing: 0;
 }
+
 /*-------------------------------------------------------*/
 /*---------------02 - BODY CSS---------------*/
 /*-------------------------------------------------------*/
@@ -118,7 +118,6 @@ p,ul,ol,pre,code {
 	margin-bottom:10px;
 }
 h1,h2,h3,h4,h5,h6 {
-	font-family:'Crimson Text',arial,serif;
 	font-weight:normal;
 	font-variant:normal;
 	white-space:normal;
@@ -151,12 +150,10 @@ h6 {
 }
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
 	color:#282828;
-	font-family:'Crimson Text',arial,serif;
 	font-size:100%;
 }
 h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
 	color:#556074;
-	font-family:'Crimson Text',arial,serif;
 	font-size:100%;
 	text-decoration:none;
 }
@@ -174,7 +171,7 @@ p,ul,ol,pre,code {
 	margin-bottom:10px;
 }
 .colored {
-	color:#191919;
+	color:#3a74c9;
 }
 ul {
 	list-style-type:none;
@@ -231,6 +228,7 @@ tbody.colorfull td:hover {
 /*-------------------------------------------------------*/
 /*------------------05 - FORMS STYLE------------------*/
 /*-------------------------------------------------------*/
+/*
 label {
 	font-weight:normal;
 	display:block;
@@ -333,6 +331,8 @@ form.inline p {
 	color:#FFF;
 	background: -webkit-gradient( linear,left top,left bottom,from(#246eab),to(#65b1f0));
 }
+*/
+
 /*-------------------------------------------------------*/ /*-------------------------------------------------------*/
 /*---06 - SIMPLE NOTIFICATIONS & FANCY NOTIFICATIONS-----*/
 /*-------------------------------------------------------*/
@@ -539,6 +539,15 @@ form.inline p {
 	right:7%;
 	text-indent: -9999px;
 }
+.how-to-find-us {
+	width:35px;
+	height:110px;
+	background:url("../images/find-us.png") no-repeat;
+	position:absolute;
+	top:0;
+	right:7%;
+	text-indent: -9999px;
+}
 /*-------------------------------------------------------*/
 /*---------------08 - CONTENT DISPLAY CSS---------------*/
 /*-------------------------------------------------------*/
@@ -685,7 +694,7 @@ form.inline p {
 	height:60px;
 }
 a#logo {
-	background:transparent url("../images/logo.png") no-repeat;
+	background:transparent url("../images/logo/SNLogoNav.png") no-repeat;
 	display:block;
 	float:left;
 	width:220px;
@@ -981,7 +990,6 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 .main-menu {
 	position:relative;
 	z-index:1000;
-	font-family:'Droid Sans',arial,serif;
 }
 .main-menu ul {
 	margin:0;
@@ -992,20 +1000,25 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	position:relative;
 	display:inline;
 	float:left;
-	font-size:14px;
-	margin:0px 2px;
+	font-size:16px;
+	margin:0px 5px;
+	border-right: 1px solid white;
+}
+.no-right-border {
+    vertical-align: bottom; 
+    padding-top: 10px;
 }
 .main-menu ul li a,.main-menu ul li a:link {
 	line-height:30px;
 	color:#FFF;
 	text-shadow:none;
-	font-size:13px;
+	font-size:15px;
 	text-transform:uppercase;
 }
 .main-menu ul li a span {
 	display:block;
 	color:#f5f5f5;
-	font-size:10px;
+	font-size:12px;
 	text-align:center;
 	margin-top:-10px;
 	text-transform:capitalize;
@@ -1013,7 +1026,7 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 }
 .main-menu ul li a:hover,.main-menu ul li:hover {
 	color:#FFF!important;
-	background:#191919;
+	background:#ce1920;
 	border-radius:4px 4px 0 0;
 	-moz-border-radius:4px 4px 0 0;
 	-webkit-border-radius:4px 4px 0 0;
@@ -1054,7 +1067,7 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	margin-top:0!important;
 }
 .main-menu ul ul {
-	background:#191919;
+	background:#ce1920;
 	z-index:101;
 	color:#FFF;
 	padding:10px 0;
@@ -1077,13 +1090,13 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	text-decoration:none!important;
 	color:#FFF!important;
 	text-shadow:none;
-	background:#000;
+	background:#333;
 	border-radius:2px;
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
-	-moz-box-shadow:0px 1px 0px #111;
-	-webkit-box-shadow:0px 0px 2px #111;
-	box-shadow:0px 1px 0px #111;
+	-moz-box-shadow:0px 1px 0px #171717;
+	-webkit-box-shadow:0px 0px 2px #171717;
+	box-shadow:0px 1px 0px #171717;
 }
 .main-menuz ul ul li ul,.main-menu ul ul ul {
 	text-decoration:none!important;
@@ -1095,7 +1108,7 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 	text-decoration:none!important;
 	color:#FFF;
 	text-shadow:none;
-	background:#000;
+	background:#333;
 	border-radius:2px;
 	-moz-border-radius:2px;
 	-webkit-border-radius: 2px;
@@ -1104,19 +1117,23 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 /*---------------12 - INTRO PAGES CSS---------------*/
 /*-------------------------------------------------------*/
 .intro-pages span {
-	color:#191919;
+	color:maroon;	
 }
 .intro-pages {
-	padding:30px 0px 50px 0;
+	padding:20px 0px;
 	height:auto;
-	margin-bottom:30px;
+	margin-bottom:3px;
 	background:transparent url("../images/intro-pages-bg.png") no-repeat bottom;
-	border-top:1px solid #efefef;
+	/* border:10px solid #efefef; */
+	border-top:2px solid #242424;
+	border-bottom:2px solid #242424;
+	color:#191919;
 }
 .intro-pages h1,.intro-pages h2,.intro-pages h3,.intro-pages h4 {
 	text-align:center;
 	margin-bottom:0;
 	font-style:italic;
+	font-weight: bold;
 }
 .intro-pages a {
 	color:#191919;
@@ -1261,7 +1278,6 @@ a.nivo-prevNav:active {
 }
 .nivo-caption {
 	text-shadow:none;
-	font-family:Helvetica,Arial,sans-serif;
 }
 .nivo-caption a {
 	color:#efe9d1;
@@ -1758,114 +1774,114 @@ a.nivo-prevNav:active {
    ================================================== */
 
 div.orbit-wrapper {
-    width: 1px;
-    height: 1px;
-    position: relative; }
+	width: 1px;
+	height: 1px;
+	position: relative; }
 
 div.orbit {
-    width: 1px;
-    height: 1px;
-    position: relative;
-    overflow: hidden }
+	width: 1px;
+	height: 1px;
+	position: relative;
+	overflow: hidden }
 
 div.orbit img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none; }
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none; }
 
 div.orbit a img {
-    border: none }
+	border: none }
 
 .orbit div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%; }
 
 
 /* TIMER
    ================================================== */
 
 div.timer {
-    width: 40px;
-    height: 40px;
-    overflow: hidden;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    opacity: .6;
-    cursor: pointer;
-    z-index: 999; }
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	opacity: .6;
+	cursor: pointer;
+	z-index: 999; }
 
 span.rotator {
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    left: -20px;
-    background: url(../images/orbit-slider/rotator-black.png) no-repeat;
-    z-index: 3; }
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: -20px;
+	background: url(../images/orbit-slider/rotator-black.png) no-repeat;
+	z-index: 3; }
 
 span.mask {
-    display: block;
-    width: 20px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    overflow: hidden; }
+	display: block;
+	width: 20px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	overflow: hidden; }
 
 span.rotator.move {
-    left: 0 }
+	left: 0 }
 
 span.mask.move {
-    width: 40px;
-    left: 0;
-    background: url(../images/orbit-slider/timer-black.png) repeat 0 0; }
+	width: 40px;
+	left: 0;
+	background: url(../images/orbit-slider/timer-black.png) repeat 0 0; }
 
 span.pause {
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(../images/orbit-slider/pause-black.png) no-repeat;
-    z-index: 4;
-    opacity: 0; }
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/orbit-slider/pause-black.png) no-repeat;
+	z-index: 4;
+	opacity: 0; }
 
 span.pause.active {
-    background: url(../images/orbit-slider/pause-black.png) no-repeat 0 -40px }
+	background: url(../images/orbit-slider/pause-black.png) no-repeat 0 -40px }
 
 div.timer:hover span.pause,
 span.pause.active {
-    opacity: 1 }
+	opacity: 1 }
 
 
 /* CAPTIONS
    ================================================== */
 
 .orbit-caption {
-    display: none;
-     }
+	display: none;
+	 }
 
 .orbit-wrapper .orbit-caption {
-    background: #000;
-    background: rgba(0,0,0,0.8);
-    z-index: 10;
-    color: #fff;
+	background: #000;
+	background: rgba(0,0,0,0.8);
+	z-index: 10;
+	color: #fff;
 	text-align: left;
 	padding: 10px 150px 10px 10px;
-    font-size: 12px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 9px;
-    width:780px; 
+	font-size: 12px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 9px;
+	width:780px; 
 	margin-left:-9px;
 	border-top:2pt solid #191919;
 	}
@@ -1882,26 +1898,26 @@ span.pause.active {
    ================================================== */
 
 div.slider-nav {
-    display: block }
+	display: block }
 
 div.slider-nav span {
-    width: 45px;
-    height: 45px;
-    text-indent: -9999px;
-    position: absolute;
-    z-index: 999;
-    top: 45%;
-    cursor: pointer; 
+	width: 45px;
+	height: 45px;
+	text-indent: -9999px;
+	position: absolute;
+	z-index: 999;
+	top: 45%;
+	cursor: pointer; 
 	}
 
 div.slider-nav span.right {
-    background:url(../images/colors/dark-theme/slider-prev-next.png) top right no-repeat;
+	background:url(../images/colors/dark-theme/slider-prev-next.png) top right no-repeat;
 	right:20px;
-     }
+	 }
 div.slider-nav span.right:hover{
-    background:url(../images/colors/dark-theme/slider-prev-next.png) bottom right no-repeat;
+	background:url(../images/colors/dark-theme/slider-prev-next.png) bottom right no-repeat;
 	right:20px;
-     }
+	 }
 div.slider-nav span.left {background:url(../images/colors/dark-theme/slider-prev-next.png) top left no-repeat;
 	left:20px;}
 
@@ -1916,32 +1932,32 @@ div.slider-nav span.left:active,div.slider-nav span.right:active{
    ================================================== */
 
 .orbit-bullets {
-    position: absolute;
-    z-index: 100;
-    list-style: none;
-    bottom: 25px;
-    left: 85%;
+	position: absolute;
+	z-index: 100;
+	list-style: none;
+	bottom: 25px;
+	left: 85%;
 	margin-right: -45px;
-    padding: 0; }
+	padding: 0; }
 
 .orbit-bullets li {
-    float: left;
-    margin-left: 5px;
-    cursor: pointer;
-    color: #999;
-    text-indent: -9999px;
-    background: url(../images/colors/dark-theme/slider-pag.png) no-repeat right;
-    width: 20px;
-    height: 19px;
-    overflow: hidden; }
+	float: left;
+	margin-left: 5px;
+	cursor: pointer;
+	color: #999;
+	text-indent: -9999px;
+	background: url(../images/colors/dark-theme/slider-pag.png) no-repeat right;
+	width: 20px;
+	height: 19px;
+	overflow: hidden; }
 
 
 .orbit-bullets li.active {
-    
-    background-position:left; }
+	
+	background-position:left; }
 
 .orbit-bullets li.active.has-thumb {
-     background-position:left; }
+	 background-position:left; }
 
 /*-------------------------------------------------------*/
 /*---------------14 - FOOTER CSS---------------*/
@@ -2094,6 +2110,16 @@ a#logo-copyright {
 	height:40px;
 	text-indent:-9999px;
 	margin-top:10px;
+}
+a#name-copyright {
+	/* 
+	background:transparent url("../images/logo-bottom.png") no-repeat;
+	display:block;
+	float:left;
+	text-indent:-9999px;
+	*/
+	line-height: 35px;
+	font-size: 22px;
 }
 #copyright a {
 	color:#FFF;
@@ -2626,7 +2652,6 @@ ul.page-pagination {
 /*-------------------------------------------------------*/
 .button {
 	cursor:pointer;
-	font-family:Arial,Helvetica,sans-serif;
 	font-size:11px;
 	color:#ffffff!important;
 	text-decoration:none!important;
@@ -3326,7 +3351,8 @@ ul.buttons-huge li {
 }
 /*-------------------------------------------------------*/
 /*---------------19 - LISTS CSS---------------*/
-/*-------------------------------------------------------*/ .simple-nav {
+/*-------------------------------------------------------*/ 
+.simple-nav {
 	list-style-type:none;
 	list-style-position:outside;
 	width:200px;
@@ -3591,7 +3617,6 @@ ul.blog-category li {
 	padding:0;
 	margin-top:-30px;
 	text-align:center;
-	font-family:"Crimson Text",Georgia,"Times New Roman",Times,serif;
 	font-style:normal;
 	color:#666666;
 }
@@ -3656,13 +3681,14 @@ ul#breadcrumbs {
 	margin-bottm:20px;
 	background-color: #9ED452;
 	background-color: #E64135;
-	background-color: lemonchiffon;
 	background-color: silver;
+	background-color: lemonchiffon;
+	background-color: white;
 	width:948px;
-	border-top: 1px solid black;
+	border-top: 0px solid black;
 	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border-left: 0px solid black;
+	border-right: 0px solid black;
 	padding:5px;
 	font-weight: 100;
 }

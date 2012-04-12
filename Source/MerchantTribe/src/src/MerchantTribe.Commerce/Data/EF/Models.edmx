@@ -542,6 +542,7 @@
           <Property Name="StoreId" Type="bigint" Nullable="false" />
           <Property Name="ImageFileSmall" Type="nvarchar" Nullable="false" MaxLength="512" />
           <Property Name="ImageFileMedium" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="Description" Type="ntext" />
         </EntityType>
         <EntityType Name="bvc_Order">
           <Key>
@@ -2140,6 +2141,7 @@
           <Property Type="Int64" Name="StoreId" Nullable="false" />
           <Property Type="String" Name="ImageFileSmall" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Type="String" Name="ImageFileMedium" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="bvc_Policy">
           <Key>
@@ -3655,6 +3657,7 @@
           <EntitySetMapping Name="bvc_Manufacturer">
             <EntityTypeMapping TypeName="EfModels.bvc_Manufacturer">
               <MappingFragment StoreEntitySet="bvc_Manufacturer">
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ImageFileMedium" ColumnName="ImageFileMedium" />
                 <ScalarProperty Name="ImageFileSmall" ColumnName="ImageFileSmall" />
                 <ScalarProperty Name="StoreId" ColumnName="StoreId" />
@@ -4623,13 +4626,13 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Models" ZoomLevel="47" ShowGrid="true">
+      <Diagram Name="Models" ZoomLevel="75" ShowGrid="true">
         <EntityTypeShape EntityType="EfModels.bv_SearchLexicon" Width="1.875" PointX="7.75" PointY="14.375" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="EfModels.bv_SearchObjects" Width="1.875" PointX="7.375" PointY="17" Height="2.3648893229166106" />
         <EntityTypeShape EntityType="EfModels.bv_SearchObjectWords" Width="2" PointX="10.25" PointY="16.875" Height="2.1725878906249818" />
