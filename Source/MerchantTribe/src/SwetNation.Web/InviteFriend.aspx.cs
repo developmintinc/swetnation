@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SwetNation.Web
 {
-    public partial class InviteFriend : System.Web.UI.Page
+    public partial class InviteFriend : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

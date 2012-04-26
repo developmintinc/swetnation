@@ -13,9 +13,9 @@ namespace MerchantTribe.Commerce.Membership
 
         public static CustomerAccountRepository InstantiateForMemory(RequestContext c)
         {
-            return new CustomerAccountRepository(c, new MemoryStrategy<Data.EF.bvc_User>(PrimaryKeyType.Bvin),                                           
-                                           new TextLogger());
+            return new CustomerAccountRepository(c, new MemoryStrategy<Data.EF.bvc_User>(PrimaryKeyType.Bvin), new TextLogger());
         }
+
         public static CustomerAccountRepository InstantiateForDatabase(RequestContext c)
         {
             CustomerAccountRepository result = null;
@@ -26,8 +26,8 @@ namespace MerchantTribe.Commerce.Membership
                     );
             return result;
         }
-        public CustomerAccountRepository(RequestContext c, IRepositoryStrategy<Data.EF.bvc_User> r,                                    
-                                    ILogger log)
+
+        public CustomerAccountRepository(RequestContext c, IRepositoryStrategy<Data.EF.bvc_User> r, ILogger log)
         {
             context = c;
             repository = r;
@@ -62,6 +62,7 @@ namespace MerchantTribe.Commerce.Membership
             Contacts.Address billAddr = MerchantTribe.Web.Json.ObjectFromJson<Contacts.Address>(data.BillingAddress);
             model.BillingAddress = billAddr ?? new Contacts.Address();
         }
+
         protected override void CopyModelToData(Data.EF.bvc_User data, CustomerAccount model)
         {
             data.bvin = model.Bvin;
@@ -99,10 +100,12 @@ namespace MerchantTribe.Commerce.Membership
             }
             return null;
         }
+
         public CustomerAccount FindForAllStores(string bvin)
         {
             return this.Find(new PrimaryKey(bvin));
         }
+
         public override bool Create(CustomerAccount item)
         {
             if (item.Bvin == string.Empty)
@@ -115,6 +118,7 @@ namespace MerchantTribe.Commerce.Membership
             if (result) Integration.Current().CustomerAccountCreated(item);
             return result;
         }
+
         public bool Update(CustomerAccount c)
         {
             if (c.StoreId != context.CurrentStore.Id)
@@ -126,6 +130,7 @@ namespace MerchantTribe.Commerce.Membership
             if (result) Integration.Current().CustomerAccountUpdated(c);
             return result;
         }
+
         public bool Delete(string bvin)
         {
             long storeId = context.CurrentStore.Id;
@@ -135,11 +140,13 @@ namespace MerchantTribe.Commerce.Membership
            if (result) Integration.Current().CustomerAccountDeleted(item);
            return result;
         }
+
         public List<CustomerAccount> FindAll()
         {
             int totalCount = 0;
             return FindAllPaged(1, int.MaxValue, ref totalCount);
         }
+
         public List<CustomerAccount> FindAllPaged(int pageNumber, int pageSize, ref int totalCount)
         {
             List<CustomerAccount> result = new List<CustomerAccount>();
@@ -156,6 +163,7 @@ namespace MerchantTribe.Commerce.Membership
                       
             return result;
         }
+
         public CustomerAccount FindByEmail(string email)
         {
             long storeId = context.CurrentStore.Id;
@@ -163,21 +171,20 @@ namespace MerchantTribe.Commerce.Membership
                                         .Where(y => y.Email == email);
             return FirstPoco(query);                
         }
+
         public List<CustomerAccount> FindMany(List<string> ids)
         {       
             List<CustomerAccount> result = new List<CustomerAccount>();
             long storeId = context.CurrentStore.Id;
-            IQueryable<Data.EF.bvc_User> data = repository.Find().Where(y => y.StoreId == storeId)
-                        .Where(y => ids.Contains(y.bvin))
-                                      .OrderBy(y => y.Email);
+            IQueryable<Data.EF.bvc_User> data = repository.Find().Where(y => y.StoreId == storeId).Where(y => ids.Contains(y.bvin)).OrderBy(y => y.Email);
 
             var countData = data;
             result = ListPoco(data);
             if (result == null) result = new List<CustomerAccount>();
 
-            return result;
-        
+            return result;        
         }
+
         public List<CustomerAccount> FindByFilter(string filter, int pageNumber, int pageSize, ref int totalCount)
         {
             List<CustomerAccount> result = new List<CustomerAccount>();
@@ -187,8 +194,7 @@ namespace MerchantTribe.Commerce.Membership
                                     y.FirstName.Contains(filter) ||
                                     y.LastName.Contains(filter) ||
                                     y.Phones.Contains(filter) ||
-                                    y.AddressBook.Contains(filter))                        
-                                      .OrderBy(y => y.Email);
+                                    y.AddressBook.Contains(filter)).OrderBy(y => y.Email);
 
             var countData = data;
             totalCount = countData.Count();
@@ -198,9 +204,6 @@ namespace MerchantTribe.Commerce.Membership
             if (result == null) result = new List<CustomerAccount>();
 
             return result;
-        }
-
-
-       
+        }       
     }
 }

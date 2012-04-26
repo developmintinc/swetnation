@@ -6,8 +6,7 @@ using System.Text;
 namespace MerchantTribe.Commerce
 {
     public class RequestContext
-    {
-        
+    {        
         public Accounts.Store CurrentStore { get; set; }
         public Accounts.UserAccount CurrentAdministrator(MerchantTribeApplication app) 
         {
@@ -42,24 +41,18 @@ namespace MerchantTribe.Commerce
                 if (System.Web.HttpContext.Current.Request == null) return false;
                 if (System.Web.HttpContext.Current.Request.RequestContext == null) return false;
                 if (System.Web.HttpContext.Current.Request.RequestContext.HttpContext == null) return false;
+                Guid? tokenId = MerchantTribe.Web.Cookies.GetCookieGuid(WebAppSettings.CookieNameAuthenticationTokenAdmin(app.CurrentStore.Id), System.Web.HttpContext.Current.Request.RequestContext.HttpContext, new EventLog());
 
-                                  
-                    Guid? tokenId = MerchantTribe.Web.Cookies.GetCookieGuid(WebAppSettings.CookieNameAuthenticationTokenAdmin(app.CurrentStore.Id),
-                   System.Web.HttpContext.Current.Request.RequestContext.HttpContext, new EventLog());
+                // no token, return
+                if (!tokenId.HasValue) return false;
 
-                    // no token, return
-                    if (!tokenId.HasValue) return false;
-
-
-                    Accounts.AccountService accountServices = Accounts.AccountService.InstantiateForDatabase(this);
-
-                    if (accountServices.IsTokenValidForStore(CurrentStore.Id, tokenId.Value))
-                    {
-                        _adminResult = true;
-                        _adminAuthTokenId = tokenId.Value;
-                        return true;
-                    }
-                
+                Accounts.AccountService accountServices = Accounts.AccountService.InstantiateForDatabase(this);
+                if (accountServices.IsTokenValidForStore(CurrentStore.Id, tokenId.Value))
+                {
+                    _adminResult = true;
+                    _adminAuthTokenId = tokenId.Value;
+                    return true;
+                }                
             }
             catch
             {
@@ -69,7 +62,6 @@ namespace MerchantTribe.Commerce
             return false;                                      
         }
 
-
         public RequestContext()
         {
             CurrentStore = new Accounts.Store();            
@@ -78,7 +70,6 @@ namespace MerchantTribe.Commerce
             IntegrationEvents = new Integration();
             RoutingContext = null;
         }
-
         
         public static RequestContext GetCurrentRequestContext()
         {

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SwetNation.Web
 {
-    public partial class FAQ : System.Web.UI.Page
+    public partial class FAQ : NotAuthorizedPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

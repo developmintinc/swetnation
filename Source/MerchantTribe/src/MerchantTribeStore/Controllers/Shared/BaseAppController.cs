@@ -7,7 +7,6 @@ using MerchantTribe.Commerce;
 using MerchantTribe.Commerce.Content;
 using MerchantTribeStore.Filters;
 
-
 namespace MerchantTribeStore.Controllers.Shared
 {
     [StoreClosedFilter]

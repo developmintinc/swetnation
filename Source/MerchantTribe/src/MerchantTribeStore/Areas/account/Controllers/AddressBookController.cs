@@ -66,7 +66,7 @@ namespace MerchantTribeStore.Areas.account.Controllers
         {
             EditSetup();
 
-            Address a = LoadAddress(id);            
+            Address a = LoadAddress(id);
             return View(new AddressViewModel(a));
         }
         private Address LoadAddress(string bvin)
@@ -85,13 +85,12 @@ namespace MerchantTribeStore.Areas.account.Controllers
                         {
                             if (a2.Bvin == bvin)
                             {
-                                return a2;                                
+                                return a2;
                             }
                         }
                         break;
                 }
             }
-
             return new Address();
         }
 

@@ -149,6 +149,7 @@ namespace MerchantTribe.Commerce.Membership
         {
             return u.Password.Equals(u.EncryptPassword(trialpassword), StringComparison.InvariantCulture);
         }
+
         public bool UpdateCustomerEmail(CustomerAccount user, string newEmail)
         {
             string oldEmail = user.Email;

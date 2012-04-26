@@ -20,15 +20,6 @@ namespace SwetNation.Web
 
             // Determine store id        
             MTApp.CurrentStore = MerchantTribe.Commerce.Utilities.UrlHelper.ParseStoreFromUrl(System.Web.HttpContext.Current.Request.Url, MTApp.AccountServices);
-            if (MTApp.CurrentStore == null)
-            {
-                Response.Redirect("~/storenotfound");
-            }
-
-            if (MTApp.CurrentStore.Status == MerchantTribe.Commerce.Accounts.StoreStatus.Deactivated)
-            {
-                Response.Redirect("~/storenotavailable");
-            }
         }
     }
 }
