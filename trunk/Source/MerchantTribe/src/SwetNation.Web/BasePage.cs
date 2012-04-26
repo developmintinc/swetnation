@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MerchantTribe.Commerce;
 using MerchantTribe.Commerce.Content;
+using MerchantTribe.Commerce.Membership;
 
 namespace SwetNation.Web
 {
@@ -22,15 +23,36 @@ namespace SwetNation.Web
 
             // Determine store id        
             MTApp.CurrentStore = MerchantTribe.Commerce.Utilities.UrlHelper.ParseStoreFromUrl(System.Web.HttpContext.Current.Request.Url, MTApp.AccountServices);
-            if (MTApp.CurrentStore == null)
-            {
-                Response.Redirect("~/storenotfound");
-            }
+        }
 
-            if (MTApp.CurrentStore.Status == MerchantTribe.Commerce.Accounts.StoreStatus.Deactivated)
+        public void IsAuthorized()
+        {
+            if (SessionManager.IsUserAuthenticated(this.MTApp) == false)
             {
-                Response.Redirect("~/storenotavailable");
+                Response.Redirect("SignIn.aspx");
             }
+        }
+
+        protected void FlashInfo(string message)
+        {
+            FlashMessage(message, "flash-message-info");
+        }
+        protected void FlashSuccess(string message)
+        {
+            FlashMessage(message, "flash-message-success");
+        }
+        protected void FlashFailure(string message)
+        {
+            FlashMessage(message, "flash-message-failure");
+        }
+        protected void FlashWarning(string message)
+        {
+            FlashMessage(message, "flash-message-warning");
+        }
+        private void FlashMessage(string message, string typeClass)
+        {
+            string format = "<div class=\"{0}\">{1}</div>";
+            Session["messages"] += string.Format(format, typeClass, message);
         }
     }
 }

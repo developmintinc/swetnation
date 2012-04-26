@@ -1,0 +1,441 @@
+﻿/*-------------------------------------------------------*/
+/* Flash Messages */
+/*-------------------------------------------------------*/
+.flash-message-info, .flash-message-success, .flash-message-failure, .flash-message-warning {border-style: solid;border-width: 1px 0px 1px 3px;padding: 0.5em 1em;font-size: 16px; margin:0.25em 0;color:#333;}
+.flash-message-info {background-color: #CFF;	border-color: #3CF;}
+.flash-message-success {background-color: #DFFFDF;border-color: #3C3;} 
+.flash-message-failure {background-color: #C10000;border-color: #C10000;color: #ff0;}
+.flash-message-warning {background-color: #fffed7;border-color: #B3B300;}
+
+/*-------------------------------------------------------*/
+/* Flash Messages */
+/*-------------------------------------------------------*/
+.flashmessageinfo, .flashmessagesuccess, .flashmessagefailure, .flashmessagewarning, .flash-message-info, .flash-message-success, .flash-message-failure, .flash-message-warning, .flash-message-watermark {border-style: solid;border-width: 1px 0px 1px 3px;padding: 0.5em 1em;font-size: 16px; margin:0.25em 0;color:#333;}
+.flashmessageinfo, .flash-message-info {background-color: #d3e8e9;	border-color: #94aeb0; color:#555;}
+.flashmessagesuccess, .flash-message-success {background-color: #DFFFDF;border-color: #3C3;} 
+.flashmessagefailure, .flash-message-failure {background-color: #C10000;border-color: #C10000;color: #ff0;}
+.flashmessagewarning, .flash-message-warning {background-color: #fffed7;border-color: #B3B300;}
+.flash-message-watermark { color: #a1a1a1; font-style: italic; border-color:#ccc; width:205px; }
+
+/*-------------------------------------------------------*/
+/* Featured Brand */
+/*-------------------------------------------------------*/
+.featuredbrands 
+{
+    padding:0;
+}
+.featuredbrands .record 
+{
+    float:left;
+    margin: 10px 0 20px 6px;
+    height:505px;
+    background-color:#242424;
+}
+
+/*-------------------------------------------------------*/
+/* Category Product Display Defaults */
+/*-------------------------------------------------------*/
+.record 
+{
+    width:470px;
+    margin:0px 34px 20px 0;
+    float:left;
+    border:solid 1px #f5f0ef;
+    border-width: 1px 3px 3px 1px;
+    background:#fff;
+}
+.record img
+{
+    width:470px;
+}
+.record a 
+{
+    color:#fff;
+    text-decoration:none;
+}
+.record a:hover 
+{
+    color:#fff;
+    text-decoration:underline;
+}
+.firstrecord 
+{
+    clear:both;
+}
+.lastrecord 
+{
+    margin-right:0;
+}
+.recordimage 
+{
+    text-align: left; 
+    border-bottom:solid 3px #000; 
+    background:#fff;
+}
+.recordname 
+{
+    padding:0 0 0 10px; 
+    font-size: 16px; 
+    color:#fff; 
+    font-weight:bold; 
+    text-align:center; 
+    line-height:1.5em;
+}
+.shopsale 
+{
+    padding:0 0 0 10px; 
+    font-size: 16px; 
+    color:#fff; 
+    font-weight:bold; 
+    text-align:center; 
+    line-height:1.5em; 
+    background-color: Maroon;
+}
+
+/*-------------------------------------------------------*/
+/* PRODUCT FILTER SECTION */
+/*-------------------------------------------------------*/
+.filter-bar 
+{ 
+	border-bottom-width: 1px;
+	border-bottom-color: #242424;
+	border-bottom-style: solid;
+	margin: 0px 0px; 
+	padding: 5px; 
+	width: 99%;
+	color: Black;
+	font-weight: 200;
+}
+.styled-select {
+	background: transparent;
+	width: 218px;
+	padding: 2px;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	height: 28px;
+}
+
+/*-------------------------------------------------------*/
+/* PRODUCT GRID */
+/*-------------------------------------------------------*/
+.productItem
+{
+    width: 290px;
+    float: left;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+.groupSeparator
+{
+    border-top: 1px dotted Gray;
+    height: 1px;
+    clear: both;
+}
+.itemSeparator
+{
+    height: 370px;
+    width: 1px;
+    border-left: 1px dotted Gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+/*-------------------------------------------------------*/
+/* PRODUCT INTRO SECTION */
+/*-------------------------------------------------------*/
+.product-intro
+{
+    width: 99%; 
+    border: 3px solid black; 
+    margin: 10px 0px; 
+    padding: 0px; 
+    background-color: #222222; 
+    color: White;
+}
+.product-intro-header
+{
+    color: White;
+    font-size: 24px;;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+/*-------------------------------------------------------*/
+/* Checkout Page */
+/*-------------------------------------------------------*/
+.checkout {}
+.checkout .sections {width:700px;float:left;}
+.checkout .section-sidebar {width:220px;float:right;}
+.checkout h2 {font-size:22px;color:#333;padding:0;margin:0.5em 0 0.5em 0;}
+.section-email,
+.section-shipping,
+.section-billing,
+.section-delivery,
+.section-payment,
+.section-totals,
+.section-extras,
+.section-actions,
+.section-cart {border:solid 1px #999;padding:0 10px 10px 10px; background-color:#f3ebea;margin:0 0 9px 0;}
+.section-actions {text-align:center;}
+.section-email #customeremail {width:500px;}
+.checkout .formlabel {font-size:14px;color:#666;}
+.checkout .address-table, .checkout .creditcardinput table {margin:1em auto;font-size:14px;color:#666;}
+.checkout .address-table select, .checkout .address-table input, 
+.section-email input, .creditcardinput input,
+.creditcardinput select {font-size:18px; border:solid 1px #ccc;}
+.section-totals {font-weight:bold;}
+.section-totals .total {display:block;width:300px;height:18px;float:right;margin:9px 0;text-align:left;clear:both;}
+.section-totals .total label {font-size:14px; line-height:1.286em;color:#666;text-align:right;display:block;width:178px;float:left;}
+.section-totals .total span {font-size:18px;line-height:1em;text-align:right;display:block;width:120px;float:right;}
+.checkout .short-field {}    
+.checkout .checkout-label {color:#666;text-align:right;vertical-align:top;}
+.checkout .address-table td, .checkout .creditcardinput td {padding:1px 3px;}
+.checkout .checkout-button {font-size:18px;font-weight:bold; background-color:Green;color:White;}
+.input-validation-error, .checkout .input-validation-error {border:solid 1px #f00;background-color: #fee;}
+.validation-summary-errors {color:#333;}
+.validation-summary-errors li {border-style: solid;border-width: 1px 0px 1px 3px;padding: 0.5em 1em;font-size: 16px;margin:0.25em 0;color: #333;background-color: #fee;border-color: #f00;list-style:none;} 
+#cart-addresses {margin:18px 0;}
+#cart-addresses #billing-address {width:345px;float:left;}
+#cart-addresses #shipping-address {width:214px;float:right;}
+.cc-visa,.cc-mastercard,.cc-amex,.cc-discover,.cc-diners,.cc-jcb{width:47px;height:30px;display:inline-block;background:url('/images/icons/creditcards.png') no-repeat 0 0;border:solid 1px #999}
+.cc-visa{background-position:0 0}
+.cc-mastercard{background-position:-47px 0}
+.cc-amex{background-position:-94px 0}
+.cc-discover{background-position:-141px 0}
+.cc-diners{background-position:-188px 0}
+.cc-jcb{background-position:-235px 0}
+
+/*-------------------------------------------------------*/
+/* STYLE REPLACEMENTS */
+/*-------------------------------------------------------*/
+body {
+	background:#FFF;
+	color:#888;
+	font:12px/20px 'Questrial', Verdana, Helvetica, Trebuchet MS, Sans-Serif;
+	line-height:20px;
+	font-size:12px;
+	-webkit-text-size-adjust:100%;
+	-webkit-tap-highlight-color:rgb(255,255,0);
+}
+.header-title 
+{
+    font-family: 'Maven Pro', 'Didact', Verdana, Helvetica, Trebuchet MS, Sans-Serif;
+	margin-bottom:10px;
+	font-size: 28px;
+	text-transform:uppercase;
+}
+.header-title-medium
+{
+    color: Maroon;
+    font-family: 'Maven Pro', 'Didact', Verdana, Helvetica, Trebuchet MS, Sans-Serif;
+	margin-bottom:10px;
+	font-size: 20px;
+	text-transform:uppercase;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Maven Pro','Didact',Verdana, Helvetica, Trebuchet MS, Sans-Serif;
+	color:#282828;
+	margin-bottom:10px;
+}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+	color:#282828;
+	font-size:100%;
+}
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover {
+	color:#556074;
+	font-size:100%;
+	text-decoration:none;
+}
+#login-form {
+	float:left; 
+	width: 100%;
+	padding:20px 10px;
+	margin:0 0 20px 0;
+	background:#fafafa;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	border-top:5px solid #000;
+	-webkit-box-shadow:inset 0 0 25px #fafafa,0 1px 0 #cecece,0 2px 0 #c9c9c9,0 2px 3px #4a4a4a;
+	-moz-box-shadow:inset 0 0 25px #fafafa,0 1px 0 #cecece,0 2px 0 #c9c9c9,0 2px 3px #4a4a4a;
+	box-shadow:inset 0 0 25px #fafafa,0 1px 0 #cecece,0 2px 0 #c9c9c9,0 2px 3px #4a4a4a;
+	text-shadow:0px 1px 0px #f5f5f5;
+}
+.simple-nav li a {
+	color: Maroon;
+	padding-left:15px;
+	background:url(../images/simple-nav-arrow.png) no-repeat 0px 2px;
+}
+.simple-nav li a:hover {
+	color: Red;
+	text-decoration:underline;
+}
+.simple-nav li a.current {    
+	color: #fff; 
+	font-weight: Bold;
+}
+
+.simple-nav li.current 
+{
+    width: 100%;
+    background-color: maroon;
+}
+
+/* BRAND PHOTO SECTION */
+.image                     { position: relative; width:460px; margin:5px; float:left; border:solid 1px #000; border-width: 3px; background-color: #000;}
+.image img                 { width: 460px;}
+.image h2                  { position: absolute; top: 200px; left: 0; width: 100%; }
+.image h2 span             { color: white; font: bold 24px/45px Helvetica, Sans-Serif; letter-spacing: -1px; background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); padding: 10px; }
+.image h2 span.spacer      { padding: 0 2px; background: none; }
+
+      
+/* SEARCH SECTION */
+.search-input-header-placeholder {
+	margin:10px 0 0 0;
+	padding:6px;
+	width:200px;
+	line-height: 34px;
+}
+.search-input-placeholder {
+	padding:6px;
+	width:200px;
+	line-height: 34px;
+}
+
+/* RED FLAG SECTION */
+.invite-a-friend {
+	width:35px;
+	height:110px;
+	background:url("../images/invite-a-friend.png") no-repeat;
+	position:absolute;
+	top:0;
+	right:7%;
+	text-indent: -9999px;
+}
+
+/* PRIMARY NAVIGATION SECTION */
+#main_navigation {
+	top:5px;
+	font-size:11px;
+	height:50px;
+	float:right;
+	z-index:1000;
+}
+.main-menu {
+	position:relative;
+	z-index:1000;
+	font-family: 'Michroma', 'Orbitron', Verdana, Helvetica, Trebuchet MS, Sans-Serif;
+}
+.main-menu ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.main-menu ul li {
+	position:relative;
+	display:inline;
+	float:left;
+	margin:0px 5px;
+	border-right: 1px solid white;
+}
+.no-right-border {
+    vertical-align: bottom; 
+    padding-top: 10px;
+}
+.main-menu ul li a,.main-menu ul li a:link {
+	line-height:30px;
+	color:#FFF;
+	text-shadow:none;
+	font-size:15px; 
+	text-transform:uppercase;
+}
+
+/* SPAN*/
+.main-menu ul li a span {
+	display:block;
+	color:#f5f5f5;
+	font-size:12px;
+	margin-top:-10px;
+	text-transform:capitalize;
+	text-shadow:none;
+}
+.main-menu ul li a:hover,.main-menu ul li:hover {
+	color:#FFF!important;
+	background:#ce1920;
+	border-radius:4px 4px 0 0;
+	-moz-border-radius:4px 4px 0 0;
+	-webkit-border-radius:4px 4px 0 0;
+}
+.main-menu ul li:hover a {
+	color:#FFF!important;
+}
+.main-menu ul li a {
+	display:block;
+	text-decoration:none;
+	overflow:hidden;
+	padding:0px 15px;
+}
+* html .main-menu ul li a {
+	display:inline-block;
+}
+.main-menu ul li ul {
+	position:absolute;
+	left:0px;
+	display:block;
+	visibility:hidden;
+	color:#FFF;
+	width:187px;
+}
+.main-menu ul li ul li {
+	display:list-item;
+	float:none;
+	border-right:none!important;
+	color:#FFF;
+}
+.main-menu ul li ul li a {
+	width:150px;
+	padding:5px 0px;
+	margin:0px 7px;
+}
+.main-menu ul ul li:hover,.main-menu ul ul li a:hover {
+	border-top:none;
+	margin-top:0!important;
+}
+.main-menu ul ul {
+	background:#ce1920;
+	z-index:101;
+	color:#FFF;
+	padding:10px 0;
+	border-radius:0px 4px 4px 4px;
+	-moz-border-radius:0 4px 4px 4px;
+	-webkit-border-radius:0 4px 4px 4px;
+	position:relative;
+}
+/*-------------------------------------------------------*/
+/*------------------05 - FORMS STYLE------------------*/
+/*-------------------------------------------------------*/
+label {
+	font-weight:normal;
+	color:#000; display: block;
+}
+input[type=text],input[type=password],textarea,select {
+	background-color:#FFF;
+	border:1px solid #000;
+	font-size:14px;
+}
+select {
+	width:300px;
+}
+select.small {
+	width:70px;
+}
+textarea {
+	width:680px;
+	height:180px;
+	padding:10px 5px;
+}
+.requiredfield 
+{
+    color: Red;
+}

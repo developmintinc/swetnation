@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SwetNation.Web
 {
-    public partial class GiftCard : System.Web.UI.Page
+    public partial class GiftCard : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

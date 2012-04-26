@@ -59,13 +59,13 @@ namespace MerchantTribe.Commerce.Accounts
                 UserAccount u = AdminUsers.FindByEmail(email);
                 if (u == null)
                 {
-                    errorMessage = "Please check your email address and password and try again.";
+                    errorMessage = "Please check your email address try again.";
                     return false;
                 }
 
                 if (!u.DoesPasswordMatch(password))
                 {
-                    errorMessage = "Please check your email address and password and try again.";
+                    errorMessage = "Please check your password and try again.";
                     return false;
                 }
 
