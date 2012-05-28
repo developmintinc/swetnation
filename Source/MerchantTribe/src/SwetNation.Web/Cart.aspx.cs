@@ -14,13 +14,17 @@ using MerchantTribe.Commerce.Utilities;
 using MerchantTribe.Commerce.BusinessRules;
 using MerchantTribe.Web.Logging;
 using SwetNation.Web.models;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
     public partial class Cart : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
+            this.IsAuthorized();
+            this.IsLive();
+
             if (!Page.IsPostBack)
             {
                 BindCartItems();
@@ -31,7 +35,44 @@ namespace SwetNation.Web
         {
             CartViewModel model = new CartViewModel();
             model = LoadCart(model);
+
+            ////////////////////////////////////////////////////
+            // SHIPPING
+            ////////////////////////////////////////////////////
+            SortableCollection<MerchantTribe.Commerce.Shipping.ShippingRateDisplay> Rates = MTApp.OrderServices.FindAvailableShippingRates(model.CurrentOrder);
+            decimal shippingTotal = 0;
+            foreach (MerchantTribe.Commerce.Shipping.ShippingRateDisplay rate in Rates)
+            {
+                if (!model.FreeShipping && !rate.DisplayName.ToLower().Contains("free"))
+                {
+                    shippingTotal = rate.Rate;
+                    MTApp.OrderServices.OrdersRequestShippingMethodByUniqueKey(rate.UniqueKey, model.CurrentOrder);
+                    MTApp.CalculateOrder(model.CurrentOrder);
+                    MTApp.OrderServices.Orders.Update(model.CurrentOrder);
+                    SessionManager.SaveOrderCookies(model.CurrentOrder, MTApp.CurrentStore);
+                }
+                else if (model.FreeShipping && rate.DisplayName.ToLower().Contains("free"))
+                {
+                    MTApp.OrderServices.OrdersRequestShippingMethodByUniqueKey(rate.UniqueKey, model.CurrentOrder);
+                    MTApp.CalculateOrder(model.CurrentOrder);
+                    MTApp.OrderServices.Orders.Update(model.CurrentOrder);
+                    SessionManager.SaveOrderCookies(model.CurrentOrder, MTApp.CurrentStore);
+                }
+
+                //shippingrate.Value = rate.UniqueKey;                
+            }            
+
+            ////////////////////////////////////////////////////
+            // TOTALS
+            ////////////////////////////////////////////////////
             litSubTotal.Text = model.CurrentOrder.OrderDiscountDetails.Count > 0 ? string.Format("{0:c}", model.CurrentOrder.TotalOrderAfterDiscounts) : string.Format("{0:c}", model.CurrentOrder.TotalOrderBeforeDiscounts);
+            litTax.Text = string.Format("{0:c}", model.CurrentOrder.TotalTax);
+            litShipping.Text = string.Format("{0:c}", model.CurrentOrder.TotalShippingAfterDiscounts);
+            litGrandTotal.Text = string.Format("{0:c}", model.CurrentOrder.TotalGrand);
+
+            ////////////////////////////////////////////////////
+            // ITEMS
+            ////////////////////////////////////////////////////
             rptCartItems.DataSource = model.LineItems;
             rptCartItems.DataBind();
         }
@@ -41,9 +82,6 @@ namespace SwetNation.Web
             Order Basket = SessionManager.CurrentShoppingCart(MTApp.OrderServices, MTApp.CurrentStore);
             if (Basket == null)
             {
-                ///////////////////////////////////////////////////////////
-                // TO DO
-                ///////////////////////////////////////////////////////////
                 lblMessage.Text = "there are no items in your shopping cart";
             }
 
@@ -52,11 +90,9 @@ namespace SwetNation.Web
             if ((Basket.Items == null) || ((Basket.Items != null) && (Basket.Items.Count <= 0)))
             {
                 model.CartEmpty = true;
-                ///////////////////////////////////////////////////////////
-                // TO DO
-                ///////////////////////////////////////////////////////////
             }
 
+            bool freeShipping = true;
             foreach (LineItem li in model.CurrentOrder.Items)
             {
                 CartLineItemViewModel ci = new CartLineItemViewModel();
@@ -65,12 +101,14 @@ namespace SwetNation.Web
                 MerchantTribe.Commerce.Catalog.Product associatedProduct = li.GetAssociatedProduct(MTApp);
                 if (associatedProduct != null)
                 {
+                    if (freeShipping)
+                        freeShipping = associatedProduct.ShippingDetails.IsNonShipping;
+
                     ci.ShowImage = true;
                     ci.ImageUrl = MerchantTribe.Commerce.Storage.DiskStorage.ProductVariantImageUrlMedium(MTApp.CurrentStore.Id, li.ProductId, associatedProduct.ImageFileSmall, li.VariantId, Request.IsSecureConnection);
                     ci.LinkUrl = "ProductDetail.aspx?bvin=" + associatedProduct.Bvin + "&OrderBvin=" + li.OrderBvin + "&LineItemId=" + li.Id;
                 }
-
-
+                
                 if (li.LineTotal != li.LineTotalWithoutDiscounts)
                 {
                     ci.HasDiscounts = true;
@@ -78,6 +116,8 @@ namespace SwetNation.Web
 
                 model.LineItems.Add(ci);                
             }
+
+            model.FreeShipping = freeShipping;
 
             return model;
         }
@@ -116,7 +156,12 @@ namespace SwetNation.Web
                         SessionManager.SaveOrderCookies(Basket, MTApp.CurrentStore);
                     }
                 }
-            }            
+            }
+        }
+
+        public void lnkSecureShopping_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Checkout.aspx");
         }
     }
 }

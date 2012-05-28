@@ -10,8 +10,8 @@
     <div id="page-wrap-logo">
         <table width="100%">
             <tr>
-                <td><img src="/images/logo/SNLogoNav.png" alt="Swet Nation" /></td>
-                <td style="font-size: 20px; font-weight: bold;">
+                <td><img src="images/logo/SNLogoNav.png" alt="Swet Nation" /></td>
+                <td class="tagline">
                     SPORTS BRANDS<br />
                     MEMBERS PRICES
                 </td>
@@ -19,7 +19,7 @@
         </table>
     </div>
 
-    <div id="page-wrap">
+    <div id="page-wrap" class="bottom">
         <asp:Panel ID="pnlPasswordReset" runat="server" Visible="false">
             <p>This form will generate a new random password for your account. You will receive an email with your new password.</p>
         </asp:Panel>
@@ -44,17 +44,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="3" class="bottom">
                         <br />
                         <hr style=" border-bottom: 1px solid white;" />
                         <br />
-                        <span style="font-size:24px; font-weight:bold;">OTHER OPTIONS?</span>
+                        
+                        <span class="tagline">ALREADY A MEMBER</span>
+                        <br />
+                        <asp:LinkButton ID="lnkSignIn" runat="server" Text="SIGN IN" CssClass="button round big deep-red" PostBackUrl="~/SignIn.aspx"></asp:LinkButton>
+                        <br /><br /><br />
+
+                        <span class="tagline">BECOME A MEMBER</span><br />
+                        <asp:LinkButton ID="lnkSignUp" runat="server" Text="SIGN UP" CssClass="button round big deep-red" PostBackUrl="~/SignUp.aspx"></asp:LinkButton>
                         <br /><br />
-                        ALREADY A MEMBER<br />
-                        <a href="SignIn.aspx" style="color:White;">Sign In</a>
-                        <br /><br />
-                        BECOME A MEMBER<br />
-                        <a href="SignIn.aspx" style="color:White;">Sign Up</a>
                     </td>
                 </tr>
             </table>

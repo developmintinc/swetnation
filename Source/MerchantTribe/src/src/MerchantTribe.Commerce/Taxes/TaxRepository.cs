@@ -18,6 +18,7 @@ namespace MerchantTribe.Commerce.Taxes
                         new MemoryStrategy<Data.EF.ecommrc_Taxes>(PrimaryKeyType.Long), new TextLogger());
             return result;
         }
+
         public static TaxRepository InstantiateForDatabase(RequestContext c)
         {
             TaxRepository result = null;
@@ -25,7 +26,8 @@ namespace MerchantTribe.Commerce.Taxes
                      new EntityFrameworkRepository<Data.EF.ecommrc_Taxes>(new Data.EF.EntityFrameworkDevConnectionString(c.ConnectionStringForEntityFramework)),
                      new EventLog());            
             return result;
-        }       
+        }
+
         public TaxRepository(RequestContext c, IRepositoryStrategy<Data.EF.ecommrc_Taxes> r, ILogger log)
         {
             context = c;
@@ -45,6 +47,7 @@ namespace MerchantTribe.Commerce.Taxes
             model.StoreId = data.StoreId;
             model.TaxScheduleId = data.TaxScheduleId;            
         }
+
         protected override void CopyModelToData(Data.EF.ecommrc_Taxes data, Tax model)
         {
             data.ApplyToShipping = model.ApplyToShipping;

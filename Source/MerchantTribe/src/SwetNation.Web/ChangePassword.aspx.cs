@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using MerchantTribe.Commerce;
 using MerchantTribe.Commerce.Membership;
 using MerchantTribe.Commerce.Contacts;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
@@ -14,8 +15,8 @@ namespace SwetNation.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["messages"] = "";
             this.IsAuthorized();
+            Session["messages"] = "";
         }
 
         public void lnkUpdate_Click(object sender, EventArgs e)

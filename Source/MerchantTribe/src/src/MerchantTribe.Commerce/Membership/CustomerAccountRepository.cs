@@ -47,6 +47,8 @@ namespace MerchantTribe.Commerce.Membership
             model.FirstName = data.FirstName;
             model.LastLoginDateUtc = data.LastLoginDate;
             model.LastName = data.LastName;
+            model.DOB = data.DOB;
+            model.Gender = data.Gender;
             model.Locked = data.Locked == 1;
             model.LockedUntilUtc = data.LockedUntil;
             model.Notes = data.Comment;
@@ -75,6 +77,8 @@ namespace MerchantTribe.Commerce.Membership
             data.FirstName = model.FirstName;
             data.LastLoginDate = model.LastLoginDateUtc;
             data.LastName = model.LastName;
+            data.DOB = model.DOB;
+            data.Gender = model.Gender;
             data.Locked = model.Locked ? 1 : 0;
             data.LockedUntil = model.LockedUntilUtc;
             data.Comment = model.Notes;
@@ -136,9 +140,9 @@ namespace MerchantTribe.Commerce.Membership
             long storeId = context.CurrentStore.Id;
             CustomerAccount item = Find(bvin);
             if (item == null) return false;            
-           bool result = Delete(new PrimaryKey(bvin));
-           if (result) Integration.Current().CustomerAccountDeleted(item);
-           return result;
+            bool result = Delete(new PrimaryKey(bvin));
+            if (result) Integration.Current().CustomerAccountDeleted(item);
+            return result;
         }
 
         public List<CustomerAccount> FindAll()
@@ -151,8 +155,7 @@ namespace MerchantTribe.Commerce.Membership
         {
             List<CustomerAccount> result = new List<CustomerAccount>();
             long storeId = context.CurrentStore.Id;
-            IQueryable<Data.EF.bvc_User> data = repository.Find().Where(y => y.StoreId == storeId)
-                                      .OrderBy(y => y.Email);
+            IQueryable<Data.EF.bvc_User> data = repository.Find().Where(y => y.StoreId == storeId).OrderBy(y => y.Email);
 
             var countData = data;
             totalCount = countData.Count();
@@ -167,8 +170,7 @@ namespace MerchantTribe.Commerce.Membership
         public CustomerAccount FindByEmail(string email)
         {
             long storeId = context.CurrentStore.Id;
-            var query = repository.Find().Where(y => y.StoreId == storeId)
-                                        .Where(y => y.Email == email);
+            var query = repository.Find().Where(y => y.StoreId == storeId).Where(y => y.Email == email);
             return FirstPoco(query);                
         }
 

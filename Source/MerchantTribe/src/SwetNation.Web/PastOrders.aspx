@@ -2,11 +2,11 @@
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <%@ Register Src="~/controls/MyAccountNav.ascx" TagName="MyAccountNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">
-    <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Past Orders" />
+    <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="My Orders" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftBodyContent" runat="server">
 	<div id="login-form">
-	    <div class="header-title-medium">Past Orders</div>
+	    <div class="header-title-medium">My Orders</div>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">

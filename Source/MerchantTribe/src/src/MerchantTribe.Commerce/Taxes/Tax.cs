@@ -35,17 +35,12 @@ namespace MerchantTribe.Commerce.Taxes
             bool result = false;
 
             if (item.TaxScheduleId() == this.TaxScheduleId)
-            {
-                if (address.CountryData.Name.ToLowerInvariant() == this.CountryName.ToLowerInvariant())
+            {                
+                if (this.RegionAbbreviation == "" || address.RegionData.Abbreviation.ToLowerInvariant() == this.RegionAbbreviation.ToLowerInvariant())
                 {
-                    if (this.RegionAbbreviation == "" ||
-                        address.RegionData.Abbreviation.ToLowerInvariant() == this.RegionAbbreviation.ToLowerInvariant())
+                    if (this.PostalCode == "" || address.PostalCode.ToLowerInvariant() == this.PostalCode.ToLowerInvariant())
                     {
-                        if (this.PostalCode == "" ||
-                            address.PostalCode.ToLowerInvariant() == this.PostalCode.ToLowerInvariant())
-                        {
-                            result = true;
-                        }
+                        result = true;
                     }
                 }
             }

@@ -76,6 +76,24 @@ namespace MerchantTribeStore {
         protected global::System.Web.UI.WebControls.TextBox SmallImageAlternateTextField;
         
         /// <summary>
+        /// SaleStartsField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SaleStartsField;
+        
+        /// <summary>
+        /// SaleEndsField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SaleEndsField;
+        
+        /// <summary>
         /// DisplayNameField control.
         /// </summary>
         /// <remarks>

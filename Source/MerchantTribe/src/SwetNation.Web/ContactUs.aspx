@@ -10,52 +10,47 @@
     <h4>CONTACT US</h4>
 	<p>
         Swet Nation LLC<br />
-        49 Lincoln Blvd.<br />
+        49 Lincoln Bvld PMB#121<br />
         Abington, MA 02351<br />
-        support@swetnation.com<br />
-        888-888-8888<br />
+        Email: <a href="mailto:support@swetnation.com">support@swetnation.com</a><br />
+        Phone: 888-888-8888<br />
 	</p>
 	
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">
+    <div class="header-title-medium">CONTACT US</div>
 	<p>
 		Questions? Comments? Suggestions? Want to request a brand?
 	</p>
+    <p>
+        <%= Session["messages"] %>
+    </p>
 	<div id="contact-form">
 		<div class="one-third-big">
 			<fieldset>
 				<label>Name <span class="required">*</span></label>
-				<input type="text" name="name" id="Myname" value="" class="text requiredField"/>
+                <asp:TextBox ID="txtName" runat="server" Width="250px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Required" ControlToValidate="txtName" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
 			</fieldset>
 		</div>
 		<div class="one-third-big last">
 			<fieldset>
 				<label>Email <span class="required">*</span></label>
-				<input type="text" name="email" id="myemail" value="" class="text requiredField email"/>
-			</fieldset>
-		</div>
-		<div class="one-third-big">
-			<fieldset>
-				<label>Subject <span class="required">*</span></label>
-				<input type="text" name="subject" id="mySubject" value="" class="text requiredField subject"/>
-			</fieldset>
-		</div>
-		<div class="one-third-big last">
-			<fieldset>
-				<label>Budget <span class="required">*</span></label>
-				<input type="text" name="budget" id="myBudget" value="" class="text requiredField subject"/>
+                <asp:TextBox ID="txtEmail" runat="server" Width="250px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="Required" ControlToValidate="txtEmail" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
 			</fieldset>
 		</div>
 		<div class="inner-content">
-		<fieldset>
-			<label>Your Message <span class="required">*</span></label>
-			<textarea name="message" id="Mymessage" rows="20" cols="30" class="text requiredField"></textarea>
-		</fieldset>
+		    <fieldset>
+			    <label>Your Message <span class="required">*</span></label>
+                <asp:TextBox ID="txtMessage" runat="server" Width="620" Height="200" TextMode="MultiLine"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="rfvMessage" runat="server" ErrorMessage="Required" ControlToValidate="txtMessage" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+		    </fieldset>
 		</div>
 		<div class="inner-content">
-		<fieldset>
-			<input name="Mysubmitted" id="Mysubmitted" value="Send Message" class="button cube small blue" type="submit"/>
-		</fieldset>
+		    <fieldset>
+                <asp:Button ID="btnContactUs" runat="server" Text="Send Message" CssClass="button round big deep-red" OnClick="btnContactUs_Click" />
+		    </fieldset>
 		</div>
 	</div>
 </asp:Content>

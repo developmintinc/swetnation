@@ -9173,6 +9173,54 @@ namespace MerchantTribe.Commerce.Data.EF
         private global::System.String _Description;
         partial void OnDescriptionChanging(global::System.String value);
         partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> SaleStarts
+        {
+            get
+            {
+                return _SaleStarts;
+            }
+            set
+            {
+                OnSaleStartsChanging(value);
+                ReportPropertyChanging("SaleStarts");
+                _SaleStarts = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SaleStarts");
+                OnSaleStartsChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _SaleStarts;
+        partial void OnSaleStartsChanging(Nullable<global::System.DateTime> value);
+        partial void OnSaleStartsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> SaleEnds
+        {
+            get
+            {
+                return _SaleEnds;
+            }
+            set
+            {
+                OnSaleEndsChanging(value);
+                ReportPropertyChanging("SaleEnds");
+                _SaleEnds = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SaleEnds");
+                OnSaleEndsChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _SaleEnds;
+        partial void OnSaleEndsChanging(Nullable<global::System.DateTime> value);
+        partial void OnSaleEndsChanged();
 
         #endregion
     
@@ -19509,6 +19557,54 @@ namespace MerchantTribe.Commerce.Data.EF
         private global::System.String _BillingAddress;
         partial void OnBillingAddressChanging(global::System.String value);
         partial void OnBillingAddressChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String DOB
+        {
+            get
+            {
+                return _DOB;
+            }
+            set
+            {
+                OnDOBChanging(value);
+                ReportPropertyChanging("DOB");
+                _DOB = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("DOB");
+                OnDOBChanged();
+            }
+        }
+        private global::System.String _DOB;
+        partial void OnDOBChanging(global::System.String value);
+        partial void OnDOBChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Gender
+        {
+            get
+            {
+                return _Gender;
+            }
+            set
+            {
+                OnGenderChanging(value);
+                ReportPropertyChanging("Gender");
+                _Gender = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Gender");
+                OnGenderChanged();
+            }
+        }
+        private global::System.String _Gender;
+        partial void OnGenderChanging(global::System.String value);
+        partial void OnGenderChanged();
 
         #endregion
     

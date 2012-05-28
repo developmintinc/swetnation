@@ -25,7 +25,7 @@
                                 <span>
                                     SHOP <%# Eval("DisplayName").ToString().ToUpper() %>
                                     <span class='spacer'></span><br /><span class='spacer'></span>
-                                    SALE ENDS APRIL 30TH
+                                    <%# ConvertSaleEndDateToString(Convert.ToDateTime(Eval("SaleEnds"))) %>
                                 </span>
                             </h2>
                         </div>
@@ -39,7 +39,7 @@
                                 <span>
                                     SHOP <%# Eval("DisplayName").ToString().ToUpper() %>
                                     <span class='spacer'></span><br /><span class='spacer'></span>
-                                    SALE ENDS MAY 1ST
+                                    <%# ConvertSaleEndDateToString(Convert.ToDateTime(Eval("SaleEnds"))) %>
                                 </span>
                             </h2>
                         </div>

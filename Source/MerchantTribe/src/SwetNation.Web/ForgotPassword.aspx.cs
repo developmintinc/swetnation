@@ -8,10 +8,11 @@ using MerchantTribe.Commerce;
 using MerchantTribe.Commerce.Content;
 using MerchantTribe.Commerce.Membership;
 using MerchantTribe.Commerce.Utilities;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
-    public partial class ForgotPassword : NotAuthorizedPage
+    public partial class ForgotPassword : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

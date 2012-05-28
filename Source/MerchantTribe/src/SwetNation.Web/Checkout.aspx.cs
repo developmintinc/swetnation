@@ -13,46 +13,62 @@ using MerchantTribe.Commerce.Content;
 using MerchantTribe.Commerce.Contacts;
 using MerchantTribe.Commerce.Payment;
 using MerchantTribe.Commerce.BusinessRules;
+using MerchantTribe.Payment;
 using MerchantTribe.Web.Logging;
 using MerchantTribe.Web.Validation;
 using SwetNation.Web.models;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
+    ////////////////////////////////////////////////////////////////////
+    // SECTIONS:
+    // SHIPPING ADDRESS
+    // BILLING ADDRESS
+    // PAYMENT METHODS
+    // SPECIAL INSTRUCTIONS
+    // TERMS
+    // ORDER SUMMARY
+    ////////////////////////////////////////////////////////////////////
     public partial class Checkout : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CheckoutViewModel model = IndexSetup();
+            this.IsAuthorized();
+            this.IsLive();
+            Session["messages"] = "";
+            if (!Page.IsPostBack)
+            {
+                CheckoutViewModel model = IndexSetup();
+            }                
         }
 
+        ////////////////////////////////////////////////////////////////////
+        // INITIALIZE
+        ////////////////////////////////////////////////////////////////////
         private CheckoutViewModel IndexSetup()
         {
             CheckoutViewModel model = new CheckoutViewModel();
+            LoadAddress();
             LoadOrder(model);
-            CheckForPoints(model);
-
-            // Buttons
-            ThemeManager themes = MTApp.ThemeManager();
-            //model.ButtonCheckoutUrl = themes.ButtonUrl("PlaceOrder", Request.IsSecureConnection);
-            //model.ButtonLoginUrl = MTApp.ThemeManager().ButtonUrl("Login", Request.IsSecureConnection);
-            imgLogin.ImageUrl = MTApp.ThemeManager().ButtonUrl("Login", Request.IsSecureConnection);
-            imgPlaceOrder.ImageUrl = themes.ButtonUrl("PlaceOrder", Request.IsSecureConnection);
 
             // Labels
             model.LabelRewardPoints = MTApp.CurrentStore.Settings.RewardsPointsName;
+            litRewardPoints.Text = model.LabelRewardPoints;
 
             // Agree Checkbox
             if (MTApp.CurrentStore.Settings.ForceTermsAgreement)
             {
+                /*
                 pnlShowAgreeToTerms.Visible = true;
                 model.ShowAgreeToTerms = true;
-                model.AgreedToTerms = false;
+                model.AgreedToTerms = chkAgreed.Checked;
                 model.AgreedToTermsDescription = SiteTerms.GetTerm(SiteTermIds.TermsAndConditionsAgreement);
                 litAgreedToTermsDescription.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditionsAgreement);
                 model.LabelTerms = SiteTerms.GetTerm(SiteTermIds.TermsAndConditions);
-                hypSiteTerms.NavigateUrl = "Terms.aspx";
+                hypSiteTerms.NavigateUrl = "TermsOfUse.aspx";
                 hypSiteTerms.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditions);
+                */
             }
             else
             {
@@ -63,11 +79,76 @@ namespace SwetNation.Web
 
             // Populate Countries
             model.Countries = MTApp.CurrentStore.Settings.FindActiveCountries();
-            //model.PaymentViewModel.AcceptedCardTypes = MTApp.CurrentStore.Settings.PaymentAcceptedCards;
 
             return model;
         }
 
+        ////////////////////////////////////////////////////////////////////
+        // SHIPPING ADDRESS
+        ////////////////////////////////////////////////////////////////////
+        private void LoadAddress()
+        {
+            CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
+            if (u != null)
+            {
+                switch (u.ShippingAddress.IsEmpty() && u.BillingAddress.IsEmpty())
+                {
+                    case true:
+                        ////////////////////////////////////////////////////////////////////
+                        // SHIPPING ADDRESS
+                        ////////////////////////////////////////////////////////////////////
+                        MerchantTribe.Commerce.Contacts.Address s = new MerchantTribe.Commerce.Contacts.Address();
+                        s.Bvin = System.Guid.NewGuid().ToString();
+                        hdfShippingAddressBvin.Value = s.Bvin;
+
+                        ////////////////////////////////////////////////////////////////////
+                        // BILLING ADDRESS
+                        ////////////////////////////////////////////////////////////////////
+                        MerchantTribe.Commerce.Contacts.Address b = new MerchantTribe.Commerce.Contacts.Address();
+                        b.Bvin = System.Guid.NewGuid().ToString();
+                        hdfBillingAddressBvin.Value = b.Bvin;
+                        break;
+                    default:
+                        ////////////////////////////////////////////////////////////////////
+                        // SHIPPING ADDRESS
+                        ////////////////////////////////////////////////////////////////////
+                        if (u.ShippingAddress != null)
+                        {
+                            hdfShippingAddressBvin.Value = u.ShippingAddress.Bvin;
+                            txtShippingFirstName.Text = u.ShippingAddress.FirstName;
+                            txtShippingLastName.Text = u.ShippingAddress.LastName;
+                            txtShippingAddress1.Text = u.ShippingAddress.Line1;
+                            txtShippingAddress2.Text = u.ShippingAddress.Line2;
+                            txtShippingCity.Text = u.ShippingAddress.City;
+                            MerchantTribe.Web.Geography.RegionSnapShot shippingRegionSnapShot = u.ShippingAddress.RegionData;
+                            ddlShippingState.SelectedIndex = ddlShippingState.Items.IndexOf(ddlShippingState.Items.FindByValue(shippingRegionSnapShot.Abbreviation));
+                            txtShippingPostalCode.Text = u.ShippingAddress.PostalCode;
+                        }
+
+                        ////////////////////////////////////////////////////////////////////
+                        // BILLING ADDRESS
+                        ////////////////////////////////////////////////////////////////////
+                        if (u.BillingAddress != null)
+                        {
+                            hdfBillingAddressBvin.Value = u.BillingAddress.Bvin;
+                            txtBillingFirstName.Text = u.BillingAddress.FirstName;
+                            txtBillingLastName.Text = u.BillingAddress.LastName;
+                            txtBillingAddress1.Text = u.BillingAddress.Line1;
+                            txtBillingAddress2.Text = u.BillingAddress.Line2;
+                            txtBillingCity.Text = u.BillingAddress.City;
+                            MerchantTribe.Web.Geography.RegionSnapShot billingRegionSnapShot = u.BillingAddress.RegionData;
+                            ddlBillingState.SelectedIndex = ddlBillingState.Items.IndexOf(ddlBillingState.Items.FindByValue(billingRegionSnapShot.Abbreviation));
+                            txtBillingPostalCode.Text = u.BillingAddress.PostalCode;
+                        }
+
+                        break;
+                }
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////
+        // LOAD ORDER DETAILS
+        ////////////////////////////////////////////////////////////////////
         private void LoadOrder(CheckoutViewModel model)
         {
             Order result = SessionManager.CurrentShoppingCart(MTApp.OrderServices, MTApp.CurrentStore);
@@ -80,66 +161,60 @@ namespace SwetNation.Web
             }
 
             // Form Values
-            hypForgotPassword.NavigateUrl = "ForgotPassword.aspx?Email=" + model.CurrentOrder.UserEmail;
             txtSpecialInstructions.Text = model.CurrentOrder.Instructions;
+
+            ////////////////////////////////////////////////////
+            // SHIPPING
+            ////////////////////////////////////////////////////
+            /*
+            bool freeShipping = true;
+            foreach (LineItem li in model.CurrentOrder.Items)
+            {
+                CartLineItemViewModel ci = new CartLineItemViewModel();
+                ci.Item = li;
+
+                MerchantTribe.Commerce.Catalog.Product associatedProduct = li.GetAssociatedProduct(MTApp);
+                if (associatedProduct != null)
+                {
+                    if (freeShipping)
+                        freeShipping = associatedProduct.ShippingDetails.IsNonShipping;
+                }
+            }
+            */
+
+            /*
+            MerchantTribe.Commerce.Utilities.SortableCollection<MerchantTribe.Commerce.Shipping.ShippingRateDisplay> Rates = MTApp.OrderServices.FindAvailableShippingRates(model.CurrentOrder);
+            if (!freeShipping)
+            {
+                foreach (MerchantTribe.Commerce.Shipping.ShippingRateDisplay rate in Rates)
+                {
+                    model.CurrentOrder.TotalShippingBeforeDiscounts = rate.Rate;
+                    break;
+                }
+            }
+            */
+
             litTotalsAsTable.Text = model.CurrentOrder.TotalsAsTable();
 
             // Email
-            model.IsLoggedIn = false;
-            if (SessionManager.IsUserAuthenticated(this.MTApp))
-            {
-                model.IsLoggedIn = true;
-                model.CurrentCustomer = MTApp.CurrentCustomer;
-                if (model.CurrentCustomer != null)
-                {
-                    txtCustomerEmail.Text = model.CurrentCustomer.Email;
-                }
+            model.CurrentCustomer = MTApp.CurrentCustomer;
 
-                // Copy customer addresses to order
-                model.CurrentCustomer.ShippingAddress.CopyTo(model.CurrentOrder.ShippingAddress);
-                if (model.BillShipSame == false)
-                {
-                    Address billAddr = model.CurrentCustomer.BillingAddress;
-                    billAddr.CopyTo(model.CurrentOrder.BillingAddress);
-                    chkBillSame.Checked = false;
-                }
-                else
-                {
-                    chkBillSame.Checked = true;
-                }
-            }
+            // Copy customer addresses to order
+            model.CurrentCustomer.ShippingAddress.CopyTo(model.CurrentOrder.ShippingAddress);
+            Address billAddr = model.CurrentCustomer.BillingAddress;
+            billAddr.CopyTo(model.CurrentOrder.BillingAddress);
 
             // Payment
             DisplayPaymentMethods(model);
+
+            // Order Items
+            ucViewOrderItems.items = model.CurrentOrder.Items;
+            ucViewOrderItems.LoadOrderItems();
         }
-        
-        public void CheckForPoints(CheckoutViewModel model)
-        {
-            model.ShowRewards = false;
-
-            if (model.CurrentCustomer == null || model.CurrentCustomer.Bvin == string.Empty) return;
-
-            string uid = model.CurrentCustomer.Bvin;
-            int points = MTApp.CustomerPointsManager.FindAvailablePoints(uid);
-            if (points > 0 && MTApp.CurrentStore.Settings.RewardsPointsOnPurchasesActive)
-            {
-                model.ShowRewards = true;
-                int potentialPointsToUse = MTApp.CustomerPointsManager.PointsNeededForPurchaseAmount(model.CurrentOrder.TotalOrderAfterDiscounts);
-                int amountToUse = 0;
-                if (points > potentialPointsToUse)
-                {
-                    amountToUse = potentialPointsToUse;
-                }
-                else
-                {
-                    amountToUse = points;
-                }
-                model.RewardPointsAvailable = "You have " + points.ToString() + " " + model.LabelRewardPoints + " available.";
-                decimal dollarValue = MTApp.CustomerPointsManager.DollarCreditForPoints(amountToUse);
-                model.LabelRewardsUse = "Use " + amountToUse.ToString() + " [" + dollarValue.ToString("C") + "] " + model.LabelRewardPoints;
-            }
-        }
-
+                
+        ////////////////////////////////////////////////////////////////////
+        // PAYMENT METHODS
+        ////////////////////////////////////////////////////////////////////
         public void DisplayPaymentMethods(CheckoutViewModel model)
         {
             MerchantTribe.Commerce.Payment.AvailablePayments availablePayments = new MerchantTribe.Commerce.Payment.AvailablePayments();
@@ -190,23 +265,8 @@ namespace SwetNation.Web
                 {
                     switch (enabledMethods[0].MethodId)
                     {
-                        case WebAppSettings.PaymentIdCheck:
-                            model.PaymentViewModel.SelectedPayment = "check";
-                            break;
                         case WebAppSettings.PaymentIdCreditCard:
                             model.PaymentViewModel.SelectedPayment = "creditcard";
-                            break;
-                        case WebAppSettings.PaymentIdTelephone:
-                            model.PaymentViewModel.SelectedPayment = "telephone";
-                            break;
-                        case WebAppSettings.PaymentIdPurchaseOrder:
-                            model.PaymentViewModel.SelectedPayment = "purchaseorder";
-                            break;
-                        case WebAppSettings.PaymentIdCompanyAccount:
-                            model.PaymentViewModel.SelectedPayment = "companyaccount";
-                            break;
-                        case WebAppSettings.PaymentIdCashOnDelivery:
-                            model.PaymentViewModel.SelectedPayment = "cod";
                             break;
                         case WebAppSettings.PaymentIdPaypalExpress:
                             model.PaymentViewModel.SelectedPayment = "paypal";
@@ -228,10 +288,373 @@ namespace SwetNation.Web
             }
         }
 
-        protected void chkBillSame_CheckedChanged(Object sender, EventArgs args)
+        ////////////////////////////////////////////////////////////////////
+        // COPY SHIPPING ADDRESS TO BILLING ADDRESS
+        ////////////////////////////////////////////////////////////////////
+        protected void chkShippingSame_CheckedChanged(Object sender, EventArgs args)
         {
             CheckBox linkedItem = sender as CheckBox;
-            CheckoutAddressBilling.ShowForm = linkedItem.Checked;
+            if (linkedItem.Checked)
+            {
+                txtBillingFirstName.Text = txtShippingFirstName.Text;
+                txtBillingLastName.Text = txtShippingLastName.Text;
+                txtBillingAddress1.Text = txtShippingAddress1.Text;
+                txtBillingAddress2.Text = txtShippingAddress2.Text;
+                txtBillingCity.Text = txtShippingCity.Text;
+                ddlBillingState.SelectedIndex = ddlShippingState.Items.IndexOf(ddlShippingState.Items.FindByValue(ddlShippingState.SelectedItem.Value));
+                txtBillingPostalCode.Text = txtShippingPostalCode.Text;
+            }
+            else
+            {
+                txtBillingFirstName.Text = "";
+                txtBillingLastName.Text = "";
+                txtBillingAddress1.Text = "";
+                txtBillingAddress2.Text = "";
+                txtBillingCity.Text = "";
+                ddlBillingState.SelectedIndex = 0;
+                txtBillingPostalCode.Text = "";
+            }
+        }
+
+        protected void UpdateAddress()
+        {
+            CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
+            if (u != null)
+            {
+                ////////////////////////////////////////////////////////////////////
+                // SETUP REGION
+                ////////////////////////////////////////////////////////////////////
+                MerchantTribe.Web.Geography.RegionSnapShot shippingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
+                shippingRegionSnapShot.Abbreviation = ddlShippingState.SelectedItem.Value;
+                shippingRegionSnapShot.Name = ddlShippingState.SelectedItem.Text;
+
+                MerchantTribe.Web.Geography.RegionSnapShot billingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
+                billingRegionSnapShot.Abbreviation = ddlBillingState.SelectedItem.Value;
+                billingRegionSnapShot.Name = ddlBillingState.SelectedItem.Text;
+
+                ////////////////////////////////////////////////////////////////////
+                // SAVE ADDRESSES
+                ////////////////////////////////////////////////////////////////////
+                Address s = new Address();
+                s.Bvin = hdfShippingAddressBvin.Value;
+                s.FirstName = txtShippingFirstName.Text;
+                s.LastName = txtShippingLastName.Text;
+                s.Line1 = txtShippingAddress1.Text;
+                s.Line2 = txtShippingAddress2.Text;
+                s.City = txtShippingCity.Text;
+                s.PostalCode = txtShippingPostalCode.Text;
+                s.RegionData = shippingRegionSnapShot;
+
+                Address b = new Address();
+                b.Bvin = hdfBillingAddressBvin.Value;
+                b.FirstName = txtBillingFirstName.Text;
+                b.LastName = txtBillingLastName.Text;
+                b.Line1 = txtBillingAddress1.Text;
+                b.Line2 = txtBillingAddress2.Text;
+                b.City = txtBillingCity.Text;
+                b.PostalCode = txtBillingPostalCode.Text;
+                b.RegionData = billingRegionSnapShot;
+
+                ////////////////////////////////////////////////////////////////////
+                // SAVE ADDRESS TO SHIPPING AND BILLING
+                ////////////////////////////////////////////////////////////////////
+                u.ShippingAddress = s;
+                u.BillingAddress = b;
+
+                ////////////////////////////////////////////////////////////////////
+                // SAVE USER PROFILE
+                ////////////////////////////////////////////////////////////////////
+                MTApp.MembershipServices.UpdateCustomer(u);
+            }
+        }
+
+        public void lnkPlaceOrder_Click(Object sender, EventArgs args)
+        {
+            CheckoutViewModel model = IndexSetup();
+            TagOrderWithAffiliate(model);
+            LoadValuesFromForm(model);
+            if (ValidateOrder(model))
+            {
+                ProcessOrder(model);
+            }
+
+            // Render Error Summary
+            foreach (var v in model.Violations)
+            {
+                FlashFailure(v.ErrorMessage);
+            }
+        }
+
+        private void TagOrderWithAffiliate(CheckoutViewModel model)
+        {
+            string affid = MTApp.ContactServices.GetValidAffiliateId(MTApp).ToString();
+            if (!string.IsNullOrEmpty(affid))
+            {
+                model.CurrentOrder.AffiliateID = affid;
+            }
+        }
+
+        private void LoadValuesFromForm(CheckoutViewModel model)
+        {
+            UpdateAddress();
+
+            // Addresses
+            //model.BillShipSame = (chkBillSame.Checked);
+
+            /*
+            LoadAddressFromForm("shipping", model.CurrentOrder.ShippingAddress);
+            LoadAddressFromForm("billing", model.CurrentOrder.BillingAddress);
+            model.CurrentOrder.ShippingAddress.CopyTo(model.CurrentOrder.BillingAddress);
+            model.CurrentOrder.BillingAddress.CopyTo(model.CurrentCustomer.BillingAddress);
+            model.CurrentOrder.ShippingAddress.CopyTo(model.CurrentOrder.ShippingAddress);
+            */
+
+            // Save addresses to customer account
+            MTApp.MembershipServices.Customers.Update(model.CurrentCustomer);
+
+            //Shipping
+            string shippingRateKey = Request.QueryString["shippingrate"];
+            MTApp.OrderServices.OrdersRequestShippingMethodByUniqueKey(shippingRateKey, model.CurrentOrder);
+
+            // Save Values so far in case of later errors
+            MTApp.CalculateOrder(model.CurrentOrder);
+
+            // Payment Methods
+            LoadPaymentFromForm(model);
+            SavePaymentSelections(model);
+
+            model.CurrentOrder.Instructions = txtSpecialInstructions.Text;
+
+            // Save all the changes to the order
+            MTApp.OrderServices.Orders.Update(model.CurrentOrder);
+            SessionManager.SaveOrderCookies(model.CurrentOrder, MTApp.CurrentStore);
+        }
+
+        private void LoadPaymentFromForm(CheckoutViewModel model)
+        {
+            model.PaymentViewModel.SelectedPayment = hfdPayMethod.Value ?? string.Empty;
+            model.PaymentViewModel.DataPurchaseOrderNumber = string.Empty;
+            model.PaymentViewModel.DataCompanyAccountNumber = string.Empty;
+            model.PaymentViewModel.DataCreditCard.CardHolderName = txtCCCardHolder.Text ?? string.Empty;
+            model.PaymentViewModel.DataCreditCard.CardNumber = MerchantTribe.Payment.CardValidator.CleanCardNumber(txtCCNumber.Text ?? string.Empty);
+            int expMonth = -1;
+            int.TryParse(ddlCCExpMonth.SelectedValue ?? string.Empty, out expMonth);
+            model.PaymentViewModel.DataCreditCard.ExpirationMonth = expMonth;
+            int expYear = -1;
+            int.TryParse(ddlCCExpYear.SelectedValue ?? string.Empty, out expYear);
+            model.PaymentViewModel.DataCreditCard.ExpirationYear = expYear;
+            model.PaymentViewModel.DataCreditCard.SecurityCode = txtCCSecurityCode.Text ?? string.Empty;
+        }
+
+        private void SavePaymentSelections(CheckoutViewModel model)
+        {
+            OrderPaymentManager payManager = new OrderPaymentManager(model.CurrentOrder, MTApp);
+            payManager.ClearAllNonStoreCreditTransactions();
+
+            bool found = false;
+            if (model.PaymentViewModel.SelectedPayment == "creditcard")
+            {
+                found = true;
+                payManager.CreditCardAddInfo(model.PaymentViewModel.DataCreditCard, model.CurrentOrder.TotalGrandAfterStoreCredits(MTApp.OrderServices));
+            }
+
+            if ((found == false) && (model.PaymentViewModel.SelectedPayment == "paypal"))
+            {
+                found = true;
+                // Need token and id before we can add this to the order
+                // Handled on the checkout page.
+                // payManager.PayPalExpressAddInfo(o.TotalGrand);
+            }
+        }
+
+        private void LoadAddressFromForm(string prefix, Address address)
+        {
+            address.Bvin = Request.Form[prefix + "addressbvin"] ?? address.Bvin;
+            address.CountryBvin = Request.Form[prefix + "country"] ?? address.CountryBvin;
+            address.FirstName = Request.Form[prefix + "firstname"] ?? address.FirstName;
+            address.LastName = Request.Form[prefix + "lastname"] ?? address.LastName;
+            address.Company = Request.Form[prefix + "company"] ?? address.Company;
+            address.Line1 = Request.Form[prefix + "address"] ?? address.Line1;
+            address.City = Request.Form[prefix + "city"] ?? address.City;
+            address.RegionBvin = Request.Form[prefix + "state"] ?? address.RegionBvin;
+            address.PostalCode = Request.Form[prefix + "zip"] ?? address.PostalCode;
+            address.Phone = Request.Form[prefix + "phone"] ?? address.Phone;
+        }
+
+        private bool ValidateOrder(CheckoutViewModel model)
+        {
+            bool result = true;
+            if (model.AgreedToTerms == false && model.ShowAgreeToTerms == true)
+            {
+                model.Violations.Add(new MerchantTribe.Web.Validation.RuleViolation("Terms", "Terms", SiteTerms.GetTerm(SiteTermIds.SiteTermsAgreementError)));
+                result = false;
+            }
+
+            // Validate Shipping Address
+            model.Violations.AddRange(ValidateAddress(model.CurrentOrder.ShippingAddress, "Shipping"));
+
+            // Validate Billing Address
+            model.Violations.AddRange(ValidateAddress(model.CurrentOrder.BillingAddress, "Billing"));
+
+            Order Basket = SessionManager.CurrentShoppingCart(MTApp.OrderServices, MTApp.CurrentStore);
+
+            // Make sure a shipping method is selected
+            // Basket validation checks for shipping method unique key
+            if (!Basket.IsValid())
+            {
+                model.Violations.AddRange(Basket.GetRuleViolations());
+            }
+
+            // Payment Validation
+            model.Violations.AddRange(ValidatePayment(model));
+
+            if ((model.Violations.Count > 0))
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        private List<MerchantTribe.Web.Validation.RuleViolation> ValidateAddress(Address a, string prefix)
+        {
+            List<MerchantTribe.Web.Validation.RuleViolation> result = new List<MerchantTribe.Web.Validation.RuleViolation>();
+            string pre = prefix.Trim().ToLowerInvariant();
+            MerchantTribe.Web.Validation.ValidationHelper.Required(prefix + " Country Name", a.CountryData.Name, result, pre + "countryname");
+            MerchantTribe.Web.Validation.ValidationHelper.Required(prefix + " First Name", a.FirstName, result, pre + "firstname");
+            MerchantTribe.Web.Validation.ValidationHelper.Required(prefix + " Last Name", a.LastName, result, pre + "lastname");
+            MerchantTribe.Web.Validation.ValidationHelper.Required(prefix + " Street", a.Line1, result, pre + "address");
+            MerchantTribe.Web.Validation.ValidationHelper.Required(prefix + " City", a.City, result, pre + "city");
+            MerchantTribe.Web.Validation.ValidationHelper.Required(prefix + " Postal Code", a.PostalCode, result, pre + "zip");
+            MerchantTribe.Web.Validation.ValidationHelper.Required(prefix + " Region/State", a.RegionData.Abbreviation, result, pre + "state");
+            return result;
+        }
+
+        private List<MerchantTribe.Web.Validation.RuleViolation> ValidatePayment(CheckoutViewModel model)
+        {
+            List<MerchantTribe.Web.Validation.RuleViolation> violations = new List<MerchantTribe.Web.Validation.RuleViolation>();
+
+            // Nothing to validate if no payment is needed
+            if (model.PaymentViewModel.NoPaymentNeeded)
+            {
+                return violations;
+            }
+
+            if (model.PaymentViewModel.SelectedPayment == "creditcard")
+            {
+                return ValidateCreditCard(model);
+            }
+            
+            if (model.PaymentViewModel.SelectedPayment == "paypal")
+            {
+                return violations;
+            }
+
+            // We haven't return anything so nothing is selected.
+            // Try CC as default payment method        
+            if (model.PaymentViewModel.DataCreditCard.CardNumber.Length > 12)
+            {
+                model.PaymentViewModel.SelectedPayment = "creditcard";
+                return ValidateCreditCard(model);
+            }
+
+            // nothing selected, trial of cc failed
+            violations.Add(new RuleViolation("Payment Method", "", "Please select a payment method", ""));
+
+            return violations;
+        }
+
+        private List<RuleViolation> ValidateCreditCard(CheckoutViewModel model)
+        {
+            List<RuleViolation> violations = new List<RuleViolation>();
+            if ((!MerchantTribe.Payment.CardValidator.IsCardNumberValid(model.PaymentViewModel.DataCreditCard.CardNumber)))
+            {
+                violations.Add(new RuleViolation("Credit Card Number", "", "Please enter a valid credit card number", "cccardnumber"));
+            }
+
+            MerchantTribe.Payment.CardType cardTypeCheck = MerchantTribe.Payment.CardValidator.GetCardTypeFromNumber(model.PaymentViewModel.DataCreditCard.CardNumber);
+            List<CardType> acceptedCards = MTApp.CurrentStore.Settings.PaymentAcceptedCards;
+            if (!acceptedCards.Contains(cardTypeCheck))
+            {
+                violations.Add(new RuleViolation("Card Type Not Accepted", "", "That card type is not accepted by this store. Please use a different card.", "cccardnumber"));
+            }
+
+            ValidationHelper.RequiredMinimum(1, "Card Expiration Year", model.PaymentViewModel.DataCreditCard.ExpirationYear, violations, "ccexpyear");
+            ValidationHelper.RequiredMinimum(1, "Card Expiration Month", model.PaymentViewModel.DataCreditCard.ExpirationMonth, violations, "ccexpmonth");
+            ValidationHelper.Required("Name on Card", model.PaymentViewModel.DataCreditCard.CardHolderName, violations, "cccardholder");
+
+            if (MTApp.CurrentStore.Settings.PaymentCreditCardRequireCVV == true)
+            {
+                ValidationHelper.RequiredMinimum(3, "Card Security Code", model.PaymentViewModel.DataCreditCard.SecurityCode.Length, violations, "ccsecuritycode");
+            }
+
+            return violations;
+        }
+
+        ////////////////////////////////////////////////////////////////////
+        // PROCESS ORDER
+        ////////////////////////////////////////////////////////////////////
+        private void ProcessOrder(CheckoutViewModel model)
+        {
+            // Save as Order
+            OrderTaskContext c = new OrderTaskContext(MTApp);
+            c.UserId = SessionManager.GetCurrentUserId(MTApp.CurrentStore);
+            c.Order = model.CurrentOrder;
+
+            // Check for PayPal Request            
+            bool paypalCheckoutSelected = model.PaymentViewModel.SelectedPayment == "paypal";
+            if (paypalCheckoutSelected)
+            {
+                c.Inputs.Add("bvsoftware", "Mode", "PaypalExpress");
+                c.Inputs.Add("bvsoftware", "AddressSupplied", "1");
+                if (!Workflow.RunByName(c, WorkflowNames.ThirdPartyCheckoutSelected))
+                {
+                    EventLog.LogEvent("Paypal Express Checkout Failed", "Specific Errors to follow", EventLogSeverity.Error);
+                    // Show Errors     
+                    List<MerchantTribe.Web.Validation.RuleViolation> violations = new List<MerchantTribe.Web.Validation.RuleViolation>();
+                    foreach (WorkflowMessage item in c.GetCustomerVisibleErrors())
+                    {
+                        violations.Add(new MerchantTribe.Web.Validation.RuleViolation("Workflow", item.Name, item.Description));
+                    }
+                }
+            }
+            else
+            {
+                if (Workflow.RunByName(c, WorkflowNames.ProcessNewOrder) == true)
+                {
+                    // Clear Cart ID because we're now an order
+                    SessionManager.SetCurrentCartId(MTApp.CurrentStore, string.Empty);
+
+                    // Process Payment
+                    if (MerchantTribe.Commerce.BusinessRules.Workflow.RunByName(c, MerchantTribe.Commerce.BusinessRules.WorkflowNames.ProcessNewOrderPayments))
+                    {
+                        MerchantTribe.Commerce.BusinessRules.Workflow.RunByName(c, MerchantTribe.Commerce.BusinessRules.WorkflowNames.ProcessNewOrderAfterPayments);
+                        Order tempOrder = MTApp.OrderServices.Orders.FindForCurrentStore(model.CurrentOrder.bvin);
+                        MerchantTribe.Commerce.Integration.Current().OrderReceived(tempOrder, MTApp);
+                        Response.Redirect("Receipt.aspx?id=" + model.CurrentOrder.bvin);
+                    }
+                    else
+                    {
+                        // Redirect to Payment Error
+                        SessionManager.SetCurrentPaymentPendingCartId(MTApp.CurrentStore, model.CurrentOrder.bvin);
+                        //Response.Redirect("PaymentError.aspx");
+                        this.FlashFailure("The payment information you provided was not able to be processed. Please update your payment information and try again.");
+                    }
+                }
+                else
+                {
+                    // Show Errors      
+                    List<MerchantTribe.Web.Validation.RuleViolation> violations = new List<MerchantTribe.Web.Validation.RuleViolation>();
+                    foreach (WorkflowMessage item in c.GetCustomerVisibleErrors())
+                    {
+                        violations.Add(new MerchantTribe.Web.Validation.RuleViolation("Workflow", item.Name, item.Description));
+                    }
+                    if (violations.Count < 1)
+                    {
+                        violations.Add(new MerchantTribe.Web.Validation.RuleViolation("Workflow", "Internal Error", "An internal error occured while attempting to place your order. Please contact the store owner directly to complete your order."));
+                    }
+                }
+            }
         }
     }
 }

@@ -29,12 +29,27 @@
         <table border="0" cellspacing="0" cellpadding="3">
             <tr>
                 <td class="formlabel">
+                    Sale Starts:
+                </td>
+                <td class="formfield">
+                    <asp:TextBox ID="SaleStartsField" runat="server" Columns="30" MaxLength="100" TabIndex="1998" Width="200px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">
+                    Sale Ends:
+                </td>
+                <td class="formfield">
+                    <asp:TextBox ID="SaleEndsField" runat="server" Columns="30" MaxLength="100" TabIndex="1999" Width="200px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">
                     Name:
                 </td>
                 <td class="formfield">
-                    <asp:TextBox ID="DisplayNameField" runat="server" Columns="30" MaxLength="100" TabIndex="2000"
-                        Width="200px"></asp:TextBox><asp:RequiredFieldValidator ID="valName" runat="server"
-                            ErrorMessage="Please enter a Name" ControlToValidate="DisplayNameField">*</asp:RequiredFieldValidator>
+                    <asp:TextBox ID="DisplayNameField" runat="server" Columns="30" MaxLength="100" TabIndex="2000" Width="200px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="valName" runat="server" ErrorMessage="Please enter a Name" ControlToValidate="DisplayNameField">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -42,8 +57,7 @@
                     Email:
                 </td>
                 <td class="formfield">
-                    <asp:TextBox ID="EmailField" runat="server" Columns="30" MaxLength="100" TabIndex="2001"
-                        Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="EmailField" runat="server" Columns="30" MaxLength="100" TabIndex="2001" Width="200px"></asp:TextBox>
                 </td>
             </tr>
             <tr>

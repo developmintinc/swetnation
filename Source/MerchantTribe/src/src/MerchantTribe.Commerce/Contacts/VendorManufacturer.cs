@@ -21,6 +21,8 @@ namespace MerchantTribe.Commerce.Contacts
 		public string ImageFileSmall { get; set; }
 		public string ImageFileMedium { get; set; }
 		public string Description { get; set; }
+        public DateTime? SaleStarts { get; set; }
+        public DateTime? SaleEnds { get; set; }
 		public List<VendorManufacturerContact> Contacts { get; set; }
 		public VendorManufacturerType ContactType { get; set; }
 
@@ -35,6 +37,8 @@ namespace MerchantTribe.Commerce.Contacts
 			this.ImageFileSmall = string.Empty;
 			this.ImageFileMedium = string.Empty;
 			this.Description = string.Empty;
+            this.SaleStarts = (DateTime?)null;
+            this.SaleEnds = (DateTime?)null;
 			this.Contacts = new List<VendorManufacturerContact>();
 			this.ContactType = VendorManufacturerType.Unknown;
 		}
@@ -85,6 +89,8 @@ namespace MerchantTribe.Commerce.Contacts
 			this.ImageFileSmall = string.Empty;
 			this.ImageFileMedium = string.Empty;
 			this.Description = string.Empty;
+            this.SaleStarts = (DateTime?)null;
+            this.SaleEnds = (DateTime?)null;
 			this.Contacts = new List<VendorManufacturerContact>();
 			this.ContactType = VendorManufacturerType.Unknown;
 
@@ -101,6 +107,8 @@ namespace MerchantTribe.Commerce.Contacts
 			this.Address.FromDto(dto.Address);
 			this.DropShipEmailTemplateId = dto.DropShipEmailTemplateId;
 			this.Description = dto.Description;
+            this.SaleStarts = dto.SaleStarts;
+            this.SaleEnds = dto.SaleEnds;
 			this.ImageFileSmall = dto.ImageFileSmall;
 			this.ImageFileMedium = dto.ImageFileMedium;
 			this.Contacts.Clear();

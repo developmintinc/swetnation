@@ -19,6 +19,10 @@ namespace MerchantTribe.CommerceDTO.v1.Membership
         [DataMember]
         public string LastName {get;set;}
         [DataMember]
+        public string DOB { get; set; }
+        [DataMember]
+        public string Gender { get; set; }
+        [DataMember]
         public string Password {get;set;}
         [DataMember]
         public string Salt {get;set;}
@@ -54,6 +58,8 @@ namespace MerchantTribe.CommerceDTO.v1.Membership
             this.FirstName = string.Empty;
             this.LastLoginDateUtc = DateTime.UtcNow;
             this.LastName = string.Empty;
+            this.DOB = string.Empty;
+            this.Gender = string.Empty;
             this.LastUpdatedUtc = DateTime.UtcNow;
             this.Notes = string.Empty;
             this.Password = string.Empty;
@@ -63,7 +69,5 @@ namespace MerchantTribe.CommerceDTO.v1.Membership
             this.ShippingAddress = new AddressDTO();
             this.BillingAddress = new AddressDTO();
 		}	
-	
-	
     }
 }

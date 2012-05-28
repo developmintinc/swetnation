@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web.controls
 {
-    public partial class Breadcrumbs : System.Web.UI.UserControl
+    public partial class Breadcrumbs : BaseUserControl
     {
         // ******** property syntax ************
         public string PageName { get; set; }

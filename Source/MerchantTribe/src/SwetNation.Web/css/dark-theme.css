@@ -1117,13 +1117,13 @@ ul.header-intro-list li a:hover,ul.header-intro-list-right li a:hover {
 /*---------------12 - INTRO PAGES CSS---------------*/
 /*-------------------------------------------------------*/
 .intro-pages span {
-	color:maroon;	
+	color:#EE0000;	
 }
 .intro-pages {
 	padding:20px 0px;
 	height:auto;
 	margin-bottom:3px;
-	background:transparent url("../images/intro-pages-bg.png") no-repeat bottom;
+	/* background:transparent url("../images/intro-pages-bg.png") no-repeat bottom; */
 	/* border:10px solid #efefef; */
 	border-top:2px solid #242424;
 	border-bottom:2px solid #242424;
@@ -1996,7 +1996,7 @@ div.slider-nav span.left:active,div.slider-nav span.right:active{
 	text-decoration:underline;
 }
 #footer strong {
-	color:#e04644;
+	color:#EE0000;
 }
 #footer p,#footer span {
 	color:#c7c7c7;

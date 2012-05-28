@@ -85,6 +85,8 @@ namespace MerchantTribeStore
                     this.AddressEditor1.LoadFromAddress(m.Address);
                     this.EmailTemplateDropDownList.SelectedValue = m.DropShipEmailTemplateId;
                     this.DescriptionField.Text = m.Description;
+                    this.SaleStartsField.Text = m.SaleStarts.HasValue ? m.SaleStarts.Value.ToShortDateString() : string.Empty;
+                    this.SaleEndsField.Text = m.SaleEnds.HasValue ? m.SaleEnds.Value.ToShortDateString() : string.Empty;
                     LoadImagePreview(m);
                 }
             }
@@ -138,6 +140,10 @@ namespace MerchantTribeStore
                 m.ImageFileMedium = fileName;
             }                
             m.Description = this.DescriptionField.Text.Trim();
+            if (this.SaleStartsField.Text != "")
+                m.SaleStarts = Convert.ToDateTime(this.SaleStartsField.Text);
+            if (this.SaleEndsField.Text != "")
+                m.SaleEnds = Convert.ToDateTime(this.SaleEndsField.Text);
             if (this.BvinField.Value == string.Empty)
                 result = MTApp.ContactServices.Manufacturers.Create(m);
             else

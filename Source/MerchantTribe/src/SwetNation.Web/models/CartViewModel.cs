@@ -21,6 +21,7 @@ namespace SwetNation.Web.models
         public bool CartEmpty { get; set; }
         public List<CartLineItemViewModel> LineItems { get; set; }
         public bool PayPalExpressAvailable { get; set; }
+        public bool FreeShipping { get; set; }
 
         public CartViewModel()
         {
@@ -37,6 +38,7 @@ namespace SwetNation.Web.models
             this.CartEmpty = false;
             this.LineItems = new List<CartLineItemViewModel>();
             this.PayPalExpressAvailable = false;
+            this.FreeShipping = true;
         }
     }
 }

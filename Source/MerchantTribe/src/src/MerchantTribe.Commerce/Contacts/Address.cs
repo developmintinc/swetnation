@@ -47,7 +47,6 @@ namespace MerchantTribe.Commerce.Contacts
 		public string CountyName {get;set;}
 		public string CountyBvin {get;set;}
 		public string UserBvin {get;set;}
-        //public bool Residential {get;set;}
         public AddressTypes AddressType {get;set;}
 		
         public Address()
@@ -179,10 +178,6 @@ namespace MerchantTribe.Commerce.Contacts
 									xr.Read();
 									UserBvin = xr.ReadString();
                                     break;
-                                //case "Residential":
-                                //    xr.Read();
-                                //    Residential = bool.Parse(xr.ReadString());
-                                //    break;
                                 case "AddressType":
                                     xr.Read();
                                     int tempType = int.Parse(xr.ReadString());
@@ -209,7 +204,6 @@ namespace MerchantTribe.Commerce.Contacts
 			if (xw != null) {
 
 				xw.WriteStartElement("Address");
-
 				xw.WriteElementString("Bvin", Bvin);
 				xw.WriteElementString("NickName", NickName);
 				xw.WriteElementString("FirstName", FirstName);
@@ -231,9 +225,6 @@ namespace MerchantTribe.Commerce.Contacts
 				xw.WriteElementString("CountyName", CountyName);
 				xw.WriteElementString("CountyBvin", CountyBvin);
 				xw.WriteElementString("UserBvin", UserBvin);
-                //xw.WriteStartElement("Residential");
-                //xw.WriteValue(_Residential);
-                //xw.WriteEndElement();
 				xw.WriteStartElement("LastUpdated");
 				xw.WriteValue(LastUpdatedUtc);
 				xw.WriteEndElement();
@@ -323,65 +314,26 @@ namespace MerchantTribe.Commerce.Contacts
 			if (this.Bvin.Trim().Length > 0) {
 				return false;
 			}
-			if (this.NickName.Trim().Length > 0) {
-				return false;
-			}
 			if (this.FirstName.Trim().Length > 0) {
-				return false;
-			}
-			if (this.MiddleInitial.Trim().Length > 0) {
 				return false;
 			}
 			if (this.LastName.Trim().Length > 0) {
 				return false;
 			}
-			if (this.Company.Trim().Length > 0) {
-				return false;
-			}
 			if (this.Line1.Trim().Length > 0) {
 				return false;
 			}
-			if (this.Line2.Trim().Length > 0) {
+			if (this.RegionData.Abbreviation.Trim().Length > 0) {
 				return false;
 			}
-			if (this.Line3.Trim().Length > 0) {
-				return false;
-			}
-			if (this.RegionBvin.Trim().Length > 0) {
-				return false;
-			}
-			if (this.RegionName.Trim().Length > 0) {
+            if (this.RegionData.Name.Trim().Length > 0) {
 				return false;
 			}
 			if (this.PostalCode.Trim().Length > 0) {
 				return false;
 			}
-			if (this.CountryBvin.Trim().Length > 0) {
-				return false;
-			}
-			if (this.CountryName.Trim().Length > 0) {
-				return false;
-			}
-			if (this.Phone.Trim().Length > 0) {
-				return false;
-			}
-			if (this.Fax.Trim().Length > 0) {
-				return false;
-			}
-			if (this.WebSiteUrl.Trim().Length > 0) {
-				return false;
-			}
-			if (this.CountryName.Trim().Length > 0) {
-				return false;
-			}
-			if (this.CountyBvin.Trim().Length > 0) {
-				return false;
-			}
-			if (this.CountyName.Trim().Length > 0) {
-				return false;
-			}
 
-			return result;
+            return result;
 		}
 
 		public string ToHtmlString()
@@ -412,8 +364,7 @@ namespace MerchantTribe.Commerce.Contacts
 			}
 			if (Line3.Trim().Length > 0) {
 				sb.Append(Line3 + "<br />");
-			}
-			
+			}			
 
             MerchantTribe.Web.Geography.Country c = MerchantTribe.Web.Geography.Country.FindByBvin(CountryBvin);
             MerchantTribe.Web.Geography.Region r = c.Regions.Where(y => y.Abbreviation == RegionBvin).FirstOrDefault();
@@ -430,11 +381,6 @@ namespace MerchantTribe.Commerce.Contacts
 					sb.Append(City + ", " + _PostalCode + "<br />");
 				}
 			}
-
-            //if (CountyName.Trim().Length > 0)
-            //{
-            //    sb.Append(CountyName + "<br />");
-            //}
 
             if (c != null)
             {
@@ -518,9 +464,6 @@ namespace MerchantTribe.Commerce.Contacts
 			if (string.Compare(this.CountyName.Trim(), a2.CountyName.Trim(), true, System.Globalization.CultureInfo.InvariantCulture) != 0) {
 				result = false;
 			}
-            //if (this.Residential != a2.Residential) {
-            //    result = false;
-            //}
 
 			return result;
 		}
@@ -549,7 +492,6 @@ namespace MerchantTribe.Commerce.Contacts
                     destinationAddress.WebSiteUrl = this.WebSiteUrl;
                     destinationAddress.CountyBvin = this.CountyBvin;
                     destinationAddress.CountyName = this.CountyName;
-                    //destinationAddress.Residential = this.Residential;                
 			}
 			catch  {
 				result = false;

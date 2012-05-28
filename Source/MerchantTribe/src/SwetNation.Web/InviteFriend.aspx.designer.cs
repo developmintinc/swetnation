@@ -22,22 +22,22 @@ namespace SwetNation.Web {
         protected global::SwetNation.Web.controls.Breadcrumbs ucBreadcrumbBar;
         
         /// <summary>
-        /// txtTo control.
+        /// txtFriendsEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTo;
+        protected global::System.Web.UI.WebControls.TextBox txtFriendsEmail;
         
         /// <summary>
-        /// lnkFacebook control.
+        /// rfvFriendsEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkFacebook;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFriendsEmail;
         
         /// <summary>
         /// txtMessage control.
@@ -49,12 +49,30 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.TextBox txtMessage;
         
         /// <summary>
-        /// ucLeftSidebarNav control.
+        /// rfvMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SwetNation.Web.controls.RightSidebarNav ucLeftSidebarNav;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMessage;
+        
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        
+        /// <summary>
+        /// ucMyAccountNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SwetNation.Web.controls.MyAccountNav ucMyAccountNav;
     }
 }

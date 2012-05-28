@@ -13,8 +13,8 @@ namespace MerchantTribe.Payment.Methods
     public class PayFlowPro: Method
     {
         private const string versionNumber= "4.3.1";
-        private const string LiveUrl = "payflowpro.verisign.com";
-        private const string TestUrl = "pilot-payflowpro.verisign.com";
+        private const string LiveUrl = "https://api.paypal.com/nvp";
+        private const string TestUrl = "https://api.sandbox.paypal.com/nvp";
 
         public override string Name
         {

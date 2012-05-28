@@ -30,6 +30,10 @@ namespace MerchantTribe.CommerceDTO.v1.Contacts
         [DataMember]
         public string Description { get; set; }
         [DataMember]
+        public DateTime? SaleStarts { get; set; }
+        [DataMember]
+        public DateTime? SaleEnds { get; set; }
+        [DataMember]
         public List<VendorManufacturerContactDTO> Contacts { get; set; }
         [DataMember]
         public VendorManufacturerTypeDTO ContactType { get; set; }
@@ -46,6 +50,8 @@ namespace MerchantTribe.CommerceDTO.v1.Contacts
             ImageFileSmall = string.Empty;
             ImageFileMedium = string.Empty;
             Description = string.Empty;
+            SaleStarts = (DateTime?)null;
+            SaleEnds = (DateTime?)null;
             Contacts = new List<VendorManufacturerContactDTO>();
             ContactType = VendorManufacturerTypeDTO.Vendor;
         }

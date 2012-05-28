@@ -544,18 +544,11 @@ namespace MerchantTribe.Commerce.Accounts
         {
             List<CardType> result = new List<CardType>();
             result.Add(CardType.Amex);
-            //result.Add(CardType.DinersClub);
             result.Add(CardType.Discover);
-            //result.Add(CardType.JCB);
-            //result.Add(CardType.Maestro);
             result.Add(CardType.MasterCard);
-            //result.Add(CardType.Solo);
-            //result.Add(CardType.Switch);
             result.Add(CardType.Visa);
             return result;
         }
-
-        
 
         // Reviews
         public int ProductReviewCount
