@@ -40,6 +40,33 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.Literal litSubTotal;
         
         /// <summary>
+        /// litTax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTax;
+        
+        /// <summary>
+        /// litShipping control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litShipping;
+        
+        /// <summary>
+        /// litGrandTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litGrandTotal;
+        
+        /// <summary>
         /// lnkKeepShopping control.
         /// </summary>
         /// <remarks>
@@ -67,13 +94,13 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.LinkButton lnkSecureShopping;
         
         /// <summary>
-        /// lnkPayPal control.
+        /// shippingrate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkPayPal;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden shippingrate;
         
         /// <summary>
         /// LinkButton3 control.

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MerchantTribe.Commerce;
 using MerchantTribe.Commerce.Orders;
+using MerchantTribe.Payment;
 
 namespace SwetNation.Web.models
 {
@@ -26,8 +27,8 @@ namespace SwetNation.Web.models
         public string SelectedPayment { get; set; }
         public string DataPurchaseOrderNumber { get; set; }
         public string DataCompanyAccountNumber { get; set; }
-        //public CardData DataCreditCard { get; set; }
-        //public List<CardType> AcceptedCardTypes { get; set; }
+        public CardData DataCreditCard { get; set; }
+        public List<CardType> AcceptedCardTypes { get; set; }
 
         public CheckoutPaymentViewModel()
         {
@@ -47,9 +48,9 @@ namespace SwetNation.Web.models
             this.CompanyAccountDescription = string.Empty;
             this.SelectedPayment = string.Empty;
             this.DataCompanyAccountNumber = string.Empty;
-            //this.DataCreditCard = new CardData();
+            this.DataCreditCard = new CardData();
             this.DataPurchaseOrderNumber = string.Empty;
-            //this.AcceptedCardTypes = new List<CardType>();
+            this.AcceptedCardTypes = new List<CardType>();
         }
 
     }

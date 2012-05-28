@@ -16,23 +16,15 @@ namespace MerchantTribe.Commerce.Membership
 
         public static MembershipServices InstantiateForMemory(RequestContext c)
         {
-            return new MembershipServices(c,
-                                      UserQuestionRepository.InstantiateForMemory(c),
-                                      CustomerAccountRepository.InstantiateForMemory(c)
-                                      );
-
+            return new MembershipServices(c, UserQuestionRepository.InstantiateForMemory(c), CustomerAccountRepository.InstantiateForMemory(c));
         }
+
         public static MembershipServices InstantiateForDatabase(RequestContext c)
         {
-            return new MembershipServices(c, 
-                                    UserQuestionRepository.InstantiateForDatabase(c),
-                                    CustomerAccountRepository.InstantiateForDatabase(c)
-                                    );
+            return new MembershipServices(c, UserQuestionRepository.InstantiateForDatabase(c), CustomerAccountRepository.InstantiateForDatabase(c));
         }
-        public MembershipServices(RequestContext c, 
-                            UserQuestionRepository questions,
-                            CustomerAccountRepository customers
-                            )
+
+        public MembershipServices(RequestContext c, UserQuestionRepository questions, CustomerAccountRepository customers)
         {
             context = c;
             this.UserQuestions = questions;
@@ -44,6 +36,7 @@ namespace MerchantTribe.Commerce.Membership
             CreateUserStatus status = CreateUserStatus.None;
             return CreateCustomer(u, ref status, clearPassword);
         }
+
         public bool CreateCustomer(Membership.CustomerAccount u, ref CreateUserStatus status, string clearPassword)
         {
             bool result = false;
@@ -80,11 +73,13 @@ namespace MerchantTribe.Commerce.Membership
 
             return result;
         }
+
         public bool UpdateCustomer(Membership.CustomerAccount u)
         {
             CreateUserStatus s = new CreateUserStatus();
             return UpdateCustomer(u, ref s);
         }
+
         public bool UpdateCustomer(Membership.CustomerAccount u, ref CreateUserStatus status)
         {
             bool result = false;
@@ -115,6 +110,7 @@ namespace MerchantTribe.Commerce.Membership
 
             return result;
         }
+
         public bool ChangePasswordForCustomer(string email, string oldPassword, string newPassword)
         {
             bool result = false;
@@ -132,6 +128,7 @@ namespace MerchantTribe.Commerce.Membership
 
             return result;
         }
+
         public bool ResetPasswordForCustomer(string email, string newPassword)
         {
             bool result = false;
@@ -161,6 +158,7 @@ namespace MerchantTribe.Commerce.Membership
             }
             return result;
         }
+
         public SystemOperationResult ValidateUser(string email, string password)
         {
             SystemOperationResult result = new SystemOperationResult();
@@ -207,6 +205,7 @@ namespace MerchantTribe.Commerce.Membership
 
             return result;
         }
+
         public bool LoginCustomer(string email, string password, ref string errorMessage, System.Web.HttpContextBase context, ref string userId, MerchantTribeApplication app)
         {
             bool result = false;
@@ -228,12 +227,8 @@ namespace MerchantTribe.Commerce.Membership
                 }
 
                 userId = u.Bvin;
-
-                Cookies.SetCookieString(WebAppSettings.CookieNameAuthenticationTokenCustomer(app.CurrentStore.Id),
-                                                u.Bvin,
-                                                context, false, new EventLog());
+                Cookies.SetCookieString(WebAppSettings.CookieNameAuthenticationTokenCustomer(app.CurrentStore.Id), u.Bvin, context, false, new EventLog());
                 result = true;
-
             }
             catch (Exception ex)
             {
@@ -244,18 +239,19 @@ namespace MerchantTribe.Commerce.Membership
 
             return result;
         }
+
         public bool LogoutCustomer(System.Web.HttpContextBase context, MerchantTribeApplication app)
         {
             bool result = true;
-            Cookies.SetCookieString(WebAppSettings.CookieNameAuthenticationTokenCustomer(app.CurrentStore.Id),
-                                                    "",
-                                                    context, false, new EventLog());
+            Cookies.SetCookieString(WebAppSettings.CookieNameAuthenticationTokenCustomer(app.CurrentStore.Id), "", context, false, new EventLog());
             return result;
         }
+
         public string GeneratePasswordForCustomer(int length)
         {
             return MerchantTribe.Web.PasswordGenerator.GeneratePassword(length);
         }
+
         // Use this VERY carefully
         public bool DestroyAllCustomers(MerchantTribeApplication app)
         {            
@@ -273,12 +269,14 @@ namespace MerchantTribe.Commerce.Membership
             }
             return true;
         }
+
         public bool CheckIfNewAddressAndAddWithUpdate(CustomerAccount a, Contacts.Address address)
         {
             bool addressWasAdded = a.CheckIfNewAddressAndAddNoUpdate(address);
             if (addressWasAdded) UpdateCustomer(a);
             return addressWasAdded;
-        }                                        
+        }
+                             
         public void UnlockCustomer(CustomerAccount c)
         {
             c.Locked = false;
@@ -286,12 +284,14 @@ namespace MerchantTribe.Commerce.Membership
             c.LockedUntilUtc = DateTime.UtcNow.AddMilliseconds(-1);
             UpdateCustomer(c);
         }
+
         public void LockCustomer(CustomerAccount c)
         {
             c.Locked = true;
             c.LockedUntilUtc = DateTime.UtcNow.AddMinutes(WebAppSettings.UserLockoutMinutes);
             UpdateCustomer(c);
         }
+
         public void CustomerCheckLock(CustomerAccount c)
         {
             if (c.Locked == true)

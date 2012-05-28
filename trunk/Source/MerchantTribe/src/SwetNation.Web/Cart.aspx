@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Shopping Cart" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="SwetNation.Web.Cart" %>
+﻿<%@ Page Title="Swet Nation - Shopping Cart" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="SwetNation.Web.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainHeadContent" runat="server">
 	<style type="text/css">
 		/* Cart Page */
@@ -165,7 +165,6 @@
 							<td class="productdetailscolumn">
 								<div id="divCartItemDescription" runat="server" class="cartitemdescription">
 									<a href='<%# Eval("LinkUrl") %>'>
-										<div class="cartsku"><%# Eval("Item.ProductSku") %></div>
 										<div class="cartproductname"><%# Eval("Item.ProductName") %></div>
 									</a>
 								</div>
@@ -206,6 +205,30 @@
 								<asp:Literal ID="litSubTotal" runat="server" Mode="PassThrough"></asp:Literal>
 							</td>
 						</tr>
+                        <tr>
+							<td class="formlabel">
+								Tax:
+							</td>
+							<td class="formfield">
+								<asp:Literal ID="litTax" runat="server" Mode="PassThrough"></asp:Literal>
+							</td>
+						</tr>
+                        <tr>
+							<td class="formlabel">
+								Shipping:
+							</td>
+							<td class="formfield">
+								<asp:Literal ID="litShipping" runat="server" Mode="PassThrough"></asp:Literal>
+							</td>
+						</tr>
+                        <tr>
+							<td class="formlabel">
+								Grand Total:
+							</td>
+							<td class="formfield">
+								<asp:Literal ID="litGrandTotal" runat="server" Mode="PassThrough"></asp:Literal>
+							</td>
+						</tr>
 					</table>
 				</div>         
 			</div>
@@ -218,16 +241,11 @@
 					</a>
 				</div>
 				<div id="cartactioncheckout" runat="server">
-    				<asp:LinkButton ID="lnkSecureShopping" runat="server" CssClass="button cube deep-red small" PostBackUrl="~/Checkout.aspx">Secure Checkout</asp:LinkButton>
-					<div class="paypalbuffer">
-						- OR -
-					</div>
-					<form action="/cart" method="post" class="paypalexpresscheckoutform">
-						<asp:LinkButton ID="lnkPayPal" runat="server" CssClass="button cube deep-red small">PayPal Express Checkout</asp:LinkButton>
-						<input type="hidden" name="paypalexpress" value="true" />
-					</form>
+    				<asp:LinkButton ID="lnkSecureShopping" runat="server" CssClass="button cube deep-red small" OnClick="lnkSecureShopping_Click">Secure Checkout</asp:LinkButton>
+                    <input type="hidden" runat="server" name="shippingrate" id="shippingrate" />
 				</div>
 			</div>
+            <!--
 			<div id="cartcoupons">
 				Add a Promotional Code:
 				<form action="/cart/addcoupon" method="post">
@@ -237,6 +255,7 @@
 				<table>
 				</table>
 			</div>
+            -->
 		</div>
 	</div>
 </asp:Content>

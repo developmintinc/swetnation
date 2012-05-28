@@ -11,6 +11,7 @@ namespace MerchantTribe.Commerce
 
         // Number of Minutes to Cache Settings
         const int CacheDefaultTime = 1440;
+
         #region " Constants "
 
         public const int DEFAULT_WEB_SERVICE_TIMEOUT = 60;
@@ -34,14 +35,11 @@ namespace MerchantTribe.Commerce
         public const string UPSProviderId = "";
         public const string ShippingUSPostalDomesticId = "B28F245B-8FE5-404E-A857-A6D01904A29A";
         public const string ShippingUSPostalInternationalId = "BD2CB7D9-CEF3-41D7-84A1-44FD420A1CF3";
-
         public const string SessionId = "merchanttribesessionid";
         public const string CartId = "merchanttribecartid";
-
         public const string VersioningFolder = "\\bvadmin\\versioning\\";
         public const string SqlVersioningFolder = "\\bvadmin\\versioning\\sql\\";
         public const string SqlFolder = "\\bvadmin\\bvsql\\";
-
         public const string GuestPasswordQueryStringName = "guest";
 
         public static string StoreKey
@@ -53,6 +51,25 @@ namespace MerchantTribe.Commerce
                 return string.Empty;
             }
         }
+
+        public static bool IsLive
+        {
+            get
+            {
+                try
+                {
+                    string key = ConfigurationManager.AppSettings["IsLive"];
+                    if (key == "true") return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Trace.Write(ex.Message);
+                    EventLog.LogEvent(ex);
+                }
+                return false;
+            }
+        }
+
         public static bool IsDebugMode
         {
             get
@@ -71,6 +88,7 @@ namespace MerchantTribe.Commerce
                 return false;
             }
         }
+
         public static bool IsIndividualMode
         {
             get
@@ -88,6 +106,7 @@ namespace MerchantTribe.Commerce
                 return true;
             }
         }
+
         public static bool IsCommercialVersion
         {
             get
@@ -105,6 +124,7 @@ namespace MerchantTribe.Commerce
                 return false;
             }
         }
+
         public static string ApplicationConnectionString
         {
             get
@@ -121,6 +141,7 @@ namespace MerchantTribe.Commerce
                 return result; 
             } 
         }
+
         public static string ApplicationConnectionStringForEntityFramework
         {
             get
@@ -140,38 +161,31 @@ namespace MerchantTribe.Commerce
                 return result;
             }
         }
+
         public static string ApplicationBaseUrl
         {
             get { return ConfigurationManager.AppSettings["BaseApplicationUrl"]; }
         }
+
         public static string ApplicationBaseImageUrl
         {
-            //get { return ApplicationBaseUrl + "images/sites/"; }
             get { return "/shop/images/sites/"; }
         }
+
         public static string ApplicationBaseImagePhysicalPath
         {
             get
             {
                 string result = string.Empty;
-
                 result = System.Web.Hosting.HostingEnvironment.MapPath("~/images/sites");
-                    if (!result.EndsWith("\\"))
-                    {
-                        result += "\\";
-                    }
-
-                //if (HttpContext.Current != null)
-                //{
-                //    result = HttpContext.Current.Request.MapPath("~/images/sites");
-                //    if (!result.EndsWith("\\"))
-                //    {
-                //        result += "\\";
-                //    }
-                //}                
+                if (!result.EndsWith("\\"))
+                {
+                    result += "\\";
+                }
                 return result;
             }
         }
+
         public static string ApplicationBuiltinThemesPath
         {
             get
@@ -179,41 +193,44 @@ namespace MerchantTribe.Commerce
                 string result = string.Empty;
 
                 result = System.Web.Hosting.HostingEnvironment.MapPath("~/content/themes");
-                //if (HttpContext.Current != null)
-                //{
-                //    result = HttpContext.Current.Request.MapPath("~/content/themes");
-                    if (!result.EndsWith("\\"))
-                    {
-                        result += "\\";
-                    }
-                //}
+                if (!result.EndsWith("\\"))
+                {
+                    result += "\\";
+                }
                 return result;
             }
         }
+
         public static string ApplicationMailServer
         {
             get { return ConfigurationManager.AppSettings["MailServer"]; }
         }
+
         public static string ApplicationMailServerUsername
         {
             get { return ConfigurationManager.AppSettings["MailServerUsername"]; }
         }
+
         public static string ApplicationMailServerPassword
         {
             get { return ConfigurationManager.AppSettings["MailServerPassword"]; }
         }
+
         public static bool ApplicationMailServerSSL
         {
             get { return bool.Parse(ConfigurationManager.AppSettings["MailServerSSL"]); }
         }
+
         public static string ApplicationMailServerPort
         {
             get { return ConfigurationManager.AppSettings["MailServerPort"]; }
         }
+
         public static bool ApplicationMailServerAsync
         {
             get { return bool.Parse(ConfigurationManager.AppSettings["MailServerAsync"]); }
         }
+
         public static long BillingStoreId
         {
             get { return long.Parse(ConfigurationManager.AppSettings["BillingStoreId"]); }
@@ -223,10 +240,12 @@ namespace MerchantTribe.Commerce
         {
             get { return ConfigurationManager.AppSettings["AppPayPalUsername"]; }
         }
+
         public static string ApplicationPayPalPassword
         {
             get { return ConfigurationManager.AppSettings["AppPayPalPassword"]; }
         }
+
         public static string ApplicationPayPalSignature
         {
             get { return ConfigurationManager.AppSettings["AppPayPalSignature"]; }
@@ -242,11 +261,12 @@ namespace MerchantTribe.Commerce
         public static string AffiliateQueryStringName
         {
             get { return "affid"; }         
-        }        
+        }
+     
         public static bool ApplyTaxToShippingAddress
         {
             get { return true; }
-        }                    
+        }
         
         public static string Cryptography3DesKey
         {
@@ -257,258 +277,319 @@ namespace MerchantTribe.Commerce
             get { return "TinyMCE";
                 //return "None";
             }
-        }        
+        }
+
         //public static bool DisableInventory
         //{
         //    get { return true; }
         //}
+
         public static bool DisplayFullCreditCardNumber
         {
             get { return false; }
-        }        
+        }
+
         public static bool DisplayUpSellsWhenAddingItemToCart
         {
             get { return false; }
-        }                
+        }
+
         public static bool EnablePostalCodeValidation
         {
             get { return true; }
         }        
+        
         public static bool EnableReturns
         {
             get { return false; }
         }        
+        
         public static decimal GiftWrapCharge
         {
             get { return 0.00m; }
         }        
+        
         public static decimal GiftCertificateMaximumAmount
         {
             get { return 9999m; }
         }        
+        
         public static decimal GiftCertificateMinimumAmount
         {
             get { return 0.01m; }          
         }        
+        
         public static int GiftCertificateValidDays
         {
             get { return 1825; }
         }        
+        
         public static bool GiftWrapAll
         {
             get { return false; }
         }
+        
         public static decimal GiftWrapRate
         {
             get { return 0.00m; }
         }                                       
+        
         public static int InventoryLowHours
         {
             get { return 24; }
         }
+        
         public static DateTime InventoryLowLastTimeRun
         {
             // set to the future so this never runs until it's implemented
             get { return DateTime.UtcNow.AddDays(2); }
         }
+        
         public static string InventoryLowReportLinePrefix
         {
             get { return ""; }
         }
+        
         public static bool InventoryEnabledNewProductDefault
         {
             get { return false; }
         }
+        
         public static Catalog.StoreProductInventoryMode InventoryModeOLD
         {
             get { return Catalog.StoreProductInventoryMode.ReserveOnOrder; }
         }                    
+        
         public static bool KitDisplayCollapsed
         {
             get { return false;}
         }
+        
         public static string LastProductsViewedCookieName
         {
             get { return "MerchantTribeLastProductsViewed"; }
         }
+        
         public static int LastProductsViewedMaxResults
         {
             get { return 3; }
         }
+        
         public static bool InventoryReservedAtCheckout
         {
             get { return true; }
         }
+        
         public static int MenuItemsPerRow
         {
             get { return 9;}
         }
+        
         public static bool MergeCartItems
         {
             get { return false; }
         }
+        
         public static bool NewProductBadgeAllowed
         {
             get { return false;}            
         }
+        
         public static int NewProductBadgeDays
         {
             get { return 30; }
         }
+        
         public static int PasswordMinimumLength
         {
             get { return 8; }
         }             
+        
         public static string PaymentCheckDescription
         {
             get { return "Send a Check by Mail"; }
         }
+        
         public static string PaymentCheckName
         {
             get { return "Check"; }
         }                        
+        
         public static string PaymentTelephoneDescription
         {
             get { return "Call us after placing your order to arrange payment."; }
         }
+        
         public static string PaymentTelephoneName
         {
             get { return "Phone"; }
         }
+        
         public static string PaymentPurchaseOrderName
         {
             get { return "Purchase Order"; }
         }
+        
         public static string PaymentCompanyAccountName
         {
             get { return "Company Account"; }
         }
+        
         public static bool PaymentPurchaseOrderRequirePONumber
         {
             get { return true; }
         }
+        
         public static string PaymentCODDescription
         {
             get { return "Cash On Delivery"; }
         }
+        
         public static string PaymentCODName
         {
             get { return "COD"; }
         }
+        
         public static string PaymentNoPaymentNeededDescription
         {
             get { return "No Payment Required."; }
         }        
+        
         public static bool PerformanceAutoLoadProductsList
         {
             get { return false; }
         }
+        
         public static int ProductLongDescriptionEditorHeight
         {
             get { return 150;}
         }               
+        
         public static bool RememberUsers
         {
             get { return true; }
         }        
+        
         public static bool RedirectToCartAfterAddProduct
         {
             get { return true; }
         }        
+        
         public static bool ReverseOrderNotes
         {
             get { return false; }
         }        
+        
         public static int RowsPerPage
         {
             get { return 10; }
         }
+        
         public static bool SearchDisableBlankSearchTerms
         {
             get { return true; }
         }        
+        
         public static string ShippingFedExServer
         {
             get { return "https://gateway.fedex.com/GatewayDC"; }           
         }
+        
         public static string ShippingUpsServer
         {
             get { return "https://www.ups.com/ups.app/xml/"; }
         }
+        
         public static string ShippingUSPostalPassword
         {
             get { return "643BVSOF1535"; }        
         }
+        
         public static string ShippingUSPostalServer
         {
             get { return "http://production.shippingapis.com/ShippingAPI.dll";}
         }
+        
         public static string ShippingUSPostalUsername
         {
             get { return "317UW02RM959"; }
         }
+        
         public static decimal ShippingUSPostalFlatRateEnvelopeCutoff
         {
             get { return 1.0m; }
         }
+        
         public static decimal ShippingUSPostalFlatRateBoxCutoff
         {
             get { return 4.0m; }
         }
+        
         public static System.Globalization.CultureInfo SiteCulture
         {
             get { return new System.Globalization.CultureInfo(SiteCultureCode); }
         }
+        
         public static string SiteCultureCode
         {
             get { return "en-US"; }
         }
+        
         public static string ApplicationCountryBvin
         {
             get { return MerchantTribe.Web.Geography.Country.UnitedStatesCountryBvin; }
         }
+        
         public static MerchantTribe.Shipping.WeightType ApplicationWeightUnits
         {
             get { return MerchantTribe.Shipping.WeightType.Pounds; }
         }
+        
         public static MerchantTribe.Shipping.LengthType ApplicationLengthUnits
         {
             get { return MerchantTribe.Shipping.LengthType.Inches; }
         }
+        
         public static bool SiteRootsOnDifferentTLDs
         {
             get { return false; }
         }     
+        
         public static bool StoreAdminLinksInNewWindow
         {
             get { return true; }
         }
+        
         public static int SuggestedItemsMaxResults
         {
             get { return 3; }
         }                
+        
         public static bool TypePropertiesDisplayEmptyProperties
         {
             get { return false; }
         }
+        
         public static bool UpsRestrictions
         {
             get { return false; }
         }
+        
         public static string CustomerIdCookieName
         {
             get { return "MerchantTribeCustomerID"; }
         }        
+        
         public static bool UseSsl
         {
             get { return true; }
         }        
+        
         public static System.Globalization.CultureInfo WebAppSettingsCulture
         {
             get { return System.Globalization.CultureInfo.InvariantCulture; }
         }
-
-       
+               
         #region " Methods "
 
         //public static string GetStringSetting(string settingName)
@@ -697,7 +778,6 @@ namespace MerchantTribe.Commerce
         //}
      
         #endregion
-
 
     }
  

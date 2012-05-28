@@ -49,6 +49,8 @@ namespace MerchantTribe.Commerce.Contacts
             model.ImageFileMedium = data.ImageFileMedium;
             model.EmailAddress = data.EmailAddress;
             model.Description = data.Description;
+            model.SaleStarts = data.SaleStarts;
+            model.SaleEnds = data.SaleEnds;
             model.LastUpdated = data.LastUpdated;
             model.StoreId = data.StoreId;
             model.ContactType = VendorManufacturerType.Manufacturer;
@@ -63,6 +65,8 @@ namespace MerchantTribe.Commerce.Contacts
             data.ImageFileMedium = model.ImageFileMedium;
             data.EmailAddress = model.EmailAddress;
             data.Description = model.Description;
+            data.SaleStarts = model.SaleStarts;
+            data.SaleEnds = model.SaleEnds;
             data.LastUpdated = model.LastUpdated;
             data.StoreId = model.StoreId;
         }
@@ -124,8 +128,7 @@ namespace MerchantTribe.Commerce.Contacts
         }
         public List<VendorManufacturer> FindAllWithFilter(string filter, int pageNumber, int pageSize, ref int rowCount)
         {
-            var x = repository.Find().Where(y => y.StoreId == context.CurrentStore.Id)
-                                     .Where(y => y.DisplayName.Contains(filter) || y.EmailAddress.Contains(filter));                                     
+            var x = repository.Find().Where(y => y.StoreId == context.CurrentStore.Id).Where(y => y.DisplayName.Contains(filter) || y.EmailAddress.Contains(filter));                                     
             if (x != null)
             {
                 rowCount = x.Count();
@@ -138,9 +141,7 @@ namespace MerchantTribe.Commerce.Contacts
         public List<VendorManufacturer> FindByUserId(string userId)
         {
             var x = repository.Find().Where(y => y.StoreId == context.CurrentStore.Id);
-
             List<VendorManufacturer> vendors = ListPoco(x);
-
             List<VendorManufacturer> output = vendors.Where(y => y.ContactExists(userId) == true).ToList();
             if (output != null)
             {

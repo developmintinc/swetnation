@@ -70,8 +70,7 @@ namespace MerchantTribe.Commerce.Tests
         ///</summary>
         [TestMethod()]
         public void CanAddItemToOrderAndCalculate()
-        {
-            
+        {            
             RequestContext c = new RequestContext();
             MerchantTribeApplication app = MerchantTribeApplication.InstantiateForMemory(c);
             c.CurrentStore = new Accounts.Store();
@@ -100,7 +99,6 @@ namespace MerchantTribe.Commerce.Tests
         [TestMethod()]
         public void CanCalculateShippingWithNonShippingItems()
         {
-
             RequestContext c = new RequestContext();
             MerchantTribeApplication app = MerchantTribeApplication.InstantiateForMemory(c);
             c.CurrentStore = new Accounts.Store();
@@ -132,7 +130,6 @@ namespace MerchantTribe.Commerce.Tests
             target.ShippingAddress.PostalCode = "23233";
             target.ShippingAddress.RegionBvin = "VA";
             target.ShippingAddress.RegionName = "VA";
-
             target.ShippingMethodId = m.Bvin;
             target.ShippingProviderId = m.ShippingProviderId;
 
@@ -165,7 +162,6 @@ namespace MerchantTribe.Commerce.Tests
         [TestMethod()]
         public void CanSkipShippingWhenOnlyNonShippingItems()
         {
-
             RequestContext c = new RequestContext();
             MerchantTribeApplication app = MerchantTribeApplication.InstantiateForMemory(c);
             c.CurrentStore = new Accounts.Store();
@@ -197,7 +193,6 @@ namespace MerchantTribe.Commerce.Tests
             target.ShippingAddress.PostalCode = "23233";
             target.ShippingAddress.RegionBvin = "VA";
             target.ShippingAddress.RegionName = "VA";
-
             target.ShippingMethodId = m.Bvin;
             target.ShippingProviderId = m.ShippingProviderId;
 
@@ -230,7 +225,6 @@ namespace MerchantTribe.Commerce.Tests
         [TestMethod()]
         public void CanUseShippingOverrideCorrectly()
         {
-
             RequestContext c = new RequestContext();
             MerchantTribeApplication app = MerchantTribeApplication.InstantiateForMemory(c);
             c.CurrentStore = new Accounts.Store();
@@ -262,7 +256,6 @@ namespace MerchantTribe.Commerce.Tests
             target.ShippingAddress.PostalCode = "23233";
             target.ShippingAddress.RegionBvin = "VA";
             target.ShippingAddress.RegionName = "VA";
-
             target.ShippingMethodId = m.Bvin;
             target.ShippingProviderId = m.ShippingProviderId;
 
@@ -297,8 +290,7 @@ namespace MerchantTribe.Commerce.Tests
         [TestMethod()]
         public void CanAddCouponToOrder()
         {
-            Order target = new Order();
-            
+            Order target = new Order();            
             Assert.IsTrue(target.AddCouponCode("coupon"), "Add failed");
             Assert.IsTrue(target.CouponCodeExists("coupon"), "Validate Check Failed");
             Assert.AreEqual(1, target.Coupons.Count, "Coupon count should be one");
@@ -308,7 +300,7 @@ namespace MerchantTribe.Commerce.Tests
         [TestMethod()]
         public void CanSaveAndRetrieveCouponsInRepository()
         {
-            Order target = new Order();            
+            Order target = new Order();
             RequestContext c = new RequestContext();
             c.CurrentStore = new Accounts.Store() { Id = 1 };
             OrderRepository repository = OrderRepository.InstantiateForMemory(c);
@@ -325,7 +317,6 @@ namespace MerchantTribe.Commerce.Tests
             {
                 Assert.AreEqual(target.Coupons[i].CouponCode, actual.Coupons[i].CouponCode, "Code didn't match for index " + i);
             }
-
         }
 
         [TestMethod()]

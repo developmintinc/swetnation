@@ -1,39 +1,41 @@
 ﻿<%@ Page Title="Swet Nation Invite A Friend" Language="C#" MasterPageFile="~/RightSidebar.master" AutoEventWireup="true" CodeBehind="InviteFriend.aspx.cs" Inherits="SwetNation.Web.InviteFriend" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
-<%@ Register Src="~/controls/RightSidebarNav.ascx" TagName="RightSidebarNav" TagPrefix="uc" %>
+<%@ Register Src="~/controls/MyAccountNav.ascx" TagName="MyAccountNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">
     <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Invite A Friend" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftBodyContent" runat="server">
-    <div class="one">
-		<div class="one-third">
-			<code>TO:</code>
-			<p>
-				<asp:TextBox ID="txtTo" runat="server" Width="295px" Height="200px" TextMode="MultiLine" BorderColor="Gray" BorderWidth="2"></asp:TextBox>
-			</p>
+    <div class="header-title-medium">INVITE A FRIEND</div>
+    <strong>
+        Invite your friends! You will receive a $10 credit in your Swet Nation account when their order ships.  Credits expire after one year.
+    </strong>
+    <p>
+        <%= Session["messages"] %>
+    </p>
+    <div id="contact-form">
+        <div class="inner-content">
+		    <fieldset>
+			    <label>Your Friends Email <span class="required">*</span> (seperate email addresses by semi colon)</label>
+                <asp:TextBox ID="txtFriendsEmail" runat="server" Width="700" Height="100" TextMode="MultiLine"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="rfvFriendsEmail" runat="server" ErrorMessage="Required" ControlToValidate="txtFriendsEmail" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+		    </fieldset>
 		</div>
-		<div class="one-third last">
-			<code>POST INVITES ON FACEBOOK</code>
-			<p style=" text-align: center;">
-                <br />
-				<asp:LinkButton ID="lnkFacebook" runat="server" Text="INVITE FRIENDS" CssClass="button round big deep-red"></asp:LinkButton>
-                <br /><br />
-                Use this link however you like - on Facebook, Twitter, or anywhere else - and watch your Credits grow<br />
-                http://swetnation.com/web/invite/alicia-mccabe
-			</p>
+		<div class="inner-content">
+		    <fieldset>
+			    <label>Your Message <span class="required">*</span></label>
+                <asp:TextBox ID="txtMessage" runat="server" Width="700" Height="200" TextMode="MultiLine"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="rfvMessage" runat="server" ErrorMessage="Required" ControlToValidate="txtMessage" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+		    </fieldset>
 		</div>
-    </div>
-    <div class="one">
-		<div class="one-third last">
-			<code>MESSAGE</code>
-			<p>
-				<asp:TextBox ID="txtMessage" runat="server" Width="295px" Height="200px" TextMode="MultiLine" BorderColor="Gray" BorderWidth="2"></asp:TextBox>
-			</p>
+		<div class="inner-content">
+		    <fieldset>
+                <asp:Button ID="btnSubmit" runat="server" Text="Send Invite" CssClass="button round big deep-red" OnClick="btnSubmit_Click" />
+		    </fieldset>
 		</div>
-    </div>
+	</div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">
     <div class="one-fourth last">
-        <uc:RightSidebarNav ID="ucLeftSidebarNav" runat="server" InviteFriendSelected="current" />
+        <uc:MyAccountNav ID="ucMyAccountNav" runat="server" InviteFriendSelected="current" />
     </div>
 </asp:Content>

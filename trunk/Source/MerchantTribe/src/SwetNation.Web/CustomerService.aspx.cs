@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
-    public partial class CustomerService : NotAuthorizedPage
+    public partial class CustomerService : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

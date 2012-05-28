@@ -22,12 +22,14 @@ namespace MerchantTribe.Commerce.Catalog
     {
 
         #region "Custom Properties"
+
         private CustomPropertyCollection _CustomProperties = new CustomPropertyCollection();
         public CustomPropertyCollection CustomProperties
         {
             get { return _CustomProperties; }
             set { _CustomProperties = value; }
         }
+
         public bool CustomPropertyExists(string devId, string propertyKey)
         {
             bool result = false;
@@ -44,6 +46,7 @@ namespace MerchantTribe.Commerce.Catalog
             }
             return result;
         }
+
         public void CustomPropertySet(string devId, string key, string value)
         {
             bool found = false;
@@ -66,6 +69,7 @@ namespace MerchantTribe.Commerce.Catalog
                 _CustomProperties.Add(new CustomProperty(devId, key, value));
             }
         }
+
         public string CustomPropertyGet(string devId, string key)
         {
             string result = string.Empty;
@@ -84,6 +88,7 @@ namespace MerchantTribe.Commerce.Catalog
 
             return result;
         }
+
         public bool CustomPropertyRemove(string devId, string key)
         {
             bool result = false;
@@ -102,6 +107,7 @@ namespace MerchantTribe.Commerce.Catalog
             }
             return result;
         }
+
         public string CustomPropertiesToXml()
         {
             string result = string.Empty;
@@ -121,6 +127,7 @@ namespace MerchantTribe.Commerce.Catalog
 
             return result;
         }
+
         public bool CustomPropertiesFromXml(string data)
         {
             bool result = false;
@@ -143,6 +150,7 @@ namespace MerchantTribe.Commerce.Catalog
             }
             return result;
         }
+
         #endregion
 
         public const int ProductNameMaxLength = 255;
@@ -164,10 +172,7 @@ namespace MerchantTribe.Commerce.Catalog
         public Shipping.ShippableItem ShippingDetails { get; set; }
         public Shipping.ShippingMode ShippingMode
         {
-            get
-            {
-                return this.ShippingDetails.ShippingSource;
-            }
+            get { return this.ShippingDetails.ShippingSource; }
             set { this.ShippingDetails.ShippingSource = value; }
         }
         public ProductStatus Status { get; set; }
@@ -194,12 +199,8 @@ namespace MerchantTribe.Commerce.Catalog
         public string PreContentColumnId { get; set; }
         public string PostContentColumnId { get; set; }
         public string UrlSlug { get; set; }        
-        public bool IsNew
-        {
-            get { return ((System.DateTime.Now - CreationDate).Days <= WebAppSettings.NewProductBadgeDays); }
-        }
+        public bool IsNew { get { return ((System.DateTime.Now - CreationDate).Days <= WebAppSettings.NewProductBadgeDays); }}
         public string PreTransformLongDescription { get; set; }
-        //public string ProductUrl { get; set; }
         public Catalog.ProductInventoryMode InventoryMode { get; set; }
         public bool IsAvailableForSale { get; set; }        
         public bool Featured { get; set; }
@@ -227,11 +228,12 @@ namespace MerchantTribe.Commerce.Catalog
                 }
             }
         }
+
         public long StoreId { get; set; }
+
         public string TabsToXml()
         {
             string result = string.Empty;
-
             try
             {
                 XmlWriterSettings writerSettings = new XmlWriterSettings();
@@ -250,14 +252,13 @@ namespace MerchantTribe.Commerce.Catalog
                 xw.Close();
                 result = sb.ToString();
             }
-
             catch (Exception ex)
             {
                 EventLog.LogEvent(ex);
             }
-
             return result;
         }
+
         public bool IsTaxable()
         {
 
@@ -283,14 +284,15 @@ namespace MerchantTribe.Commerce.Catalog
         {
             return this.Options.Count > 0;
         }
+
         public bool HasVariants()
         {
             return this.Variants.Count > 0;
         }
+
         protected bool SortingEnabled = true;
 
         //Sub Items
-        //public Collection<string> Categories { get; private set; }
         public List<ProductImage> Images { get; set; }
         public List<ProductReview> Reviews { get; set; }
         public List<ProductReview> ReviewsApproved
@@ -307,13 +309,6 @@ namespace MerchantTribe.Commerce.Catalog
         }                
         public OptionList Options { get; set; }
         public VariantList Variants { get; set; }
-        //public void PreloadOptionItems(List<OptionItem> items)
-        //{
-        //    foreach (Option o in this.Options)
-        //    {
-        //        o.LoadItemsFromList(items);
-        //    }
-        //}
 
         public Product()
         {
@@ -350,7 +345,6 @@ namespace MerchantTribe.Commerce.Catalog
             this.PreContentColumnId = string.Empty;
             this.PostContentColumnId = string.Empty;
             this.UrlSlug = string.Empty;
-            //this.Categories = new Collection<string>();
             this.PreTransformLongDescription = string.Empty;            
             this.InventoryMode = ProductInventoryMode.AlwayInStock;
             this.GiftWrapPrice = 0m;
@@ -363,17 +357,18 @@ namespace MerchantTribe.Commerce.Catalog
             this.StoreId = 0;
             this.IsAvailableForSale = true;
         }
-
-
+        
         // Pricing Functions
         private bool GetAdminGiftWrappable()
         {
             return WebAppSettings.GiftWrapAll;
         }
+
         private decimal GetAdminGiftWrapPrice()
         {
             return WebAppSettings.GiftWrapCharge;
         }
+
         public decimal GetCurrentPrice(string userBvin, decimal adjustment, Orders.LineItem li, string variantId)
         {
             decimal result = this.SitePrice;
@@ -432,6 +427,7 @@ namespace MerchantTribe.Commerce.Catalog
 
             return result;
         }
+
         //public string GetSitePriceForDisplay(decimal adjustment)
         //{
         //    return GetSitePriceForDisplay(adjustment, string.Empty);
@@ -667,19 +663,17 @@ namespace MerchantTribe.Commerce.Catalog
 
         //    return result;
         //}
+
         public Product Clone(bool cloneProductChoicesAndInputs, bool cloneProductImages)
         {
             Product result = new Product();
-
             result.AllowReviews = this.AllowReviews;
             result.Bvin = string.Empty;
             result.CreationDateUtc = DateTime.UtcNow;
-            
-            foreach (CustomProperty prop in this.CustomProperties)
-            {
-                result.CustomProperties.Add(prop.DeveloperId, prop.Key, prop.Value);                
-            }
 
+            foreach (CustomProperty prop in this.CustomProperties)
+                result.CustomProperties.Add(prop.DeveloperId, prop.Key, prop.Value);        
+        
             result.Featured = this.Featured;
             result.GiftWrapAllowed = this.GiftWrapAllowed;
             result.GiftWrapPrice = this.GiftWrapPrice;
@@ -689,8 +683,6 @@ namespace MerchantTribe.Commerce.Catalog
                 result.ImageFileMediumAlternateText = this.ImageFileMediumAlternateText;
                 result.ImageFileSmall = this.ImageFileSmall;
                 result.ImageFileSmallAlternateText = this.ImageFileSmallAlternateText;
-
-
                 foreach (var img in this.Images)
                 {
                     ProductImage imgClone = img.Clone();
@@ -707,14 +699,12 @@ namespace MerchantTribe.Commerce.Catalog
             result.MetaDescription = this.MetaDescription;
             result.MetaKeywords = this.MetaKeywords;
             result.MetaTitle = this.MetaTitle;
-            result.MinimumQty = this.MinimumQty;
-            
+            result.MinimumQty = this.MinimumQty;            
             result.PostContentColumnId = this.PostContentColumnId;
             result.PreContentColumnId = this.PreContentColumnId;
             result.PreTransformLongDescription = this.PreTransformLongDescription;
             result.ProductName = this.ProductName;
-            result.ProductTypeId = this.ProductTypeId;
-            
+            result.ProductTypeId = this.ProductTypeId;            
             result.ShippingDetails.ExtraShipFee = this.ShippingDetails.ExtraShipFee;
             result.ShippingDetails.Height = this.ShippingDetails.Height;
             result.ShippingDetails.IsNonShipping = this.ShippingDetails.IsNonShipping;
@@ -726,7 +716,6 @@ namespace MerchantTribe.Commerce.Catalog
             result.ShippingDetails.ShipSeparately = this.ShippingDetails.ShipSeparately;
             result.ShippingDetails.Weight = this.ShippingDetails.Weight;
             result.ShippingDetails.Width = this.ShippingDetails.Width;
-
             result.ShippingMode = this.ShippingMode;
             result.ShortDescription = this.ShortDescription;
             result.SiteCost = this.SiteCost;
@@ -759,13 +748,10 @@ namespace MerchantTribe.Commerce.Catalog
                     Option c = opt.Clone();
                     result.Options.Add(c);
                 }                
-                //result.Variants = this.Variants;
             }
                                                       
             result.Bvin = System.Guid.NewGuid().ToString();
-        
 
-                
             return result;
         }
 
@@ -773,6 +759,7 @@ namespace MerchantTribe.Commerce.Catalog
         {
             return Clone(true, true);
         }
+
         public Content.BVValidationResult Validate()
         {
             Content.BVValidationResult result = new Content.BVValidationResult();
@@ -783,12 +770,10 @@ namespace MerchantTribe.Commerce.Catalog
         public List<Content.HtmlTemplateTag> GetReplaceableTags(MerchantTribeApplication app)
         {
             List<Content.HtmlTemplateTag> result = new List<Content.HtmlTemplateTag>();
-
             result.Add(new Content.HtmlTemplateTag("[[Product.CreationDate]]", this.CreationDate.ToString()));
             result.Add(new Content.HtmlTemplateTag("[[Product.ExtraShipFee]]", this.ShippingDetails.ExtraShipFee.ToString("c")));
             result.Add(new Content.HtmlTemplateTag("[[Product.ImageFileSmall]]", this.ImageFileSmall));
             result.Add(new Content.HtmlTemplateTag("[[Product.ImageFileMedium]]", this.ImageFileMedium));
-
             string available = Content.SiteTerms.GetTerm(Content.SiteTermIds.InStock);
             string notAvailable = Content.SiteTerms.GetTerm(Content.SiteTermIds.OutOfStock);
 
@@ -827,7 +812,6 @@ namespace MerchantTribe.Commerce.Catalog
             result.Add(new Content.HtmlTemplateTag("[[Product.SitePriceOverrideText]]", this.SitePriceOverrideText));
             result.Add(new Content.HtmlTemplateTag("[[Product.Sku]]", this.Sku));
             result.Add(new Content.HtmlTemplateTag("[[Product.TaxExempt]]", this.TaxExempt.ToString()));
-            //result.Add(new Content.EmailTemplateTag("[[Product.TemplateName]]", this.TemplateName));
             result.Add(new Content.HtmlTemplateTag("[[Product.TypeProperties]]", this.GetTypeProperties(app)));
             result.Add(new Content.HtmlTemplateTag("[[Product.TypePropertiesDropShipper]]", this.GetTypeProperties(true, app)));
             result.Add(new Content.HtmlTemplateTag("[[Product.VendorId]]", this.VendorId));
@@ -839,17 +823,18 @@ namespace MerchantTribe.Commerce.Catalog
         {
             return GetTypeProperties(false, app);
         }
+
         private string GetPropertyValueFromList(List<ProductPropertyValue> values, long propertyId)
         {
             string temp = values.Where(y => y.PropertyID == propertyId).Select(y => y.StringValue).FirstOrDefault();
             if (temp != null) return temp;
             return string.Empty;
-        }        
+        }
+    
         public string GetTypeProperties(bool forDropShipper, MerchantTribeApplication app)
         {
             string productTypeId = this.Bvin;
             string productId = this.ProductTypeId;
-
 
             List<ProductPropertyValue> propertyValues = app.CatalogServices.ProductPropertyValues.FindByProductId(this.Bvin);            
             System.Collections.Generic.List<Catalog.ProductProperty> props = app.CatalogServices.ProductPropertiesFindForType(productTypeId);
@@ -868,20 +853,13 @@ namespace MerchantTribe.Commerce.Catalog
                 if (render)
                 {
                     string currentValue = app.CatalogServices.FormatProductPropertyChoiceValue(props[i], GetPropertyValueFromList(propertyValues, props[i].Id));
-                    // If text property is empty, do not display
                     if ((props[i].TypeCode == Catalog.ProductPropertyType.TextField) && (currentValue == string.Empty))
-                    {
                         continue;
-                    }
 
                     if (i % 2 == 0)
-                    {
                         sb.Append("<li>");
-                    }
                     else
-                    {
                         sb.Append("<li class=\"alt\">");
-                    }
 
                     sb.Append("<span class=\"productpropertylabel\">");
                     sb.Append(props[i].DisplayName);
@@ -902,21 +880,16 @@ namespace MerchantTribe.Commerce.Catalog
         {
             Collection<T> result = new Collection<T>();
             foreach (T item in data)
-            {
                 result.Add(item);
-            }
             return result;
         }
+
         bool System.IEquatable<Product>.Equals(Product other)
         {
             if (this.Bvin != other.Bvin)
-            {
                 return false;
-            }
             else
-            {
                 return true;
-            }
         }
         
         public string GetCartDestinationUrl(Orders.LineItem li)
@@ -974,7 +947,6 @@ namespace MerchantTribe.Commerce.Catalog
             this.MetaKeywords = dto.MetaKeywords ?? string.Empty;
             this.MetaTitle = dto.MetaTitle ?? string.Empty;
             this.MinimumQty = dto.MinimumQty;
-            //this.Options = dto.Options;
             this.PostContentColumnId = dto.PostContentColumnId ?? string.Empty;
             this.PreContentColumnId = dto.PreContentColumnId ?? string.Empty;
             this.PreTransformLongDescription = dto.PreTransformLongDescription ?? string.Empty;
@@ -1001,9 +973,9 @@ namespace MerchantTribe.Commerce.Catalog
             this.TaxExempt = dto.TaxExempt;
             this.TaxSchedule = dto.TaxSchedule;
             this.UrlSlug = dto.UrlSlug ?? string.Empty;
-            //this.Variants = dto.Variants;
             this.VendorId = dto.VendorId ?? string.Empty;           
         }
+
         public ProductDTO ToDto()
         {
             ProductDTO dto = new ProductDTO();
@@ -1059,7 +1031,6 @@ namespace MerchantTribe.Commerce.Catalog
             dto.TaxExempt = this.TaxExempt;
             dto.TaxSchedule = this.TaxSchedule;
             dto.UrlSlug = this.UrlSlug;
-            //dto.Variants = this.Variants;
             dto.VendorId = this.VendorId; 
 
             return dto;
@@ -1071,10 +1042,10 @@ namespace MerchantTribe.Commerce.Catalog
         {
             return AsPurchasable(selectionData, app, true);
         }
+
         public Orders.PurchasableSnapshot AsPurchasable(OptionSelectionList selectionData, MerchantTribeApplication app, bool calculateUserPrice)
         {
             Orders.PurchasableSnapshot result = new Orders.PurchasableSnapshot();
-
             result.BasePrice = this.SitePrice;
             result.Name = this.ProductName;
             result.Sku = this.Sku;
@@ -1104,9 +1075,8 @@ namespace MerchantTribe.Commerce.Catalog
                     }
                     break;
             }
+
             result.TaxScheduleId = this.TaxSchedule;
-
-
             decimal basePriceToModify = result.BasePrice;
 
             // See if we have adjustments based on options
@@ -1117,6 +1087,7 @@ namespace MerchantTribe.Commerce.Catalog
                 adjustments = selectionData.GetPriceAdjustmentForSelections(this.Options);
                 weightAdjustments = selectionData.GetWeightAdjustmentForSelections(this.Options);
             }
+
             this.ShippingDetails.Weight += weightAdjustments;
 
             // See if we need to use a variant price as base
@@ -1151,11 +1122,9 @@ namespace MerchantTribe.Commerce.Catalog
                     }
                 }
             }
-
-
+            
             // Record option price adjustments on modified base price
             result.BasePrice = basePriceToModify + adjustments;
-
 
             if (this.HasOptions())
             {
@@ -1172,8 +1141,10 @@ namespace MerchantTribe.Commerce.Catalog
                 sb.Append("</ul>");
                 result.Description = sb.ToString();
             }
+
             return result;
         }
+
         #endregion
         
     }

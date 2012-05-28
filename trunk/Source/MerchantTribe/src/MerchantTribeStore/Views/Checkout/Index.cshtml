@@ -5,18 +5,15 @@
 }
 <div class="checkout">
     @Html.Raw((string)TempData["messages"])
-    <h1>
-        Checkout</h1>
+    <h1>Checkout</h1>
     <div class="section-sidebar">
         @Html.Action("Index", "ContentColumn", new { id = "601" })
     </div>
     <div class="sections">
         <form action="@Url.Content("~/checkout")" method="post">
         <div class="section-email">
-            <h2>
-                Email Address</h2>
-            <input type="text" id="customeremail" name="customeremail"
-                   tabindex="100" size="50" value="@Model.CurrentOrder.UserEmail" /><span class="requiredfield">*</span><br />
+            <h2>Email Address</h2>
+            <input type="text" id="customeremail" name="customeremail" tabindex="100" size="50" value="@Model.CurrentOrder.UserEmail" /><span class="requiredfield">*</span><br />
             <div id="loginform">                
                 @if (Model.IsLoggedIn)
                 {

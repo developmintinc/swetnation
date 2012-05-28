@@ -24,6 +24,8 @@ namespace MerchantTribe.Commerce.Membership
         public string Email {get;set;}
         public string FirstName {get;set;}
         public string LastName {get;set;}
+        public string DOB { get; set; }
+        public string Gender { get; set; }
         public string Password {get;set;}
         public string Salt {get;set;}
         public Address ShippingAddress { get; set; }
@@ -66,6 +68,8 @@ namespace MerchantTribe.Commerce.Membership
             this.Email = string.Empty;
             this.FirstName = string.Empty;
             this.LastName = string.Empty;
+            this.DOB = string.Empty;
+            this.Gender = string.Empty;
             this.Password = string.Empty;
             this.Salt = string.Empty;
 
@@ -97,6 +101,8 @@ namespace MerchantTribe.Commerce.Membership
             result.Add(new Content.HtmlTemplateTag("[[User.FirstName]]", this.FirstName));
             result.Add(new Content.HtmlTemplateTag("[[User.LastLoginDate]]", this.LastLoginDateUtc.ToLocalTime().ToString()));
             result.Add(new Content.HtmlTemplateTag("[[User.LastName]]", this.LastName));
+            result.Add(new Content.HtmlTemplateTag("[[User.DOB]]", this.DOB));
+            result.Add(new Content.HtmlTemplateTag("[[User.Gender]]", this.Gender));
             result.Add(new Content.HtmlTemplateTag("[[User.LastUpdated]]", this.LastUpdatedUtc.ToLocalTime().ToString()));
             result.Add(new Content.HtmlTemplateTag("[[User.Locked]]", this.Locked.ToString()));
             result.Add(new Content.HtmlTemplateTag("[[User.LockedUntil]]", this.LockedUntilUtc.ToLocalTime().ToString()));
@@ -186,6 +192,8 @@ namespace MerchantTribe.Commerce.Membership
             dto.Email = this.Email;
             dto.FirstName = this.FirstName;
             dto.LastName = this.LastName;
+            dto.DOB = this.DOB;
+            dto.Gender = this.Gender;
             dto.Password = this.Password;
             dto.Salt = this.Salt;
 
@@ -214,6 +222,8 @@ namespace MerchantTribe.Commerce.Membership
             this.Email = dto.Email;
             this.FirstName = dto.FirstName;
             this.LastName = dto.LastName;
+            this.DOB = dto.DOB;
+            this.Gender = dto.Gender;
             this.Password = dto.Password;
             this.Salt = dto.Salt;
 

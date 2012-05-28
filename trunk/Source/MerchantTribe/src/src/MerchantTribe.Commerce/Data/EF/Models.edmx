@@ -543,6 +543,8 @@
           <Property Name="ImageFileSmall" Type="nvarchar" Nullable="false" MaxLength="512" />
           <Property Name="ImageFileMedium" Type="nvarchar" Nullable="false" MaxLength="512" />
           <Property Name="Description" Type="ntext" />
+          <Property Name="SaleStarts" Type="datetime" />
+          <Property Name="SaleEnds" Type="datetime" />
         </EntityType>
         <EntityType Name="bvc_Order">
           <Key>
@@ -1032,6 +1034,8 @@
           <Property Name="StoreId" Type="bigint" Nullable="false" />
           <Property Name="ShippingAddress" Type="nvarchar(max)" Nullable="false" />
           <Property Name="BillingAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="bvc_UserQuestions">
           <Key>
@@ -2142,6 +2146,8 @@
           <Property Type="String" Name="ImageFileSmall" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Type="String" Name="ImageFileMedium" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SaleStarts" />
+          <Property Type="DateTime" Name="SaleEnds" />
         </EntityType>
         <EntityType Name="bvc_Policy">
           <Key>
@@ -2503,6 +2509,8 @@
           <NavigationProperty Name="bvc_UserXContact" Relationship="EfModels.FK_bvc_UserXAffiliate_bvc_User" FromRole="bvc_User" ToRole="bvc_UserXContact" />
           <Property Type="String" Name="ShippingAddress" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="BillingAddress" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DOB" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gender" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="bvc_UserQuestions">
           <Key>
@@ -3657,6 +3665,8 @@
           <EntitySetMapping Name="bvc_Manufacturer">
             <EntityTypeMapping TypeName="EfModels.bvc_Manufacturer">
               <MappingFragment StoreEntitySet="bvc_Manufacturer">
+                <ScalarProperty Name="SaleEnds" ColumnName="SaleEnds" />
+                <ScalarProperty Name="SaleStarts" ColumnName="SaleStarts" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ImageFileMedium" ColumnName="ImageFileMedium" />
                 <ScalarProperty Name="ImageFileSmall" ColumnName="ImageFileSmall" />
@@ -4011,6 +4021,8 @@
           <EntitySetMapping Name="bvc_User">
             <EntityTypeMapping TypeName="EfModels.bvc_User">
               <MappingFragment StoreEntitySet="bvc_User">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
                 <ScalarProperty Name="ShippingAddress" ColumnName="ShippingAddress" />
                 <ScalarProperty Name="StoreId" ColumnName="StoreId" />
@@ -4632,7 +4644,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Models" ZoomLevel="75" ShowGrid="true">
+      <Diagram Name="Models" ZoomLevel="85" ShowGrid="true">
         <EntityTypeShape EntityType="EfModels.bv_SearchLexicon" Width="1.875" PointX="7.75" PointY="14.375" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="EfModels.bv_SearchObjects" Width="1.875" PointX="7.375" PointY="17" Height="2.3648893229166106" />
         <EntityTypeShape EntityType="EfModels.bv_SearchObjectWords" Width="2" PointX="10.25" PointY="16.875" Height="2.1725878906249818" />

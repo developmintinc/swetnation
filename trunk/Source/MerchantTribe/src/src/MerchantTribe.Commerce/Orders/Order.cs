@@ -316,7 +316,7 @@ namespace MerchantTribe.Commerce.Orders
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("<table cellspacing=\"0\" cellpadding=\"2\" class=\"totaltable\" border=\"0\">");
+            sb.Append("<table cellspacing=\"0\" cellpadding=\"2\" class=\"totaltable\">");
 
             // Sub Total
             if (this.OrderDiscountDetails.Count > 0)
@@ -392,7 +392,7 @@ namespace MerchantTribe.Commerce.Orders
             {
                 sb.Append("<tr>");
                 sb.Append("<td class=\"totallabel\">");
-                sb.Append("Shipping:<br /><span class=\"tiny\">" + ShippingMethodDisplayName + "</span></td>");
+                sb.Append("Shipping:</td>");
                 sb.Append("<td class=\"totalshipping\">");
                 sb.Append(this.TotalShippingAfterDiscounts.ToString("c"));
                 sb.Append("</td>");
@@ -445,6 +445,7 @@ namespace MerchantTribe.Commerce.Orders
                 item.ClearTaxValue();
             }
         }
+
         public void ClearShippingPricesAndMethod()
         {
             this.ShippingMethodId = string.Empty;
@@ -453,6 +454,7 @@ namespace MerchantTribe.Commerce.Orders
             this.ShippingProviderServiceCode = string.Empty;
             this.TotalShippingBeforeDiscounts = 0;
         }
+
         public void ClearDiscounts()
         {
             for (int i = 0; i <= Items.Count - 1; i++)
@@ -1020,13 +1022,11 @@ namespace MerchantTribe.Commerce.Orders
             }
             return result;
         }
+
         public void EvaluateCurrentShippingStatus()
         {
             this.ShippingStatus = this.EvaluateShippingStatus();
         }
-
-
-        
                 
         public IDictionary<long, decimal> GetLineItemValuesAccountingForOrderDiscounts()
         {

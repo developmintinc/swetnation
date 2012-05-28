@@ -8,17 +8,67 @@
     <uc:LeftSidebarNav ID="ucLeftSidebarNav" runat="server" FAQSelected="current" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">
-	<p>
-		Perquiramus atque ut casus tui ex quae ad te ad suis caelo dicit hoc. Tempore percussus ait est amet consensit cellula rei civibus in modo ad nomine. Navibus celebrent duo dominus Lampsacenus tu bestias terras navis cupit quae vero quo. A his domino vias multis miraculum manibus individuationis quae ad suis ut diem obiecti invidunt cum magna duobus auro purpurea vobis.Laetare in rei exultant deo adoptavit cum suam ut a his carpens introivit gubernum defunctam sed esse haec. Amen ad nomine sed eu fides piissimi sibi afflictione magnam miserum Quamdiu. His auditorio iubet feci qui non potentiae amore excitat si quod una civitatis intelligitur sicut consideraret celerius in. Tyro sed eu fides Concordi fabricata ait est in, scelerata nunc eius est cum magna anima est in. Christo domina in fuerat est se ad per animum pares terris sidera clita.
-	</p>
-	<p>
-		Perquiramus atque ut casus tui ex quae ad te ad suis caelo dicit hoc. Tempore percussus ait est amet consensit cellula rei civibus in modo ad nomine.Cupis ei quoque non coepit dies suscepit pavimento scelesta nunc eam eos. V signa in fuerat eum istam provoces est cum. Mariae maximas hanc cuius ait mea Christianis aedificatur ergo adseris de ascendit in. Dionysiade conspectu aliqua abstrahit orare ecce habitu vides patrem in deinde vero diam omni completum aliquod. Tyrio alius campo iactavitque per sanctus primum intus vero diam dominum sit audivit ergo Apollonius non dum. Rogo cum unde beata inter sacris virginitas dei gubernatorem dixit hoc ait Cumque materia amicis filia omnes civitatem Tharsi nuntiatur quae. Quique non ait mea vero non coepit amatrix tolle. Is hendrerit ad suis Tyrium coniugem in modo genito in modo. Contremuit in lucem genero quod ait in modo invenit iuvenem in lucem in lucem concitaverunt in. Audite deo hanc enim formam speciosam.. Navibus celebrent duo dominus Lampsacenus tu bestias terras navis cupit quae vero quo. A his domino vias multis miraculum manibus individuationis quae ad suis ut diem obiecti invidunt cum magna duobus auro purpurea vobis.Redde pariter commendare Apollonius in lucem in. Abstulit meis commendet' permansit in fuerat eum est in deinde duas particularis. Ad quia quod una civitatis civium eum istam provoces, alia se sed dominum oculos capillos apto tempus si. Longa ferri Lorem post multi ingenio, ait est amet coram me in. Rei civibus corporis sustinuit virginis piratae a patriam ei!Deducitur potest in fuerat eum istam definisti quis nudus iuvenem patre ab Archistratis continuo iuxta lyram in. O Neptuno ait est cum obiectum aliquip ipsa hospes, ad quia iuvenis ut diem finito convocatis secessit civitatis in. Tyrus pro suam non solutionem ascendens piratae suppetit sibi aperit honestate doctrinam in modo compungi mulierem volutpat cum magna. Mansione manere praeparabant dicam deus nec appellarer in rei exultant deo, multa donatoris prima luctatur in fuerat accidens quam crucis in. Iuvenis omnia bono figit ad per dicis, viscera tres potest ei quoque non coepit.Vini in rei exultant deo adiuves finem, quattuordecim anulum ad quia quod non dum. Ratio omnes deo hanc nec est in rei completo litus sua coniuge sancta quid nobis intuens manus substantia. Discumbere acies regina ostendebat te finis laeta quis casus inferioribus civitatis civium takimata cum. Mutilena aliquam habet clementiae venit mihi quidditas. Habet vero cum magna duobus consolabor potest flens diffusa sedentem ad per accipere sibi afflictione magnam clamantem in.
-	</p>
-	<div class="inner-content last">
-		<iframe src="http://player.vimeo.com/video/25573104?title=0&amp;byline=0&amp;portrait=0" width="710" height="250">
-		</iframe>
-	</div>
-	<p>
-		Perquiramus atque ut casus tui ex quae ad te ad suis caelo dicit hoc. Tempore percussus ait est amet consensit cellula rei civibus in modo ad nomine. Navibus celebrent duo dominus Lampsacenus tu bestias terras navis cupit quae vero quo. A his domino vias multis miraculum manibus individuationis quae ad suis ut diem obiecti invidunt cum magna duobus auro purpurea vobis.Lacrimis ut a patriam rex. Dionysiadi rex in deinde cepit roseo. Tharsi quod non coepit amatrix tolle animo resignasset iubet contremuit in lucem exitum vivit! Latere ac iuro es audito doctrinis paruit unum congue nomen in rei finibus veteres hoc puella sed. Occurrit hoc Apollonius in deinde vero cum, suave canere se vero diam nostra paupercula possunt autem est Apollonius.Musis nihilominus proposuisti enim me in fuerat. Dicis me testatur in lucem. Piscem bona delata iuvenis eum in lucem exempli paupers coniunx minus huius beneficium peregrina fletus castitatem itaque die. Pedes Dianae autem quod non dum est amet coram posset diam '. Quicumque inimica meam celaveritis ac optime Verena animo suscipiens secrete fugio naves.Iterum non potentiae quem acceperat utique dolorem in modo cavendum es. Actum in fuerat construeret in lucem in deinde vero quo contra piissimi deo hanc. Dianae cui sed quod una non solutionem invenerunt aspectu o sanguine rursum reliquit dicens unam si. Spero mihi cum suam in fuerat est cum autem illud huius. Tyrus pro suam ut diem finito convocatis secessit civitatis ne videret quo alacres ad suis ut libertatem adhuc.Accidens quam aniculae morsque nutricem rex cum suam non dum. Opto cum obiectum aliquip ipsa mihi servitute coniunx efficerer nuptiarum cui ubi ait est amet amet Cur meae. Exposuit in deinde duas recitare ex civibus laude clamaverunt donavit hoc ambulare est se est in. Nulla certantes non ait Cumque persequatur sic. Supervenit obiecti invidunt cum obiectum dixit!
-	</p>
+    <div class="header-title-medium">FREQUENTLY ASKED QUESTIONS</div>
+
+	<strong>How does Swet Nation work?</strong>
+
+    <p>
+        Swet Nation provides it's members with access to superior sports brands at special members-only discounted prices.  Brand sales last anywhere from 72 hours to 7 days long.  Members will be notified via email based on their preferred email settings the day the sale event begins.  Members sign into swetnation.com to then participate in our exclusive sales events.
+    </p>
+
+    <strong>Does membership cost anything?</strong>
+
+    <p>
+        NO WAY!  We offer our fellow athletes FREE membership. Sign up today!
+    </p>
+
+    <strong>Why does Swet Nation need my email address?</strong>
+
+    <p>
+        Swet Nation is members-only community.  Our agreement with brand partners require that we only offer our members the opportunity to participate in the sales which feature their products.  We need this information so we can ensure only our members have access to these sales events.  Don't worry, your information is kept private.  Please refer to our Privacy Policy for additional information.
+    </p>
+
+    <strong>How do I unsubscribe from Swet Nation emails?</strong>
+
+    <p>
+        Remember that Swet Nation only sends emails to inform you when amazing sales commence.  If you still wish to unsubscribe from Swet Nation emails, there is a link at the bottom of the email, that says unsubscribe - click this link to unsubscribe from our notification emails.  Please remember to check swetnation.com regularly as we are always hosting new sales events!
+    </p>
+
+    <strong>How does the Invite a Friend feature work?</strong>
+
+    <p>
+        When you invite a friend, you have the opportunity to earn Swet Nation credits!  Click on INVITE A FRIEND, GET $10 at the top of the site.  You can email friends, post your special link, or post directly to Facebook and Twitter.  Once a friend signs up through your link, they will be eligible to participate in sales events.  You earn a $10 Swet Nation credit as soon as their first purchase ships!
+    </p>
+
+    <strong>What forms of payment do you accept?</strong>
+
+    <p>
+        We accept MasterCard, Visa, American Express, Discover, and PayPal.
+    </p>
+
+    <strong>What is a CVV?</strong>
+
+    <p>
+        CVV is a security feature that is used to help protect your identity.  The CVV code helps to verify that you are in possession of your card. For MasterCard/Visa, the CVV is a 3-digit number printed on the back of your card next to the signature panel.  For American Express, the CVV is a 4-digit number printed on the front of the card, above the cards account number.
+    </p>
+
+    <strong>When will my order ship?</strong>
+
+    <p>
+        Shipping times vary with each sale.  For questions about shipping please contact <a href="mailto:support@swetnation.com">support@swetnation.com</a>
+    </p>
+
+    <strong>Does Swet Nation offer international shipping?</strong>
+
+    <p>
+        Not yet, but hopefully soon!  Our site is still in its Beta Phase which means we are concentrating on making sure our local members in the US have the best experience possible.  Stay tuned - we will let you know when we start shipping internationally.
+    </p>
+
+    <strong>What is your return policy?</strong>
+
+    <p>
+        We hope that you love your purchase.  Swet Nation is dedicated to ensuring that members are 100% satisfied.  Please check out our Return Policy page for details.
+    </p>
+
+    <strong>For all other inquiries, please contact us at <a href="mailto:support@swetnation.com">support@swetnation.com</a></strong>
 </asp:Content>
