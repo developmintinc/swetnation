@@ -10,6 +10,7 @@ using MerchantTribe.Commerce.Utilities;
 using MerchantTribe.Commerce;
 using MerchantTribe.Commerce.Membership;
 using MerchantTribe.Commerce.Contacts;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
