@@ -10,195 +10,186 @@
 namespace SwetNation.Web {
     
     
-    public partial class SignUp {
+    public partial class Receipt {
         
         /// <summary>
-        /// Head1 control.
+        /// litOrderNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.WebControls.Literal litOrderNumber;
         
         /// <summary>
-        /// ucHeaderFonts control.
+        /// litFullOrderStatusDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SwetNation.Web.controls.HeaderFonts ucHeaderFonts;
+        protected global::System.Web.UI.WebControls.Literal litFullOrderStatusDescription;
         
         /// <summary>
-        /// form1 control.
+        /// litBillingAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Literal litBillingAddress;
         
         /// <summary>
-        /// vsSignUp control.
+        /// litShippingAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsSignUp;
+        protected global::System.Web.UI.WebControls.Literal litShippingAddress;
         
         /// <summary>
-        /// txtFirstName control.
+        /// litTotalsAsTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
+        protected global::System.Web.UI.WebControls.Literal litTotalsAsTable;
         
         /// <summary>
-        /// rfvFirstName control.
+        /// ucViewOrderItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFirstName;
+        protected global::SwetNation.Web.controls.ViewOrderItems ucViewOrderItems;
         
         /// <summary>
-        /// txtLastName control.
+        /// pnlSpecialInstructions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastName;
+        protected global::System.Web.UI.WebControls.Panel pnlSpecialInstructions;
         
         /// <summary>
-        /// rfvLastName control.
+        /// litInstructions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLastName;
+        protected global::System.Web.UI.WebControls.Literal litInstructions;
         
         /// <summary>
-        /// txtEmail control.
+        /// pnlCoupons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.Panel pnlCoupons;
         
         /// <summary>
-        /// rfvEmail control.
+        /// litCoupons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+        protected global::System.Web.UI.WebControls.Literal litCoupons;
         
         /// <summary>
-        /// txtPassword control.
+        /// trNotes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trNotes;
         
         /// <summary>
-        /// rfvPassword control.
+        /// packagesdiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl packagesdiv;
         
         /// <summary>
-        /// txtConfirmPassword control.
+        /// pnlPackages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+        protected global::System.Web.UI.WebControls.Panel pnlPackages;
         
         /// <summary>
-        /// rfvConfirmPassword control.
+        /// litShipped control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvConfirmPassword;
+        protected global::System.Web.UI.WebControls.Literal litShipped;
         
         /// <summary>
-        /// ddlGender control.
+        /// litTrackingNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
+        protected global::System.Web.UI.WebControls.Literal litTrackingNumber;
         
         /// <summary>
-        /// rfvGender control.
+        /// litPaymentsSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGender;
+        protected global::System.Web.UI.WebControls.Literal litPaymentsSummary;
         
         /// <summary>
-        /// chkAgreed control.
+        /// litAmountCharged control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAgreed;
+        protected global::System.Web.UI.WebControls.Literal litAmountCharged;
         
         /// <summary>
-        /// litAgreedToTermsDescription control.
+        /// litTotalCredit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label litAgreedToTermsDescription;
+        protected global::System.Web.UI.WebControls.Literal litTotalCredit;
         
         /// <summary>
-        /// hypSiteTerms control.
+        /// litAmountRefunded control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypSiteTerms;
+        protected global::System.Web.UI.WebControls.Literal litAmountRefunded;
         
         /// <summary>
-        /// btnSignUp control.
+        /// litAmountDue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnSignUp;
-        
-        /// <summary>
-        /// lnkSignIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkSignIn;
+        protected global::System.Web.UI.WebControls.Literal litAmountDue;
     }
 }

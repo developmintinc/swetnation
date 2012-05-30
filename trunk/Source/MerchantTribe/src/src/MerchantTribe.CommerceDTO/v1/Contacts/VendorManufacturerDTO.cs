@@ -34,6 +34,8 @@ namespace MerchantTribe.CommerceDTO.v1.Contacts
         [DataMember]
         public DateTime? SaleEnds { get; set; }
         [DataMember]
+        public int SortOrder { get; set; }
+        [DataMember]
         public List<VendorManufacturerContactDTO> Contacts { get; set; }
         [DataMember]
         public VendorManufacturerTypeDTO ContactType { get; set; }
@@ -52,6 +54,7 @@ namespace MerchantTribe.CommerceDTO.v1.Contacts
             Description = string.Empty;
             SaleStarts = (DateTime?)null;
             SaleEnds = (DateTime?)null;
+            SortOrder = 1;
             Contacts = new List<VendorManufacturerContactDTO>();
             ContactType = VendorManufacturerTypeDTO.Vendor;
         }

@@ -111,6 +111,7 @@ namespace MerchantTribe.Commerce.Catalog
             model.SiteCost = data.SiteCost;
             model.SitePrice = data.SitePrice;
             model.SitePriceOverrideText = data.SitePriceOverrideText;
+            model.SortOrder = data.SortOrder;
             model.Sku = data.SKU;
             model.Status = (ProductStatus)data.Status;
             model.StoreId = data.StoreId;
@@ -122,6 +123,7 @@ namespace MerchantTribe.Commerce.Catalog
             model.UrlSlug = data.RewriteUrl;
             model.VendorId = data.VendorID; 
         }
+
         protected override void CopyModelToData(Data.EF.bvc_Product data, Product model)
         {
             data.AllowReviews = model.AllowReviews;
@@ -163,6 +165,7 @@ namespace MerchantTribe.Commerce.Catalog
             data.SiteCost = model.SiteCost;
             data.SitePrice = model.SitePrice;
             data.SitePriceOverrideText = model.SitePriceOverrideText;
+            data.SortOrder = model.SortOrder;
             data.SKU = model.Sku;
             data.Status = (int)model.Status;
             data.StoreId = model.StoreId;
@@ -171,7 +174,7 @@ namespace MerchantTribe.Commerce.Catalog
             data.TaxClass = model.TaxSchedule.ToString();
             data.TemplateName = model.TemplateName;
             data.RewriteUrl = model.UrlSlug;
-            data.VendorID = model.VendorId; 
+            data.VendorID = model.VendorId;            
         }
 
         protected override void DeleteAllSubItems(Product model)
@@ -181,6 +184,7 @@ namespace MerchantTribe.Commerce.Catalog
             imageRepository.DeleteForProductId(model.Bvin);
             reviewRepository.DeleteForProductId(model.Bvin);
         }
+
         protected override void GetSubItems(Product model)
         {
             model.Variants.Clear();
@@ -190,6 +194,7 @@ namespace MerchantTribe.Commerce.Catalog
             model.Images = imageRepository.FindByProductId(model.Bvin);
             model.Reviews = reviewRepository.FindByProductId(model.Bvin);            
         }
+
         protected override void MergeSubItems(Product model)
         {
             variantRepository.MergeList(model.Bvin, model.Variants);
@@ -210,27 +215,32 @@ namespace MerchantTribe.Commerce.Catalog
             }
             return null;
         }
+
         public Product FindForAllStores(string bvin)
         {
             return this.Find(new PrimaryKey(bvin));            
         }
+
         public Product FindBySlug(string urlSlug)
         {
             return FindBySlugForStore(urlSlug, context.CurrentStore.Id);
         }
+
         public Product FindBySlugForStore(string urlSlug, long storeId)
         {
-            IQueryable<Data.EF.bvc_Product> data = repository.Find().Where(y => y.RewriteUrl == urlSlug).Where(y => y.StoreId == storeId).OrderBy(y => y.Id);
+            IQueryable<Data.EF.bvc_Product> data = repository.Find().Where(y => y.RewriteUrl == urlSlug).Where(y => y.StoreId == storeId).OrderByDescending(y => y.SortOrder);
             if (data.Count() > 0) return SinglePoco(data);
             return null;
         }
+
         public Product FindBySku(string sku)
         {
             return FindBySkuForStore(sku, context.CurrentStore.Id);
         }
+
         public Product FindBySkuForStore(string sku, long storeId)
         {
-            IQueryable<Data.EF.bvc_Product> data = repository.Find().Where(y => y.SKU == sku).Where(y => y.StoreId == storeId).OrderBy(y => y.Id);
+            IQueryable<Data.EF.bvc_Product> data = repository.Find().Where(y => y.SKU == sku).Where(y => y.StoreId == storeId).OrderByDescending(y => y.SortOrder);
             if (data.Count() > 0) return SinglePoco(data);
             return null;
         }
@@ -262,16 +272,6 @@ namespace MerchantTribe.Commerce.Catalog
             return Delete(new PrimaryKey(bvin));
         }
 
-        //public List<Product> FindAll()
-        //{
-        //    long storeId = context.CurrentStore.Id;
-        //    IQueryable<Data.EF.bvc_Product> result = repository.Find().Where(y => y.StoreId == storeId).OrderBy(y => y.ProductName);
-        //    return ListPoco(result);
-        //}
-        //public List<Product> FindAllForAllStores()
-        //{
-        //    return this.FindAllPagedForAllStores(1, int.MaxValue);
-        //}        
         public override List<Product> FindAllPaged(int pageNumber, int pageSize)
         {
             List<Product> result = new List<Product>();
@@ -282,7 +282,7 @@ namespace MerchantTribe.Commerce.Catalog
             int skip = (pageNumber - 1) * pageSize;
             long storeId = context.CurrentStore.Id;
 
-            IQueryable<Data.EF.bvc_Product> items = repository.Find().Where(y => y.StoreId == storeId).OrderBy(y => y.ProductName).Skip(skip).Take(take);
+            IQueryable<Data.EF.bvc_Product> items = repository.Find().Where(y => y.StoreId == storeId).OrderByDescending(y => y.SortOrder).Skip(skip).Take(take);
             if (items != null)
             {                
                 result = ListPoco(items);
@@ -308,9 +308,9 @@ namespace MerchantTribe.Commerce.Catalog
             if (pageNumber < 1) pageNumber = 1;
 
             int take = pageSize;
-            int skip = (pageNumber - 1) * pageSize;            
+            int skip = (pageNumber - 1) * pageSize;
 
-            IQueryable<Data.EF.bvc_Product> items = repository.Find().OrderBy(y => y.ProductName).Skip(skip).Take(take);
+            IQueryable<Data.EF.bvc_Product> items = repository.Find().OrderByDescending(y => y.SortOrder).Skip(skip).Take(take);
             if (items != null)
             {
                 result = ListPoco(items);
@@ -333,9 +333,7 @@ namespace MerchantTribe.Commerce.Catalog
             return result;
         }
 
-        public List<Product>FindByCategoryId(string categoryBvin, CategorySortOrder sort, 
-                                            bool showUnavailable, 
-                                            int pageNumber,int pageSize, ref int totalResults)
+        public List<Product>FindByCategoryId(string categoryBvin, CategorySortOrder sort, bool showUnavailable, int pageNumber,int pageSize, ref int totalResults)
         {
             ProductSearchCriteria criteria = new ProductSearchCriteria();
             criteria.CategorySort = sort;
@@ -369,8 +367,7 @@ namespace MerchantTribe.Commerce.Catalog
             int skip = (pageNumber - 1) * pageSize;
             long storeId = context.CurrentStore.Id;
 
-            IQueryable<Data.EF.bvc_Product> items = repository.Find()
-                                            .Where(y => y.StoreId == storeId);
+            IQueryable<Data.EF.bvc_Product> items = repository.Find().Where(y => y.StoreId == storeId).OrderByDescending(y => y.SortOrder);
 
             // Display Inactive
             if (criteria.DisplayInactiveProducts == false)
@@ -468,7 +465,7 @@ namespace MerchantTribe.Commerce.Catalog
 
             IQueryable<Data.EF.bvc_Product> items = repository.Find().Where(y => y.StoreId == storeId)
                                                                 .Where(y => y.Featured == true)
-                                                                .OrderByDescending(y => y.LastUpdated).Skip(skip).Take(take);
+                                                                .OrderByDescending(y => y.SortOrder).Skip(skip).Take(take);
             if (items != null)
             {
                 result = ListPoco(items);
@@ -482,9 +479,8 @@ namespace MerchantTribe.Commerce.Catalog
             long storeId = context.CurrentStore.Id;
 
             List<Product> result = new List<Product>();
-            
-            IQueryable<Data.EF.bvc_Product> items = repository.Find().Where(y => bvins.Contains(y.bvin))
-                                                                      .Where(y => y.StoreId == storeId).OrderBy(y => y.Id == y.Id);            
+
+            IQueryable<Data.EF.bvc_Product> items = repository.Find().Where(y => bvins.Contains(y.bvin)).Where(y => y.StoreId == storeId).OrderByDescending(y => y.SortOrder);
             if (items != null)
             {
                 result = ListPoco(items);

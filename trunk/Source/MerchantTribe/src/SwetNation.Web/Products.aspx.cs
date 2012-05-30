@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,8 +10,8 @@ using MerchantTribe.Commerce.Content;
 using MerchantTribe.Commerce.Utilities;
 using MerchantTribe.Commerce;
 using MerchantTribe.Commerce.Orders;
-using System.Text;
 using SwetNation.Web.models;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
@@ -18,6 +19,9 @@ namespace SwetNation.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.IsAuthorized();
+            this.IsLive();
+
             ShowProductIntro();
             if (Page.IsPostBack)
             {
@@ -33,22 +37,23 @@ namespace SwetNation.Web
 
         private void ShowProductIntro()
         {
+            pnlBrand.Visible = false;
+
             string manufacturerId = "";
             if (!String.IsNullOrEmpty(Request.QueryString["ManufacturerId"]))
                 manufacturerId = Request.QueryString["ManufacturerId"];
 
-            pnlBurton.Visible = false;
-            pnlLululemon.Visible = false;
-            pnlNike.Visible = false;
-            pnlSpecialized.Visible = false;
-            if (manufacturerId == "78f6d011-f0c9-427c-bdba-4d744715bd04")
-                pnlBurton.Visible = true;
-            else if (manufacturerId == "00467203-a901-4ee2-9749-f0613825ae68")
-                pnlLululemon.Visible = true;
-            else if (manufacturerId == "c1c58612-0c46-4398-96f2-af95b227ca1d")
-                pnlNike.Visible = true;
-            else if (manufacturerId == "36d6c17a-5d73-4e31-8c71-1614d07170ec")
-                pnlSpecialized.Visible = true;
+            MerchantTribe.Commerce.Contacts.VendorManufacturer m = MTApp.ContactServices.Manufacturers.Find(manufacturerId);
+            if (m != null)
+            {
+                string imageSmall = m.ImageFileSmall;
+                imgBrand.ImageUrl = "https://swetnation.com/shop/images/sites/1/manufacturers/" + manufacturerId + "/small/" + imageSmall;
+                imgBrand.Width = new Unit("300px");
+                imgBrand.AlternateText = m.DisplayName;
+                litBrandName.Text = m.DisplayName;
+                litBrandDescription.Text = m.Description;
+                pnlBrand.Visible = true;
+            }
         }
 
         private void BindCategoryDropDown()
@@ -134,10 +139,19 @@ namespace SwetNation.Web
                                                                                         model.Quantity,
                                                                                         MTApp);
                         Order Basket = SessionManager.CurrentShoppingCart(MTApp.OrderServices, MTApp.CurrentStore);
+                        Basket.UserID = SessionManager.GetCurrentUserId(MTApp.CurrentStore);
+                        MerchantTribe.Commerce.Membership.CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
+                        if (u != null)
+                        {
+                            Basket.BillingAddress = u.BillingAddress;
+                            Basket.ShippingAddress = u.ShippingAddress;
+                        }
+                        /*
                         if (Basket.UserID != SessionManager.GetCurrentUserId(MTApp.CurrentStore))
                         {
                             Basket.UserID = SessionManager.GetCurrentUserId(MTApp.CurrentStore);
                         }
+                        */
                         if (model.LineItemId.Trim().Length > 0)
                         {
                             long lineItemId = 0;

@@ -29,6 +29,14 @@
         <table border="0" cellspacing="0" cellpadding="3">
             <tr>
                 <td class="formlabel">
+                    Sort Order:
+                </td>
+                <td class="formfield">
+                    <asp:TextBox ID="SortOrderField" runat="server" Columns="30" MaxLength="100" TabIndex="1997" Width="200px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">
                     Sale Starts:
                 </td>
                 <td class="formfield">

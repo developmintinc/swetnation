@@ -545,6 +545,7 @@
           <Property Name="Description" Type="ntext" />
           <Property Name="SaleStarts" Type="datetime" />
           <Property Name="SaleEnds" Type="datetime" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="bvc_Order">
           <Key>
@@ -721,6 +722,7 @@
           <Property Name="DescriptionTabs" Type="ntext" Nullable="false" />
           <Property Name="OutOfStockMode" Type="int" Nullable="false" />
           <Property Name="IsAvailableForSale" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="bvc_ProductFile">
           <Key>
@@ -1036,6 +1038,7 @@
           <Property Name="BillingAddress" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DOB" Type="nvarchar" MaxLength="50" />
           <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="AgreedToTerms" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="bvc_UserQuestions">
           <Key>
@@ -2148,6 +2151,7 @@
           <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="SaleStarts" />
           <Property Type="DateTime" Name="SaleEnds" />
+          <Property Type="Int32" Name="SortOrder" Nullable="false" />
         </EntityType>
         <EntityType Name="bvc_Policy">
           <Key>
@@ -2242,6 +2246,7 @@
           <NavigationProperty Name="bvc_ProductInventory" Relationship="EfModels.FK_bvc_ProductInventory_bvc_Product" FromRole="bvc_Product" ToRole="bvc_ProductInventory" />
           <NavigationProperty Name="bvc_ProductXCategory" Relationship="EfModels.FK_ProductXCategory_bvc_Product" FromRole="bvc_Product" ToRole="bvc_ProductXCategory" />
           <NavigationProperty Name="bvc_ProductPropertyValue" Relationship="EfModels.FK_bvc_ProductPropertyValue_bvc_Product" FromRole="bvc_Product" ToRole="bvc_ProductPropertyValue" />
+          <Property Type="Int32" Name="SortOrder" Nullable="false" />
         </EntityType>
         <EntityType Name="bvc_ProductFile">
           <Key>
@@ -2511,6 +2516,7 @@
           <Property Type="String" Name="BillingAddress" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="DOB" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Gender" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="AgreedToTerms" Nullable="false" />
         </EntityType>
         <EntityType Name="bvc_UserQuestions">
           <Key>
@@ -3665,6 +3671,7 @@
           <EntitySetMapping Name="bvc_Manufacturer">
             <EntityTypeMapping TypeName="EfModels.bvc_Manufacturer">
               <MappingFragment StoreEntitySet="bvc_Manufacturer">
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
                 <ScalarProperty Name="SaleEnds" ColumnName="SaleEnds" />
                 <ScalarProperty Name="SaleStarts" ColumnName="SaleStarts" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -3721,6 +3728,7 @@
           <EntitySetMapping Name="bvc_Product">
             <EntityTypeMapping TypeName="EfModels.bvc_Product">
               <MappingFragment StoreEntitySet="bvc_Product">
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
                 <ScalarProperty Name="IsAvailableForSale" ColumnName="IsAvailableForSale" />
                 <ScalarProperty Name="OutOfStockMode" ColumnName="OutOfStockMode" />
                 <ScalarProperty Name="DescriptionTabs" ColumnName="DescriptionTabs" />
@@ -4021,6 +4029,7 @@
           <EntitySetMapping Name="bvc_User">
             <EntityTypeMapping TypeName="EfModels.bvc_User">
               <MappingFragment StoreEntitySet="bvc_User">
+                <ScalarProperty Name="AgreedToTerms" ColumnName="AgreedToTerms" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />

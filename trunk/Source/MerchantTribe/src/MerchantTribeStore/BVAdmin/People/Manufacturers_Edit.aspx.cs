@@ -87,6 +87,7 @@ namespace MerchantTribeStore
                     this.DescriptionField.Text = m.Description;
                     this.SaleStartsField.Text = m.SaleStarts.HasValue ? m.SaleStarts.Value.ToShortDateString() : string.Empty;
                     this.SaleEndsField.Text = m.SaleEnds.HasValue ? m.SaleEnds.Value.ToShortDateString() : string.Empty;
+                    this.SortOrderField.Text = m.SortOrder.ToString();
                     LoadImagePreview(m);
                 }
             }
@@ -144,6 +145,8 @@ namespace MerchantTribeStore
                 m.SaleStarts = Convert.ToDateTime(this.SaleStartsField.Text);
             if (this.SaleEndsField.Text != "")
                 m.SaleEnds = Convert.ToDateTime(this.SaleEndsField.Text);
+            if (this.SortOrderField.Text != "")
+                m.SortOrder = Convert.ToInt32(this.SortOrderField.Text);
             if (this.BvinField.Value == string.Empty)
                 result = MTApp.ContactServices.Manufacturers.Create(m);
             else

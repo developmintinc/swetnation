@@ -13,6 +13,24 @@ namespace SwetNation.Web {
     public partial class ProductDetail {
         
         /// <summary>
+        /// pnlStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlStatus;
+        
+        /// <summary>
+        /// litStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStatus;
+        
+        /// <summary>
         /// litProductNameSlider control.
         /// </summary>
         /// <remarks>
@@ -49,13 +67,13 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.Literal litProductNameContent;
         
         /// <summary>
-        /// litSalePriceContent control.
+        /// litSitePriceContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSalePriceContent;
+        protected global::System.Web.UI.WebControls.Literal litSitePriceContent;
         
         /// <summary>
         /// litListPriceContent control.
@@ -74,5 +92,14 @@ namespace SwetNation.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litLongDescription;
+        
+        /// <summary>
+        /// lnkAddToCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAddToCart;
     }
 }

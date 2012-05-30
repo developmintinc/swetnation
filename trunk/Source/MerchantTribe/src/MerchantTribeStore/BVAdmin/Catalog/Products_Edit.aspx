@@ -105,12 +105,9 @@
                     Name:
                 </td>
                 <td class="formfield" valign="top" align="left">
-                    <asp:TextBox ID="productnamefield" ClientIDMode="static" TabIndex="1700" runat="server"
-                        Columns="40" CssClass="FormInput" Width="180px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="valNameRequired" runat="server" ControlToValidate="ProductNameField"
-                        ErrorMessage="Name is Required">*</asp:RequiredFieldValidator>
-                    <asp:CustomValidator ID="valNameLength" runat="server" ControlToValidate="ProductNameField"
-                        ErrorMessage="Name can not be longer than 255 characters." OnServerValidate="valNameLength_ServerValidate">*</asp:CustomValidator>
+                    <asp:TextBox ID="productnamefield" ClientIDMode="static" TabIndex="1700" runat="server" Columns="40" CssClass="FormInput" Width="200px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="valNameRequired" runat="server" ControlToValidate="ProductNameField" ErrorMessage="Name is Required">*</asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="valNameLength" runat="server" ControlToValidate="ProductNameField" ErrorMessage="Name can not be longer than 255 characters." OnServerValidate="valNameLength_ServerValidate">*</asp:CustomValidator>
                 </td>
             </tr>
             <tr>
@@ -118,18 +115,22 @@
                     Product Type:
                 </td>
                 <td class="formfield" valign="top" align="left">
-                    <asp:DropDownList ID="lstProductType" TabIndex="1800" runat="server" Width="200px"
-                        AutoPostBack="True">
-                    </asp:DropDownList>
-                    <asp:CustomValidator ID="ProductTypeCustomValidator" runat="server" ErrorMessage="Test"
-                        OnServerValidate="ProductTypeCustomValidator_ServerValidate">*</asp:CustomValidator>
+                    <asp:DropDownList ID="lstProductType" TabIndex="1800" runat="server" Width="200px" AutoPostBack="True"></asp:DropDownList>
+                    <asp:CustomValidator ID="ProductTypeCustomValidator" runat="server" ErrorMessage="Test" OnServerValidate="ProductTypeCustomValidator_ServerValidate">*</asp:CustomValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel" align="right" valign="top">
+                    Sort Order:
+                </td>
+                <td class="formfield" valign="top" align="left">
+                    <asp:TextBox ID="SortOrderField" TabIndex="1810" runat="server" Columns="40" CssClass="FormInput" Width="200px"></asp:TextBox>
                 </td>
             </tr>
             <asp:Literal ID="ProductTypePropertiesLiteral" runat="server">
             </asp:Literal><tr>
                 <td colspan="2">
-                    <h2>
-                        Pricing</h2>
+                    <h2>Pricing</h2>
                 </td>
             </tr>
             <tr>

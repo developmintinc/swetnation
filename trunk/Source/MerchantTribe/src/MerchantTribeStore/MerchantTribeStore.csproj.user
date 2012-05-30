@@ -7,7 +7,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <StartPageUrl>Views/Products/Index.cshtml</StartPageUrl>
+          <StartPageUrl>BVAdmin/Default.aspx</StartPageUrl>
           <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>True</SilverlightDebugging>
@@ -23,9 +23,6 @@
           </StartWorkingDirectory>
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
-          <ProjectOutputReferences>
-            <Ref Project="{24A4744E-6A96-4DED-B4D9-018C3171C8DA}" Folder="ClientBin">MerchantTribe.SilverlightFileUpload.xap</Ref>
-          </ProjectOutputReferences>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

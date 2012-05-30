@@ -2,15 +2,12 @@
 
 <%@ Register Src="../Controls/MessageBox.ascx" TagName="MessageBox" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-<h1>
-        Edit Mailing List</h1>
-    
+    <h1>Edit Mailing List</h1>    
     <div style="float: right;width:450px;margin-bottom:20px;">        
-        <h2>
-            Members</h2>
+        <h2>Members</h2>
         <div style="text-align:right; margin:3px 0px 5px 0px;">
-                    <asp:ImageButton ID="btnNew" runat="server" AlternateText="Add New Mailing List"
-                        ImageUrl="~/BVAdmin/Images/Buttons/New.png" onclick="btnNew_Click" /></div>        
+            <asp:ImageButton ID="btnNew" runat="server" AlternateText="Add New Mailing List" ImageUrl="~/BVAdmin/Images/Buttons/New.png" onclick="btnNew_Click" />
+        </div>        
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderColor="#CCCCCC"
             CellPadding="3" DataKeyNames="Id" GridLines="None" Width="100%" 
             onrowdeleting="GridView1_RowDeleting" onrowediting="GridView1_RowEditing">
@@ -30,31 +27,27 @@
         </asp:GridView>
     </div>
     <uc1:MessageBox ID="MessageBox1" runat="server" />
-    <asp:Label ID="lblError" runat="server" CssClass="errormessage"></asp:Label><asp:Panel ID="pnlMain" runat="server" DefaultButton="btnSaveChanges">
+    <asp:Label ID="lblError" runat="server" CssClass="errormessage"></asp:Label>
+    <asp:Panel ID="pnlMain" runat="server" DefaultButton="btnSaveChanges">
         <table border="0" cellspacing="0" cellpadding="3">
             <tr>
-                <td class="formlabel">
-                    Name:</td>
+                <td class="formlabel">Name:</td>
                 <td class="formfield">
-                    <asp:TextBox ID="NameField" runat="server" Columns="30" MaxLength="100" TabIndex="2000"
-                        Width="200px"></asp:TextBox><asp:RequiredFieldValidator ID="valName" runat="server"
-                            ErrorMessage="Please enter a Name" ControlToValidate="NameField">*</asp:RequiredFieldValidator></td>
-            </tr>
-            <tr>
-                <td class="formlabel">
-                    Is Private:</td>
-                <td class="formfield">
-                    <asp:CheckBox ID="IsPrivateField" runat="server" />
+                    <asp:TextBox ID="NameField" runat="server" Columns="30" MaxLength="100" TabIndex="2000" Width="200px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="valName" runat="server" ErrorMessage="Please enter a Name" ControlToValidate="NameField">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
+                <td class="formlabel">Is Private:</td>
+                <td class="formfield"><asp:CheckBox ID="IsPrivateField" runat="server" /></td>
+            </tr>
+            <tr>
                 <td class="formlabel">
-                    <asp:ImageButton ID="btnCancel" TabIndex="2501" runat="server" ImageUrl="../images/buttons/Cancel.png"
-                        CausesValidation="False" onclick="btnCancel_Click"></asp:ImageButton></td>
+                    <asp:ImageButton ID="btnCancel" TabIndex="2501" runat="server" ImageUrl="../images/buttons/Cancel.png" CausesValidation="False" onclick="btnCancel_Click"></asp:ImageButton>
+                </td>
                 <td class="formfield">
-                    <asp:ImageButton ID="btnSaveChanges" TabIndex="2500" runat="server" 
-                        ImageUrl="../images/buttons/SaveChanges.png" onclick="btnSaveChanges_Click">
-                    </asp:ImageButton></td>
+                    <asp:ImageButton ID="btnSaveChanges" TabIndex="2500" runat="server" ImageUrl="../images/buttons/SaveChanges.png" onclick="btnSaveChanges_Click"></asp:ImageButton>
+                </td>
             </tr>
         </table>
     </asp:Panel>

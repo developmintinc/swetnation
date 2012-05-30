@@ -10,87 +10,78 @@
 namespace SwetNation.Web {
     
     
-    public partial class Products {
+    public partial class EstimateShipping {
         
         /// <summary>
-        /// ucBreadcrumbBar control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SwetNation.Web.controls.Breadcrumbs ucBreadcrumbBar;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
-        /// pnlStatus control.
+        /// CountryId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlStatus;
+        protected global::System.Web.UI.WebControls.DropDownList CountryId;
         
         /// <summary>
-        /// litStatus control.
+        /// State control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litStatus;
+        protected global::System.Web.UI.WebControls.Literal State;
         
         /// <summary>
-        /// pnlBrand control.
+        /// RegionId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlBrand;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden RegionId;
         
         /// <summary>
-        /// imgBrand control.
+        /// PostalCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgBrand;
+        protected global::System.Web.UI.WebControls.Literal PostalCode;
         
         /// <summary>
-        /// litBrandName control.
+        /// City control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litBrandName;
+        protected global::System.Web.UI.WebControls.Literal City;
         
         /// <summary>
-        /// litBrandDescription control.
+        /// TempRegionId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litBrandDescription;
+        protected global::System.Web.UI.WebControls.HiddenField TempRegionId;
         
         /// <summary>
-        /// lstProducts control.
+        /// blRates control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lstProducts;
-        
-        /// <summary>
-        /// ddlCategories control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCategories;
+        protected global::System.Web.UI.WebControls.BulletedList blRates;
     }
 }

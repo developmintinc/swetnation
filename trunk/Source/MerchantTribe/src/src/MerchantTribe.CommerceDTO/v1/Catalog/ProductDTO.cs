@@ -98,6 +98,8 @@ namespace MerchantTribe.CommerceDTO.v1.Catalog
         [DataMember]
         public bool AllowReviews { get; set; }
         [DataMember]
+        public int SortOrder { get; set; }
+        [DataMember]
         public List<ProductDescriptionTabDTO> Tabs { get; set; }        
         [DataMember]
         public long StoreId { get; set; }

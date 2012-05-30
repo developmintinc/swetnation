@@ -23,6 +23,7 @@ namespace MerchantTribe.Commerce.Contacts
 		public string Description { get; set; }
         public DateTime? SaleStarts { get; set; }
         public DateTime? SaleEnds { get; set; }
+        public int SortOrder { get; set; }
 		public List<VendorManufacturerContact> Contacts { get; set; }
 		public VendorManufacturerType ContactType { get; set; }
 
@@ -39,6 +40,7 @@ namespace MerchantTribe.Commerce.Contacts
 			this.Description = string.Empty;
             this.SaleStarts = (DateTime?)null;
             this.SaleEnds = (DateTime?)null;
+            this.SortOrder = 1;
 			this.Contacts = new List<VendorManufacturerContact>();
 			this.ContactType = VendorManufacturerType.Unknown;
 		}
@@ -91,6 +93,7 @@ namespace MerchantTribe.Commerce.Contacts
 			this.Description = string.Empty;
             this.SaleStarts = (DateTime?)null;
             this.SaleEnds = (DateTime?)null;
+            this.SortOrder = 1;
 			this.Contacts = new List<VendorManufacturerContact>();
 			this.ContactType = VendorManufacturerType.Unknown;
 
@@ -109,6 +112,7 @@ namespace MerchantTribe.Commerce.Contacts
 			this.Description = dto.Description;
             this.SaleStarts = dto.SaleStarts;
             this.SaleEnds = dto.SaleEnds;
+            this.SortOrder = dto.SortOrder;
 			this.ImageFileSmall = dto.ImageFileSmall;
 			this.ImageFileMedium = dto.ImageFileMedium;
 			this.Contacts.Clear();

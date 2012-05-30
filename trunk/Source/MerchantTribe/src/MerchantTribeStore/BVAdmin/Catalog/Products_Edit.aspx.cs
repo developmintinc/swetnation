@@ -185,6 +185,7 @@ namespace MerchantTribeStore
                     }
                     this.chkFeatured.Checked = p.Featured;
                     this.SkuField.Text = p.Sku;
+                    this.SortOrderField.Text = p.SortOrder.ToString();
                     this.productnamefield.Text = p.ProductName;
                     this.ListPriceField.Text = p.ListPrice.ToString("C");
                     this.CostField.Text = p.SiteCost.ToString("C");
@@ -363,6 +364,8 @@ namespace MerchantTribeStore
 
                     p.Sku = this.SkuField.Text.Trim();
 
+                    if (SortOrderField.Text != "")
+                        p.SortOrder = Convert.ToInt32(SortOrderField.Text);
 
                     p.ProductName = this.productnamefield.Text.Trim();
                     if (this.lstProductType.SelectedValue != null)
