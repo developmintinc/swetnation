@@ -205,6 +205,7 @@ namespace MerchantTribe.Commerce.Catalog
         public bool IsAvailableForSale { get; set; }        
         public bool Featured { get; set; }
         public bool AllowReviews { get; set; }
+        public int SortOrder { get; set; }
         public List<ProductDescriptionTab> Tabs { get; set; }
         public void TabsFromXml(string xml)
         {
@@ -356,6 +357,7 @@ namespace MerchantTribe.Commerce.Catalog
             this.Tabs = new List<ProductDescriptionTab>();
             this.StoreId = 0;
             this.IsAvailableForSale = true;
+            this.SortOrder = 1;
         }
         
         // Pricing Functions
@@ -667,6 +669,7 @@ namespace MerchantTribe.Commerce.Catalog
         public Product Clone(bool cloneProductChoicesAndInputs, bool cloneProductImages)
         {
             Product result = new Product();
+            result.SortOrder = this.SortOrder;
             result.AllowReviews = this.AllowReviews;
             result.Bvin = string.Empty;
             result.CreationDateUtc = DateTime.UtcNow;
@@ -810,6 +813,7 @@ namespace MerchantTribe.Commerce.Catalog
             result.Add(new Content.HtmlTemplateTag("[[Product.SiteCost]]", this.SiteCost.ToString("c")));
             result.Add(new Content.HtmlTemplateTag("[[Product.SitePrice]]", this.SitePrice.ToString("c")));
             result.Add(new Content.HtmlTemplateTag("[[Product.SitePriceOverrideText]]", this.SitePriceOverrideText));
+            result.Add(new Content.HtmlTemplateTag("[[Product.SortOrder]]", this.SortOrder.ToString()));
             result.Add(new Content.HtmlTemplateTag("[[Product.Sku]]", this.Sku));
             result.Add(new Content.HtmlTemplateTag("[[Product.TaxExempt]]", this.TaxExempt.ToString()));
             result.Add(new Content.HtmlTemplateTag("[[Product.TypeProperties]]", this.GetTypeProperties(app)));
@@ -958,6 +962,7 @@ namespace MerchantTribe.Commerce.Catalog
             this.SiteCost = dto.SiteCost;
             this.SitePrice = dto.SitePrice;
             this.SitePriceOverrideText = dto.SitePriceOverrideText ?? string.Empty;
+            this.SortOrder = dto.SortOrder;
             this.Sku = dto.Sku ?? string.Empty;
             this.Status = (ProductStatus)((int)dto.Status);
             this.StoreId = dto.StoreId;
@@ -1019,6 +1024,7 @@ namespace MerchantTribe.Commerce.Catalog
             dto.SiteCost = this.SiteCost;
             dto.SitePrice = this.SitePrice;
             dto.SitePriceOverrideText = this.SitePriceOverrideText;
+            dto.SortOrder = this.SortOrder;
             dto.Sku = this.Sku;
             dto.Status = (ProductStatusDTO)((int)this.Status);
             dto.StoreId = this.StoreId;

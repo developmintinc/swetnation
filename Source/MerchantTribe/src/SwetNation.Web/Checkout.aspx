@@ -300,7 +300,7 @@
 						<asp:Literal ID="litAgreedToTermsDescription" runat="server" Mode="PassThrough"></asp:Literal>
 						<p><asp:HyperLink ID="hypSiteTerms" runat="server" CssClass="viewSiteTerms" Target="_blank" ForeColor="Red"></asp:HyperLink></p>
 					</asp:Panel>
-                    <asp:LinkButton ID="lnkPlaceOrder" runat="server" Text="Place Order" CssClass="button round big black" ToolTip="Place Order" OnClick="lnkPlaceOrder_Click"></asp:LinkButton>
+                    <asp:LinkButton ID="lnkPlaceOrder" runat="server" Text="Place Order" CssClass="button cube deep-red small" ToolTip="Place Order" OnClick="lnkPlaceOrder_Click"></asp:LinkButton>
                 </div>
 			</div>
 			<div class="clear">&nbsp;</div>

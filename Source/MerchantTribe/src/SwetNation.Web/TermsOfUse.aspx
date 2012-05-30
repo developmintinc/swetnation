@@ -5,8 +5,7 @@
     <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Terms of Use" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftBodyContent" runat="server">
-	<br />
-    <h1>TERMS OF USE</h1>
+    <div class="header-title-medium">TERMS OF USE</div>
 
     <p>
     Thank you for shopping at SWET NATION. This site (the "Site") is
@@ -642,7 +641,7 @@
     See http://www.copyright.gov/ for further information. Our contact for
     copyright issues relating to this Site (including the notices and counter-
     notices) is: Copyright Agent, Swet Nation, 49 Lincoln Blvd, Abington, MA
-    02351, 888-888-8888 info@swetnation.com. Please note that there are
+    02351, 888.850.SWET (7938) info@swetnation.com. Please note that there are
     penalties for false claims under the DMCA. One or more patents may
     apply to this website, including without limitation: U.S. Patent Nos.
     5528490; 5761649; and 6029142 and any other patents that may issue in

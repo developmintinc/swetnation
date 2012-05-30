@@ -51,6 +51,7 @@ namespace MerchantTribe.Commerce.Contacts
             model.Description = data.Description;
             model.SaleStarts = data.SaleStarts;
             model.SaleEnds = data.SaleEnds;
+            model.SortOrder = data.SortOrder;
             model.LastUpdated = data.LastUpdated;
             model.StoreId = data.StoreId;
             model.ContactType = VendorManufacturerType.Manufacturer;
@@ -67,6 +68,7 @@ namespace MerchantTribe.Commerce.Contacts
             data.Description = model.Description;
             data.SaleStarts = model.SaleStarts;
             data.SaleEnds = model.SaleEnds;
+            data.SortOrder = model.SortOrder;
             data.LastUpdated = model.LastUpdated;
             data.StoreId = model.StoreId;
         }
@@ -124,7 +126,7 @@ namespace MerchantTribe.Commerce.Contacts
 
         public List<VendorManufacturer> FindAll()
         {
-            return ListPoco(repository.Find().Where(y => y.StoreId == context.CurrentStore.Id));
+            return ListPoco(repository.Find().Where(y => y.StoreId == context.CurrentStore.Id).OrderByDescending(y => y.SortOrder));
         }
         public List<VendorManufacturer> FindAllWithFilter(string filter, int pageNumber, int pageSize, ref int rowCount)
         {
@@ -132,7 +134,7 @@ namespace MerchantTribe.Commerce.Contacts
             if (x != null)
             {
                 rowCount = x.Count();
-                var x2 = x.OrderBy(y => y.StoreId).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+                var x2 = x.OrderBy(y => y.StoreId).ThenByDescending(y => y.SortOrder).Skip((pageNumber - 1) * pageSize).Take(pageSize);
                 return ListPoco(x2);
             }
 

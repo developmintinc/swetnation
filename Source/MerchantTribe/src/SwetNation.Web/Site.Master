@@ -10,8 +10,8 @@
 <%@ Register Src="~/controls/FooterNav.ascx" TagName="FooterNav" TagPrefix="uc" %>
 <html lang="en">
 <head id="Head1" runat="server">
-    <title>Swet Nation - Huge discount on top sports apparel</title>
-    <meta name="description" content="SwetNation - SNOW + SWEAT + SKI + ROCK"/>
+    <title>Swet Nation :: Huge discount on top sports apparel</title>
+    <meta name="description" content="SwetNation :: SPORTS BRANDS - MEMBERS PRICES"/>
     <meta name="keywords" content=""/>
     <meta name="author" content="SecondStrategy.com"/>
     <link rel="shortcut icon" type="image/gif" href="images/favicon.gif"/>

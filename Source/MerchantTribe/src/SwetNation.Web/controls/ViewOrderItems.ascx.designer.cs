@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SwetNation.Web {
+namespace SwetNation.Web.controls {
     
     
-    public partial class PrivacyPolicy {
+    public partial class ViewOrderItems {
         
         /// <summary>
-        /// ucBreadcrumbBar control.
+        /// rptOrderItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SwetNation.Web.controls.Breadcrumbs ucBreadcrumbBar;
-        
-        /// <summary>
-        /// ucLeftSidebarNav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SwetNation.Web.controls.RightSidebarNav ucLeftSidebarNav;
+        protected global::System.Web.UI.WebControls.Repeater rptOrderItems;
     }
 }

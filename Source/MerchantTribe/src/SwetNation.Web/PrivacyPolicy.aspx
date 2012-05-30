@@ -1,12 +1,11 @@
-﻿<%@ Page Title="Swet Nation Privacy Policy" Language="C#" MasterPageFile="~/RightSidebar.master" AutoEventWireup="true" CodeBehind="PrivacyPolicy.aspx.cs" Inherits="SwetNation.Web.PrivatePolicy" %>
+﻿<%@ Page Title="Swet Nation Privacy Policy" Language="C#" MasterPageFile="~/RightSidebar.master" AutoEventWireup="true" CodeBehind="PrivacyPolicy.aspx.cs" Inherits="SwetNation.Web.PrivacyPolicy" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <%@ Register Src="~/controls/RightSidebarNav.ascx" TagName="RightSidebarNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">
-    <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Private Policy" />
+    <uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Privacy Policy" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftBodyContent" runat="server">
-	<br />
-    <h1>PRIVACY POLICY</h1>
+    <div class="header-title-medium">PRIVACY POLICY</div>
 
     <p>
         Swet Nation is committed to protecting the privacy of visitors to this site
@@ -165,8 +164,8 @@
 
     <p>     If you are a registered user, you may access and update your registration
     information and your preferences to receive email or other communications
-    from us by sending an email to info@swetnation.com. Please note that
-    your friends and contacts may still choose to send email invitations to you.
+    from us by sending an email to <a href="mailto:support@swetnation.com">support@swetnation.com</a>. 
+    Please note that your friends and contacts may still choose to send email invitations to you.
     Any user who receives an email invitation to join the Site may choose
     not to receive such invitations in the future by following the instructions in
     the email invitations and, in addition, if you are a member, you may also
@@ -210,10 +209,11 @@
     </p>
 
     <p>
-        Swet Nation<br />         49 Lincoln Blvd, Abington MA 02351 888-888-8888<br />
-        info@swetnation.com.<br />
+        Swet Nation<br />         49 Lincoln Blvd, Abington MA 02351<br />
+        888.850.SWET (7938)<br />
+        <a href="mailto:support@swetnation.com">support@swetnation.com</a><br />
     </p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="RightBodyContent" runat="server">
-    <uc:RightSidebarNav ID="ucLeftSidebarNav" runat="server" PrivatePolicySelected="current" />
+    <uc:RightSidebarNav ID="ucLeftSidebarNav" runat="server" PrivacyPolicySelected="current" />
 </asp:Content>

@@ -236,9 +236,7 @@
 		<div class="one">
 			<div id="cartactions">
 				<div id="cartactioncontinue">
-					<a href="/" alt="Keep Shopping">
-						<asp:LinkButton ID="lnkKeepShopping" runat="server" CssClass="button cube deep-red small" PostBackUrl="~/Products.aspx">Keep Shopping</asp:LinkButton>
-					</a>
+					<asp:LinkButton ID="lnkKeepShopping" runat="server" CssClass="button cube deep-red small" PostBackUrl="~/Products.aspx">Keep Shopping</asp:LinkButton>
 				</div>
 				<div id="cartactioncheckout" runat="server">
     				<asp:LinkButton ID="lnkSecureShopping" runat="server" CssClass="button cube deep-red small" OnClick="lnkSecureShopping_Click">Secure Checkout</asp:LinkButton>

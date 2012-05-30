@@ -13,6 +13,15 @@ namespace SwetNation.Web {
     public partial class SignIn {
         
         /// <summary>
+        /// ucHeaderFonts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SwetNation.Web.controls.HeaderFonts ucHeaderFonts;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

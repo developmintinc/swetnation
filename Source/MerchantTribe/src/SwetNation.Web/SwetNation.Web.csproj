@@ -67,30 +67,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="3d-slider-2.html" />
-    <Content Include="3d-slider.html" />
-    <Content Include="404-error.html" />
-    <Content Include="about-us.html" />
     <Content Include="AboutUs.aspx" />
-    <Content Include="accordion-slider-2.html" />
-    <Content Include="accordion-slider.html" />
-    <Content Include="blog-post.html" />
-    <Content Include="blog.html" />
-    <Content Include="buttons.html" />
     <Content Include="Cart.aspx" />
     <Content Include="ChangeEmail.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Checkout.aspx" />
-    <Content Include="ClientTestimonials.aspx" />
-    <Content Include="columns.html" />
-    <Content Include="contact.html" />
     <Content Include="ContactUs.aspx" />
-    <Content Include="content-slider-2.html" />
-    <Content Include="content-slider.html" />
     <Content Include="controls\BreadcrumbBar.ascx" />
-    <Content Include="controls\CheckoutAddress.ascx" />
-    <Content Include="controls\CreditCardInput.ascx" />
-    <Content Include="controls\DisplayPaymentMethods.ascx" />
     <Content Include="controls\FooterInformation.ascx" />
     <Content Include="controls\FooterNav.ascx" />
     <Content Include="controls\HeaderFonts.ascx" />
@@ -103,6 +86,7 @@
     <Content Include="controls\RightSidebarNav.ascx" />
     <Content Include="controls\SearchBox.ascx" />
     <Content Include="controls\SocialIcons.ascx" />
+    <Content Include="controls\ViewOrderItems.ascx" />
     <Content Include="css\coffe-theme.css" />
     <Content Include="css\corporate-blue.css" />
     <Content Include="css\corporate-red.css" />
@@ -130,20 +114,9 @@
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
     <Content Include="css\yellow-theme.css" />
-    <Content Include="CustomerService.aspx" />
-    <Content Include="cycle-slider.html" />
-    <Content Include="dual-sidebar.html" />
+    <Content Include="EstimateShipping.aspx" />
     <Content Include="FAQ.aspx" />
-    <Content Include="faq.html" />
     <Content Include="ForgotPassword.aspx" />
-    <Content Include="forms.html" />
-    <Content Include="fullwidth-sidebar.html" />
-    <Content Include="fullwidth.html" />
-    <Content Include="gallery-1.html" />
-    <Content Include="gallery-2.html" />
-    <Content Include="gallery-3.html" />
-    <Content Include="gallery-4.html" />
-    <Content Include="GiftCard.aspx" />
     <Content Include="images\3d-slider\slider-960-01.jpg" />
     <Content Include="images\3d-slider\slider-960-02.jpg" />
     <Content Include="images\3d-slider\slider-960-03.jpg" />
@@ -379,6 +352,7 @@
     <Content Include="images\icons\content\unread-mail.png" />
     <Content Include="images\icons\content\user.png" />
     <Content Include="images\icons\content\yes.png" />
+    <Content Include="images\icons\creditcards.png" />
     <Content Include="images\icons\dribbble.png" />
     <Content Include="images\icons\facebook.png" />
     <Content Include="images\icons\rss.png" />
@@ -566,8 +540,6 @@
     <Content Include="images\twitter-feed.png" />
     <Content Include="images\two-third-img-holder.png" />
     <Content Include="Default.aspx" />
-    <Content Include="index.html" />
-    <Content Include="inner-corporate-page.html" />
     <Content Include="InviteFriend.aspx" />
     <Content Include="JobOpportunities.aspx" />
     <Content Include="js\accordian\jquery.accordion.js" />
@@ -598,40 +570,18 @@
     <Content Include="js\tabify\jquery.tabify.js" />
     <Content Include="js\tipsy\jquery.tipsy.js" />
     <Content Include="js\twitter\jquery.tweet.js" />
-    <Content Include="left-sidebar.html" />
-    <Content Include="lists.html" />
-    <Content Include="login.html" />
-    <Content Include="MyAccount.aspx" />
-    <Content Include="nivo-slider-thumb.html" />
-    <Content Include="nivo-slider.html" />
-    <Content Include="orbit-slider-2.html" />
-    <Content Include="OurServices.aspx" />
-    <Content Include="OurTeam.aspx" />
+    <Content Include="MyProfile.aspx" />
     <Content Include="PastOrders.aspx" />
-    <Content Include="pricing-boxes.html" />
-    <Content Include="pricing-tables.html" />
     <Content Include="PrivacyPolicy.aspx" />
-    <Content Include="product-page-item.html" />
-    <Content Include="product-page.html" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Products.aspx" />
-    <Content Include="registration.html" />
+    <Content Include="Receipt.aspx" />
     <Content Include="ReturnPolicy.aspx" />
-    <Content Include="right-sidebar.html" />
-    <Content Include="roundabout-slider.html" />
-    <Content Include="SavedItems.aspx" />
     <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
-    <Content Include="simple-slider.html" />
-    <Content Include="static-page.html" />
-    <Content Include="styled-boxes.html" />
-    <Content Include="tabs-accordions.html" />
-    <Content Include="team.html" />
     <Content Include="TermsOfUse.aspx" />
     <Content Include="Test.aspx" />
-    <Content Include="typography.html" />
-    <Content Include="video-block.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -648,10 +598,10 @@
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BasePage.cs">
+    <Compile Include="Code\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BaseUserControl.cs">
+    <Compile Include="Code\BaseUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Cart.aspx.cs">
@@ -682,13 +632,6 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientTestimonials.aspx.cs">
-      <DependentUpon>ClientTestimonials.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ClientTestimonials.aspx.designer.cs">
-      <DependentUpon>ClientTestimonials.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ContactUs.aspx.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -702,27 +645,6 @@
     </Compile>
     <Compile Include="controls\BreadcrumbBar.ascx.designer.cs">
       <DependentUpon>BreadcrumbBar.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\CheckoutAddress.ascx.cs">
-      <DependentUpon>CheckoutAddress.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\CheckoutAddress.ascx.designer.cs">
-      <DependentUpon>CheckoutAddress.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\CreditCardInput.ascx.cs">
-      <DependentUpon>CreditCardInput.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\CreditCardInput.ascx.designer.cs">
-      <DependentUpon>CreditCardInput.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\DisplayPaymentMethods.ascx.cs">
-      <DependentUpon>DisplayPaymentMethods.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\DisplayPaymentMethods.ascx.designer.cs">
-      <DependentUpon>DisplayPaymentMethods.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\FooterInformation.ascx.cs">
       <DependentUpon>FooterInformation.ascx</DependentUpon>
@@ -808,12 +730,19 @@
     <Compile Include="controls\SocialIcons.ascx.designer.cs">
       <DependentUpon>SocialIcons.ascx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerService.aspx.cs">
-      <DependentUpon>CustomerService.aspx</DependentUpon>
+    <Compile Include="controls\ViewOrderItems.ascx.cs">
+      <DependentUpon>ViewOrderItems.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerService.aspx.designer.cs">
-      <DependentUpon>CustomerService.aspx</DependentUpon>
+    <Compile Include="controls\ViewOrderItems.ascx.designer.cs">
+      <DependentUpon>ViewOrderItems.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EstimateShipping.aspx.cs">
+      <DependentUpon>EstimateShipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstimateShipping.aspx.designer.cs">
+      <DependentUpon>EstimateShipping.aspx</DependentUpon>
     </Compile>
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
@@ -828,13 +757,6 @@
     </Compile>
     <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GiftCard.aspx.cs">
-      <DependentUpon>GiftCard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GiftCard.aspx.designer.cs">
-      <DependentUpon>GiftCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -871,39 +793,23 @@
     <Compile Include="Main.master.designer.cs">
       <DependentUpon>Main.master</DependentUpon>
     </Compile>
-    <Compile Include="MasterBasePage.cs">
+    <Compile Include="Code\MasterBasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="models\CartLineItemViewModel.cs" />
     <Compile Include="models\CartViewModel.cs" />
     <Compile Include="models\CheckoutPaymentViewModel.cs" />
     <Compile Include="models\CheckoutViewModel.cs" />
+    <Compile Include="models\EstimateShippingViewModel.cs" />
     <Compile Include="models\ProductPageViewModel.cs" />
     <Compile Include="models\SignInViewModel.cs" />
     <Compile Include="models\SingleProductViewModel.cs" />
-    <Compile Include="MyAccount.aspx.cs">
-      <DependentUpon>MyAccount.aspx</DependentUpon>
+    <Compile Include="MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyAccount.aspx.designer.cs">
-      <DependentUpon>MyAccount.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NotAuthorizedPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OurServices.aspx.cs">
-      <DependentUpon>OurServices.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OurServices.aspx.designer.cs">
-      <DependentUpon>OurServices.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OurTeam.aspx.cs">
-      <DependentUpon>OurTeam.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OurTeam.aspx.designer.cs">
-      <DependentUpon>OurTeam.aspx</DependentUpon>
+    <Compile Include="MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="PastOrders.aspx.cs">
       <DependentUpon>PastOrders.aspx</DependentUpon>
@@ -941,6 +847,13 @@
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReturnPolicy.aspx.cs">
       <DependentUpon>ReturnPolicy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -954,13 +867,6 @@
     </Compile>
     <Compile Include="RightSidebar.master.designer.cs">
       <DependentUpon>RightSidebar.master</DependentUpon>
-    </Compile>
-    <Compile Include="SavedItems.aspx.cs">
-      <DependentUpon>SavedItems.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SavedItems.aspx.designer.cs">
-      <DependentUpon>SavedItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignIn.aspx.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
@@ -1026,6 +932,30 @@
     <ProjectReference Include="..\src\MerchantTribe.Commerce\MerchantTribe.Commerce.csproj">
       <Project>{4EFF0D3E-99D4-4A8D-A672-B88E5E47CBAA}</Project>
       <Name>MerchantTribe.Commerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.Payment\MerchantTribe.Payment.csproj">
+      <Project>{4C223AD8-685A-4AAC-8610-1BEC50636203}</Project>
+      <Name>MerchantTribe.Payment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.PaypalWebServices\MerchantTribe.PaypalWebServices.csproj">
+      <Project>{40FCF14A-F903-4BF1-B4E0-FC5CB623BDF2}</Project>
+      <Name>MerchantTribe.PaypalWebServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.Shipping.FedEx\MerchantTribe.Shipping.FedEx.csproj">
+      <Project>{9B00258D-45D2-43BD-8178-A6F2AAFF5090}</Project>
+      <Name>MerchantTribe.Shipping.FedEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.Shipping.Ups\MerchantTribe.Shipping.Ups.csproj">
+      <Project>{68FF27BE-6296-4A8B-B20F-6480A491D092}</Project>
+      <Name>MerchantTribe.Shipping.Ups</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.Shipping.USPostal\MerchantTribe.Shipping.USPostal.csproj">
+      <Project>{A7F1EBBC-53E6-43AE-902E-8B8EF5082C54}</Project>
+      <Name>MerchantTribe.Shipping.USPostal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\MerchantTribe.Shipping\MerchantTribe.Shipping.csproj">
+      <Project>{99A252BB-D844-4581-B924-4E59AE19857F}</Project>
+      <Name>MerchantTribe.Shipping</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

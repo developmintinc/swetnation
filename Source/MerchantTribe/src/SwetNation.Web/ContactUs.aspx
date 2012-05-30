@@ -13,7 +13,7 @@
         49 Lincoln Bvld PMB#121<br />
         Abington, MA 02351<br />
         Email: <a href="mailto:support@swetnation.com">support@swetnation.com</a><br />
-        Phone: 888-888-8888<br />
+        Phone: 888.850.SWET (7938)<br />
 	</p>
 	
 </asp:Content>

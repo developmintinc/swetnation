@@ -8913,7 +8913,8 @@ namespace MerchantTribe.Commerce.Data.EF
         /// <param name="storeId">Initial value of the StoreId property.</param>
         /// <param name="imageFileSmall">Initial value of the ImageFileSmall property.</param>
         /// <param name="imageFileMedium">Initial value of the ImageFileMedium property.</param>
-        public static bvc_Manufacturer Createbvc_Manufacturer(global::System.String bvin, global::System.String displayName, global::System.String emailAddress, global::System.String address, global::System.String dropShipEmailTemplateId, global::System.DateTime lastUpdated, global::System.Int64 storeId, global::System.String imageFileSmall, global::System.String imageFileMedium)
+        /// <param name="sortOrder">Initial value of the SortOrder property.</param>
+        public static bvc_Manufacturer Createbvc_Manufacturer(global::System.String bvin, global::System.String displayName, global::System.String emailAddress, global::System.String address, global::System.String dropShipEmailTemplateId, global::System.DateTime lastUpdated, global::System.Int64 storeId, global::System.String imageFileSmall, global::System.String imageFileMedium, global::System.Int32 sortOrder)
         {
             bvc_Manufacturer bvc_Manufacturer = new bvc_Manufacturer();
             bvc_Manufacturer.bvin = bvin;
@@ -8925,6 +8926,7 @@ namespace MerchantTribe.Commerce.Data.EF
             bvc_Manufacturer.StoreId = storeId;
             bvc_Manufacturer.ImageFileSmall = imageFileSmall;
             bvc_Manufacturer.ImageFileMedium = imageFileMedium;
+            bvc_Manufacturer.SortOrder = sortOrder;
             return bvc_Manufacturer;
         }
 
@@ -9221,6 +9223,30 @@ namespace MerchantTribe.Commerce.Data.EF
         private Nullable<global::System.DateTime> _SaleEnds;
         partial void OnSaleEndsChanging(Nullable<global::System.DateTime> value);
         partial void OnSaleEndsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 SortOrder
+        {
+            get
+            {
+                return _SortOrder;
+            }
+            set
+            {
+                OnSortOrderChanging(value);
+                ReportPropertyChanging("SortOrder");
+                _SortOrder = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SortOrder");
+                OnSortOrderChanged();
+            }
+        }
+        private global::System.Int32 _SortOrder;
+        partial void OnSortOrderChanging(global::System.Int32 value);
+        partial void OnSortOrderChanged();
 
         #endregion
     
@@ -11970,7 +11996,8 @@ namespace MerchantTribe.Commerce.Data.EF
         /// <param name="descriptionTabs">Initial value of the DescriptionTabs property.</param>
         /// <param name="outOfStockMode">Initial value of the OutOfStockMode property.</param>
         /// <param name="isAvailableForSale">Initial value of the IsAvailableForSale property.</param>
-        public static bvc_Product Createbvc_Product(global::System.Int32 id, global::System.String bvin, global::System.String sKU, global::System.String productName, global::System.String productTypeId, global::System.Decimal listPrice, global::System.Decimal sitePrice, global::System.Decimal siteCost, global::System.String metaKeywords, global::System.String metaDescription, global::System.String metaTitle, global::System.Int32 taxExempt, global::System.String taxClass, global::System.Int32 nonShipping, global::System.Int32 shipSeparately, global::System.Int32 shippingMode, global::System.Decimal shippingWeight, global::System.Decimal shippingLength, global::System.Decimal shippingWidth, global::System.Decimal shippingHeight, global::System.Int32 status, global::System.String imageFileSmall, global::System.String imageFileMedium, global::System.DateTime creationDate, global::System.Int32 minimumQty, global::System.String shortDescription, global::System.String longDescription, global::System.String manufacturerID, global::System.String vendorID, global::System.Int32 giftWrapAllowed, global::System.Decimal extraShipFee, global::System.DateTime lastUpdated, global::System.String keywords, global::System.String templateName, global::System.String preContentColumnId, global::System.String postContentColumnId, global::System.String rewriteUrl, global::System.String sitePriceOverrideText, global::System.String preTransformLongDescription, global::System.String smallImageAlternateText, global::System.String mediumImageAlternateText, global::System.String customProperties, global::System.Decimal giftWrapPrice, global::System.Int64 storeId, global::System.Boolean featured, global::System.Boolean allowReviews, global::System.String descriptionTabs, global::System.Int32 outOfStockMode, global::System.Boolean isAvailableForSale)
+        /// <param name="sortOrder">Initial value of the SortOrder property.</param>
+        public static bvc_Product Createbvc_Product(global::System.Int32 id, global::System.String bvin, global::System.String sKU, global::System.String productName, global::System.String productTypeId, global::System.Decimal listPrice, global::System.Decimal sitePrice, global::System.Decimal siteCost, global::System.String metaKeywords, global::System.String metaDescription, global::System.String metaTitle, global::System.Int32 taxExempt, global::System.String taxClass, global::System.Int32 nonShipping, global::System.Int32 shipSeparately, global::System.Int32 shippingMode, global::System.Decimal shippingWeight, global::System.Decimal shippingLength, global::System.Decimal shippingWidth, global::System.Decimal shippingHeight, global::System.Int32 status, global::System.String imageFileSmall, global::System.String imageFileMedium, global::System.DateTime creationDate, global::System.Int32 minimumQty, global::System.String shortDescription, global::System.String longDescription, global::System.String manufacturerID, global::System.String vendorID, global::System.Int32 giftWrapAllowed, global::System.Decimal extraShipFee, global::System.DateTime lastUpdated, global::System.String keywords, global::System.String templateName, global::System.String preContentColumnId, global::System.String postContentColumnId, global::System.String rewriteUrl, global::System.String sitePriceOverrideText, global::System.String preTransformLongDescription, global::System.String smallImageAlternateText, global::System.String mediumImageAlternateText, global::System.String customProperties, global::System.Decimal giftWrapPrice, global::System.Int64 storeId, global::System.Boolean featured, global::System.Boolean allowReviews, global::System.String descriptionTabs, global::System.Int32 outOfStockMode, global::System.Boolean isAvailableForSale, global::System.Int32 sortOrder)
         {
             bvc_Product bvc_Product = new bvc_Product();
             bvc_Product.Id = id;
@@ -12022,6 +12049,7 @@ namespace MerchantTribe.Commerce.Data.EF
             bvc_Product.DescriptionTabs = descriptionTabs;
             bvc_Product.OutOfStockMode = outOfStockMode;
             bvc_Product.IsAvailableForSale = isAvailableForSale;
+            bvc_Product.SortOrder = sortOrder;
             return bvc_Product;
         }
 
@@ -13206,6 +13234,30 @@ namespace MerchantTribe.Commerce.Data.EF
         private global::System.Boolean _IsAvailableForSale;
         partial void OnIsAvailableForSaleChanging(global::System.Boolean value);
         partial void OnIsAvailableForSaleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 SortOrder
+        {
+            get
+            {
+                return _SortOrder;
+            }
+            set
+            {
+                OnSortOrderChanging(value);
+                ReportPropertyChanging("SortOrder");
+                _SortOrder = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SortOrder");
+                OnSortOrderChanged();
+            }
+        }
+        private global::System.Int32 _SortOrder;
+        partial void OnSortOrderChanging(global::System.Int32 value);
+        partial void OnSortOrderChanged();
 
         #endregion
     
@@ -19021,7 +19073,8 @@ namespace MerchantTribe.Commerce.Data.EF
         /// <param name="storeId">Initial value of the StoreId property.</param>
         /// <param name="shippingAddress">Initial value of the ShippingAddress property.</param>
         /// <param name="billingAddress">Initial value of the BillingAddress property.</param>
-        public static bvc_User Createbvc_User(global::System.String bvin, global::System.String email, global::System.String firstName, global::System.String lastName, global::System.String password, global::System.String salt, global::System.Int32 taxExempt, global::System.DateTime creationDate, global::System.DateTime lastLoginDate, global::System.String comment, global::System.String addressBook, global::System.DateTime lastUpdated, global::System.Int32 locked, global::System.DateTime lockedUntil, global::System.Int32 failedLoginCount, global::System.String phones, global::System.String pricingGroup, global::System.String customQuestionAnswers, global::System.Int64 storeId, global::System.String shippingAddress, global::System.String billingAddress)
+        /// <param name="agreedToTerms">Initial value of the AgreedToTerms property.</param>
+        public static bvc_User Createbvc_User(global::System.String bvin, global::System.String email, global::System.String firstName, global::System.String lastName, global::System.String password, global::System.String salt, global::System.Int32 taxExempt, global::System.DateTime creationDate, global::System.DateTime lastLoginDate, global::System.String comment, global::System.String addressBook, global::System.DateTime lastUpdated, global::System.Int32 locked, global::System.DateTime lockedUntil, global::System.Int32 failedLoginCount, global::System.String phones, global::System.String pricingGroup, global::System.String customQuestionAnswers, global::System.Int64 storeId, global::System.String shippingAddress, global::System.String billingAddress, global::System.Boolean agreedToTerms)
         {
             bvc_User bvc_User = new bvc_User();
             bvc_User.bvin = bvin;
@@ -19045,6 +19098,7 @@ namespace MerchantTribe.Commerce.Data.EF
             bvc_User.StoreId = storeId;
             bvc_User.ShippingAddress = shippingAddress;
             bvc_User.BillingAddress = billingAddress;
+            bvc_User.AgreedToTerms = agreedToTerms;
             return bvc_User;
         }
 
@@ -19605,6 +19659,30 @@ namespace MerchantTribe.Commerce.Data.EF
         private global::System.String _Gender;
         partial void OnGenderChanging(global::System.String value);
         partial void OnGenderChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean AgreedToTerms
+        {
+            get
+            {
+                return _AgreedToTerms;
+            }
+            set
+            {
+                OnAgreedToTermsChanging(value);
+                ReportPropertyChanging("AgreedToTerms");
+                _AgreedToTerms = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AgreedToTerms");
+                OnAgreedToTermsChanged();
+            }
+        }
+        private global::System.Boolean _AgreedToTerms;
+        partial void OnAgreedToTermsChanging(global::System.Boolean value);
+        partial void OnAgreedToTermsChanged();
 
         #endregion
     

@@ -12,89 +12,15 @@
         </asp:Panel>
     </div>
     <div class="one">
-        <asp:Panel ID="pnlBurton" runat="server" CssClass="one product-intro" ClientIDMode="Static">
+        <asp:Panel ID="pnlBrand" runat="server" CssClass="one product-intro" ClientIDMode="Static">
             <div class="one-third">
-                <img src="images/products/intro/burton/burton01.jpg" alt="Burton Snowboards" width="300px" />
+                <asp:Image ID="imgBrand" runat="server" />
 		    </div>
             <div class="one-half last">
-			    <div class="header-title white">BURTON</div>
-                <p>
-                    Burton Snowboards is a manufacturer of snowboards.Founded by Jake Burton Carpenter in 1977, 
-                    the company specializes in a product line aimed at snowboarders: snowboards, bindings, boots, 
-                    outerwear, and accessories. The company's flagship store is in Burlington, Vermont.
-                </p>
-			    <p>
-			        Burton built the world's first snowboard factory. It is the largest snowboard brand in the 
-                    world. Burton products are marketed worldwide in over 4,348 stores; 1,536 of those stores are 
-                    located in the United States. In 2003 Burton allowed several online companies to sell Burton 
-                    products over the internet.
-			    </p>
+			    <div class="header-title white"><asp:Literal ID="litBrandName" runat="server" Mode="PassThrough"></asp:Literal></div>
+                <asp:Literal ID="litBrandDescription" runat="server" Mode="PassThrough"></asp:Literal>
 		    </div>
-        </asp:Panel>
-        <asp:Panel ID="pnlLululemon" runat="server" CssClass="one product-intro" ClientIDMode="Static">
-            <div class="one-third">
-                <img src="images/products/intro/lululemon/lululemon04.jpg" alt="lululemon athletica" width="300px" />
-		    </div>
-            <div class="one-half last">
-			    <div class="header-title white">LULULEMON</div>
-                <p>
-                    Lululemon Athletica, styled as lululemon athletica, is a self-described yoga-inspired athletic 
-                    apparel company, which produces a clothing line and runs international clothing stores from its 
-                    company base in Vancouver, British Columbia, Canada.
-                </p>
-			    <p>
-                    Dennis "Chip" Wilson founded Lululemon Athletica (usually referred to simply as "lululemon" or 
-                    "lulu") in 1998 in response to increased female participation in sports and in accordance with 
-                    his belief in yoga as the optimal way to maintain athletic excellence into an advanced age. 
-                </p>
-                <p>
-                    Wilson had previously made a foray into the sportswear business by setting up Westbeach Sports in 1979. 
-                    Wilson opened the first Lululemon store in the Vancouver neighbourhood of Kitsilano.
-			    </p>
-		    </div>
-        </asp:Panel>
-        <asp:Panel ID="pnlNike" runat="server" CssClass="one product-intro" ClientIDMode="Static">
-            <div class="one-third">
-                <img src="images/products/intro/nike/nike04.jpg" alt="Nike" width="300px" />
-		    </div>
-            <div class="one-half last">
-			    <div class="header-title white">NIKE</div>
-			    <p>
-			        Nike is a major publicly traded clothing, footwear, sportswear, and equipment supplier based in the 
-                    United States. The company is headquartered near Beaverton, Oregon, in the Portland metropolitan 
-                    area. It is the world's leading supplier of athletic shoes and apparel and a major manufacturer of 
-                    sports equipment.
-			    </p>
-                <p>
-                    The company was founded on January 25, 1964 as Blue Ribbon Sports by Bill Bowerman and Philip Knight, and 
-                    officially became Nike, Inc.
-                </p>
-		    </div>
-        </asp:Panel>
-        <asp:Panel ID="pnlSpecialized" runat="server" CssClass="one product-intro" ClientIDMode="Static">
-            <div class="one-third">
-                <img src="images/products/intro/specialized/specialized07.jpg" alt="Specialized" width="300px" />
-		    </div>
-            <div class="one-half last">
-			    <div class="header-title white">SPECIALIZED</div>
-			    <p>
-			        Specialized was founded in 1974 by Mike Sinyard, a cycling enthusiast who sold his Volkswagen Bus 
-                    for $1,500 to fund a cycle tour of Europe, where he bought handlebars and stems made by Campagnolo and 
-                    Cinelli to take back to the US. 
-                </p>
-                <p>
-                    Sinyard started out importing Italian bike components that were 
-                    difficult to find in the United States, but the company began to produce its own bike parts by 1976, 
-                    starting with the Specialized Touring Tire.
-                </p>
-                <p>
-                    In 1979, the company started to produce the Allez, a road 
-                    bike, in Japan. Specialized introduced the first major production mountain bike in the world, the 
-                    Stumpjumper, in 1981. Specialized continue to produce the Stumpjumper, which, like mountain bikes 
-                    in general, has evolved significantly since 1981 and now comes in full suspension.                     
-			    </p>
-		    </div>
-        </asp:Panel>
+        </asp:Panel>        
     </div>
     <div class="one">
         <asp:ListView runat="server" ID="lstProducts" GroupItemCount="3" OnItemCommand="lstProducts_ItemCommand">
@@ -113,13 +39,12 @@
                     <div><img src='https://swetnation.com/shop/Images/sites/1/products/<%# Eval("Bvin") %>/<%# Eval("ImageFileSmall") %>' width='270' height='270' alt='<%# Eval("ProductName") %>' /></div>
                     <div>
                         <br />
-                        <a href='ProductDetail.aspx?bvin=<%# Eval("Bvin") %>' class="button cube deep-red small">View Product</a>
-					    <asp:LinkButton ID="lnkAddtoCart" runat="server" CssClass="button cube deep-red small" CommandName="AddToCart" CommandArgument='<%# Eval("Bvin") %>'>Add To Cart</asp:LinkButton>
+                        <a href='ProductDetail.aspx?bvin=<%# Eval("Bvin") %>' class="button cube deep-red small">View Product</a>					    
                     </div>
-                    <div><strong><%# Eval("ProductName") %></strong></div>
+                    <div style="margin-top:5px;"><strong><%# Eval("ProductName") %></strong></div>
                     <div>
-                        <strong style="text-decoration:line-through;">Retail Price: <%# String.Format("{0:C}", Eval("SitePrice"))%></strong> | 
-                        <strong style="color:Red;">Members Price: <%# String.Format("{0:C}", Eval("SiteCost"))%></strong>                        
+                        <strong style="text-decoration:line-through;">Retail: <%# String.Format("{0:C}", Eval("ListPrice"))%></strong> | 
+                        <strong style="color:Red;">Members: <%# String.Format("{0:C}", Eval("SitePrice"))%></strong>
                     </div>
                 </div>
             </ItemTemplate>
@@ -174,7 +99,3 @@
         }
     </script>
 </asp:Content>
-
-
-
-

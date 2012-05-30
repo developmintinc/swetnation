@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SwetNation.Web.models;
 using MerchantTribe.Commerce;
+using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
-    public partial class SignIn : NotAuthorizedPage
+    public partial class SignIn : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -57,7 +58,7 @@ namespace SwetNation.Web
                         Response.Redirect("~/Checkout.aspx");
                     }
                     // otherwise send to account home
-                    Response.Redirect("~/MyAccount.aspx");
+                    Response.Redirect("~/Default.aspx");
                 }
                 else
                 {

@@ -22,7 +22,8 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <SilverlightApplicationList>{24A4744E-6A96-4DED-B4D9-018C3171C8DA}|..\src\BVSoftware.SilverlightFileUpload\BVSoftware.SilverlightFileUpload.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>
+    </SilverlightApplicationList>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
