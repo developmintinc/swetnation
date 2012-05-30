@@ -25,8 +25,8 @@
 	
 	// Enter your launch date
 	launchDate = {
-		day: 1,
-		month: 4,
+		day: 10,
+		month: 5,
 		year: 2012,
 		hour: 12,
 		min: 0,

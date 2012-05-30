@@ -1,31 +1,7 @@
-RED COLOR
-
-.button.red {background-color:#f26c4f;}
-.button.deep-red {background-color:#bf0101;}
-
-.headline_inner .colored,.headline_inner_center .colored {
-	color:#bf0101;
-}
-.colored {
-	color:#b61c04;
-}
-.required {
-	color:#ed1c24;
-	color:#e64135;
-}
-#footer .colored {
-	color:#e04644;
-}
 
 alicia m damato-mccabe
 4264285601601552 
 06/13
 580
 
-
-
-
-
-
-background-color:#d81f27;
-background-color:#d81f27;
+#b61c04
