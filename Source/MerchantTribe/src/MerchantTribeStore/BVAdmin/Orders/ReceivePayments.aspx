@@ -1,8 +1,5 @@
-<%@ Page Language="C#" MasterPageFile="~/BVAdmin/BVAdmin.master" AutoEventWireup="True" Inherits="MerchantTribeStore.BVAdmin_Orders_ReceivePayments"
-    Title="Payments" Codebehind="ReceivePayments.aspx.cs" %>
-
-<%@ Register Src="../../BVModules/Controls/CreditCardInput.ascx" TagName="CreditCardInput"
-    TagPrefix="uc2" %>
+<%@ Page Language="C#" MasterPageFile="~/BVAdmin/BVAdmin.master" AutoEventWireup="True" Inherits="MerchantTribeStore.BVAdmin_Orders_ReceivePayments" Title="Payments" Codebehind="ReceivePayments.aspx.cs" %>
+<%@ Register Src="../../BVModules/Controls/CreditCardInput.ascx" TagName="CreditCardInput" TagPrefix="uc2" %>
 <%@ Register Src="../Controls/MessageBox.ascx" TagName="MessageBox" TagPrefix="uc1" %>
 <%@ Register src="ReceivePaymentsControl.ascx" tagname="ReceivePaymentsControl" tagprefix="uc3" %>
 <%@ Register src="OrderActions.ascx" tagname="OrderActions" tagprefix="uc4" %>

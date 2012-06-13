@@ -8,12 +8,13 @@
 <%@ Register Src="~/controls/PrimaryNav.ascx" TagName="PrimaryNav" TagPrefix="uc" %>
 <%@ Register Src="~/controls/FooterInformation.ascx" TagName="FooterInformation" TagPrefix="uc" %>
 <%@ Register Src="~/controls/FooterNav.ascx" TagName="FooterNav" TagPrefix="uc" %>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head id="Head1" runat="server">
-    <title>Swet Nation :: Huge discount on top sports apparel</title>
-    <meta name="description" content="SwetNation :: SPORTS BRANDS - MEMBERS PRICES"/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content="SecondStrategy.com"/>
+    <title>Swet Nation :: Sports Brands at Members-Only Prices</title>
+    <meta name="description" content="SwetNation :: SPORTS BRANDS - MEMBERS PRICES" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="SecondStrategy.com" />
     <link rel="shortcut icon" type="image/gif" href="images/favicon.gif"/>
     <uc:HeaderFonts ID="ucHeaderFonts" runat="server" />
     <uc:HeaderStyles ID="ucHeaderStyles" runat="server" />

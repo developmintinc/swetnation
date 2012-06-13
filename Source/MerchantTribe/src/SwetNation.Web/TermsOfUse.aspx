@@ -22,7 +22,7 @@
     <p>
     1. Use of the Site. You may use the Site only in accordance with and
     subject to these Terms of Use and the Site's Privacy Policy (the "Privacy
-    Policy") (available at http://swetnation.com/privacy). Once you complete
+    Policy") (available at https://swetnation.com/privacy). Once you complete
     and submit your registration, you have opted in to receive email
     communication from us. You may not use the Site for any purpose that is
     unlawful or prohibited by these Terms of Use, or to solicit the performance
@@ -641,10 +641,10 @@
     See http://www.copyright.gov/ for further information. Our contact for
     copyright issues relating to this Site (including the notices and counter-
     notices) is: Copyright Agent, Swet Nation, 49 Lincoln Blvd, Abington, MA
-    02351, 888.850.SWET (7938) info@swetnation.com. Please note that there are
-    penalties for false claims under the DMCA. One or more patents may
-    apply to this website, including without limitation: U.S. Patent Nos.
-    5528490; 5761649; and 6029142 and any other patents that may issue in
+    02351, 888.850.SWET (7938) <a href="mailto:support@swetnation.com" target="_blank">support@swetnation.com</a>. 
+    Please note that there are penalties for false claims under the DMCA. One or 
+    more patents may apply to this website, including without limitation: U.S. Patent 
+    Nos. 5528490; 5761649; and 6029142 and any other patents that may issue in
     the future which are related to the foregoing patents.
     </p>
 

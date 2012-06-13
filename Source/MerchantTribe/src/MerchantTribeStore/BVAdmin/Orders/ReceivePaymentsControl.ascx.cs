@@ -14,13 +14,10 @@ namespace MerchantTribeStore
 
     public partial class BVAdmin_Orders_ReceivePaymentsControl : MerchantTribe.Commerce.Content.BVUserControl
     {
-
         private Order o = new MerchantTribe.Commerce.Orders.Order();
         private OrderPaymentManager payManager = null;
-
         public delegate void TransactionEventDelegate();
         public TransactionEventDelegate TransactionEvent;
-
         private string orderId = string.Empty;
 
         protected override void OnLoad(EventArgs e)
@@ -43,10 +40,7 @@ namespace MerchantTribeStore
                     this.lnkPO.Visible = false;
                 }
             }
-
-
         }
-
 
         #region tab buttons
 
@@ -200,7 +194,6 @@ namespace MerchantTribeStore
         }
 
         // Credit Cards
-
         private void LoadCreditCardLists()
         {
 
@@ -241,8 +234,6 @@ namespace MerchantTribeStore
                 this.lnkCreditCardRefund.Enabled = true;
             }
 
-
-
             // Load Cards for Charges and Auths
             List<OrderTransaction> cards = payManager.CreditCardInfoListAll();
             this.lstCreditCards.Items.Clear();
@@ -262,8 +253,6 @@ namespace MerchantTribeStore
                 }
                 this.lnkCreditCardCharge.Enabled = true;
             }
-
-
         }
         protected void lnkCreditCardAddInfo_Click(object sender, EventArgs e)
         {

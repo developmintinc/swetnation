@@ -17,7 +17,7 @@
       auto_join_text_ed: "i",                   // [string]   auto text for past tense: "i" surfed
       auto_join_text_ing: "i am",               // [string]   auto tense for present tense: "i was" surfing
       auto_join_text_reply: "i replied to",     // [string]   auto tense for replies: "i replied to" @someone "with"
-      auto_join_text_url: "i was looking at",   // [string]   auto tense for urls: "i was looking at" http:...
+      auto_join_text_url: "i was looking at",   // [string]   auto tense for urls: "i was looking at" https:...
       loading_text: null,                       // [string]   optional loading text, displayed while tweets load
       refresh_interval: null ,                  // [integer]  optional number of seconds after which to reload tweets
       twitter_url: "twitter.com",               // [string]   custom twitter url, if any (apigee, etc.)
@@ -35,12 +35,12 @@
     $.fn.extend({
       linkUrl: function() {
         var returning = [];
-        // See http://daringfireball.net/2010/07/improved_regex_for_matching_urls
+        // See https://daringfireball.net/2010/07/improved_regex_for_matching_urls
         var regexp = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/gi;
         this.each(function() {
           returning.push(this.replace(regexp,
                                       function(match) {
-                                        var url = (/^[a-z]+:/i).test(match) ? match : "http://"+match;
+                                        var url = (/^[a-z]+:/i).test(match) ? match : "https://"+match;
                                         return "<a href=\""+url+"\">"+match+"</a>";
                                       }));
         });
@@ -50,7 +50,7 @@
         var returning = [];
         var regexp = /[\@]+(\w+)/gi;
         this.each(function() {
-          returning.push(this.replace(regexp,"@<a href=\"http://"+s.twitter_url+"/$1\">$1</a>"));
+          returning.push(this.replace(regexp,"@<a href=\"https://"+s.twitter_url+"/$1\">$1</a>"));
         });
         return $(returning);
       },
@@ -60,7 +60,7 @@
         var regexp = /(?:^| )[\#]+([\w\u00c0-\u00d6\u00d8-\u00f6\u00f8-\u00ff\u0600-\u06ff]+)/gi;
         var usercond = (s.username && s.username.length == 1) ? '&from='+s.username.join("%2BOR%2B") : '';
         this.each(function() {
-          returning.push(this.replace(regexp, ' <a href="http://'+s.twitter_search_url+'/search?q=&tag=$1&lang=all'+usercond+'">#$1</a>'));
+          returning.push(this.replace(regexp, ' <a href="https://'+s.twitter_search_url+'/search?q=&tag=$1&lang=all'+usercond+'">#$1</a>'));
         });
         return $(returning);
       },
@@ -117,7 +117,7 @@
     }
 
     function build_url() {
-      var proto = ('https:' == document.location.protocol ? 'https:' : 'http:');
+      var proto = ('https:' == document.location.protocol ? 'https:' : 'https:');
       var count = (s.fetch === null) ? s.count : s.fetch;
       if (s.list) {
         return proto+"//"+s.twitter_api_url+"/1/"+s.username[0]+"/lists/"+s.list+"/statuses.json?per_page="+count+"&callback=?";
@@ -180,10 +180,10 @@
             // Basic building blocks for constructing tweet <li> using a template
             var screen_name = item.from_user || item.user.screen_name;
             var source = item.source;
-            var user_url = "http://"+s.twitter_url+"/"+screen_name;
+            var user_url = "https://"+s.twitter_url+"/"+screen_name;
             var avatar_size = s.avatar_size;
             var avatar_url = item.profile_image_url || item.user.profile_image_url;
-            var tweet_url = "http://"+s.twitter_url+"/"+screen_name+"/status/"+item.id_str;
+            var tweet_url = "https://"+s.twitter_url+"/"+screen_name+"/status/"+item.id_str;
             var retweet = (typeof(item.retweeted_status) != 'undefined');
             var retweeted_screen_name = retweet ? item.retweeted_status.user.screen_name : null;
             var tweet_time = parse_date(item.created_at);

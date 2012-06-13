@@ -107,94 +107,96 @@
                 <div class="section-billing">
                     <div class="header-title-medium">Shipping Address</div>
                     <asp:HiddenField ID="hdfShippingAddressBvin" runat="server" />
-					<asp:CheckBox ID="chkShippingSame" runat="server" OnCheckedChanged="chkShippingSame_CheckedChanged" AutoPostBack="true" /> 
+					<asp:CheckBox ID="chkShippingSame" runat="server" OnCheckedChanged="chkShippingSame_CheckedChanged" AutoPostBack="true" Checked="true" /> 
 					My shipping address is the same as my billing address
-		            <fieldset>
-                        <asp:Label ID="lblShippingFirstName" runat="server" AssociatedControlID="txtShippingFirstName">First Name <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtShippingFirstName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvShippingFirstName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingFirstName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
-		            </fieldset>
-                    <fieldset>
-                        <asp:Label ID="lblShippingLastName" runat="server" AssociatedControlID="txtShippingLastName">Last Name <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtShippingLastName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvShippingLastName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingLastName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
-		            </fieldset>
-                    <fieldset>
-                        <asp:Label ID="lblShippingAddress1" runat="server" AssociatedControlID="txtShippingAddress1">Address <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtShippingAddress1" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvShippingAddress1" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingAddress1" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
-		            </fieldset>
-		            <fieldset>
-                        <asp:Label ID="lblShippingAddress2" runat="server" AssociatedControlID="txtShippingAddress2">Address 2</asp:Label>
-                        <asp:TextBox ID="txtShippingAddress2" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-		            </fieldset>
-		            <fieldset>
-                        <asp:Label ID="lblShippingCity" runat="server" AssociatedControlID="txtShippingCity">City <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtShippingCity" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvShippingCity" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
-		            </fieldset>
-                    <fieldset>
-                        <asp:Label ID="lblShippingState" runat="server" AssociatedControlID="ddlShippingState">State <span class="required">*</span></asp:Label>
-                        <asp:DropDownList ID="ddlShippingState" runat="server" ValidationGroup="vgMyAccount" Width="100%">
-	                        <asp:ListItem Value="AL">Alabama</asp:ListItem>
-	                        <asp:ListItem Value="AK">Alaska</asp:ListItem>
-	                        <asp:ListItem Value="AZ">Arizona</asp:ListItem>
-	                        <asp:ListItem Value="AR">Arkansas</asp:ListItem>
-	                        <asp:ListItem Value="CA">California</asp:ListItem>
-	                        <asp:ListItem Value="CO">Colorado</asp:ListItem>
-	                        <asp:ListItem Value="CT">Connecticut</asp:ListItem>
-	                        <asp:ListItem Value="DC">District of Columbia</asp:ListItem>
-	                        <asp:ListItem Value="DE">Delaware</asp:ListItem>
-	                        <asp:ListItem Value="FL">Florida</asp:ListItem>
-	                        <asp:ListItem Value="GA">Georgia</asp:ListItem>
-	                        <asp:ListItem Value="HI">Hawaii</asp:ListItem>
-	                        <asp:ListItem Value="ID">Idaho</asp:ListItem>
-	                        <asp:ListItem Value="IL">Illinois</asp:ListItem>
-	                        <asp:ListItem Value="IN">Indiana</asp:ListItem>
-	                        <asp:ListItem Value="IA">Iowa</asp:ListItem>
-	                        <asp:ListItem Value="KS">Kansas</asp:ListItem>
-	                        <asp:ListItem Value="KY">Kentucky</asp:ListItem>
-	                        <asp:ListItem Value="LA">Louisiana</asp:ListItem>
-	                        <asp:ListItem Value="ME">Maine</asp:ListItem>
-	                        <asp:ListItem Value="MD">Maryland</asp:ListItem>
-	                        <asp:ListItem Value="MA">Massachusetts</asp:ListItem>
-	                        <asp:ListItem Value="MI">Michigan</asp:ListItem>
-	                        <asp:ListItem Value="MN">Minnesota</asp:ListItem>
-	                        <asp:ListItem Value="MS">Mississippi</asp:ListItem>
-	                        <asp:ListItem Value="MO">Missouri</asp:ListItem>
-	                        <asp:ListItem Value="MT">Montana</asp:ListItem>
-	                        <asp:ListItem Value="NE">Nebraska</asp:ListItem>
-	                        <asp:ListItem Value="NV">Nevada</asp:ListItem>
-	                        <asp:ListItem Value="NH">New Hampshire</asp:ListItem>
-	                        <asp:ListItem Value="NJ">New Jersey</asp:ListItem>
-	                        <asp:ListItem Value="NM">New Mexico</asp:ListItem>
-	                        <asp:ListItem Value="NY">New York</asp:ListItem>
-	                        <asp:ListItem Value="NC">North Carolina</asp:ListItem>
-	                        <asp:ListItem Value="ND">North Dakota</asp:ListItem>
-	                        <asp:ListItem Value="OH">Ohio</asp:ListItem>
-	                        <asp:ListItem Value="OK">Oklahoma</asp:ListItem>
-	                        <asp:ListItem Value="OR">Oregon</asp:ListItem>
-	                        <asp:ListItem Value="PA">Pennsylvania</asp:ListItem>
-	                        <asp:ListItem Value="RI">Rhode Island</asp:ListItem>
-	                        <asp:ListItem Value="SC">South Carolina</asp:ListItem>
-	                        <asp:ListItem Value="SD">South Dakota</asp:ListItem>
-	                        <asp:ListItem Value="TN">Tennessee</asp:ListItem>
-	                        <asp:ListItem Value="TX">Texas</asp:ListItem>
-	                        <asp:ListItem Value="UT">Utah</asp:ListItem>
-	                        <asp:ListItem Value="VT">Vermont</asp:ListItem>
-	                        <asp:ListItem Value="VA">Virginia</asp:ListItem>
-	                        <asp:ListItem Value="WA">Washington</asp:ListItem>
-	                        <asp:ListItem Value="WV">West Virginia</asp:ListItem>
-	                        <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
-	                        <asp:ListItem Value="WY">Wyoming</asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="rfvShippingState" runat="server" ErrorMessage="Required" ControlToValidate="ddlShippingState" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
-		            </fieldset>
-                    <fieldset>
-                        <asp:Label ID="lblShippingPostalCode" runat="server" AssociatedControlID="txtShippingPostalCode">Zip Code <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtShippingPostalCode" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvShippingPostalCode" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
-		            </fieldset>
+                    <asp:Panel ID="pnlShippingSection" runat="server" Visible="false">
+		                <fieldset>
+                            <asp:Label ID="lblShippingFirstName" runat="server" AssociatedControlID="txtShippingFirstName">First Name <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtShippingFirstName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvShippingFirstName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingFirstName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+		                </fieldset>
+                        <fieldset>
+                            <asp:Label ID="lblShippingLastName" runat="server" AssociatedControlID="txtShippingLastName">Last Name <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtShippingLastName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvShippingLastName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingLastName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+		                </fieldset>
+                        <fieldset>
+                            <asp:Label ID="lblShippingAddress1" runat="server" AssociatedControlID="txtShippingAddress1">Address <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtShippingAddress1" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvShippingAddress1" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingAddress1" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+		                </fieldset>
+		                <fieldset>
+                            <asp:Label ID="lblShippingAddress2" runat="server" AssociatedControlID="txtShippingAddress2">Address 2</asp:Label>
+                            <asp:TextBox ID="txtShippingAddress2" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+		                </fieldset>
+		                <fieldset>
+                            <asp:Label ID="lblShippingCity" runat="server" AssociatedControlID="txtShippingCity">City <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtShippingCity" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvShippingCity" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+		                </fieldset>
+                        <fieldset>
+                            <asp:Label ID="lblShippingState" runat="server" AssociatedControlID="ddlShippingState">State <span class="required">*</span></asp:Label>
+                            <asp:DropDownList ID="ddlShippingState" runat="server" ValidationGroup="vgMyAccount" Width="100%">
+	                            <asp:ListItem Value="AL">Alabama</asp:ListItem>
+	                            <asp:ListItem Value="AK">Alaska</asp:ListItem>
+	                            <asp:ListItem Value="AZ">Arizona</asp:ListItem>
+	                            <asp:ListItem Value="AR">Arkansas</asp:ListItem>
+	                            <asp:ListItem Value="CA">California</asp:ListItem>
+	                            <asp:ListItem Value="CO">Colorado</asp:ListItem>
+	                            <asp:ListItem Value="CT">Connecticut</asp:ListItem>
+	                            <asp:ListItem Value="DC">District of Columbia</asp:ListItem>
+	                            <asp:ListItem Value="DE">Delaware</asp:ListItem>
+	                            <asp:ListItem Value="FL">Florida</asp:ListItem>
+	                            <asp:ListItem Value="GA">Georgia</asp:ListItem>
+	                            <asp:ListItem Value="HI">Hawaii</asp:ListItem>
+	                            <asp:ListItem Value="ID">Idaho</asp:ListItem>
+	                            <asp:ListItem Value="IL">Illinois</asp:ListItem>
+	                            <asp:ListItem Value="IN">Indiana</asp:ListItem>
+	                            <asp:ListItem Value="IA">Iowa</asp:ListItem>
+	                            <asp:ListItem Value="KS">Kansas</asp:ListItem>
+	                            <asp:ListItem Value="KY">Kentucky</asp:ListItem>
+	                            <asp:ListItem Value="LA">Louisiana</asp:ListItem>
+	                            <asp:ListItem Value="ME">Maine</asp:ListItem>
+	                            <asp:ListItem Value="MD">Maryland</asp:ListItem>
+	                            <asp:ListItem Value="MA">Massachusetts</asp:ListItem>
+	                            <asp:ListItem Value="MI">Michigan</asp:ListItem>
+	                            <asp:ListItem Value="MN">Minnesota</asp:ListItem>
+	                            <asp:ListItem Value="MS">Mississippi</asp:ListItem>
+	                            <asp:ListItem Value="MO">Missouri</asp:ListItem>
+	                            <asp:ListItem Value="MT">Montana</asp:ListItem>
+	                            <asp:ListItem Value="NE">Nebraska</asp:ListItem>
+	                            <asp:ListItem Value="NV">Nevada</asp:ListItem>
+	                            <asp:ListItem Value="NH">New Hampshire</asp:ListItem>
+	                            <asp:ListItem Value="NJ">New Jersey</asp:ListItem>
+	                            <asp:ListItem Value="NM">New Mexico</asp:ListItem>
+	                            <asp:ListItem Value="NY">New York</asp:ListItem>
+	                            <asp:ListItem Value="NC">North Carolina</asp:ListItem>
+	                            <asp:ListItem Value="ND">North Dakota</asp:ListItem>
+	                            <asp:ListItem Value="OH">Ohio</asp:ListItem>
+	                            <asp:ListItem Value="OK">Oklahoma</asp:ListItem>
+	                            <asp:ListItem Value="OR">Oregon</asp:ListItem>
+	                            <asp:ListItem Value="PA">Pennsylvania</asp:ListItem>
+	                            <asp:ListItem Value="RI">Rhode Island</asp:ListItem>
+	                            <asp:ListItem Value="SC">South Carolina</asp:ListItem>
+	                            <asp:ListItem Value="SD">South Dakota</asp:ListItem>
+	                            <asp:ListItem Value="TN">Tennessee</asp:ListItem>
+	                            <asp:ListItem Value="TX">Texas</asp:ListItem>
+	                            <asp:ListItem Value="UT">Utah</asp:ListItem>
+	                            <asp:ListItem Value="VT">Vermont</asp:ListItem>
+	                            <asp:ListItem Value="VA">Virginia</asp:ListItem>
+	                            <asp:ListItem Value="WA">Washington</asp:ListItem>
+	                            <asp:ListItem Value="WV">West Virginia</asp:ListItem>
+	                            <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
+	                            <asp:ListItem Value="WY">Wyoming</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvShippingState" runat="server" ErrorMessage="Required" ControlToValidate="ddlShippingState" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+		                </fieldset>
+                        <fieldset>
+                            <asp:Label ID="lblShippingPostalCode" runat="server" AssociatedControlID="txtShippingPostalCode">Zip Code <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtShippingPostalCode" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvShippingPostalCode" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+		                </fieldset>
+                    </asp:Panel>
 				</div>
                 <!---------------------------------------------------------------------------------->
                 <!-- REWARD POINTS -->
@@ -204,8 +206,8 @@
                         <div class="section-payment">                
                             <h2><asp:Literal ID="litRewardPoints" runat="server" Mode="PassThrough"></asp:Literal></h2>
                             <asp:Literal ID="litRewardPointsAvailable" runat="server" Mode="PassThrough"></asp:Literal><br />
-                            <asp:RadioButton ID="radDoNotUseRewardsPoints" runat="server" GroupName="ShowRewards" Text="Do Not Use Points"  /><br />
-                            <asp:RadioButton ID="radUseRewardsPoints" runat="server" GroupName="ShowRewards" Text="Use Points"  /><br />
+                            <asp:RadioButton ID="radDoNotUseRewardsPoints" runat="server" GroupName="ShowRewards"  /> Do Not Use Points<br />
+                            <asp:RadioButton ID="radUseRewardsPoints" runat="server" GroupName="ShowRewards" OnCheckedChanged="radUseRewardsPoints_CheckedChanged" AutoPostBack="true"  /> <asp:Literal ID="litLabelRewardsUse" runat="server" Mode="PassThrough"></asp:Literal><br />
                         </div>
                     </div>    
                 </asp:Panel>
@@ -300,7 +302,8 @@
 						<asp:Literal ID="litAgreedToTermsDescription" runat="server" Mode="PassThrough"></asp:Literal>
 						<p><asp:HyperLink ID="hypSiteTerms" runat="server" CssClass="viewSiteTerms" Target="_blank" ForeColor="Red"></asp:HyperLink></p>
 					</asp:Panel>
-                    <asp:LinkButton ID="lnkPlaceOrder" runat="server" Text="Place Order" CssClass="button cube deep-red small" ToolTip="Place Order" OnClick="lnkPlaceOrder_Click"></asp:LinkButton>
+                    <asp:LinkButton ID="lnkPlaceOrder" runat="server" Text="Place Order" CssClass="button cube deep-red small" ToolTip="Place Order" OnClick="lnkPlaceOrder_Click"></asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="lnkCancelOrder" runat="server" Text="Cancel Order" CssClass="button cube deep-red small" ToolTip="Cancel Order" OnClick="lnkCancelOrder_Click"></asp:LinkButton>
                 </div>
 			</div>
 			<div class="clear">&nbsp;</div>

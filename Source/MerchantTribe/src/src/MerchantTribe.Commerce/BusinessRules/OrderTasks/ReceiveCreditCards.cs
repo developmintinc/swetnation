@@ -17,16 +17,13 @@ namespace MerchantTribe.Commerce.BusinessRules.OrderTasks
 			bool result = true;
             if (context.MTApp.OrderServices.PaymentSummary(context.Order).AmountDue > 0)
             {
-
                 foreach (Orders.OrderTransaction p in context.MTApp.OrderServices.Transactions.FindForOrder(context.Order.bvin))
                 {
                     List<Orders.OrderTransaction> transactions = context.MTApp.OrderServices.Transactions.FindForOrder(context.Order.bvin);
-
                     if (p.Action == MerchantTribe.Payment.ActionType.CreditCardInfo)
                     {
                         // if we already have an auth or charge on the card, skip
-                        if (p.HasSuccessfulLinkedAction(MerchantTribe.Payment.ActionType.CreditCardCharge, transactions) ||
-                            p.HasSuccessfulLinkedAction(MerchantTribe.Payment.ActionType.CreditCardHold, transactions))
+                        if (p.HasSuccessfulLinkedAction(MerchantTribe.Payment.ActionType.CreditCardCharge, transactions) || p.HasSuccessfulLinkedAction(MerchantTribe.Payment.ActionType.CreditCardHold, transactions))
                         {
                             Orders.OrderNote note = new Orders.OrderNote();
                             note.IsPublic = false;

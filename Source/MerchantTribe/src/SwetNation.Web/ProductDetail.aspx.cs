@@ -451,15 +451,29 @@ namespace SwetNation.Web
                 resultItem = MTApp.CatalogServices.Products.Find(bvin);
                 if (resultItem != null)
                 {
+                    string imageUrl = "/shop/Images/sites/1/products/" + resultItem.Bvin + "/" + resultItem.ImageFileSmall;
+                    string pageUrl = HttpContext.Current.Request.Url.AbsoluteUri;
+
                     string listPrice = String.Format("{0:C}", resultItem.ListPrice);
                     string sitePrice = String.Format("{0:C}", resultItem.SitePrice);
                     litListPriceContent.Text = listPrice;
                     litSitePriceContent.Text = sitePrice;
-                    litListPriceSlider.Text = sitePrice;
                     litLongDescription.Text = resultItem.LongDescription;
                     litProductNameContent.Text = resultItem.ProductName;
-                    litProductNameSlider.Text = resultItem.ProductName;
-                    imgProductImageSmall.ImageUrl = "https://swetnation.com/shop/Images/sites/1/products/" + resultItem.Bvin + "/" + resultItem.ImageFileSmall;
+                    imgProductImageSmall.ImageUrl = "https://swetnation.com/shop/Images/sites/1/products/" + resultItem.Bvin + "/" + resultItem.ImageFileSmall; ;
+
+                    litFBTitle.Text = System.Environment.NewLine + "<meta property=\"og:title\" content=\"" + resultItem.ProductName + "\" />" + System.Environment.NewLine;
+                    litFBType.Text = "<meta property=\"og:type\" content=\"product\" />" + System.Environment.NewLine;
+                    litFBUrl.Text = "<meta property=\"og:url\" content=\"" + pageUrl + "\" />" + System.Environment.NewLine;
+                    litFBImage.Text = "<meta property=\"og:image\" content=\"" + imageUrl + "\" />" + System.Environment.NewLine;
+                    litFBSiteName.Text = "<meta property=\"og:site_name\" content=\"Swet Nation\" />" + System.Environment.NewLine;
+                    litFBAdmins.Text = "<meta property=\"og:admins\" content=\"\" />" + System.Environment.NewLine;
+                    litFBAppId.Text = "<meta property=\"og:app_id\" content=\"\" />" + System.Environment.NewLine;
+                    /*
+                    litFBLike.Text = System.Environment.NewLine + "<div class=\"fb-like\" data-href=\"" + pageUrl + "\" data-send=\"true\" data-layout=\"button_count\" data-width=\"450\" data-show-faces=\"false\"></div>" + System.Environment.NewLine;
+                    litTweet.Text = System.Environment.NewLine + "<a href=\"https://twitter.com/share?url=http%3a%2f%2fswetnation.com&amp;via=swetnation&amp;text=Check This Out: All of the best prices on sports apparel &amp;related=&amp;count=horizontal&amp;lang=en&amp;counturl=http%3a%2f%2fswetnation.com\" class=\"twitter-share-button\">Tweet</a>" + System.Environment.NewLine;
+                    litGooglePlus.Text = System.Environment.NewLine + "<g:plusone href=\"" + pageUrl + "\" size=\"standard\" annotation=\"inline\"></g:plusone>" + System.Environment.NewLine;
+                    */
                 }
             }
         }

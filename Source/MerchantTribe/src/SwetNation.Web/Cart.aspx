@@ -199,12 +199,22 @@
 					<table border="0" cellspacing="0" cellpadding="3">
 						<tr>
 							<td class="formlabel">
-								Sub Total:
+								Total:
 							</td>
 							<td class="formfield">
 								<asp:Literal ID="litSubTotal" runat="server" Mode="PassThrough"></asp:Literal>
 							</td>
 						</tr>
+                        <asp:Panel ID="pnlTotalDiscount" runat="server" Visible="false">
+                            <tr>
+							    <td class="formlabel">
+								    Total Discount:
+							    </td>
+							    <td class="formfield">
+								    <asp:Literal ID="litTotalOrderDiscounts" runat="server" Mode="PassThrough"></asp:Literal>
+							    </td>
+						    </tr>
+                        </asp:Panel>
                         <tr>
 							<td class="formlabel">
 								Tax:
@@ -242,18 +252,12 @@
     				<asp:LinkButton ID="lnkSecureShopping" runat="server" CssClass="button cube deep-red small" OnClick="lnkSecureShopping_Click">Secure Checkout</asp:LinkButton>
                     <input type="hidden" runat="server" name="shippingrate" id="shippingrate" />
 				</div>
-			</div>
-            <!--
+			</div>            
 			<div id="cartcoupons">
-				Add a Promotional Code:
-				<form action="/cart/addcoupon" method="post">
-					<input type="text" name="couponcode" class="textbox" />
-					<asp:LinkButton ID="LinkButton3" runat="server" CssClass="button cube deep-red small">Add Coupon To Cart</asp:LinkButton>
-				</form>
-				<table>
-				</table>
-			</div>
-            -->
+				Add a Promotional Code:<br />				
+                <asp:TextBox ID="txtCouponCode" runat="server" class="textbox"></asp:TextBox>
+				<asp:LinkButton ID="btnAddCoupon" runat="server" CssClass="button cube deep-red small" OnClick="btnAddCoupon_Click">Add Coupon To Cart</asp:LinkButton>
+			</div>            
 		</div>
 	</div>
 </asp:Content>

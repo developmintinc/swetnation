@@ -51,11 +51,11 @@
 					</p>
 					<!--<div class="tweet"></div>-->
                     <ul class="simple-nav">
-                        <li><a href="http://www.facebook.com/swetnation" target="_blank">Facebook</a></li>
-                        <li><a href="http://www.twitter.com/swetnation" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/swetnation" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/swetnation" target="_blank">Twitter</a></li>
                         <li><a href="https://plus.google.com/u/0/b/117158435000953559596/117158435000953559596/posts" target="_blank">Google+</a></li>
-                        <li><a href="http://www.linkedin.com/company/2498955?goback=%2Egde_814137_member_96993375" target="_blank">LinkedIn</a></li>
-                        <li><a href="http://www.youtube.com/user/SwetNation" target="_blank">YouTube</a></li>                        
+                        <li><a href="https://www.linkedin.com/company/2498955?goback=%2Egde_814137_member_96993375" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.youtube.com/user/SwetNation" target="_blank">YouTube</a></li>                        
 					</ul>
 				</div>
 				<!-- COLUMN ENDS-->

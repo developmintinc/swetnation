@@ -2,7 +2,7 @@
 <div id="main_navigation" class="main-menu">
 	<!--  MAIN  NAVIGATION STARTS HERE-->
 	<ul>
-		<li><a href="Default.aspx" title="Home">BRANDS<span>Current</span></a></li>
+		<li><a href="Default.aspx" title="Home">BRANDS<span>&nbsp;</span></a></li>
         <asp:Literal ID="litNavigation" runat="server" Mode="PassThrough"></asp:Literal>        
         <li class="no-right-border" style="border-right: 0px solid black !important;">
             <asp:HyperLink ID="hypCart" runat="server" NavigateUrl="~/Cart.aspx">

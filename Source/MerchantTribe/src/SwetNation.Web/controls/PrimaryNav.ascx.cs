@@ -29,7 +29,8 @@ namespace SwetNation.Web.controls
             {                
                 string categoryName = category.Name;
                 string categoryId = category.Bvin;
-                navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "' class='primary-navigation'>" + categoryName + "<span>Products</span></a><ul>";
+                string secondaryName = "Sales";
+                navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "' class='primary-navigation'>" + categoryName + "<span>" + secondaryName + "</span></a><ul>";
 
                 List<CategoryProductAssociation> categoryProductAssociations = MTApp.CatalogServices.CategoriesXProducts.FindForCategory(category.Bvin, 1, 1000);
                 List<string> manufacturerIds = new List<string>();
@@ -52,9 +53,12 @@ namespace SwetNation.Web.controls
 
                 foreach(string manufacturerId in manufacturerIds)
                 {
-                    MerchantTribe.Commerce.Contacts.VendorManufacturer vendorManufacturer = MTApp.ContactServices.Manufacturers.Find(manufacturerId);
-                    string brandName = vendorManufacturer.DisplayName;
-                    navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "&ManufacturerId=" + manufacturerId + "'>" + brandName + "</a></li>";
+                    if (manufacturerId != "- No Manufacturer -")
+                    {
+                        MerchantTribe.Commerce.Contacts.VendorManufacturer vendorManufacturer = MTApp.ContactServices.Manufacturers.Find(manufacturerId);
+                        string brandName = vendorManufacturer.DisplayName;
+                        navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "&ManufacturerId=" + manufacturerId + "'>" + brandName + "</a></li>";
+                    }                    
                 }
 
                 navigation += "</ul></li>";

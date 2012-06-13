@@ -70,15 +70,21 @@ namespace SwetNation.Web
         {
             ProductSearchCriteria productSearchCriteria = new ProductSearchCriteria();
             productSearchCriteria.Status = ProductStatus.Active;
+            productSearchCriteria.CategorySort = CategorySortOrder.ProductPriceDescending;
 
             if (!String.IsNullOrEmpty(Request.QueryString["ManufacturerId"]))
-                productSearchCriteria.ManufacturerId += Request.QueryString["ManufacturerId"];
+                productSearchCriteria.ManufacturerId = Request.QueryString["ManufacturerId"];
 
             if (!String.IsNullOrEmpty(Request.QueryString["CategoryId"]))
-                productSearchCriteria.CategoryId += Request.QueryString["CategoryId"];
+                productSearchCriteria.CategoryId = Request.QueryString["CategoryId"];
 
-            List<MerchantTribe.Commerce.Catalog.Product> resultItems = new List<MerchantTribe.Commerce.Catalog.Product>();
-            resultItems = MTApp.CatalogServices.Products.FindByCriteria(productSearchCriteria);
+            List<ProductPageViewModel> resultItems = new List<ProductPageViewModel>();
+            List<MerchantTribe.Commerce.Catalog.Product> products = MTApp.CatalogServices.Products.FindByCriteria(productSearchCriteria);
+            foreach (var product in products)
+            {
+                resultItems.Add(ProductSetup(product.Bvin));
+            }
+
             lstProducts.DataSource = resultItems;
             lstProducts.DataBind();
         }
@@ -86,95 +92,6 @@ namespace SwetNation.Web
         protected void ddlCategories_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             GetProducts();
-        }
-
-        protected void lstProducts_ItemCommand(object source, ListViewCommandEventArgs e)
-        {
-            string productId = Convert.ToString(e.CommandArgument);
-            MerchantTribe.Commerce.Catalog.Product result = null;
-            if (productId != string.Empty)
-            {
-                //result = MTApp.CatalogServices.Products.Find(productId);
-                if ((String)e.CommandName == "AddToCart")
-                {
-                    AddToCart(productId);
-                }
-                else if ((String)e.CommandName == "SaveForLater")
-                {
-
-                }
-            }
-        }
-
-        public void AddToCart(string bvin)
-        {
-            ProductPageViewModel model = ProductSetup(bvin);
-            // see if we're editing a line item instead of a new add
-            string lineItemString = Request.Form["lineitemid"];
-            if (!string.IsNullOrEmpty(lineItemString))
-            {
-                if (model.LineItemId == string.Empty) model.LineItemId = lineItemString;
-            }
-            ParseSelections(model);
-            if (Request.Form["savelaterbutton.x"] != null)
-            {
-                // Save for Later
-                MTApp.CatalogServices.SaveProductToWishList(model.LocalProduct, model.Selections, 1, MTApp);
-                ///////////////////////////////////////////////////////////////////////////
-                // TO DO
-                ///////////////////////////////////////////////////////////////////////////
-                //return Redirect("~/account/saveditems");
-            }
-            else
-            {
-                // Add to Cart
-                bool IsPurchasable = ValidateSelections(model);
-                if ((IsPurchasable))
-                {
-                    DetermineQuantityToAdd(model);
-                    if (model.Quantity > 0)
-                    {
-                        LineItem li = MTApp.CatalogServices.ConvertProductToLineItem(model.LocalProduct,
-                                                                                        model.Selections,
-                                                                                        model.Quantity,
-                                                                                        MTApp);
-                        Order Basket = SessionManager.CurrentShoppingCart(MTApp.OrderServices, MTApp.CurrentStore);
-                        Basket.UserID = SessionManager.GetCurrentUserId(MTApp.CurrentStore);
-                        MerchantTribe.Commerce.Membership.CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
-                        if (u != null)
-                        {
-                            Basket.BillingAddress = u.BillingAddress;
-                            Basket.ShippingAddress = u.ShippingAddress;
-                        }
-                        /*
-                        if (Basket.UserID != SessionManager.GetCurrentUserId(MTApp.CurrentStore))
-                        {
-                            Basket.UserID = SessionManager.GetCurrentUserId(MTApp.CurrentStore);
-                        }
-                        */
-                        if (model.LineItemId.Trim().Length > 0)
-                        {
-                            long lineItemId = 0;
-                            long.TryParse(model.LineItemId, out lineItemId);
-                            var toRemove = Basket.Items.Where(y => y.Id == lineItemId).SingleOrDefault();
-                            if (toRemove != null) Basket.Items.Remove(toRemove);
-                        }
-                        MTApp.AddToOrderWithCalculateAndSave(Basket, li);
-                        SessionManager.SaveOrderCookies(Basket, MTApp.CurrentStore);
-
-                        /////////////////////////////////////////////////////////////////
-                        // TO DO
-                        /////////////////////////////////////////////////////////////////
-                        //return Redirect("~/cart");
-
-                        pnlStatus.Visible = true;
-                        litStatus.Text = "Item has been added to your shopping cart";
-                    }
-                }
-            }
-            // Load Selections from form here
-            // Do checks and add
-            model.PreRenderedOptions = HtmlRendering.ProductOptions(model.LocalProduct.Options, model.Selections);
         }
 
         private ProductPageViewModel ProductSetup(string bvin)
@@ -308,7 +225,7 @@ namespace SwetNation.Web
         private void CheckForBackOrder(ProductPageViewModel model)
         {
             InventoryCheckData data = MTApp.CatalogServices.InventoryCheck(model.LocalProduct, string.Empty);
-            model.StockMessage = data.InventoryMessage;
+            model.StockMessage = data.Qty <= 0 ? "(" + data.InventoryMessage + ")" : "";
             model.IsAvailableForSale = data.IsAvailableForSale;
         }
 
@@ -444,91 +361,6 @@ namespace SwetNation.Web
                     model.RelatedItems.Add(item);
                 }
             }
-        }
-
-        private void ParseSelections(ProductPageViewModel model)
-        {
-            OptionSelectionList result = new OptionSelectionList();
-            foreach (Option opt in model.LocalProduct.Options)
-            {
-                OptionSelection selected = opt.ParseFromForm(Request.Form);
-                if (selected != null)
-                {
-                    result.Add(selected);
-                }
-            }
-            model.Selections = result;
-        }
-
-        private void DetermineQuantityToAdd(ProductPageViewModel model)
-        {
-            int quantity = 0;
-            string formQuantity = Request.Form["qty"];
-            if (int.TryParse(formQuantity, out quantity))
-            {
-                if (model.LocalProduct.MinimumQty > 0)
-                {
-                    if (quantity < model.LocalProduct.MinimumQty)
-                    {
-                        //////////////////////////////////////////////////////////////////////
-                        // TO DO
-                        //////////////////////////////////////////////////////////////////////
-                        //FlashWarning(SiteTerms.ReplaceTermVariable(SiteTerms.GetTerm(SiteTermIds.ProductPageMinimumQuantityError), "quantity", model.LocalProduct.MinimumQty.ToString()));
-                        quantity = -1;
-                    }
-                }
-            }
-            else
-            {
-                if (model.LocalProduct.MinimumQty > 0)
-                {
-                    quantity = model.LocalProduct.MinimumQty;
-                }
-                else
-                {
-                    quantity = 1;
-                }
-            }
-
-            model.Quantity = quantity;
-        }
-
-        private bool ValidateSelections(ProductPageViewModel model)
-        {
-            bool result = false;
-
-            if ((model.LocalProduct.HasOptions()))
-            {
-                if ((model.LocalProduct.HasVariants()))
-                {
-                    Variant v = model.LocalProduct.Variants.FindBySelectionData(model.Selections, model.LocalProduct.Options);
-                    if ((v != null))
-                    {
-                        result = true;
-                    }
-                    else
-                    {
-                        model.ValidationMessage = "<div class=\"flash-message-warning\">The options you've selected aren't available at the moment. Please select different options.</div>";
-                    }
-                }
-                else
-                {
-                    result = true;
-                }
-
-                // Make sure no "labels" are selected
-                if (model.Selections.HasLabelsSelected())
-                {
-                    result = false;
-                    model.ValidationMessage = "<div class=\"flash-message-warning\">Please make all selections before adding to cart.</div>";
-                }
-            }
-            else
-            {
-                result = true;
-            }
-
-            return result;
         }
     }
 }

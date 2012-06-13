@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftBodyContent" runat="server">
 	<div class="header-title-medium">RETURNS:</div>
     <p>
-        We at Swet Nation take the time to research and offer amazing sports products to our members.  We always want to be sure that our members are satisfied with their purchases.  In the event that you are not 100% satisfied, we will happily accept returns on eligible items.  Approved returns will be credited in the form of a <u>merchandise credit</u> which will be applied to your account.  PLEASE NOTE: Items must be unused, unworn, in original packaging and will all original product tags attached.
+        We at Swet Nation take the time to research and offer amazing sports products to our members. We always want to be sure that our members are satisfied with their purchases. In the event that you are not 100% satisfied, we will happily accept returns on eligible items that are received within 30 days from the date the item was originally shipped. Approved returns will be credited in the form of a merchandise creditwhich will be applied to your account.
     </p>
     <p>
         To initiate a return, please email <a href="mailto:support@swetnation.com">support@swetnation.com</a> with the order number, item in which you wish to return, reason for return and we will process the return in the timely manner.

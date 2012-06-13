@@ -31,6 +31,16 @@ namespace SwetNation.Web
             }
         }
 
+        public void btnAddCoupon_Click(object sender, EventArgs e)
+        {
+            Order Basket = SessionManager.CurrentShoppingCart(MTApp.OrderServices, MTApp.CurrentStore);
+            string code = txtCouponCode.Text ?? string.Empty;
+            Basket.AddCouponCode(code.Trim());
+            MTApp.CalculateOrderAndSave(Basket);
+            SessionManager.SaveOrderCookies(Basket, MTApp.CurrentStore);
+            Response.Redirect("Cart.aspx");
+        }
+
         protected void BindCartItems()
         {
             CartViewModel model = new CartViewModel();
@@ -65,7 +75,13 @@ namespace SwetNation.Web
             ////////////////////////////////////////////////////
             // TOTALS
             ////////////////////////////////////////////////////
-            litSubTotal.Text = model.CurrentOrder.OrderDiscountDetails.Count > 0 ? string.Format("{0:c}", model.CurrentOrder.TotalOrderAfterDiscounts) : string.Format("{0:c}", model.CurrentOrder.TotalOrderBeforeDiscounts);
+            if (model.CurrentOrder.OrderDiscountDetails.Count > 0)
+            {
+                pnlTotalDiscount.Visible = true;
+                litTotalOrderDiscounts.Text = string.Format("{0:c}", model.CurrentOrder.TotalOrderDiscounts);
+            }
+
+            litSubTotal.Text = string.Format("{0:c}", model.CurrentOrder.TotalOrderBeforeDiscounts);
             litTax.Text = string.Format("{0:c}", model.CurrentOrder.TotalTax);
             litShipping.Text = string.Format("{0:c}", model.CurrentOrder.TotalShippingAfterDiscounts);
             litGrandTotal.Text = string.Format("{0:c}", model.CurrentOrder.TotalGrand);

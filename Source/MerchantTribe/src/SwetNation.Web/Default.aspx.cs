@@ -26,17 +26,17 @@ namespace SwetNation.Web
             lstFeaturedBrands.DataBind();
         }
 
-        public string ConvertSaleEndDateToString(DateTime saleEndsDate)
+        public string ConvertSaleEndDateToString(string brand, DateTime saleEndsDate)
         {
             string saleEndsString = "";
             if (saleEndsDate != DateTime.MinValue)
             {
-                saleEndsString = "SALE ENDS ON " + ConvertSaleEndDateToString(saleEndsDate.Month) + " " + saleEndsDate.Day;
+                saleEndsString = brand + " SALE ENDS ON " + ConvertSaleEndDateToString(saleEndsDate.Month) + " " + saleEndsDate.Day;
             }
             else
             {
-                saleEndsString = "SALE IS OPEN ENDED";
-            }            
+                saleEndsString = brand + " SALE IS APPROACHING";
+            }
             return saleEndsString;
         }
 

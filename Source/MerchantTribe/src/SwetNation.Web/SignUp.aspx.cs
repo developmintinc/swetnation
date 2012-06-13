@@ -6,22 +6,37 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SwetNation.Web.models;
 using MerchantTribe.Commerce;
-using MerchantTribe.Commerce.Membership;
+using MerchantTribe.Commerce.Contacts;
 using MerchantTribe.Commerce.Content;
+using MerchantTribe.Commerce.Marketing;
+using MerchantTribe.Commerce.Marketing.PromotionQualifications;
+using MerchantTribe.Commerce.Membership;
 using SwetNation.Web.Code;
 
 namespace SwetNation.Web
 {
     public partial class SignUp : BasePage
     {
+        Utilities _utilities;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            _utilities = new Utilities(MTApp);
             Session["messages"] = "";
-            litAgreedToTermsDescription.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditionsAgreement);
-            hypSiteTerms.NavigateUrl = "TermsOfUse.aspx";
-            hypSiteTerms.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditions);
-        }
 
+            if (!Page.IsPostBack)
+            {
+                if (Request.QueryString["InvitedBy"] != "")
+                {
+                    Session["InvitedBy"] = string.Format("{0}", Request.QueryString["InvitedBy"]);
+                }
+
+                litAgreedToTermsDescription.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditionsAgreement);
+                hypSiteTerms.NavigateUrl = "TermsOfUse.aspx";
+                hypSiteTerms.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditions);
+            }            
+        }
+                
         public void btnSignUp_Click(object sender, EventArgs e)
         {
             if (chkAgreed.Checked)
@@ -49,13 +64,35 @@ namespace SwetNation.Web
                     CustomerAccount u = new CustomerAccount();
                     if (u != null)
                     {
+                        ////////////////////////////////////////////////////////////////////
+                        // SETUP USER
+                        ////////////////////////////////////////////////////////////////////
                         u.FirstName = posted.FirstName.Trim();
                         u.LastName = posted.LastName.Trim();
                         u.Email = posted.Email.Trim();
                         u.Gender = posted.Gender;
-                        CreateUserStatus s = CreateUserStatus.None;
 
-                        // Create new user
+                        ////////////////////////////////////////////////////////////////////
+                        // SETUP REGION
+                        ////////////////////////////////////////////////////////////////////
+                        MerchantTribe.Web.Geography.RegionSnapShot shippingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
+                        shippingRegionSnapShot.Abbreviation = ddlState.SelectedItem.Value;
+                        shippingRegionSnapShot.Name = ddlState.SelectedItem.Text;
+
+                        ////////////////////////////////////////////////////////////////////
+                        // SETUP SHIPPING ADDRESS
+                        ////////////////////////////////////////////////////////////////////
+                        Address a = new Address();
+                        a.Bvin = System.Guid.NewGuid().ToString();
+                        a.City = txtCity.Text;
+                        a.PostalCode = txtPostalCode.Text;
+                        a.RegionData = shippingRegionSnapShot;
+                        u.ShippingAddress = a;
+
+                        ////////////////////////////////////////////////////////////////////
+                        // CREATE USER
+                        ////////////////////////////////////////////////////////////////////
+                        CreateUserStatus s = CreateUserStatus.None;
                         result = MTApp.MembershipServices.CreateCustomer(u, ref s, posted.Password.Trim());
                         if (result == false)
                         {
@@ -73,6 +110,19 @@ namespace SwetNation.Web
                         {
                             // Update bvin field so that next save will call updated instead of create
                             MerchantTribe.Web.Cookies.SetCookieString(WebAppSettings.CookieNameAuthenticationTokenCustomer(MTApp.CurrentStore.Id), u.Bvin, this.Request.RequestContext.HttpContext, false, new EventLog());
+
+                            if (string.Format("{0}", Session["InvitedBy"]) != "")
+                            {
+                                // SIGN UP NEW MEMBER WITH PROMO CODE
+                                //_utilities.CreatePromoForInvitedFriend(u.Email, false);
+                                
+                                // SIGN UP EXISITNG MEMBER WITH PROMO CODE
+                                _utilities.CreatePromoForInvitedFriend(string.Format("{0}", Session["InvitedBy"]), false);
+
+                                // SEND EMAIL TO EXISTING MEMBER INFORMING THEM OF PROMO CODE
+                                SendInvitationConfirmationEmail(u.FirstName + " " + u.LastName);
+                            }
+
                             Response.Redirect("~/Default.aspx");
                         }
                     }
@@ -116,6 +166,35 @@ namespace SwetNation.Web
                 }
             }
             return resp;
+        }
+
+        private void SendInvitationConfirmationEmail(string memberName)
+        {
+            ///////////////////////////////////////////////////////////////
+            // CREATE BODY MESSAGE
+            ///////////////////////////////////////////////////////////////
+            string emailAddress = string.Format("{0}", Session["InvitedBy"]);
+            string message = "You invited " + memberName + " to join Swet Nation and they did. Now you are rewarded with a $10 off your next purchase by using the following Promo Code: 'INVITE'.</a><br /><br />";
+
+            ///////////////////////////////////////////////////////////////
+            // CREATE MAIL MESSAGE
+            ///////////////////////////////////////////////////////////////
+            if (IsEmailSyntaxValid(emailAddress))
+            {
+                System.Net.Mail.MailAddress mailAddress = new System.Net.Mail.MailAddress("noreply@swetnation.com");
+                System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage();
+                m.IsBodyHtml = true;
+                m.From = mailAddress;
+                m.To.Add(emailAddress.Trim());
+                m.Subject = "Swet Nation :: $10 Off Your Next Order";
+                m.Body = message;
+                MerchantTribe.Commerce.Utilities.MailServices.SendMail(m);
+            }
+        }
+
+        private bool IsEmailSyntaxValid(string emailToValidate)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(emailToValidate, @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
         }
 
         private class ValidateModelResponse
