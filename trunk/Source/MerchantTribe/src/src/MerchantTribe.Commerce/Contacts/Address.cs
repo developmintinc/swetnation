@@ -311,7 +311,8 @@ namespace MerchantTribe.Commerce.Contacts
 		{
 			bool result = true;
 
-			if (this.Bvin.Trim().Length > 0) {
+            if (this.Bvin != null && this.Bvin.Trim().Length > 0)
+            {
 				return false;
 			}
 			if (this.FirstName.Trim().Length > 0) {

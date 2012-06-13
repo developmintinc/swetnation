@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Product.master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="SwetNation.Web.Products" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .disabled a.toggleLink { display: none; }
+    </style>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">
 	<uc:BreadcrumbBar ID="ucBreadcrumbBar" runat="server" PageName="Products" />
@@ -23,7 +26,7 @@
         </asp:Panel>        
     </div>
     <div class="one">
-        <asp:ListView runat="server" ID="lstProducts" GroupItemCount="3" OnItemCommand="lstProducts_ItemCommand">
+        <asp:ListView runat="server" ID="lstProducts" GroupItemCount="3">
             <LayoutTemplate>
                 <div style="width: 1000px;">
                     <asp:PlaceHolder runat="server" ID="groupPlaceHolder" />
@@ -34,17 +37,21 @@
                     <asp:PlaceHolder runat="server" ID="itemPlaceHolder" />
                 </div>
             </GroupTemplate>
-            <ItemTemplate>
+            <ItemTemplate>                
                 <div class="productItem">
-                    <div><img src='https://swetnation.com/shop/Images/sites/1/products/<%# Eval("Bvin") %>/<%# Eval("ImageFileSmall") %>' width='270' height='270' alt='<%# Eval("ProductName") %>' /></div>
                     <div>
-                        <br />
-                        <a href='ProductDetail.aspx?bvin=<%# Eval("Bvin") %>' class="button cube deep-red small">View Product</a>					    
+                        <a href='<%# Convert.ToBoolean(Eval("IsAvailableForSale")) ? "ProductDetail.aspx?bvin=" + Eval("LocalProduct.Bvin") : "#"  %>'>
+                            <img src='https://swetnation.com/shop/Images/sites/1/products/<%# Eval("LocalProduct.Bvin") %>/<%# Eval("LocalProduct.ImageFileSmall") %>' width='270' height='270' alt='<%# Eval("LocalProduct.ProductName") %>' />
+                        </a>
                     </div>
-                    <div style="margin-top:5px;"><strong><%# Eval("ProductName") %></strong></div>
+                    <div class='<%# Convert.ToBoolean(Eval("IsAvailableForSale")) ? "" : "disabled"  %>'>
+                        <br />
+                        <a href='ProductDetail.aspx?bvin=<%# Eval("LocalProduct.Bvin") %>' class="button cube deep-red small toggleLink">View Product</a>					    
+                    </div>
+                    <div style="margin-top:5px;"><strong><%# Eval("LocalProduct.ProductName")%> <span style="color:Red;"><%# Eval("StockMessage")%></span></strong></div>
                     <div>
-                        <strong style="text-decoration:line-through;">Retail: <%# String.Format("{0:C}", Eval("ListPrice"))%></strong> | 
-                        <strong style="color:Red;">Members: <%# String.Format("{0:C}", Eval("SitePrice"))%></strong>
+                        <strong style="text-decoration:line-through;">Retail: <%# String.Format("{0:C}", Eval("LocalProduct.ListPrice"))%></strong> | 
+                        <strong style="color:Red;">Members: <%# String.Format("{0:C}", Eval("LocalProduct.SitePrice"))%></strong>
                     </div>
                 </div>
             </ItemTemplate>

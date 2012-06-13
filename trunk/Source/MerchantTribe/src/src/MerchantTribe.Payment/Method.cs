@@ -7,14 +7,9 @@ namespace MerchantTribe.Payment
 {
     public abstract class Method
     {
-
         public abstract string Name { get; }
-
-        public abstract string Id { get; }        
-
-        public abstract void ProcessTransaction(Transaction t);
-        
-        public abstract MethodSettings BaseSettings { get; }
-        
+        public abstract string Id { get; }
+        public abstract void ProcessTransaction(Transaction t);        
+        public abstract MethodSettings BaseSettings { get; }        
     }
 }

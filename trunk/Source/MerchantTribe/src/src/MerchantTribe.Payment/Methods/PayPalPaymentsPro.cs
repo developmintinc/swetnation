@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using MerchantTribe.PaypalWebServices;
 using com.paypal.sdk.services;
 using com.paypal.soap.api;
+
 namespace MerchantTribe.Payment.Methods
 {
     public class PayPalPaymentsPro: Method
@@ -62,14 +62,10 @@ namespace MerchantTribe.Payment.Methods
             
             try
             {
-                string OrderNumber = string.Empty;
-                                
+                string OrderNumber = string.Empty;                                
                 OrderNumber = t.MerchantInvoiceNumber;
                 // Solves Duplicate Order Number Problem
                 OrderNumber = OrderNumber + System.Guid.NewGuid().ToString();
-
-                //        Dim cardType As Core.Payment.CreditCardType = Core.Payment.CreditCardType.FindByCode(data.Payment.CreditCardType)
-                
                 
                 DoDirectPaymentResponseType authResponse = ppAPI.DoDirectPayment(String.Format("{0:N}", t.Amount),
                     t.Customer.LastName,
@@ -147,7 +143,6 @@ namespace MerchantTribe.Payment.Methods
             try
             {
                 string OrderNumber = string.Empty;
-
                 OrderNumber = t.MerchantInvoiceNumber;
                 // Solves Duplicate Order Number Problem
                 OrderNumber = OrderNumber + System.Guid.NewGuid().ToString();
@@ -178,8 +173,6 @@ namespace MerchantTribe.Payment.Methods
                     this.ConvertCountryName(t.Customer.ShipCountry),
                     OrderNumber);
 
-
-
                 if ((chargeResponse.Ack == AckCodeType.Success) || (chargeResponse.Ack == AckCodeType.SuccessWithWarning))
                 {
                     t.Result.ReferenceNumber = chargeResponse.TransactionID;
@@ -208,11 +201,8 @@ namespace MerchantTribe.Payment.Methods
             try
             {
                 string OrderNumber = string.Empty;
-
                 OrderNumber = t.MerchantInvoiceNumber;
-
                 DoCaptureResponseType captureResponse = ppAPI.DoCapture(t.PreviousTransactionNumber, "Thank you for your payment.", String.Format("{0:N}", t.Amount), CurrencyCodeType.USD, OrderNumber);
-
                 if ((captureResponse.Ack == AckCodeType.Success) || (captureResponse.Ack == AckCodeType.SuccessWithWarning))
                 {
                     t.Result.ReferenceNumber = captureResponse.DoCaptureResponseDetails.PaymentInfo.TransactionID;
@@ -270,9 +260,7 @@ namespace MerchantTribe.Payment.Methods
             {
                 //per paypal's request, the refund type should always be set to partial
                 string refundType = "Partial";
-                RefundTransactionResponseType refundResponse = ppAPI.RefundTransaction(
-                    t.PreviousTransactionNumber, refundType, String.Format("{0:N}", t.Amount));
-
+                RefundTransactionResponseType refundResponse = ppAPI.RefundTransaction(t.PreviousTransactionNumber, refundType, String.Format("{0:N}", t.Amount));
                 if ((refundResponse.Ack == AckCodeType.Success) || (refundResponse.Ack == AckCodeType.SuccessWithWarning))
                 {
                     t.Result.ReferenceNumber = refundResponse.RefundTransactionID;
@@ -301,7 +289,6 @@ namespace MerchantTribe.Payment.Methods
             try
             {
                 DoVoidResponseType voidResponse = ppAPI.DoVoid(t.PreviousTransactionNumber, "Transaction Voided");
-
                 if ((voidResponse.Ack == AckCodeType.Success) || (voidResponse.Ack == AckCodeType.SuccessWithWarning))
                 {
                     t.Result.Succeeded = true;

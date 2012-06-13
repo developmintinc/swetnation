@@ -98,6 +98,7 @@
     <Content Include="css\dark-orange.css" />
     <Content Include="css\dark-theme.css" />
     <Content Include="css\grey-theme.css" />
+    <Content Include="css\ie.css" />
     <Content Include="css\light-blue.css" />
     <Content Include="css\light-green.css" />
     <Content Include="css\nivo-slider.css" />
@@ -117,6 +118,7 @@
     <Content Include="EstimateShipping.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="images\3d-slider\slider-960-01.jpg" />
     <Content Include="images\3d-slider\slider-960-02.jpg" />
     <Content Include="images\3d-slider\slider-960-03.jpg" />
@@ -582,6 +584,7 @@
     <Content Include="SignUp.aspx" />
     <Content Include="TermsOfUse.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="TestNoMaster.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -632,6 +635,7 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Code\Utilities.cs" />
     <Compile Include="ContactUs.aspx.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -764,6 +768,9 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="InviteFriend.aspx.cs">
       <DependentUpon>InviteFriend.aspx</DependentUpon>
@@ -910,6 +917,20 @@
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test.Master.cs">
+      <DependentUpon>Test.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.Master.designer.cs">
+      <DependentUpon>Test.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TestNoMaster.aspx.cs">
+      <DependentUpon>TestNoMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestNoMaster.aspx.designer.cs">
+      <DependentUpon>TestNoMaster.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="js\piecemaker-2\piecemaker.fla" />
@@ -919,6 +940,7 @@
     <Content Include="LeftSidebar.master" />
     <Content Include="RightSidebar.master" />
     <Content Include="Product.master" />
+    <Content Include="Test.Master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\MerchantTribe.Billing\MerchantTribe.Billing.csproj">
@@ -965,7 +987,7 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
+          <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>50129</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>

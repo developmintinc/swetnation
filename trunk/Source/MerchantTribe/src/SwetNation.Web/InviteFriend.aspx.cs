@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MerchantTribe.Commerce;
+using MerchantTribe.Commerce.Membership;
 using SwetNation.Web.Code;
 
 namespace SwetNation.Web
@@ -13,19 +15,30 @@ namespace SwetNation.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             this.IsAuthorized();
-            Session["messages"] = ""; ;
+            Session["messages"] = "";
         }
 
         public void btnSubmit_Click(object sender, EventArgs e)
         {
             ///////////////////////////////////////////////////////////////
+            // CAPTURE MEMBERS EMAIL ADDRESS
+            ///////////////////////////////////////////////////////////////
+            string memberEmail = "";
+            string memberName = "";
+            CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
+            if (u != null)
+            {
+                memberEmail = u.Email;
+                memberName = u.FirstName + " " + u.LastName;
+            }
+
+            ///////////////////////////////////////////////////////////////
             // CREATE BODY MESSAGE
             ///////////////////////////////////////////////////////////////
             string[] emailAddresses = txtFriendsEmail.Text.Trim().Split(';');
-            string message = "You are invited to join <a href='https://swetnation.com/web/join.aspx'>Swet Nation</a>"; ;
+            string message = "<a href='https://swetnation.com/SingUp.aspx?InvitedBy=" + memberEmail + "'>You are invited to join Swet Nation by " + memberName + ". After you sign up and become a member by following this link to Swet Nation you will be able to use the following Promo Code: 'INVITE' and get $10 off your first purchase.</a><br /><br />";
             if (txtMessage.Text != "")
             {
-                message = "You are invited to join <a href='https://swetnation.com/web/join.aspx'>Swet Nation</a></br></br>";
                 message += txtMessage.Text;
             }
 
@@ -41,7 +54,7 @@ namespace SwetNation.Web
                     m.IsBodyHtml = true;
                     m.From = mailAddress;
                     m.To.Add(emailAddress.Trim());
-                    m.Subject = "Swet Nation :: Invitation";
+                    m.Subject = "Swet Nation :: Members Only Invitation";
                     m.Body = message;
                     if (MerchantTribe.Commerce.Utilities.MailServices.SendMail(m))
                     {

@@ -29,10 +29,7 @@ namespace MerchantTribe.Commerce.Payment
 
         public override void ProcessTransaction(Transaction t)
         {
-            Membership.CustomerPointsManager manager =
-                Membership.CustomerPointsManager.InstantiateForDatabase(Settings.PointsIssuedPerDollarSpent,
-                                                    Settings.PointsNeededForDollarCredit,
-                                                    RequestContext.GetCurrentRequestContext().CurrentStore.Id);
+            Membership.CustomerPointsManager manager = Membership.CustomerPointsManager.InstantiateForDatabase(Settings.PointsIssuedPerDollarSpent, Settings.PointsNeededForDollarCredit, RequestContext.GetCurrentRequestContext().CurrentStore.Id);
             switch (t.Action)
             {
                 case ActionType.RewardPointsBalanceInquiry:

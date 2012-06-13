@@ -17,11 +17,11 @@ namespace SwetNation.Web.controls
             CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
             if (u != null)
             {
-                litMemberName.Text = "Welcome " + u.FirstName + " <a href='SignOut.aspx' style='color:#fff;'>(sign out)</a>";
+                litMemberName.Text = "<span class='white'>Welcome " + u.FirstName + "</span> <a href='SignOut.aspx' class='white'>(sign out)</a>";
             }
             else
             {
-                litMemberName.Text = "<a href='SignIn.aspx' style='color:#fff;'>Login</a>";
+                litMemberName.Text = "<a href='SignIn.aspx' class='white'>Login</a>";
             }
         }
     }

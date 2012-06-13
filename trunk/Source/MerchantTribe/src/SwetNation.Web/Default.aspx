@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SwetNation.Web.Index" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainHeadContent" runat="Server">
-    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainBodyContent" runat="Server">
     <div id="content">
@@ -23,9 +25,7 @@
                             <img src='https://swetnation.com/shop/images/sites/1/manufacturers/<%# Eval("Bvin") %>/medium/<%# Eval("ImageFileSmall") %>' border="0" alt="<%# Eval("DisplayName") %>" />
                             <h2>
                                 <span>
-                                    SHOP <%# Eval("DisplayName").ToString().ToUpper() %>
-                                    <span class='spacer'></span><br /><span class='spacer'></span>
-                                    <%# ConvertSaleEndDateToString(Convert.ToDateTime(Eval("SaleEnds"))) %>
+                                    <%# ConvertSaleEndDateToString(Eval("DisplayName").ToString().ToUpper(), Convert.ToDateTime(Eval("SaleEnds"))) %>
                                 </span>
                             </h2>
                         </div>
@@ -37,9 +37,8 @@
                             <img src='https://swetnation.com/shop/images/sites/1/manufacturers/<%# Eval("Bvin") %>/medium/<%# Eval("ImageFileSmall") %>' border="0" alt="<%# Eval("DisplayName") %>" />
                             <h2>
                                 <span>
-                                    SHOP <%# Eval("DisplayName").ToString().ToUpper() %>
-                                    <span class='spacer'></span><br /><span class='spacer'></span>
-                                    <%# ConvertSaleEndDateToString(Convert.ToDateTime(Eval("SaleEnds"))) %>
+                                    <!--<span class='spacer'></span><br /><span class='spacer'></span>-->
+                                    <%# ConvertSaleEndDateToString(Eval("DisplayName").ToString().ToUpper(), Convert.ToDateTime(Eval("SaleEnds"))) %>
                                 </span>
                             </h2>
                         </div>

@@ -301,8 +301,8 @@ namespace MerchantTribeStore.Controllers
         private void LoadPaymentFromForm(CheckoutViewModel model)
         {
             model.PaymentViewModel.SelectedPayment = Request.Form["paymethod"] ?? string.Empty;
-            model.PaymentViewModel.DataPurchaseOrderNumber = Request.Form["purchaseorder"] ?? string.Empty;
-            model.PaymentViewModel.DataCompanyAccountNumber = Request.Form["companyaccount"] ?? string.Empty;
+            model.PaymentViewModel.DataPurchaseOrderNumber = Request.Form["ponumber"] ?? string.Empty;
+            model.PaymentViewModel.DataCompanyAccountNumber = Request.Form["accountnumber"] ?? string.Empty;
             model.PaymentViewModel.DataCreditCard.CardHolderName = Request.Form["cccardholder"] ?? string.Empty;
             model.PaymentViewModel.DataCreditCard.CardNumber = MerchantTribe.Payment.CardValidator.CleanCardNumber(Request.Form["cccardnumber"] ?? string.Empty);
             int expMonth = -1;

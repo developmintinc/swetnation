@@ -40,6 +40,24 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.Literal litSubTotal;
         
         /// <summary>
+        /// pnlTotalDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlTotalDiscount;
+        
+        /// <summary>
+        /// litTotalOrderDiscounts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTotalOrderDiscounts;
+        
+        /// <summary>
         /// litTax control.
         /// </summary>
         /// <remarks>
@@ -103,12 +121,21 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden shippingrate;
         
         /// <summary>
-        /// LinkButton3 control.
+        /// txtCouponCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        protected global::System.Web.UI.WebControls.TextBox txtCouponCode;
+        
+        /// <summary>
+        /// btnAddCoupon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnAddCoupon;
     }
 }

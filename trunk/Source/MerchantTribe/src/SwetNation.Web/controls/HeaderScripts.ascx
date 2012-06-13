@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderScripts.ascx.cs" Inherits="SwetNation.Web.controls.HeaderScripts" %>
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> JQUERY -->
 <script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/cycle-slider/cycle.js"></script>
 <script type="text/javascript" src="js/nivo-slider/jquery.nivo.slider.js"></script>

@@ -515,9 +515,7 @@ namespace MerchantTribe.Commerce.Orders
             t.PreviousTransactionAuthCode = previousTransaction.RefNum2;
             OrderTransaction ot = new OrderTransaction(t);
 
-            if (previousTransaction.Action != ActionType.CreditCardCapture 
-                && previousTransaction.Action != ActionType.CreditCardCharge
-                && previousTransaction.Action != ActionType.CreditCardInfo)
+            if (previousTransaction.Action != ActionType.CreditCardCapture && previousTransaction.Action != ActionType.CreditCardCharge && previousTransaction.Action != ActionType.CreditCardInfo)
             {
                 ot.Success = false;
                 ot.Messages = "Transaction must be CC capture or charge type to refund.";
@@ -532,6 +530,7 @@ namespace MerchantTribe.Commerce.Orders
                 ot = new OrderTransaction(t);
                 ot.LinkedToTransaction = previousTransaction.IdAsString;
             }
+
             return svc.AddPaymentTransactionToOrder(o, ot, this.MTApp);
         }
         public bool CreditCardVoid(string previousTransaction, decimal amount)
@@ -1285,11 +1284,8 @@ namespace MerchantTribe.Commerce.Orders
 
             foreach (Orders.OrderTransaction p in svc.Transactions.FindForOrder(o.bvin))
             {
-
                 List<Orders.OrderTransaction> transactions = svc.Transactions.FindForOrder(o.bvin);
-
-                if (p.Action == MerchantTribe.Payment.ActionType.RewardPointsInfo ||
-                    p.Action == MerchantTribe.Payment.ActionType.RewardPointsHold)
+                if (p.Action == MerchantTribe.Payment.ActionType.RewardPointsInfo || p.Action == MerchantTribe.Payment.ActionType.RewardPointsHold)
                 {
                     // if we already have an auth or charge on the card, skip
                     if (p.HasSuccessfulLinkedAction(MerchantTribe.Payment.ActionType.RewardPointsDecrease, transactions) ||

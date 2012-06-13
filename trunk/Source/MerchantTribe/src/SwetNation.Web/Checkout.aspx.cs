@@ -25,6 +25,7 @@ namespace SwetNation.Web
     // SECTIONS:
     // SHIPPING ADDRESS
     // BILLING ADDRESS
+    // REWARD POINTS
     // PAYMENT METHODS
     // SPECIAL INSTRUCTIONS
     // TERMS
@@ -39,6 +40,8 @@ namespace SwetNation.Web
             Session["messages"] = "";
             if (!Page.IsPostBack)
             {
+                // First time in I disable the validation for billing address
+                SetShippingValidationGroup(true);
                 CheckoutViewModel model = IndexSetup();
             }                
         }
@@ -51,26 +54,14 @@ namespace SwetNation.Web
             CheckoutViewModel model = new CheckoutViewModel();
             LoadAddress();
             LoadOrder(model);
+            CheckForPoints(model);
 
             // Labels
             model.LabelRewardPoints = MTApp.CurrentStore.Settings.RewardsPointsName;
             litRewardPoints.Text = model.LabelRewardPoints;
 
             // Agree Checkbox
-            if (MTApp.CurrentStore.Settings.ForceTermsAgreement)
-            {
-                /*
-                pnlShowAgreeToTerms.Visible = true;
-                model.ShowAgreeToTerms = true;
-                model.AgreedToTerms = chkAgreed.Checked;
-                model.AgreedToTermsDescription = SiteTerms.GetTerm(SiteTermIds.TermsAndConditionsAgreement);
-                litAgreedToTermsDescription.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditionsAgreement);
-                model.LabelTerms = SiteTerms.GetTerm(SiteTermIds.TermsAndConditions);
-                hypSiteTerms.NavigateUrl = "TermsOfUse.aspx";
-                hypSiteTerms.Text = SiteTerms.GetTerm(SiteTermIds.TermsAndConditions);
-                */
-            }
-            else
+            if (!MTApp.CurrentStore.Settings.ForceTermsAgreement)
             {
                 pnlShowAgreeToTerms.Visible = false;
                 model.ShowAgreeToTerms = false;
@@ -162,38 +153,6 @@ namespace SwetNation.Web
 
             // Form Values
             txtSpecialInstructions.Text = model.CurrentOrder.Instructions;
-
-            ////////////////////////////////////////////////////
-            // SHIPPING
-            ////////////////////////////////////////////////////
-            /*
-            bool freeShipping = true;
-            foreach (LineItem li in model.CurrentOrder.Items)
-            {
-                CartLineItemViewModel ci = new CartLineItemViewModel();
-                ci.Item = li;
-
-                MerchantTribe.Commerce.Catalog.Product associatedProduct = li.GetAssociatedProduct(MTApp);
-                if (associatedProduct != null)
-                {
-                    if (freeShipping)
-                        freeShipping = associatedProduct.ShippingDetails.IsNonShipping;
-                }
-            }
-            */
-
-            /*
-            MerchantTribe.Commerce.Utilities.SortableCollection<MerchantTribe.Commerce.Shipping.ShippingRateDisplay> Rates = MTApp.OrderServices.FindAvailableShippingRates(model.CurrentOrder);
-            if (!freeShipping)
-            {
-                foreach (MerchantTribe.Commerce.Shipping.ShippingRateDisplay rate in Rates)
-                {
-                    model.CurrentOrder.TotalShippingBeforeDiscounts = rate.Rate;
-                    break;
-                }
-            }
-            */
-
             litTotalsAsTable.Text = model.CurrentOrder.TotalsAsTable();
 
             // Email
@@ -210,6 +169,37 @@ namespace SwetNation.Web
             // Order Items
             ucViewOrderItems.items = model.CurrentOrder.Items;
             ucViewOrderItems.LoadOrderItems();
+        }
+
+        ////////////////////////////////////////////////////////////////////
+        // REWARD POINTS
+        ////////////////////////////////////////////////////////////////////
+        void CheckForPoints(CheckoutViewModel model)
+        {
+            pnlShowRewards.Visible = false;
+
+            if (model.CurrentCustomer == null || model.CurrentCustomer.Bvin == string.Empty) return;
+
+            string uid = model.CurrentCustomer.Bvin;
+            int points = MTApp.CustomerPointsManager.FindAvailablePoints(uid);
+            decimal pointsValue = MTApp.CustomerPointsManager.DollarCreditForPoints(points);
+            if (points > 0 && MTApp.CurrentStore.Settings.RewardsPointsOnPurchasesActive)
+            {
+                pnlShowRewards.Visible = true;
+                int potentialPointsToUse = MTApp.CustomerPointsManager.PointsNeededForPurchaseAmount(model.CurrentOrder.TotalOrderBeforeDiscounts);
+                int amountToUse = 0;
+                if (points > potentialPointsToUse)
+                {
+                    amountToUse = potentialPointsToUse;
+                }
+                else
+                {
+                    amountToUse = points;
+                }
+                litRewardPointsAvailable.Text = "You have [" + pointsValue.ToString("C") + "] " + model.LabelRewardPoints + " available.";
+                decimal dollarValue = MTApp.CustomerPointsManager.DollarCreditForPoints(amountToUse);
+                litLabelRewardsUse.Text = "Use [" + dollarValue.ToString("C") + "] " + model.LabelRewardPoints;
+            }
         }
                 
         ////////////////////////////////////////////////////////////////////
@@ -294,25 +284,44 @@ namespace SwetNation.Web
         protected void chkShippingSame_CheckedChanged(Object sender, EventArgs args)
         {
             CheckBox linkedItem = sender as CheckBox;
-            if (linkedItem.Checked)
+            if (!linkedItem.Checked)
             {
-                txtBillingFirstName.Text = txtShippingFirstName.Text;
-                txtBillingLastName.Text = txtShippingLastName.Text;
-                txtBillingAddress1.Text = txtShippingAddress1.Text;
-                txtBillingAddress2.Text = txtShippingAddress2.Text;
-                txtBillingCity.Text = txtShippingCity.Text;
-                ddlBillingState.SelectedIndex = ddlShippingState.Items.IndexOf(ddlShippingState.Items.FindByValue(ddlShippingState.SelectedItem.Value));
-                txtBillingPostalCode.Text = txtShippingPostalCode.Text;
+                pnlShippingSection.Visible = true;
+                SetShippingValidationGroup(false);
+                txtShippingFirstName.Text = "";
+                txtShippingLastName.Text = "";
+                txtShippingAddress1.Text = "";
+                txtShippingAddress2.Text = "";
+                txtShippingCity.Text = "";
+                ddlShippingState.SelectedIndex = 0;
+                txtShippingPostalCode.Text = "";                
             }
             else
             {
-                txtBillingFirstName.Text = "";
-                txtBillingLastName.Text = "";
-                txtBillingAddress1.Text = "";
-                txtBillingAddress2.Text = "";
-                txtBillingCity.Text = "";
-                ddlBillingState.SelectedIndex = 0;
-                txtBillingPostalCode.Text = "";
+                pnlShippingSection.Visible = false;
+                SetShippingValidationGroup(true);
+            }
+        }
+
+        private void SetShippingValidationGroup(bool disable)
+        {
+            if (disable)
+            {
+                rfvShippingFirstName.ValidationGroup = "";
+                rfvShippingLastName.ValidationGroup = "";
+                rfvShippingAddress1.ValidationGroup = "";
+                rfvShippingCity.ValidationGroup = "";
+                rfvShippingState.ValidationGroup = "";
+                rfvShippingPostalCode.ValidationGroup = "";
+            }
+            else
+            {
+                rfvShippingFirstName.ValidationGroup = "vgMyAccount";
+                rfvShippingLastName.ValidationGroup = "vgMyAccount";
+                rfvShippingAddress1.ValidationGroup = "vgMyAccount";
+                rfvShippingCity.ValidationGroup = "vgMyAccount";
+                rfvShippingState.ValidationGroup = "vgMyAccount";
+                rfvShippingPostalCode.ValidationGroup = "vgMyAccount";
             }
         }
 
@@ -322,19 +331,12 @@ namespace SwetNation.Web
             if (u != null)
             {
                 ////////////////////////////////////////////////////////////////////
-                // SETUP REGION
+                // SAVE ADDRESSES
                 ////////////////////////////////////////////////////////////////////
                 MerchantTribe.Web.Geography.RegionSnapShot shippingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
                 shippingRegionSnapShot.Abbreviation = ddlShippingState.SelectedItem.Value;
                 shippingRegionSnapShot.Name = ddlShippingState.SelectedItem.Text;
 
-                MerchantTribe.Web.Geography.RegionSnapShot billingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
-                billingRegionSnapShot.Abbreviation = ddlBillingState.SelectedItem.Value;
-                billingRegionSnapShot.Name = ddlBillingState.SelectedItem.Text;
-
-                ////////////////////////////////////////////////////////////////////
-                // SAVE ADDRESSES
-                ////////////////////////////////////////////////////////////////////
                 Address s = new Address();
                 s.Bvin = hdfShippingAddressBvin.Value;
                 s.FirstName = txtShippingFirstName.Text;
@@ -347,13 +349,30 @@ namespace SwetNation.Web
 
                 Address b = new Address();
                 b.Bvin = hdfBillingAddressBvin.Value;
-                b.FirstName = txtBillingFirstName.Text;
-                b.LastName = txtBillingLastName.Text;
-                b.Line1 = txtBillingAddress1.Text;
-                b.Line2 = txtBillingAddress2.Text;
-                b.City = txtBillingCity.Text;
-                b.PostalCode = txtBillingPostalCode.Text;
-                b.RegionData = billingRegionSnapShot;
+                if (chkShippingSame.Checked)
+                {                    
+                    b.FirstName = s.FirstName;
+                    b.LastName = s.LastName;
+                    b.Line1 = s.Line1;
+                    b.Line2 = s.Line2;
+                    b.City = s.City;
+                    b.PostalCode = s.PostalCode;
+                    b.RegionData = s.RegionData;
+                }
+                else
+                {
+                    MerchantTribe.Web.Geography.RegionSnapShot billingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
+                    billingRegionSnapShot.Abbreviation = ddlBillingState.SelectedItem.Value;
+                    billingRegionSnapShot.Name = ddlBillingState.SelectedItem.Text;
+
+                    b.FirstName = txtBillingFirstName.Text;
+                    b.LastName = txtBillingLastName.Text;
+                    b.Line1 = txtBillingAddress1.Text;
+                    b.Line2 = txtBillingAddress2.Text;
+                    b.City = txtBillingCity.Text;
+                    b.PostalCode = txtBillingPostalCode.Text;
+                    b.RegionData = billingRegionSnapShot;
+                }
 
                 ////////////////////////////////////////////////////////////////////
                 // SAVE ADDRESS TO SHIPPING AND BILLING
@@ -398,17 +417,6 @@ namespace SwetNation.Web
         {
             UpdateAddress();
 
-            // Addresses
-            //model.BillShipSame = (chkBillSame.Checked);
-
-            /*
-            LoadAddressFromForm("shipping", model.CurrentOrder.ShippingAddress);
-            LoadAddressFromForm("billing", model.CurrentOrder.BillingAddress);
-            model.CurrentOrder.ShippingAddress.CopyTo(model.CurrentOrder.BillingAddress);
-            model.CurrentOrder.BillingAddress.CopyTo(model.CurrentCustomer.BillingAddress);
-            model.CurrentOrder.ShippingAddress.CopyTo(model.CurrentOrder.ShippingAddress);
-            */
-
             // Save addresses to customer account
             MTApp.MembershipServices.Customers.Update(model.CurrentCustomer);
 
@@ -419,6 +427,10 @@ namespace SwetNation.Web
             // Save Values so far in case of later errors
             MTApp.CalculateOrder(model.CurrentOrder);
 
+            // Save Payment Information                    
+            model.UseRewardsPoints = radUseRewardsPoints.Checked;
+            ApplyRewardsPoints(model);
+
             // Payment Methods
             LoadPaymentFromForm(model);
             SavePaymentSelections(model);
@@ -428,6 +440,45 @@ namespace SwetNation.Web
             // Save all the changes to the order
             MTApp.OrderServices.Orders.Update(model.CurrentOrder);
             SessionManager.SaveOrderCookies(model.CurrentOrder, MTApp.CurrentStore);
+        }
+
+        private void ApplyRewardsPoints(CheckoutViewModel model)
+        {
+            // Remove any current points info transactions
+            foreach (OrderTransaction t in MTApp.OrderServices.Transactions.FindForOrder(model.CurrentOrder.bvin))
+            {
+                if (t.Action == MerchantTribe.Payment.ActionType.RewardPointsInfo)
+                {
+                    MTApp.OrderServices.Transactions.Delete(t.Id);
+                }
+            }
+
+            // Don't add if we're not using points
+            if (!model.UseRewardsPoints) return;
+
+            // Apply Info to Order
+            OrderPaymentManager payManager = new OrderPaymentManager(model.CurrentOrder, MTApp);
+            payManager.RewardsPointsAddInfo(RewardsPotentialCredit(model));
+        }
+
+        private decimal RewardsPotentialCredit(CheckoutViewModel model)
+        {
+            decimal result = 0;
+            if (!model.UseRewardsPoints) return result;
+
+            int points = MTApp.CustomerPointsManager.FindAvailablePoints(model.CurrentCustomer.Bvin);
+            int potentialPointsToUse = MTApp.CustomerPointsManager.PointsNeededForPurchaseAmount(model.CurrentOrder.TotalOrderAfterDiscounts);
+            int amountToUse = 0;
+            if (points > potentialPointsToUse)
+            {
+                amountToUse = potentialPointsToUse;
+            }
+            else
+            {
+                amountToUse = points;
+            }
+            result = MTApp.CustomerPointsManager.DollarCreditForPoints(amountToUse);
+            return result;
         }
 
         private void LoadPaymentFromForm(CheckoutViewModel model)
@@ -655,6 +706,44 @@ namespace SwetNation.Web
                     }
                 }
             }
+        }
+
+        protected void radUseRewardsPoints_CheckedChanged(object sender, System.EventArgs e)
+        {
+            if (radUseRewardsPoints.Checked == true)
+            {
+                rfvCCNumber.ValidationGroup = "";
+                rfvSecurityCode.ValidationGroup = "";
+                rfvCCCardHolder.ValidationGroup = "";
+            }
+            else
+            {
+                rfvCCNumber.ValidationGroup = "vgMyAccount";
+                rfvSecurityCode.ValidationGroup = "vgMyAccount";
+                rfvCCCardHolder.ValidationGroup = "vgMyAccount";
+            }
+        }
+
+        public void lnkCancelOrder_Click(Object sender, EventArgs args)
+        {
+            string bvin = SessionManager.GetCurrentPaymentPendingCartId(MTApp.CurrentStore);
+            if (bvin.Trim().Length < 1) Response.Redirect("Cart.aspx");
+
+            Order Basket = MTApp.OrderServices.Orders.FindForCurrentStore(bvin);
+            if (Basket != null)
+            {
+                Basket.StatusCode = OrderStatusCode.Cancelled;
+                Basket.StatusName = "Cancelled";
+
+                OrderNote n = new OrderNote();
+                n.IsPublic = true;
+                n.Note = "Cancelled by Customer";
+                Basket.Notes.Add(n);
+
+                MTApp.OrderServices.Orders.Update(Basket);
+                SessionManager.SetCurrentPaymentPendingCartId(MTApp.CurrentStore, string.Empty);
+            }
+            Response.Redirect("Cart.aspx");
         }
     }
 }

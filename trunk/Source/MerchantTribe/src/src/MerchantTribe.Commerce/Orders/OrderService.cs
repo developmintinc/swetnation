@@ -32,8 +32,8 @@ namespace MerchantTribe.Commerce.Orders
                                       OrderTransactionRepository.InstantiateForMemory(c),
                                       ShippingMethodRepository.InstantiateForMemory(c),
                                       Accounts.StoreSettingsRepository.InstantiateForMemory(c));
-
         }
+
         public static OrderService InstantiateForDatabase(RequestContext c)
         {
             return new OrderService(c,
@@ -56,6 +56,7 @@ namespace MerchantTribe.Commerce.Orders
             Transactions = OrderTransactionRepository.InstantiateForDatabase(c);
             ShippingMethods = ShippingMethodRepository.InstantiateForDatabase(c);
         }
+
         public OrderService(RequestContext c, 
                             OrderRepository orders,
                             TaxRepository taxes, TaxScheduleRepository taxSchedules, 
@@ -74,8 +75,7 @@ namespace MerchantTribe.Commerce.Orders
             this.storeSettings = settings;
         }
 
-        // Taxes
-     
+        // Taxes     
         public bool TaxSchedulesDestroy(long scheduleId)
         {
             try
@@ -98,7 +98,6 @@ namespace MerchantTribe.Commerce.Orders
         public Zone ShippingZoneFindInList(List<Zone> zones, long id)
         {
             Zone result = null;
-
             foreach (Zone z in zones)
             {
                 if (z.Id == id)
@@ -109,6 +108,7 @@ namespace MerchantTribe.Commerce.Orders
 
             return result;
         }
+
         public bool ShippingZoneAddArea(long zoneId, string countryIso3, string regionAbbreviation)
         {
             Zone z = ShippingZones.Find(zoneId);
@@ -135,6 +135,7 @@ namespace MerchantTribe.Commerce.Orders
             }
             return false;
         }
+
         public bool ShippingZoneRemoveArea(long zoneId, string countryIso3, string regionAbbreviation)
         {
             Zone z = ShippingZones.Find(zoneId);
@@ -164,7 +165,7 @@ namespace MerchantTribe.Commerce.Orders
             return false;
         }
 
-        //Orders and Items                           
+        //Orders and Items
         public SystemOperationResult OrdersUpdateItemQuantity(long itemId, int quantity, Order o)
         {
             SystemOperationResult result = new SystemOperationResult();
@@ -206,7 +207,6 @@ namespace MerchantTribe.Commerce.Orders
             // Get Rates for each Method
             foreach (Shipping.ShippingMethod m in methods)
             {
-
                 Collection<Shipping.ShippingRateDisplay> tempRates = m.GetRates(o);
                 if (tempRates != null)
                 {
@@ -272,6 +272,7 @@ namespace MerchantTribe.Commerce.Orders
 
             return result;
         }
+
         public Shipping.ShippingRateDisplay OrdersFindShippingRateByUniqueKey(string key, Order o)
         {
             Utilities.SortableCollection<Shipping.ShippingRateDisplay> rates = FindAvailableShippingRates(o);
@@ -326,13 +327,16 @@ namespace MerchantTribe.Commerce.Orders
             {
                 return sb.ToString();
             }
+
             return "No Payment Methods Selected";
         }
+
         public bool AddPaymentTransactionToOrder(Order o, MerchantTribe.Payment.Transaction t, MerchantTribeApplication app)
         {
             Orders.OrderTransaction ot = new OrderTransaction(t);
             return AddPaymentTransactionToOrder(o, ot, app);
         }
+
         public bool AddPaymentTransactionToOrder(Order o, OrderTransaction t, MerchantTribeApplication app)
         {
             // Save Order First if no bvin
@@ -352,6 +356,7 @@ namespace MerchantTribe.Commerce.Orders
 
             return false;
         }
+
         public OrderPaymentSummary PaymentSummary(Order o)
         {
             OrderPaymentSummary result = new OrderPaymentSummary();
@@ -359,6 +364,7 @@ namespace MerchantTribe.Commerce.Orders
             o.PaymentStatus = EvaluatePaymentStatus(o, result);
             return result;
         }
+
         public OrderPaymentStatus EvaluatePaymentStatus(Order o)
         {
             OrderPaymentSummary s = new OrderPaymentSummary();
@@ -367,6 +373,7 @@ namespace MerchantTribe.Commerce.Orders
             s = null;
             return result;
         }
+
         private OrderPaymentStatus EvaluatePaymentStatus(Order o, OrderPaymentSummary s)
         {
             OrderPaymentStatus result = OrderPaymentStatus.Unknown;
@@ -399,6 +406,7 @@ namespace MerchantTribe.Commerce.Orders
             o.PaymentStatus = result;
             return result;
         }
+
         private void OnPaymentChanged(OrderPaymentStatus previousPaymentStatus, Order o, MerchantTribeApplication app)
         {
             BusinessRules.OrderTaskContext context = new BusinessRules.OrderTaskContext(app);
@@ -432,8 +440,10 @@ namespace MerchantTribe.Commerce.Orders
                 o.ShippingProviderServiceCode = r.ProviderServiceCode;
 				result = true;
 			}
+
 			return result;
-		}     
+		}
+
         public bool OrdersRequestShippingMethodByUniqueKey(string rateUniqueKey, Order o)
         {
             bool result = false;
@@ -468,8 +478,5 @@ namespace MerchantTribe.Commerce.Orders
         {
             return MerchantTribe.Commerce.Orders.OrderNumberGenerator.GenerateNewOrderNumber(storeId);
         }
-
-        
-
     }
 }
