@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Test.master.cs" Inherits="SwetNation.Web.Test1" %>
+<%@ Register Src="~/controls/HeaderStyles.ascx" TagName="HeaderStyles" TagPrefix="uc" %>
+<%@ Register Src="~/controls/HeaderScripts.ascx" TagName="HeaderScripts" TagPrefix="uc" %>
+<%@ Register Src="~/controls/HeaderFonts.ascx" TagName="HeaderFonts" TagPrefix="uc" %>
+<%@ Register Src="~/controls/PersonalProfileLinks.ascx" TagName="PersonalProfileLinks" TagPrefix="uc" %>
+<%@ Register Src="~/controls/SearchBox.ascx" TagName="SearchBox" TagPrefix="uc" %>
+<%@ Register Src="~/controls/SocialIcons.ascx" TagName="SocialIcons" TagPrefix="uc" %>
+<%@ Register Src="~/controls/PrimaryNav.ascx" TagName="PrimaryNav" TagPrefix="uc" %>
+<%@ Register Src="~/controls/FooterInformation.ascx" TagName="FooterInformation" TagPrefix="uc" %>
+<%@ Register Src="~/controls/FooterNav.ascx" TagName="FooterNav" TagPrefix="uc" %>
+<!doctype html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <uc:HeaderFonts ID="ucHeaderFonts" runat="server" />
+    <uc:HeaderStyles ID="ucHeaderStyles" runat="server" />
+    <uc:HeaderScripts ID="ucHeaderScripts" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+	    
+	    <div class="center-page">
+		    <div id="container">
+			    <div id="header-intro-panel">
+				    <div class="center">
+				        <!-- SITE SEARCH STARTS -->
+					    <uc:PersonalProfileLinks ID="ucPersonalProfileLinks" runat="server" />
+                        <!-- SITE SEARCH ENDS -->
+                        <!-- SOCIAL NETWORKS ICONS STARTS -->
+				        <uc:SocialIcons ID="ucSocialIcons" runat="server" />
+                        <!-- SOCIAL NETWORKS ICONS ENDS -->
+				    </div>
+			    </div>
+			
+                <!-- HEADER CONTAINER STARTS -->
+			    <div id="header-container">
+				    <div class="header-center">
+                        <!-- HEADER STARTS -->
+					    <div id="header">
+                            <!-- LOGO STARTS -->
+						    <a id="logo" title="Homepage" href="Default.aspx">Homepage</a>
+						    <!--LOGO ENDS HERE  -->
+						    <!-- PRIMARY NAV STARTS -->
+					        <uc:PrimaryNav ID="ucPrimaryNav" runat="server" />
+                            <!-- PRIMARY NAV ENDS  -->
+					    </div>
+					    <!-- HEADER ENDS-->
+				    </div>
+			    </div>
+
+			    <!-- HEADER CONTAINER ENDS -->
+			    <div class="post-header-shadow">
+			    </div>
+
+                <asp:ContentPlaceHolder ID="SiteContentPlaceHolder" runat="server">        
+                </asp:ContentPlaceHolder>
+
+                <!-- MAIN CONTENT ENDS-->
+			    <div class="pre-footer-shadow">
+			    </div>
+
+                <!-- FOOTER INFORMATION STARTS-->
+		        <uc:FooterInformation ID="ucFooterInformation" runat="server" />
+                <!-- FOOTER INFORMATION ENDS-->
+			
+                <!-- FOOTER NAV STARTS-->
+                <uc:FooterNav ID="ucFooterNav" runat="server" />
+                <!-- FOOTER NAV ENDS-->
+
+		    </div>	    
+        </div>
+    </div>
+    </form>
+</body>
+</html>
