@@ -252,7 +252,7 @@ namespace MerchantTribe.PaypalWebServices
             pp_request.DoExpressCheckoutPaymentRequestDetails.PayerID = payerID;
             pp_request.DoExpressCheckoutPaymentRequestDetails.PaymentAction = paymentAction;
             
-
+            /*
             pp_request.DoExpressCheckoutPaymentRequestDetails.PaymentDetails = new PaymentDetailsType();
             pp_request.DoExpressCheckoutPaymentRequestDetails.PaymentDetails.InvoiceID = invoiceId;
             pp_request.DoExpressCheckoutPaymentRequestDetails.PaymentDetails.OrderTotal = new BasicAmountType();
@@ -260,6 +260,7 @@ namespace MerchantTribe.PaypalWebServices
             pp_request.DoExpressCheckoutPaymentRequestDetails.PaymentDetails.OrderTotal.currencyID = currencyCodeType;
             pp_request.DoExpressCheckoutPaymentRequestDetails.PaymentDetails.OrderTotal.Value = paymentAmount;
             pp_request.DoExpressCheckoutPaymentRequestDetails.PaymentDetails.ButtonSource = "BVCommerce_Cart_EC_US";
+            */
             return (DoExpressCheckoutPaymentResponseType)caller.Call("DoExpressCheckoutPayment", pp_request);
         }
 

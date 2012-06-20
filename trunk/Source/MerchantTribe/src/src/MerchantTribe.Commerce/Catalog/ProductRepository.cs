@@ -427,6 +427,9 @@ namespace MerchantTribe.Commerce.Catalog
                     case CategorySortOrder.ProductPriceDescending:
                         items = items.OrderByDescending(y => y.SitePrice);
                         break;
+                    case CategorySortOrder.ProductPriority:
+                        items = items.OrderByDescending(y => y.SortOrder);
+                        break;
                     default:
                         // TODO: This needs to respect merchant set sort order instead.
                         items = items.OrderBy(y => y.ProductName);
@@ -436,7 +439,7 @@ namespace MerchantTribe.Commerce.Catalog
             }
             else
             {
-                items = items.OrderBy(y => y.ProductName);
+                items = items.OrderByDescending(y => y.SortOrder);
             }
 
             // Get Total Count

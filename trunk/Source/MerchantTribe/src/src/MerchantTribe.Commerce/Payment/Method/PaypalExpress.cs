@@ -41,7 +41,7 @@ namespace MerchantTribe.Commerce.Payment.Method
                     if ((paymentResponse.Ack == AckCodeType.Success) || (paymentResponse.Ack == AckCodeType.SuccessWithWarning))
                     {
                         t.Result.Succeeded = true;
-                        t.Result.ReferenceNumber = paymentResponse.DoExpressCheckoutPaymentResponseDetails.PaymentInfo.TransactionID;
+                        //t.Result.ReferenceNumber = paymentResponse.DoExpressCheckoutPaymentResponseDetails.PaymentInfo.TransactionID;
                         t.Result.ResponseCode = "OK";
                         t.Result.ResponseCodeDescription = "PayPal Express Payment Authorized Successfully.";
                         return true;
@@ -164,8 +164,8 @@ namespace MerchantTribe.Commerce.Payment.Method
 
                 if ((paymentResponse.Ack == AckCodeType.Success) || (paymentResponse.Ack == AckCodeType.SuccessWithWarning))
                 {
-                    t.Result.ReferenceNumber = paymentResponse.DoExpressCheckoutPaymentResponseDetails.PaymentInfo.TransactionID;
-
+                    //t.Result.ReferenceNumber = paymentResponse.DoExpressCheckoutPaymentResponseDetails.PaymentInfo.TransactionID;
+                    /*
                     if (paymentResponse.DoExpressCheckoutPaymentResponseDetails.PaymentInfo.PaymentStatus == PaymentStatusCodeType.Completed)
                     {
                         t.Result.Succeeded = true;
@@ -186,6 +186,8 @@ namespace MerchantTribe.Commerce.Payment.Method
                         t.Result.Messages.Add(new MerchantTribe.Payment.Message("An error occurred while trying to charge your PayPal payment.", "", MerchantTribe.Payment.MessageType.Error));
                         return false;
                     }
+                    */
+                    return false;
                 }
                 else
                 {

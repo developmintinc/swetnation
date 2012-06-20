@@ -126,7 +126,8 @@
     <Reference Include="Payflow_dotNET">
       <HintPath>..\..\lib\Payflow_dotNET.dll</HintPath>
     </Reference>
-    <Reference Include="paypal_base">
+    <Reference Include="paypal_base, Version=5.6.61.0, Culture=neutral, PublicKeyToken=b37401294aaf5617">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\paypal_base.dll</HintPath>
     </Reference>
     <Reference Include="System" />

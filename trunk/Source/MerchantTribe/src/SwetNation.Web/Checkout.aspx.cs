@@ -41,9 +41,9 @@ namespace SwetNation.Web
             if (!Page.IsPostBack)
             {
                 // First time in I disable the validation for billing address
-                SetShippingValidationGroup(true);
+                SetBillingValidationGroup(true);
                 CheckoutViewModel model = IndexSetup();
-            }                
+            }
         }
 
         ////////////////////////////////////////////////////////////////////
@@ -106,14 +106,14 @@ namespace SwetNation.Web
                         if (u.ShippingAddress != null)
                         {
                             hdfShippingAddressBvin.Value = u.ShippingAddress.Bvin;
-                            txtShippingFirstName.Text = u.ShippingAddress.FirstName;
-                            txtShippingLastName.Text = u.ShippingAddress.LastName;
-                            txtShippingAddress1.Text = u.ShippingAddress.Line1;
-                            txtShippingAddress2.Text = u.ShippingAddress.Line2;
-                            txtShippingCity.Text = u.ShippingAddress.City;
+                            txtShippingFirstName.Text = txtShippingFirstName.Text == "" ? u.ShippingAddress.FirstName : txtShippingFirstName.Text;
+                            txtShippingLastName.Text = txtShippingLastName.Text == "" ? u.ShippingAddress.LastName : txtShippingLastName.Text;
+                            txtShippingAddress1.Text = txtShippingAddress1.Text == "" ? u.ShippingAddress.Line1 : txtShippingAddress1.Text;
+                            txtShippingAddress2.Text = txtShippingAddress2.Text == "" ? u.ShippingAddress.Line2 : txtShippingAddress2.Text;
+                            txtShippingCity.Text = txtShippingCity.Text == "" ? u.ShippingAddress.City : txtShippingCity.Text;
                             MerchantTribe.Web.Geography.RegionSnapShot shippingRegionSnapShot = u.ShippingAddress.RegionData;
                             ddlShippingState.SelectedIndex = ddlShippingState.Items.IndexOf(ddlShippingState.Items.FindByValue(shippingRegionSnapShot.Abbreviation));
-                            txtShippingPostalCode.Text = u.ShippingAddress.PostalCode;
+                            txtShippingPostalCode.Text = txtShippingPostalCode.Text == "" ? u.ShippingAddress.PostalCode : txtShippingPostalCode.Text;
                         }
 
                         ////////////////////////////////////////////////////////////////////
@@ -122,14 +122,14 @@ namespace SwetNation.Web
                         if (u.BillingAddress != null)
                         {
                             hdfBillingAddressBvin.Value = u.BillingAddress.Bvin;
-                            txtBillingFirstName.Text = u.BillingAddress.FirstName;
-                            txtBillingLastName.Text = u.BillingAddress.LastName;
-                            txtBillingAddress1.Text = u.BillingAddress.Line1;
-                            txtBillingAddress2.Text = u.BillingAddress.Line2;
-                            txtBillingCity.Text = u.BillingAddress.City;
+                            txtBillingFirstName.Text = txtBillingFirstName.Text == "" ? u.BillingAddress.FirstName : txtBillingFirstName.Text;
+                            txtBillingLastName.Text = txtBillingLastName.Text == "" ? u.BillingAddress.LastName : txtBillingLastName.Text;
+                            txtBillingAddress1.Text = txtBillingAddress1.Text == "" ? u.BillingAddress.Line1 : txtBillingAddress1.Text;
+                            txtBillingAddress2.Text = txtBillingAddress2.Text == "" ? u.BillingAddress.Line2 : txtBillingAddress2.Text;
+                            txtBillingCity.Text = txtBillingCity.Text == "" ? u.BillingAddress.City : txtBillingCity.Text;
                             MerchantTribe.Web.Geography.RegionSnapShot billingRegionSnapShot = u.BillingAddress.RegionData;
                             ddlBillingState.SelectedIndex = ddlBillingState.Items.IndexOf(ddlBillingState.Items.FindByValue(billingRegionSnapShot.Abbreviation));
-                            txtBillingPostalCode.Text = u.BillingAddress.PostalCode;
+                            txtBillingPostalCode.Text = txtBillingPostalCode.Text == "" ? u.BillingAddress.PostalCode : txtBillingPostalCode.Text;
                         }
 
                         break;
@@ -281,47 +281,47 @@ namespace SwetNation.Web
         ////////////////////////////////////////////////////////////////////
         // COPY SHIPPING ADDRESS TO BILLING ADDRESS
         ////////////////////////////////////////////////////////////////////
-        protected void chkShippingSame_CheckedChanged(Object sender, EventArgs args)
+        protected void chkBillingSame_CheckedChanged(Object sender, EventArgs args)
         {
             CheckBox linkedItem = sender as CheckBox;
             if (!linkedItem.Checked)
             {
-                pnlShippingSection.Visible = true;
-                SetShippingValidationGroup(false);
-                txtShippingFirstName.Text = "";
-                txtShippingLastName.Text = "";
-                txtShippingAddress1.Text = "";
-                txtShippingAddress2.Text = "";
-                txtShippingCity.Text = "";
-                ddlShippingState.SelectedIndex = 0;
-                txtShippingPostalCode.Text = "";                
+                pnlBillingSection.Visible = true;
+                SetBillingValidationGroup(false);
+                txtBillingFirstName.Text = "";
+                txtBillingLastName.Text = "";
+                txtBillingAddress1.Text = "";
+                txtBillingAddress2.Text = "";
+                txtBillingCity.Text = "";
+                ddlBillingState.SelectedIndex = 0;
+                txtBillingPostalCode.Text = "";                
             }
             else
             {
-                pnlShippingSection.Visible = false;
-                SetShippingValidationGroup(true);
+                pnlBillingSection.Visible = false;
+                SetBillingValidationGroup(true);
             }
         }
 
-        private void SetShippingValidationGroup(bool disable)
+        private void SetBillingValidationGroup(bool disable)
         {
             if (disable)
             {
-                rfvShippingFirstName.ValidationGroup = "";
-                rfvShippingLastName.ValidationGroup = "";
-                rfvShippingAddress1.ValidationGroup = "";
-                rfvShippingCity.ValidationGroup = "";
-                rfvShippingState.ValidationGroup = "";
-                rfvShippingPostalCode.ValidationGroup = "";
+                rfvBillingFirstName.ValidationGroup = "";
+                rfvBillingLastName.ValidationGroup = "";
+                rfvBillingAddress1.ValidationGroup = "";
+                rfvBillingCity.ValidationGroup = "";
+                rfvBillingState.ValidationGroup = "";
+                rfvBillingPostalCode.ValidationGroup = "";
             }
             else
             {
-                rfvShippingFirstName.ValidationGroup = "vgMyAccount";
-                rfvShippingLastName.ValidationGroup = "vgMyAccount";
-                rfvShippingAddress1.ValidationGroup = "vgMyAccount";
-                rfvShippingCity.ValidationGroup = "vgMyAccount";
-                rfvShippingState.ValidationGroup = "vgMyAccount";
-                rfvShippingPostalCode.ValidationGroup = "vgMyAccount";
+                rfvBillingFirstName.ValidationGroup = "vgMyAccount";
+                rfvBillingLastName.ValidationGroup = "vgMyAccount";
+                rfvBillingAddress1.ValidationGroup = "vgMyAccount";
+                rfvBillingCity.ValidationGroup = "vgMyAccount";
+                rfvBillingState.ValidationGroup = "vgMyAccount";
+                rfvBillingPostalCode.ValidationGroup = "vgMyAccount";
             }
         }
 
@@ -349,7 +349,7 @@ namespace SwetNation.Web
 
                 Address b = new Address();
                 b.Bvin = hdfBillingAddressBvin.Value;
-                if (chkShippingSame.Checked)
+                if (chkBillingSame.Checked)
                 {                    
                     b.FirstName = s.FirstName;
                     b.LastName = s.LastName;
@@ -416,6 +416,11 @@ namespace SwetNation.Web
         private void LoadValuesFromForm(CheckoutViewModel model)
         {
             UpdateAddress();
+
+            CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
+            model.CurrentCustomer = u;
+            model.CurrentOrder.BillingAddress = u.BillingAddress;
+            model.CurrentOrder.ShippingAddress = u.ShippingAddress;
 
             // Save addresses to customer account
             MTApp.MembershipServices.Customers.Update(model.CurrentCustomer);
@@ -516,20 +521,6 @@ namespace SwetNation.Web
                 // Handled on the checkout page.
                 // payManager.PayPalExpressAddInfo(o.TotalGrand);
             }
-        }
-
-        private void LoadAddressFromForm(string prefix, Address address)
-        {
-            address.Bvin = Request.Form[prefix + "addressbvin"] ?? address.Bvin;
-            address.CountryBvin = Request.Form[prefix + "country"] ?? address.CountryBvin;
-            address.FirstName = Request.Form[prefix + "firstname"] ?? address.FirstName;
-            address.LastName = Request.Form[prefix + "lastname"] ?? address.LastName;
-            address.Company = Request.Form[prefix + "company"] ?? address.Company;
-            address.Line1 = Request.Form[prefix + "address"] ?? address.Line1;
-            address.City = Request.Form[prefix + "city"] ?? address.City;
-            address.RegionBvin = Request.Form[prefix + "state"] ?? address.RegionBvin;
-            address.PostalCode = Request.Form[prefix + "zip"] ?? address.PostalCode;
-            address.Phone = Request.Form[prefix + "phone"] ?? address.Phone;
         }
 
         private bool ValidateOrder(CheckoutViewModel model)

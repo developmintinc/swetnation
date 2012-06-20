@@ -3,6 +3,8 @@ using System.IO;
 using System.Text;
 using System.Web;
 using System.Web.UI;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Web.UI.WebControls;
 using System.Collections.ObjectModel;
 using MerchantTribe.Commerce.Catalog;
@@ -141,147 +143,143 @@ namespace MerchantTribeStore
 
             sb.Append("</tr></table></div>");
         }
-
-        //private void LoadEditor(string bvin)
-        //{
-        //    ProductImage pi = ProductImage.FindByBvin(bvin);
-        //    btnSave.Visible = false;
-        //    btnUpdate.Visible = true;
-        //    LoadEditorWithImage(pi);
-        //}
-
-        //private void LoadEditorWithImage(ProductImage pi)
-        //{
-        //    this.EditBvin.Value = pi.Bvin;
-        //    this.FileNameField.Text = pi.FileName;
-        //    this.CaptionField.Text = pi.Caption;
-        //    this.AlternateTextField.Text = pi.AlternateText;
-
-        //    if (File.Exists(Path.Combine(Request.PhysicalApplicationPath, pi.FileName)) == true)
-        //    {
-        //        ImageInfo info;
-        //        info = ImageHelper.GetImageInformation(Path.Combine(Request.PhysicalApplicationPath, pi.FileName));
-        //        ImageInfo maxInfo = ImageHelper.GetProportionalImageDimensionsForImage(info, 220, 220);
-        //        imgPreview.Width = maxInfo.Width;
-        //        imgPreview.Height = maxInfo.Height;
-        //        string pictureUrl = "~/" + pi.FileName;
-        //        imgPreview.ImageUrl = pictureUrl.Replace("\\", "/");
-        //    }
-        //    else
-        //    {
-        //        imgPreview.ImageUrl = "~/BVAdmin/images/NoPreview.gif";
-        //        imgPreview.Width = Unit.Pixel(110);
-        //        imgPreview.Height = Unit.Pixel(110);
-        //    }
-
-        //}
-
-        //private void ClearEditor()
-        //{
-        //    this.EditBvin.Value = string.Empty;
-        //    this.FileNameField.Text = string.Empty;
-        //    this.CaptionField.Text = string.Empty;
-        //    this.AlternateTextField.Text = string.Empty;
-        //    imgPreview.ImageUrl = "~/BVAdmin/images/NoPreview.gif";
-        //    imgPreview.Width = Unit.Pixel(110);
-        //    imgPreview.Height = Unit.Pixel(110);
-        //}
-
-        //protected void btnNew_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-        //{
-        //    pnlEditor.Visible = true;
-        //    msg.ClearMessage();
-        //    btnSave.Visible = true;
-        //    btnUpdate.Visible = false;
-        //    //Dim pi As New Catalog.ProductImage
-        //    //pi.ProductID = Me.ProductIdField.Value
-        //    //pi.FileName = ""
-        //    //pi.Caption = "New Image"
-        //    //If Catalog.ProductImage.Insert(pi) = True Then
-        //    //    LoadEditorWithImage(pi)
-        //    //    Me.LoadImages()
-        //    //Else
-        //    //    msg.ShowError("Couldn't Save New Product Image!")
-        //    //End If
-        //}
-
-        //protected void btnCancel_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-        //{
-        //    pnlEditor.Visible = false;
-        //    msg.ClearMessage();
-        //    ClearEditor();
-        //    LoadImages();
-        //}
-
-        //protected void GridView1_RowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
-        //{
-        //    if (e.Row.RowType == DataControlRowType.DataRow)
-        //    {
-
-        //        ProductImage pi = (ProductImage)e.Row.DataItem;
-
-        //        System.Web.UI.WebControls.Image preview;
-        //        preview = (System.Web.UI.WebControls.Image)e.Row.Cells[0].FindControl("Image1");
-        //        if (preview != null)
-        //        {
-        //            if (File.Exists(Path.Combine(Request.PhysicalApplicationPath, pi.FileName)) == true)
-        //            {
-        //                ImageInfo info;
-        //                info = ImageHelper.GetImageInformation(Path.Combine(Request.PhysicalApplicationPath, pi.FileName));
-        //                ImageInfo maxInfo = ImageHelper.GetProportionalImageDimensionsForImage(info, 110, 110);
-        //                preview.Width = maxInfo.Width;
-        //                preview.Height = maxInfo.Height;
-        //                string pictureUrl = "~/" + pi.FileName;
-        //                preview.ImageUrl = pictureUrl.Replace("\\", "/");
-        //            }
-        //            else
-        //            {
-        //                preview.ImageUrl = "~/Bvadmin/images/NoPreview.gif";
-        //                preview.Width = Unit.Pixel(110);
-        //                preview.Height = Unit.Pixel(110);
-        //            }
-
-        //        }
-
-        //        ImageButton btn = (ImageButton)e.Row.FindControl("btnUp");
-        //        btn.CommandArgument = pi.Bvin;
-
-        //        btn = (ImageButton)e.Row.FindControl("btnDown");
-        //        btn.CommandArgument = pi.Bvin;
-        //    }
-        //}
-
-        //protected void GridView1_RowDeleting(object sender, System.Web.UI.WebControls.GridViewDeleteEventArgs e)
-        //{
-        //    msg.ClearMessage();
-        //    string bvin = (string)GridView1.DataKeys[e.RowIndex].Value;
-        //    ProductImage.Delete(bvin);
-        //    LoadImages();
-        //}
-
-        //protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
-        //{
-        //    msg.ClearMessage();
-        //    string bvin = (string)GridView1.DataKeys[e.NewEditIndex].Value;
-        //    pnlEditor.Visible = true;
-        //    this.LoadEditor(bvin);
-
-        //}
-
-        //protected void btnSave_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-        //{
-        //    if (Page.IsValid)
-        //    {
-        //        Save();
-        //    }
-        //}
-
+                
         protected override bool Save()
         {
             return true;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (imgupload.HasFile)
+            {
+                if (imgupload.PostedFile.ContentType == "image/jpeg" || imgupload.PostedFile.ContentType == "image/png" || imgupload.PostedFile.ContentType == "image/gif")
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(imgupload.FileName);
+                    string ext = Path.GetExtension(imgupload.FileName);
+
+                    if (MerchantTribe.Commerce.Storage.DiskStorage.ValidateImageType(ext))
+                    {
+                        fileName = MerchantTribe.Web.Text.CleanFileName(fileName);
+
+                        ProductImage img = new ProductImage();
+                        img.Bvin = System.Guid.NewGuid().ToString();
+
+                        // Construct filename
+                        string filename = Path.GetFileName(imgupload.FileName);
+                        filename = Server.MapPath("~/Images/sites/1/products/" + this.ProductIdField.Value + "/additional/" + img.Bvin + "/") + filename;
+
+                        // Delete the old one if it exists
+                        if (File.Exists(filename))
+                        {
+                            File.SetAttributes(filename, FileAttributes.Normal);
+                            File.Delete(filename);
+                        }
+
+                        if (imgupload != null)
+                        {
+                            if (Directory.Exists(Path.GetDirectoryName(filename)) == false)
+                                Directory.CreateDirectory(Path.GetDirectoryName(filename));
+                            imgupload.SaveAs(filename);
+                        }
+
+                        // Starting the process of saving the small image
+                        string pathOfOriginal = Path.GetDirectoryName(filename);
+                        string pathOfOutputSmall = Path.Combine(pathOfOriginal, "small");
+                        if (!Directory.Exists(pathOfOutputSmall))
+                        {
+                            Directory.CreateDirectory(pathOfOutputSmall);
+                        }
+
+                        string pathOfOutputMedium = Path.Combine(pathOfOriginal, "medium");
+                        if (!Directory.Exists(pathOfOutputMedium))
+                        {
+                            Directory.CreateDirectory(pathOfOutputMedium);
+                        }
+
+                        ShrinkImageFileOnUpload(filename, "medium", 440, 440, imgupload);
+                        ShrinkImageFileOnUpload(filename, "small", 240, 240, imgupload);
+
+                        //p.ImageFileSmall = fileName + ext;
+                        //p.ImageFileMedium = fileName + ext;
+                        /*
+                        if (MerchantTribe.Commerce.Storage.DiskStorage.UploadAdditionalProductImage(MTApp.CurrentStore.Id, this.ProductIdField.Value, img.Bvin, this.imgupload))
+                        {
+                            img.AlternateText = fileName + ext;
+                            img.FileName = fileName + ext;
+                            img.Caption = string.Empty;
+                            img.ProductId = this.ProductIdField.Value;
+                            if (MTApp.CatalogServices.ProductImages.Create(img))
+                            {
+                                this.MessageBox1.ShowOk("New Image Added at " + DateTime.Now.ToString() + ".");
+                            }
+                            else
+                            {
+                                this.MessageBox1.ShowWarning("Unable to save image record. Unknown error.");
+                            }
+                        }
+                        else
+                        {
+                            this.MessageBox1.ShowWarning("Unable to save image. Unknown error.");
+                        }
+                        */
+
+                        if (Directory.Exists(Path.GetDirectoryName(filename)) == true)
+                            this.MessageBox1.ShowOk("New Image Added at " + DateTime.Now.ToString() + ".");
+                        else
+                            this.MessageBox1.ShowWarning("Unable to save image record. Unknown error.");
+
+                        LoadImages();
+                    }
+                }
+                else
+                    this.MessageBox1.ShowError("Only .PNG, .JPG, .GIF file types are allowed for icon images");
+            }
+        }
+
+        public void ShrinkImageFileOnUpload(string originalFile, string outputDirectory, int maxWidth, int maxHeight, FileUpload file)
+        {
+            string pathOfOriginal = Path.GetDirectoryName(originalFile);
+            string pathOfOutput = Path.Combine(pathOfOriginal, outputDirectory);
+
+            if (!Directory.Exists(pathOfOutput))
+                Directory.CreateDirectory(pathOfOutput);
+
+            string outputFile = Path.Combine(pathOfOutput, Path.GetFileName(originalFile));
+            outputFile = outputFile.Replace("/", @"\");
+
+            // Create a bitmap of the content of the fileUpload control in memory
+            Bitmap originalBMP = new Bitmap(file.FileContent);
+
+            // Calculate the new image dimensions
+            int origWidth = originalBMP.Width;
+            int origHeight = originalBMP.Height;
+            int sngRatio = origWidth / origHeight;
+            int newWidth = maxWidth;
+            int newHeight = newWidth / (sngRatio == 0 ? 1 : sngRatio);
+
+            // Create a new bitmap which will hold the previous resized bitmap
+            Bitmap newBMP = new Bitmap(originalBMP, newWidth, newHeight);
+
+            // Create a graphic based on the new bitmap
+            Graphics oGraphics = Graphics.FromImage(newBMP);
+
+            // Set the properties for the new graphic file
+            oGraphics.SmoothingMode = SmoothingMode.AntiAlias; oGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            // Draw the new graphic based on the resized bitmap
+            oGraphics.DrawImage(originalBMP, 0, 0, newWidth, newHeight);
+
+            // Save the new graphic file to the server
+            newBMP.Save(outputFile);
+
+            // Once finished with the bitmap objects, we deallocate them.
+            originalBMP.Dispose();
+            newBMP.Dispose();
+            oGraphics.Dispose();
+        }
+
+        protected void btnAdd2_Click(object sender, EventArgs e)
         {
             // Image Upload
             if ((this.imgupload.HasFile))
@@ -324,111 +322,6 @@ namespace MerchantTribeStore
                     this.MessageBox1.ShowError("Only .PNG, .JPG, .GIF file types are allowed for icon images");                    
                 }
             }
-        }
-
-        //protected override bool Save()
-        //{
-        //    bool result = false;
-        //    if (btnSave.Visible)
-        //    {
-        //        ProductImage pi = new ProductImage();
-        //        pi.Bvin = this.EditBvin.Value;
-        //        pi.ProductId = this.ProductIdField.Value;
-        //        pi.AlternateText = this.AlternateTextField.Text;
-        //        pi.Caption = this.CaptionField.Text;
-        //        pi.FileName = this.FileNameField.Text;
-        //        if (ProductImage.Insert(pi) == true)
-        //        {
-        //            this.ClearEditor();
-        //            msg.ShowOk("Changes Saved");
-        //            result = true;
-        //        }
-        //        else
-        //        {
-        //            msg.ShowError("Error while saving changes");
-        //        }
-        //        LoadImages();
-        //        pnlEditor.Visible = false;
-        //    }
-        //    else
-        //    {
-        //        result = true;
-        //    }
-
-        //    return result;
-        //}
-
-        //private void RegisterWindowScripts()
-        //{
-
-        //    StringBuilder sb = new StringBuilder();
-
-        //    sb.Append("var w;");
-        //    sb.Append("function popUpWindow(parameters) {");
-        //    sb.Append("w = window.open(parameters, 'imageBrowser', 'resizable=yes, scrollbars=yes,height=480, width=640');");
-        //    sb.Append("w.focus();");
-        //    sb.Append("}");
-
-        //    sb.Append("function closePopup() {");
-        //    sb.Append("w.close();");
-        //    sb.Append("self.focus();");
-        //    sb.Append("}");
-
-        //    sb.Append("function SetEditorImage(fileName) {");
-        //    sb.Append("document.getElementById('");
-        //    sb.Append(this.FileNameField.ClientID);
-        //    sb.Append("').value = fileName;");
-        //    sb.Append("document.getElementById('");
-        //    sb.Append(this.imgPreview.ClientID);
-        //    sb.Append("').src = '../../'+fileName;");
-        //    sb.Append("w.close();");
-        //    sb.Append("}");
-
-        //    Page.ClientScript.RegisterClientScriptBlock(typeof(System.Web.UI.Page), "WindowScripts", sb.ToString(), true);
-
-        //}
-
-        //protected void btnUpdate_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-        //{
-        //    ProductImage pi = new ProductImage();
-        //    pi.Bvin = this.EditBvin.Value;
-        //    pi.ProductId = this.ProductIdField.Value;
-        //    pi.AlternateText = this.AlternateTextField.Text;
-        //    pi.Caption = this.CaptionField.Text;
-        //    pi.FileName = this.FileNameField.Text;
-        //    if (ProductImage.Update(pi) == true)
-        //    {
-        //        this.ClearEditor();
-        //        msg.ShowOk("Changes Saved");
-        //    }
-        //    else
-        //    {
-        //        msg.ShowError("Error while saving changes");
-        //    }
-        //    LoadImages();
-        //    pnlEditor.Visible = false;
-        //}
-
-        //protected void GridView1_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
-        //{
-        //    if (e.CommandName == "Up")
-        //    {
-        //        ProductImage img = ProductImage.FindByBvin((string)e.CommandArgument);
-        //        if (img != null && img.Bvin != string.Empty)
-        //        {
-        //            ProductImage.MoveUp(img);
-        //        }
-        //        LoadImages();
-        //    }
-        //    else if (e.CommandName == "Down")
-        //    {
-        //        ProductImage img = ProductImage.FindByBvin((string)e.CommandArgument);
-        //        if (img != null && img.Bvin != string.Empty)
-        //        {
-        //            ProductImage.MoveDown(img);
-        //        }
-        //        LoadImages();
-        //    }
-        //}
+        }        
     }
 }
