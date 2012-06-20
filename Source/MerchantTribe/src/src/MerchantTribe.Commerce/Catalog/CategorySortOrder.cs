@@ -2,7 +2,6 @@ using System;
 
 namespace MerchantTribe.Commerce.Catalog
 {
-
 	public enum CategorySortOrder : int
 	{
 		None = 0,
@@ -10,7 +9,7 @@ namespace MerchantTribe.Commerce.Catalog
 		ProductName = 2,
 		ProductPriceAscending = 3,
 		ProductPriceDescending = 4,
-		ManufacturerName = 5
+		ManufacturerName = 5,
+        ProductPriority = 6
 	}
-
 }

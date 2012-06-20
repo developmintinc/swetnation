@@ -20,8 +20,6 @@ namespace MerchantTribeStore
             filters.Add(new HandleErrorAttribute());
         }
 
-        #region " Scheduled Tasks "
-
         static void ScheduleTaskTrigger()
         {
             HttpRuntime.Cache.Add("ScheduledTaskTrigger",
@@ -31,7 +29,8 @@ namespace MerchantTribeStore
                                   TimeSpan.FromMinutes(2), 
                                   CacheItemPriority.NotRemovable, 
                                   new CacheItemRemovedCallback(PerformScheduledTasks));
-        }        
+        }
+
         static void PerformScheduledTasks(string key, Object value, CacheItemRemovedReason reason)
         {
             try
@@ -72,8 +71,6 @@ namespace MerchantTribeStore
             string destination = rootUrl + "scheduledtasks/" + storekey;
             MerchantTribe.Commerce.Utilities.WebForms.SendRequestByPost(destination, string.Empty);
         }
-
-#endregion
 
         void RegisterRoutes(RouteCollection routes)
         {

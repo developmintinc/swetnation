@@ -166,6 +166,7 @@
 								<div id="divCartItemDescription" runat="server" class="cartitemdescription">
 									<a href='<%# Eval("LinkUrl") %>'>
 										<div class="cartproductname"><%# Eval("Item.ProductName") %></div>
+                                        <%# Eval("Item.ProductShortDescription")%>
 									</a>
 								</div>
 							</td>

@@ -21,8 +21,8 @@ namespace SwetNation.Web
         {
             this.IsAuthorized();
             this.IsLive();
-
-            GetProduct();
+            if (!Page.IsPostBack)
+                GetProduct();
         }
 
         public void lnkAddToCart_Click(object sender, EventArgs e)
@@ -362,7 +362,9 @@ namespace SwetNation.Web
             OptionSelectionList result = new OptionSelectionList();
             foreach (Option opt in model.LocalProduct.Options)
             {
-                OptionSelection selected = opt.ParseFromForm(Request.Form);
+                OptionSelection selected = new OptionSelection();
+                selected.OptionBvin = hdfOptionBvin.Value;
+                selected.SelectionData = ddlOptions.SelectedItem.Value;
                 if (selected != null)
                 {
                     result.Add(selected);
@@ -374,7 +376,7 @@ namespace SwetNation.Web
         private void DetermineQuantityToAdd(ProductPageViewModel model)
         {
             int quantity = 0;
-            string formQuantity = Request.Form["qty"];
+            string formQuantity = txtQuantity.Text;
             if (int.TryParse(formQuantity, out quantity))
             {
                 if (model.LocalProduct.MinimumQty > 0)
@@ -451,6 +453,28 @@ namespace SwetNation.Web
                 resultItem = MTApp.CatalogServices.Products.Find(bvin);
                 if (resultItem != null)
                 {
+                    if (resultItem.Options.Count() > 0)
+                    {
+                        hdfOptionBvin.Value = resultItem.Options.First().Bvin;
+                        ListItemCollection listItemCollection = new ListItemCollection();
+                        foreach (OptionItem item in resultItem.Options.First().Items)
+                        {
+                            if (item.IsLabel)
+                            {
+                                listItemCollection.Add(new ListItem() { Text = "-- Select Size --", Value = "" });
+                            }
+                            else
+                            {
+                                listItemCollection.Add(new ListItem() { Text = item.Name, Value = item.Bvin });
+                            }
+                        }
+                        ddlOptions.Visible = true;
+                        ddlOptions.DataSource = listItemCollection;
+                        ddlOptions.DataTextField = "Text";
+                        ddlOptions.DataValueField = "Value";
+                        ddlOptions.DataBind();
+                    }
+
                     string imageUrl = "/shop/Images/sites/1/products/" + resultItem.Bvin + "/" + resultItem.ImageFileSmall;
                     string pageUrl = HttpContext.Current.Request.Url.AbsoluteUri;
 

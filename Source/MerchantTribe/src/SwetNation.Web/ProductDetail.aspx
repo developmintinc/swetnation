@@ -42,7 +42,23 @@
             <p>
 				<asp:Literal ID="litLongDescription" runat="server"></asp:Literal>
 			</p>
-            <asp:LinkButton ID="lnkAddToCart" runat="server" CssClass="button cube deep-red small" OnClick="lnkAddToCart_Click">Add To Cart</asp:LinkButton>
+            <div style="background-color: #eee; border-width: 1px; border-color: grey; border-style: solid; padding: 5px; margin: 5px 0px;">
+                <table>
+                    <tr>
+                        <td><asp:HiddenField ID="hdfOptionBvin" runat="server" /></td>
+                        <td><asp:DropDownList ID="ddlOptions" runat="server" Visible="false" Width="200px"></asp:DropDownList></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quantity</strong></td>
+                        <td><asp:TextBox ID="txtQuantity" runat="server" Width="200px" Text="1"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><asp:LinkButton ID="lnkAddToCart" runat="server" CssClass="button cube deep-red small" OnClick="lnkAddToCart_Click">Add To Cart</asp:LinkButton></td>
+                    </tr>
+                </table>
+            </div>
+            
             <br /><br />
             
             <!-- FaceBook Like -->

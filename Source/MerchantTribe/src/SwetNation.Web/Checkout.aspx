@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Swet Nation - Checkout" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="SwetNation.Web.Checkout" MaintainScrollPositionOnPostback="true" %>
+﻿<%@ Page Title="Swet Nation - Checkout" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Checkout.aspx.cs" Inherits="SwetNation.Web.Checkout" MaintainScrollPositionOnPostback="true" %>
 <%@ Register Src="~/controls/ViewOrderItems.ascx" TagName="ViewOrderItems" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainHeadContent" runat="server">
 </asp:Content>
@@ -9,38 +9,38 @@
 			<asp:Label ID="lblMessage" runat="server"><%= Session["messages"] %></asp:Label>
 			<div class="sections">
                 <!---------------------------------------------------------------------------------->
-                <!-- BILLING ADDRESS -->                
+                <!-- SHIPPING ADDRESS -->
                 <!---------------------------------------------------------------------------------->
-                <div class="section-shipping">
-                    <div class="header-title-medium">Billing Address</div>
-                    <asp:HiddenField ID="hdfBillingAddressBvin" runat="server" />
-                    <fieldset>
-                        <asp:Label ID="lblBillingFirstName" runat="server" AssociatedControlID="txtBillingFirstName">First Name <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtBillingFirstName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvBillingFirstName" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingFirstName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                <div class="section-billing">
+                    <div class="header-title-medium">Shipping Address</div>
+                    <asp:HiddenField ID="hdfShippingAddressBvin" runat="server" />
+		            <fieldset>
+                        <asp:Label ID="lblShippingFirstName" runat="server" AssociatedControlID="txtShippingFirstName">First Name <span class="required">*</span></asp:Label>
+                        <asp:TextBox ID="txtShippingFirstName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvShippingFirstName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingFirstName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		            </fieldset>
                     <fieldset>
-                        <asp:Label ID="lblBillingLastName" runat="server" AssociatedControlID="txtBillingLastName">Last Name <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtBillingLastName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvBillingLastName" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingLastName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                        <asp:Label ID="lblShippingLastName" runat="server" AssociatedControlID="txtShippingLastName">Last Name <span class="required">*</span></asp:Label>
+                        <asp:TextBox ID="txtShippingLastName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvShippingLastName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingLastName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		            </fieldset>
-					<fieldset>
-                        <asp:Label ID="lblBillingAddress1" runat="server" AssociatedControlID="txtBillingAddress1">Address <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtBillingAddress1" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvBillingAddress1" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingAddress1" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                    <fieldset>
+                        <asp:Label ID="lblShippingAddress1" runat="server" AssociatedControlID="txtShippingAddress1">Address <span class="required">*</span></asp:Label>
+                        <asp:TextBox ID="txtShippingAddress1" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvShippingAddress1" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingAddress1" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		            </fieldset>
 		            <fieldset>
-                        <asp:Label ID="lblBillingAddress2" runat="server" AssociatedControlID="txtBillingAddress2">Address 2</asp:Label>
-                        <asp:TextBox ID="txtBillingAddress2" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                        <asp:Label ID="lblShippingAddress2" runat="server" AssociatedControlID="txtShippingAddress2">Address 2</asp:Label>
+                        <asp:TextBox ID="txtShippingAddress2" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
 		            </fieldset>
 		            <fieldset>
-                        <asp:Label ID="lblBillingCity" runat="server" AssociatedControlID="txtBillingCity">City <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtBillingCity" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvBillingCity" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                        <asp:Label ID="lblShippingCity" runat="server" AssociatedControlID="txtShippingCity">City <span class="required">*</span></asp:Label>
+                        <asp:TextBox ID="txtShippingCity" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvShippingCity" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		            </fieldset>
                     <fieldset>
-                        <asp:Label ID="lblBillingState" runat="server" AssociatedControlID="ddlBillingState">State <span class="required">*</span></asp:Label>
-                        <asp:DropDownList ID="ddlBillingState" runat="server" ValidationGroup="vgMyAccount" Width="100%">
+                        <asp:Label ID="lblShippingState" runat="server" AssociatedControlID="ddlShippingState">State <span class="required">*</span></asp:Label>
+                        <asp:DropDownList ID="ddlShippingState" runat="server" ValidationGroup="vgMyAccount" Width="100%">
 	                        <asp:ListItem Value="AL">Alabama</asp:ListItem>
 	                        <asp:ListItem Value="AK">Alaska</asp:ListItem>
 	                        <asp:ListItem Value="AZ">Arizona</asp:ListItem>
@@ -93,50 +93,50 @@
 	                        <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
 	                        <asp:ListItem Value="WY">Wyoming</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="rfvBillingState" runat="server" ErrorMessage="Required" ControlToValidate="ddlBillingState" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvShippingState" runat="server" ErrorMessage="Required" ControlToValidate="ddlShippingState" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		            </fieldset>
                     <fieldset>
-                        <asp:Label ID="lblBillingPostalCode" runat="server" AssociatedControlID="txtBillingPostalCode">Zip Code <span class="required">*</span></asp:Label>
-                        <asp:TextBox ID="txtBillingPostalCode" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvBillingPostalCode" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingPostalCode" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                        <asp:Label ID="lblShippingPostalCode" runat="server" AssociatedControlID="txtShippingPostalCode">Zip Code <span class="required">*</span></asp:Label>
+                        <asp:TextBox ID="txtShippingPostalCode" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvShippingPostalCode" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		            </fieldset>
 				</div>
                 <!---------------------------------------------------------------------------------->
-                <!-- SHIPPING ADDRESS -->
+                <!-- BILLING ADDRESS -->                
                 <!---------------------------------------------------------------------------------->
-                <div class="section-billing">
-                    <div class="header-title-medium">Shipping Address</div>
-                    <asp:HiddenField ID="hdfShippingAddressBvin" runat="server" />
-					<asp:CheckBox ID="chkShippingSame" runat="server" OnCheckedChanged="chkShippingSame_CheckedChanged" AutoPostBack="true" Checked="true" /> 
+                <div class="section-shipping">
+                    <div class="header-title-medium">Billing Address</div>
+                    <asp:HiddenField ID="hdfBillingAddressBvin" runat="server" />
+                    <asp:CheckBox ID="chkBillingSame" runat="server" OnCheckedChanged="chkBillingSame_CheckedChanged" AutoPostBack="true" Checked="true" /> 
 					My shipping address is the same as my billing address
-                    <asp:Panel ID="pnlShippingSection" runat="server" Visible="false">
-		                <fieldset>
-                            <asp:Label ID="lblShippingFirstName" runat="server" AssociatedControlID="txtShippingFirstName">First Name <span class="required">*</span></asp:Label>
-                            <asp:TextBox ID="txtShippingFirstName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvShippingFirstName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingFirstName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                    <asp:Panel ID="pnlBillingSection" runat="server" Visible="false">
+                        <fieldset>
+                            <asp:Label ID="lblBillingFirstName" runat="server" AssociatedControlID="txtBillingFirstName">First Name <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtBillingFirstName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvBillingFirstName" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingFirstName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		                </fieldset>
                         <fieldset>
-                            <asp:Label ID="lblShippingLastName" runat="server" AssociatedControlID="txtShippingLastName">Last Name <span class="required">*</span></asp:Label>
-                            <asp:TextBox ID="txtShippingLastName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvShippingLastName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingLastName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblBillingLastName" runat="server" AssociatedControlID="txtBillingLastName">Last Name <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtBillingLastName" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvBillingLastName" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingLastName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		                </fieldset>
-                        <fieldset>
-                            <asp:Label ID="lblShippingAddress1" runat="server" AssociatedControlID="txtShippingAddress1">Address <span class="required">*</span></asp:Label>
-                            <asp:TextBox ID="txtShippingAddress1" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvShippingAddress1" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingAddress1" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
-		                </fieldset>
-		                <fieldset>
-                            <asp:Label ID="lblShippingAddress2" runat="server" AssociatedControlID="txtShippingAddress2">Address 2</asp:Label>
-                            <asp:TextBox ID="txtShippingAddress2" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+					    <fieldset>
+                            <asp:Label ID="lblBillingAddress1" runat="server" AssociatedControlID="txtBillingAddress1">Address <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtBillingAddress1" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvBillingAddress1" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingAddress1" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		                </fieldset>
 		                <fieldset>
-                            <asp:Label ID="lblShippingCity" runat="server" AssociatedControlID="txtShippingCity">City <span class="required">*</span></asp:Label>
-                            <asp:TextBox ID="txtShippingCity" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvShippingCity" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblBillingAddress2" runat="server" AssociatedControlID="txtBillingAddress2">Address 2</asp:Label>
+                            <asp:TextBox ID="txtBillingAddress2" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+		                </fieldset>
+		                <fieldset>
+                            <asp:Label ID="lblBillingCity" runat="server" AssociatedControlID="txtBillingCity">City <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtBillingCity" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvBillingCity" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		                </fieldset>
                         <fieldset>
-                            <asp:Label ID="lblShippingState" runat="server" AssociatedControlID="ddlShippingState">State <span class="required">*</span></asp:Label>
-                            <asp:DropDownList ID="ddlShippingState" runat="server" ValidationGroup="vgMyAccount" Width="100%">
+                            <asp:Label ID="lblBillingState" runat="server" AssociatedControlID="ddlBillingState">State <span class="required">*</span></asp:Label>
+                            <asp:DropDownList ID="ddlBillingState" runat="server" ValidationGroup="vgMyAccount" Width="100%">
 	                            <asp:ListItem Value="AL">Alabama</asp:ListItem>
 	                            <asp:ListItem Value="AK">Alaska</asp:ListItem>
 	                            <asp:ListItem Value="AZ">Arizona</asp:ListItem>
@@ -189,12 +189,12 @@
 	                            <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
 	                            <asp:ListItem Value="WY">Wyoming</asp:ListItem>
                             </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="rfvShippingState" runat="server" ErrorMessage="Required" ControlToValidate="ddlShippingState" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfvBillingState" runat="server" ErrorMessage="Required" ControlToValidate="ddlBillingState" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		                </fieldset>
                         <fieldset>
-                            <asp:Label ID="lblShippingPostalCode" runat="server" AssociatedControlID="txtShippingPostalCode">Zip Code <span class="required">*</span></asp:Label>
-                            <asp:TextBox ID="txtShippingPostalCode" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvShippingPostalCode" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingCity" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblBillingPostalCode" runat="server" AssociatedControlID="txtBillingPostalCode">Zip Code <span class="required">*</span></asp:Label>
+                            <asp:TextBox ID="txtBillingPostalCode" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvBillingPostalCode" runat="server" ErrorMessage="Required" ControlToValidate="txtBillingPostalCode" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		                </fieldset>
                     </asp:Panel>
 				</div>
@@ -302,7 +302,7 @@
 						<asp:Literal ID="litAgreedToTermsDescription" runat="server" Mode="PassThrough"></asp:Literal>
 						<p><asp:HyperLink ID="hypSiteTerms" runat="server" CssClass="viewSiteTerms" Target="_blank" ForeColor="Red"></asp:HyperLink></p>
 					</asp:Panel>
-                    <asp:LinkButton ID="lnkPlaceOrder" runat="server" Text="Place Order" CssClass="button cube deep-red small" ToolTip="Place Order" OnClick="lnkPlaceOrder_Click"></asp:LinkButton>&nbsp;
+                    <asp:LinkButton ID="lnkPlaceOrder" runat="server" Text="Place Order" CssClass="button cube deep-red small" ToolTip="Place Order" OnClick="lnkPlaceOrder_Click" ValidationGroup="vgMyAccount"></asp:LinkButton>&nbsp;
                     <asp:LinkButton ID="lnkCancelOrder" runat="server" Text="Cancel Order" CssClass="button cube deep-red small" ToolTip="Cancel Order" OnClick="lnkCancelOrder_Click"></asp:LinkButton>
                 </div>
 			</div>
