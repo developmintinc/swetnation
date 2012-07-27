@@ -37,7 +37,7 @@ html {
 #page-wrap-signup
 {
 	width: 300px;
-	height: 650px; 
+	height: 530px; 
 	margin: 30px 0px 20px 150px; 
 	padding: 20px; 
 	background: #000; 
@@ -49,15 +49,15 @@ html {
 	font-size: 20px;
 }
 label {
-	font-weight:bold;
+	font-weight:normal;
 	display: block; 
-	font-size: 12px; 
+	font-size: 14px; 
 	margin: 5px 0; 
 	color:White;
 }
 a.small, span.small {
 	font-weight:normal;
-	font-size: 12px; 
+	font-size: 14px; 
 	color:White;
 }
 input[type=text],input[type=password],textarea,select {

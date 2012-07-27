@@ -396,8 +396,9 @@ namespace MerchantTribe.Commerce.Accounts
         {
             get
             {
-                string temp = GetProp("RewardsPointsName");
-                if (temp == string.Empty) temp = "Rewards Points";
+                //string temp = GetProp("RewardsPointsName");
+                string temp = string.Empty;
+                if (temp == string.Empty) temp = "Credits";
                 return temp;
             }
             set { SetProp("RewardsPointsName", value); }

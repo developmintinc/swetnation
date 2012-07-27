@@ -756,7 +756,7 @@ namespace MerchantTribe.Commerce.Catalog
                     if (result.Qty < 1)
                     {
                         result.IsInStock = false;
-                        result.InventoryMessage = "<span class=\"inventoryoutofstock\">Out of Stock</span>";
+                        result.InventoryMessage = "<span class=\"inventoryoutofstock\">SOLD OUT</span>";
                         result.IsAvailableForSale = false;
                     }
                     else
@@ -770,7 +770,7 @@ namespace MerchantTribe.Commerce.Catalog
                     if (result.Qty < 1)
                     {
                         result.IsInStock = false;
-                        result.InventoryMessage = "<span class=\"inventoryoutofstock\">Out of Stock</span>";
+                        result.InventoryMessage = "<span class=\"inventoryoutofstock\">SOLD OUT</span>";
                         result.IsAvailableForSale = false;
                     }
                     else

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using log4net;
 
 namespace SwetNation.Web
 {
@@ -12,7 +13,9 @@ namespace SwetNation.Web
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            // Log4Net
+            log4net.Config.XmlConfigurator.Configure();
+            MerchantTribe.Commerce.EventLog.LogEvent("System", "Application Startup", MerchantTribe.Web.Logging.EventLogSeverity.Information);
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -45,7 +48,13 @@ namespace SwetNation.Web
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
+            // Code that runs when an unhandled error occurs
+            Exception ex = Server.GetLastError().GetBaseException();
+            MerchantTribe.Commerce.EventLog.LogEvent(ex, MerchantTribe.Web.Logging.EventLogSeverity.Error);
+            while (ex.InnerException != null)
+            {
+                MerchantTribe.Commerce.EventLog.LogEvent(ex);
+            }
         }
 
         protected void Session_End(object sender, EventArgs e)
@@ -55,7 +64,7 @@ namespace SwetNation.Web
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            MerchantTribe.Commerce.EventLog.LogEvent("System", "Application Shutdown", MerchantTribe.Web.Logging.EventLogSeverity.Information);
         }
     }
 }

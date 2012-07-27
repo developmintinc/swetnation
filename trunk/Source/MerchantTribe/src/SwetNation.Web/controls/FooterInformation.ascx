@@ -21,8 +21,8 @@
 					<ul class="simple-nav">
                         <li><a href="Products.aspx?CategoryId=445dc9ec-fd22-4414-b55d-ad9c1bfde941">Mens</a></li>
                         <li><a href="Products.aspx?CategoryId=a773b364-d07e-4c98-bdc2-1bb755c59b0e">Womens</a></li>
-                        <li><a href="Products.aspx?CategoryId=60729988-67f8-4cd5-ba9e-ef2919161f38">Gear</a></li>
-                        <li><a href="Products.aspx?CategoryId=5538caa0-e121-4b9c-b287-41586b5c71fa">Services</a></li>
+                        <li><a href="Products.aspx?CategoryId=60729988-67f8-4cd5-ba9e-ef2919161f38">Unisex</a></li>
+                        <li><a href="Products.aspx?CategoryId=5538caa0-e121-4b9c-b287-41586b5c71fa">Gear</a></li>
 					</ul>
 				</div>
 				<!-- COLUMN ENDS-->

@@ -185,6 +185,13 @@ namespace MerchantTribeStore
 
                         // Starting the process of saving the small image
                         string pathOfOriginal = Path.GetDirectoryName(filename);
+
+                        string pathOfOutputTiny = Path.Combine(pathOfOriginal, "tiny");
+                        if (!Directory.Exists(pathOfOutputTiny))
+                        {
+                            Directory.CreateDirectory(pathOfOutputTiny);
+                        }
+
                         string pathOfOutputSmall = Path.Combine(pathOfOriginal, "small");
                         if (!Directory.Exists(pathOfOutputSmall))
                         {
@@ -197,8 +204,22 @@ namespace MerchantTribeStore
                             Directory.CreateDirectory(pathOfOutputMedium);
                         }
 
-                        ShrinkImageFileOnUpload(filename, "medium", 440, 440, imgupload);
+                        ShrinkImageFileOnUpload(filename, "tiny", 50, 50, imgupload);
                         ShrinkImageFileOnUpload(filename, "small", 240, 240, imgupload);
+                        ShrinkImageFileOnUpload(filename, "medium", 440, 440, imgupload);
+
+                        img.AlternateText = fileName + ext;
+                        img.FileName = fileName + ext;
+                        img.Caption = string.Empty;
+                        img.ProductId = this.ProductIdField.Value;
+                        if (MTApp.CatalogServices.ProductImages.Create(img))
+                        {
+                            this.MessageBox1.ShowOk("New Image Added at " + DateTime.Now.ToString() + ".");
+                        }
+                        else
+                        {
+                            this.MessageBox1.ShowWarning("Unable to save image record. Unknown error.");
+                        }
 
                         //p.ImageFileSmall = fileName + ext;
                         //p.ImageFileMedium = fileName + ext;

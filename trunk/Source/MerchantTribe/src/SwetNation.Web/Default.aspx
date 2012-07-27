@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SwetNation.Web.Index" %>
+<%@ OutputCache Duration="300" VaryByParam="None" Location="Client" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainHeadContent" runat="Server">
     <!--[if IE]>
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
@@ -9,7 +10,7 @@
         <div class="one">
             <div class="intro-pages">
                 <h3>
-                    Sports Brands | Members Prices
+                    Sports Brands | Members Prices | $7.98 Shipping
                 </h3>
             </div>
         </div>

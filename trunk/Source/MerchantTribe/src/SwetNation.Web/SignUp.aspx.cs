@@ -73,22 +73,12 @@ namespace SwetNation.Web
                         u.Gender = posted.Gender;
 
                         ////////////////////////////////////////////////////////////////////
-                        // SETUP REGION
-                        ////////////////////////////////////////////////////////////////////
-                        MerchantTribe.Web.Geography.RegionSnapShot shippingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
-                        shippingRegionSnapShot.Abbreviation = ddlState.SelectedItem.Value;
-                        shippingRegionSnapShot.Name = ddlState.SelectedItem.Text;
-
-                        ////////////////////////////////////////////////////////////////////
                         // SETUP SHIPPING ADDRESS
                         ////////////////////////////////////////////////////////////////////
                         Address a = new Address();
                         a.Bvin = System.Guid.NewGuid().ToString();
                         a.FirstName = u.FirstName;
                         a.LastName = u.LastName;
-                        a.City = txtCity.Text;
-                        a.PostalCode = txtPostalCode.Text;
-                        a.RegionData = shippingRegionSnapShot;
                         u.ShippingAddress = a;
 
                         ////////////////////////////////////////////////////////////////////

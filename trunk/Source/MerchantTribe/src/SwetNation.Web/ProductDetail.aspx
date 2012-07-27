@@ -1,17 +1,49 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Product.master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="SwetNation.Web.ProductDetail" %>
 <asp:Content ID="ContentHead" ContentPlaceHolderID="HeadContent" runat="server">
-    <style type="text/css">
-        .fullprice { text-decoration: line-through !important; font-weight: bold;}
-    </style>
+    <link href="css/product.css" rel="stylesheet" type="text/css" />
+    <script src="js/product.js" type="text/javascript"></script>
 
     <!-- FaceBook OpenGraph Tags -->    <asp:Literal ID="litFBTitle" runat="server" Mode="PassThrough"></asp:Literal>    <asp:Literal ID="litFBType" runat="server" Mode="PassThrough"></asp:Literal>    <asp:Literal ID="litFBUrl" runat="server" Mode="PassThrough"></asp:Literal>    <asp:Literal ID="litFBImage" runat="server" Mode="PassThrough"></asp:Literal>    <asp:Literal ID="litFBSiteName" runat="server" Mode="PassThrough"></asp:Literal>    <asp:Literal ID="litFBAdmins" runat="server" Mode="PassThrough"></asp:Literal>    <asp:Literal ID="litFBAppId" runat="server" Mode="PassThrough"></asp:Literal>
 
+    <style type="text/css">
+        .thumbnail{
+            position: relative;
+            z-index: 0;
+        }
+
+        .thumbnail:hover{
+            background-color: transparent;
+            z-index: 50;
+        }
+
+        .thumbnail span{ /*CSS for enlarged image*/
+            position: absolute;
+            background-color: lightyellow;
+            padding: 5px;
+            left: -1000px;
+            border: 1px dashed gray;
+            visibility: hidden;
+            color: black;
+            text-decoration: none;
+        }
+
+        .thumbnail span img{ /*CSS for enlarged image*/
+            border-width: 0;
+            padding: 2px;
+        }
+
+        .thumbnail:hover span{ /*CSS for enlarged image on hover*/
+            visibility: visible;
+            top: 0;
+            left: 60px; /*position where enlarged image should offset horizontally */
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainBodyContent" runat="server">
     <div id="fb-root"></div>
-    <script>
+    <script language="javascript" type="text/javascript">
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) { return; }
@@ -28,6 +60,9 @@
     <div class="one">
 		<div class="one-third">
 			<asp:Image ID="imgProductImageSmall" runat="server" Width="300" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" />
+            <asp:Panel ID="pnlAdditionalImages" runat="server" Visible="false" CssClass="imagecolumn">
+                <asp:Literal ID="litAdditionalImages" runat="server" Mode="PassThrough"></asp:Literal>
+            </asp:Panel>
 		</div>
         <div class="one-half last">
             <h2>
@@ -39,10 +74,17 @@
 			<p>
                 Retail Price <span class="fullprice"><asp:Literal ID="litListPriceContent" runat="server"></asp:Literal></span>
             </p>
-            <p>
-				<asp:Literal ID="litLongDescription" runat="server"></asp:Literal>
-			</p>
-            <div style="background-color: #eee; border-width: 1px; border-color: grey; border-style: solid; padding: 5px; margin: 5px 0px;">
+            <div style="border-width: 0px; border-bottom: 1px solid #000; border-top: 1px solid #000; padding: 5px; margin: 5px 0px; background-color: #fff;">
+                <style type="text/css">
+                    table
+                    {
+                        border-collapse:collapse;
+                    }
+                    table,th, td
+                    {
+                        border: 1px solid white;
+                    }
+                </style>
                 <table>
                     <tr>
                         <td><asp:HiddenField ID="hdfOptionBvin" runat="server" /></td>
@@ -50,7 +92,15 @@
                     </tr>
                     <tr>
                         <td><strong>Quantity</strong></td>
-                        <td><asp:TextBox ID="txtQuantity" runat="server" Width="200px" Text="1"></asp:TextBox></td>
+                        <td>
+                            <asp:DropDownList ID="ddlQuantity" runat="server" Width="200px">
+                                <asp:ListItem Value="1" Text="1"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="2"></asp:ListItem>
+                                <asp:ListItem Value="3" Text="3"></asp:ListItem>
+                                <asp:ListItem Value="4" Text="4"></asp:ListItem>
+                                <asp:ListItem Value="5" Text="5"></asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -58,7 +108,10 @@
                     </tr>
                 </table>
             </div>
-            
+            <p>
+				<asp:Literal ID="litLongDescription" runat="server"></asp:Literal>
+			</p>
+                        
             <br /><br />
             
             <!-- FaceBook Like -->
@@ -83,6 +136,14 @@
         </div>
 	</div>
     
+    <div class="modal2">
+        <div class="popoverframe2">
+            <a id="dialogclose" href="#">Close</a><br />
+            <iframe id="popoverpage2"></iframe>
+            <br />
+            <a id="dialogclose2" href="#">Close</a>
+        </div>
+    </div>
     
     <script language="javascript" type="text/javascript">
         var gi, gd, gj = 1, gn = 20, gt = 40;

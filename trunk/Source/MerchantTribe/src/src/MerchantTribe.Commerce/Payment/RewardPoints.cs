@@ -19,7 +19,7 @@ namespace MerchantTribe.Commerce.Payment
 
         public override string Name
         {
-            get { return "Reward Points"; }
+            get { return "Credits"; }
         }
 
         public override string Id
@@ -107,7 +107,7 @@ namespace MerchantTribe.Commerce.Payment
                 case ActionType.RewardPointsInfo:
                     t.Result.Succeeded = true;
                     t.Result.ResponseCode = "OK";
-                    t.Result.ResponseCodeDescription = "Reward Points Info";
+                    t.Result.ResponseCodeDescription = "Credits Info";
                     break;
                 default:
                     t.Result.Succeeded = false;

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Swet Nation FAQ" Language="C#" MasterPageFile="~/LeftSidebar.master" AutoEventWireup="true" CodeBehind="FAQ.aspx.cs" Inherits="SwetNation.Web.FAQ" %>
+<%@ OutputCache Duration="3600" VaryByParam="None" Location="Client" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <%@ Register Src="~/controls/LeftSidebarNav.ascx" TagName="LeftSidebarNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">

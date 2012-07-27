@@ -85,6 +85,33 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShippingLastName;
         
         /// <summary>
+        /// lblShippingPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblShippingPhoneNumber;
+        
+        /// <summary>
+        /// txtShippingPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtShippingPhoneNumber;
+        
+        /// <summary>
+        /// rfvShippingPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShippingPhoneNumber;
+        
+        /// <summary>
         /// lblShippingAddress1 control.
         /// </summary>
         /// <remarks>
@@ -569,6 +596,24 @@ namespace SwetNation.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCCExpYear;
+        
+        /// <summary>
+        /// rfvCCExpMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCCExpMonth;
+        
+        /// <summary>
+        /// rfvCCExpYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCCExpYear;
         
         /// <summary>
         /// lblSecurityCode control.

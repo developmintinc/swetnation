@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Swet Nation Invite A Friend" Language="C#" MasterPageFile="~/RightSidebar.master" AutoEventWireup="true" CodeBehind="InviteFriend.aspx.cs" Inherits="SwetNation.Web.InviteFriend" %>
+<%@ OutputCache Duration="3600" VaryByParam="None" Location="Client" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <%@ Register Src="~/controls/MyAccountNav.ascx" TagName="MyAccountNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">
