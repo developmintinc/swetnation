@@ -25,6 +25,11 @@
                         <asp:RequiredFieldValidator ID="rfvShippingLastName" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingLastName" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
 		            </fieldset>
                     <fieldset>
+                        <asp:Label ID="lblShippingPhoneNumber" runat="server" AssociatedControlID="txtShippingPhoneNumber">Phone Number <span class="required">*</span></asp:Label>
+                        <asp:TextBox ID="txtShippingPhoneNumber" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvShippingPhoneNumber" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingPhoneNumber" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+		            </fieldset>
+                    <fieldset>
                         <asp:Label ID="lblShippingAddress1" runat="server" AssociatedControlID="txtShippingAddress1">Address <span class="required">*</span></asp:Label>
                         <asp:TextBox ID="txtShippingAddress1" runat="server" ValidationGroup="vgMyAccount" Width="100%"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvShippingAddress1" runat="server" ErrorMessage="Required" ControlToValidate="txtShippingAddress1" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
@@ -108,7 +113,7 @@
                     <div class="header-title-medium">Billing Address</div>
                     <asp:HiddenField ID="hdfBillingAddressBvin" runat="server" />
                     <asp:CheckBox ID="chkBillingSame" runat="server" OnCheckedChanged="chkBillingSame_CheckedChanged" AutoPostBack="true" Checked="true" /> 
-					My shipping address is the same as my billing address
+					My billing address is the same as my shipping address
                     <asp:Panel ID="pnlBillingSection" runat="server" Visible="false">
                         <fieldset>
                             <asp:Label ID="lblBillingFirstName" runat="server" AssociatedControlID="txtBillingFirstName">First Name <span class="required">*</span></asp:Label>
@@ -204,9 +209,9 @@
                 <asp:Panel ID="pnlShowRewards" runat="server" Visible="false">
                     <div id="pnlRewardsPoints">
                         <div class="section-payment">                
-                            <h2><asp:Literal ID="litRewardPoints" runat="server" Mode="PassThrough"></asp:Literal></h2>
+                            <div class="header-title-medium"><asp:Literal ID="litRewardPoints" runat="server" Mode="PassThrough"></asp:Literal></div>
                             <asp:Literal ID="litRewardPointsAvailable" runat="server" Mode="PassThrough"></asp:Literal><br />
-                            <asp:RadioButton ID="radDoNotUseRewardsPoints" runat="server" GroupName="ShowRewards"  /> Do Not Use Points<br />
+                            <asp:RadioButton ID="radDoNotUseRewardsPoints" runat="server" GroupName="ShowRewards" Checked="true" /> Do Not Use Credits<br />
                             <asp:RadioButton ID="radUseRewardsPoints" runat="server" GroupName="ShowRewards" OnCheckedChanged="radUseRewardsPoints_CheckedChanged" AutoPostBack="true"  /> <asp:Literal ID="litLabelRewardsUse" runat="server" Mode="PassThrough"></asp:Literal><br />
                         </div>
                     </div>    
@@ -232,6 +237,7 @@
                         <fieldset>
                             <asp:Label ID="lblExpDate" runat="server" AssociatedControlID="ddlCCExpMonth">Exp. Date <span class="required">*</span></asp:Label>
                             <asp:DropDownList ID="ddlCCExpMonth" runat="server" Font-Size="Small" CssClass="small">
+                                <asp:ListItem Text="" Value=""></asp:ListItem>
                                 <asp:ListItem Text="1" Value="1"></asp:ListItem>
                                 <asp:ListItem Text="2" Value="2"></asp:ListItem>
                                 <asp:ListItem Text="3" Value="3"></asp:ListItem>
@@ -247,6 +253,7 @@
                             </asp:DropDownList>
                             &nbsp;/&nbsp;
                             <asp:DropDownList ID="ddlCCExpYear" runat="server" Font-Size="Small" CssClass="small">
+                                <asp:ListItem Text="" Value=""></asp:ListItem>
                                 <asp:ListItem Text="2012" Value="2012"></asp:ListItem>
                                 <asp:ListItem Text="2013" Value="2013"></asp:ListItem>
                                 <asp:ListItem Text="2014" Value="2014"></asp:ListItem>
@@ -260,6 +267,8 @@
                                 <asp:ListItem Text="2022" Value="2022"></asp:ListItem>
                                 <asp:ListItem Text="2023" Value="2023"></asp:ListItem>
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvCCExpMonth" runat="server" ErrorMessage="Required" ControlToValidate="ddlCCExpMonth" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="rfvCCExpYear" runat="server" ErrorMessage="Required" ControlToValidate="ddlCCExpYear" Display="Dynamic" ValidationGroup="vgMyAccount" CssClass="required"></asp:RequiredFieldValidator>
                         </fieldset>
                         <fieldset>
                             <asp:Label ID="lblSecurityCode" runat="server" AssociatedControlID="txtCCSecurityCode">Security Code <span class="required">*</span></asp:Label>

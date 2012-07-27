@@ -44,19 +44,19 @@ namespace MerchantTribe.Payment
                 case ActionType.GiftCardInfo:
                     return "Gift Card Info";
                 case ActionType.RewardPointsBalanceInquiry:
-                    return "Reward Points Balance Inquiry";                    
+                    return "Credits Balance Inquiry";                    
                 case ActionType.RewardPointsCapture:
-                    return "Reward Points Capture";
+                    return "Credits Capture";
                 case ActionType.RewardPointsDecrease:
-                    return "Reward Points Decrease";
+                    return "Credits Decrease";
                 case ActionType.RewardPointsHold:
-                    return "Reward Points Hold";
+                    return "Credits Hold";
                 case ActionType.RewardPointsIncrease:
-                    return "Reward Points Increase";
+                    return "Credits Increase";
                 case ActionType.RewardPointsInfo:
-                    return "Reward Points Info";
+                    return "Credits Info";
                 case ActionType.RewardPointsUnHold:
-                    return "Reward Points UnHold";
+                    return "Credits UnHold";
                 case ActionType.PayPalCapture:
                     return "PayPal Capture Hold";
                 case ActionType.PayPalCharge:

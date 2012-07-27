@@ -41,7 +41,7 @@ namespace MerchantTribeStore.Models
             this.ButtonCheckoutUrl = string.Empty;
             this.ButtonLoginUrl = string.Empty;
             this.ButtonCancelUrl = string.Empty;
-            this.LabelRewardPoints = "Reward Points";
+            this.LabelRewardPoints = "Credits";
             this.BillShipSame = true;
             this.ShowRewards = false;
             this.UseRewardsPoints = false;

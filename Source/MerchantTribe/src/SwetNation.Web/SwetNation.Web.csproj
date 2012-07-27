@@ -110,6 +110,7 @@
     <Content Include="css\piecemaker.css" />
     <Content Include="css\pink-theme.css" />
     <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\product.css" />
     <Content Include="css\pure-orange.css" />
     <Content Include="css\purple-theme.css" />
     <Content Include="css\red-cherry.css" />
@@ -566,6 +567,7 @@
     <Content Include="js\piecemaker-2\piecemakerXML.xml" />
     <Content Include="js\portfolio\filterable.js" />
     <Content Include="js\prettyPhoto\jquery.prettyPhoto.js" />
+    <Content Include="js\product.js" />
     <Content Include="js\roundabout-slider\jquery.roundabout-shapes.min.js" />
     <Content Include="js\roundabout-slider\jquery.roundabout.js" />
     <Content Include="js\scrolltop\scrolltopcontrol.js" />
@@ -576,6 +578,8 @@
     <Content Include="js\tabify\jquery.tabify.js" />
     <Content Include="js\tipsy\jquery.tipsy.js" />
     <Content Include="js\twitter\jquery.tweet.js" />
+    <Content Include="Log\MerchantTribeLog.Debug.txt" />
+    <Content Include="Log\MerchantTribeLog.txt" />
     <Content Include="MyProfile.aspx" />
     <Content Include="PastOrders.aspx" />
     <Content Include="PrivacyPolicy.aspx" />

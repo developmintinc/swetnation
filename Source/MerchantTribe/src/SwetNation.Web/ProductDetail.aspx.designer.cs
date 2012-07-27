@@ -103,6 +103,24 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.Image imgProductImageSmall;
         
         /// <summary>
+        /// pnlAdditionalImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAdditionalImages;
+        
+        /// <summary>
+        /// litAdditionalImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAdditionalImages;
+        
+        /// <summary>
         /// litProductNameContent control.
         /// </summary>
         /// <remarks>
@@ -130,15 +148,6 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.Literal litListPriceContent;
         
         /// <summary>
-        /// litLongDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litLongDescription;
-        
-        /// <summary>
         /// hdfOptionBvin control.
         /// </summary>
         /// <remarks>
@@ -157,13 +166,13 @@ namespace SwetNation.Web {
         protected global::System.Web.UI.WebControls.DropDownList ddlOptions;
         
         /// <summary>
-        /// txtQuantity control.
+        /// ddlQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
+        protected global::System.Web.UI.WebControls.DropDownList ddlQuantity;
         
         /// <summary>
         /// lnkAddToCart control.
@@ -173,6 +182,15 @@ namespace SwetNation.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkAddToCart;
+        
+        /// <summary>
+        /// litLongDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litLongDescription;
         
         /// <summary>
         /// litFBLike control.

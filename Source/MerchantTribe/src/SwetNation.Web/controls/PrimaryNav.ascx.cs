@@ -38,7 +38,8 @@ namespace SwetNation.Web.controls
                 {
                     string productId = categoryProductAssociation.ProductId;
                     string manufacturerId = MTApp.CatalogServices.Products.Find(productId).ManufacturerId;
-                    manufacturerIds.Add(manufacturerId);
+                    if (manufacturerId.Trim().ToLower() != "- no manufacturer -")
+                        manufacturerIds.Add(manufacturerId);
                 }
 
                 manufacturerIds.Sort();
@@ -56,8 +57,11 @@ namespace SwetNation.Web.controls
                     if (manufacturerId != "- No Manufacturer -")
                     {
                         MerchantTribe.Commerce.Contacts.VendorManufacturer vendorManufacturer = MTApp.ContactServices.Manufacturers.Find(manufacturerId);
-                        string brandName = vendorManufacturer.DisplayName;
-                        navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "&ManufacturerId=" + manufacturerId + "'>" + brandName + "</a></li>";
+                        if (vendorManufacturer != null)
+                        {
+                            string brandName = vendorManufacturer.DisplayName;
+                            navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "&ManufacturerId=" + manufacturerId + "'>" + brandName + "</a></li>";
+                        }                        
                     }                    
                 }
 

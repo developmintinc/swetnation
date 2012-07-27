@@ -44,7 +44,7 @@ namespace SwetNation.Web
             model.MainImageUrl = MerchantTribe.Commerce.Storage.DiskStorage.ProductImageUrlMedium(MTApp.CurrentStore.Id, model.LocalProduct.Bvin, model.LocalProduct.ImageFileSmall, Request.IsSecureConnection);
             model.MainImageAltText = model.LocalProduct.ImageFileSmallAlternateText;
             RenderPrices(model);
-            LoadRelatedItems(model);
+            //LoadRelatedItems(model);
             RenderAdditionalImages(model);
             if (Request.QueryString["LineItemId"] != null)
             {
@@ -289,6 +289,10 @@ namespace SwetNation.Web
             }
             sb.Append("</div>");
             model.PreRenderedImages = sb.ToString();
+
+            // POPULATE ADDITIONAL IMAGES
+            pnlAdditionalImages.Visible = true;
+            litAdditionalImages.Text = sb.ToString();
         }
 
         private void RenderSingleAdditionalImage(StringBuilder sb, ProductImage img)
@@ -303,7 +307,7 @@ namespace SwetNation.Web
                                                                                                        img.Bvin,
                                                                                                        img.FileName,
                                                                                                        false);
-            sb.Append("<a href=\"" + largeUrl + "\" alt=\"" + mediumUrl + "\" class=\"popover\">");
+            sb.Append("<a href=\"" + mediumUrl + "\" alt=\"" + mediumUrl + "\" class=\"popover\" target=\"_blank\" >");
             sb.Append("<img src=\"");
             sb.Append(MerchantTribe.Commerce.Storage.DiskStorage.ProductAdditionalImageUrlTiny(MTApp.CurrentStore.Id,
                                                                                                       img.ProductId,
@@ -376,7 +380,7 @@ namespace SwetNation.Web
         private void DetermineQuantityToAdd(ProductPageViewModel model)
         {
             int quantity = 0;
-            string formQuantity = txtQuantity.Text;
+            string formQuantity = ddlQuantity.SelectedValue;
             if (int.TryParse(formQuantity, out quantity))
             {
                 if (model.LocalProduct.MinimumQty > 0)
@@ -448,9 +452,16 @@ namespace SwetNation.Web
         {
             if (!String.IsNullOrEmpty(Request.QueryString["bvin"]))
             {
+                // GET PRODUCT BY ID
                 string bvin = Request.QueryString["bvin"];
                 MerchantTribe.Commerce.Catalog.Product resultItem = new MerchantTribe.Commerce.Catalog.Product();
                 resultItem = MTApp.CatalogServices.Products.Find(bvin);
+
+                // ADDITIONAL IMAGES
+                ProductPageViewModel model = new ProductPageViewModel();
+                model.LocalProduct = ParseProductFromBvin(bvin);
+                RenderAdditionalImages(model);
+
                 if (resultItem != null)
                 {
                     if (resultItem.Options.Count() > 0)

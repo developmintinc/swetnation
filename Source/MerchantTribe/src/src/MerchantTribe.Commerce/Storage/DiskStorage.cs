@@ -19,6 +19,7 @@ namespace MerchantTribe.Commerce.Storage
         {
             return BaseUrl(false);
         }
+
         internal static string BaseUrl(bool isSecure)
         {
             string u = WebAppSettings.ApplicationBaseImageUrl;
@@ -28,40 +29,49 @@ namespace MerchantTribe.Commerce.Storage
             }
             return u;
         }
+
         protected static string BaseImageUrl()
         {
             string u = WebAppSettings.ApplicationBaseImageUrl;
             return u;
         }
+
         internal static string BaseStoreUrl(long storeId)
         {
             return BaseStoreUrl(storeId, false);
         }
+
         internal static string BaseStoreUrl(long storeId, bool isSecure)
         {
             return BaseUrl(isSecure) + storeId.ToString() + "/";
         }
+
         internal static string BaseStorePhysicalPath(long storeId)
         {
             return WebAppSettings.ApplicationBaseImagePhysicalPath + storeId.ToString() + "\\";
         }
+
         internal static string BaseStoreThemeUrl(long storeId, string themeId)
         {
             return BaseStoreThemeUrl(storeId, themeId, false);
         }
+
         internal static string BaseStoreThemeUrl(long storeId, string themeId, bool isSecure)
         {
             return BaseStoreUrl(storeId, isSecure) + "themes/theme-" + themeId + "/";
         }
+
         internal static string BaseStoreThemePhysicalPath(long storeId, string themeId)
         {
             return BaseStorePhysicalPath(storeId) + "themes\\theme-" + themeId + "\\";
         }
+        
         protected static string BuiltinThemesPath()
         {
             string u = WebAppSettings.ApplicationBuiltinThemesPath;
             return u;
         }
+        
         protected static string BuiltInDemoImagesPath()
         {
             string p = BuiltinThemesPath();
@@ -126,7 +136,7 @@ namespace MerchantTribe.Commerce.Storage
             {
                 string saveLocation = WebAppSettings.BaseImagePhysicalPath;
                 saveLocation += storeId.ToString() + "/products/" + productId + "/";
-                
+
                 FileHelper.CopySingle(Path.Combine(BuiltInDemoImagesPath(), "small"),
                                         Path.Combine(saveLocation, "small"), imageName, true);
                 FileHelper.CopySingle(Path.Combine(BuiltInDemoImagesPath(), "medium"),
@@ -149,6 +159,7 @@ namespace MerchantTribe.Commerce.Storage
             }
             return result;
         }
+
         public static bool UploadProductImage(long storeId, string productId, FileUpload file)
         {
             bool result = true;
@@ -180,6 +191,7 @@ namespace MerchantTribe.Commerce.Storage
 
             return result;
         }
+
         public static bool UploadProductImage(long storeId, string productId, string fileName, byte[] data)
         {
             bool result = true;
@@ -211,6 +223,7 @@ namespace MerchantTribe.Commerce.Storage
             }
             return result;
         }
+
         public static bool UploadProductVariantImage(long storeId, string productId, string variantId, FileUpload file)
         {
             bool result = true;
@@ -221,16 +234,16 @@ namespace MerchantTribe.Commerce.Storage
             }
 
             string saveLocation = WebAppSettings.BaseImagePhysicalPath;
-            saveLocation += storeId.ToString() + "/products/" + productId + "/variants/" + variantId ;
+            saveLocation += storeId.ToString() + "/products/" + productId + "/variants/" + variantId;
 
             // Clear out old images before posting new one
             if (Directory.Exists(saveLocation))
             {
                 FileHelper.DeleteDirectoryAndFilesRecursive(saveLocation);
             }
-    
+
             saveLocation += "/" + variantId;
-            saveLocation += System.IO.Path.GetExtension(file.FileName);           
+            saveLocation += System.IO.Path.GetExtension(file.FileName);
             result = WriteFileToPath(saveLocation, file);
 
             if (result)
@@ -387,7 +400,7 @@ namespace MerchantTribe.Commerce.Storage
                     File.SetAttributes(saveLocation, FileAttributes.Normal);
                     File.Delete(saveLocation);
                 }
-                
+
                 // Create New
                 FileStream fs = File.Create(saveLocation);
                 inputStream.CopyTo(fs);
@@ -402,8 +415,8 @@ namespace MerchantTribe.Commerce.Storage
                 writeStream.Flush();
                 writeStream.Close();
             }
-            
-            result = true;            
+
+            result = true;
             return result;
         }
 
@@ -433,7 +446,7 @@ namespace MerchantTribe.Commerce.Storage
             {
                 result = Utilities.ImageProcessing.ShrinkToTiny(saveLocation);
                 if (result)
-                {                    
+                {
                     result = Utilities.ImageProcessing.ShrinkToSmall(saveLocation);
                     if (result)
                     {
@@ -478,7 +491,7 @@ namespace MerchantTribe.Commerce.Storage
             }
             return result;
         }
-        
+
         public static bool DeleteAdditionalProductImage(long storeId, string productId, string imageId)
         {
             bool result = true;
@@ -537,6 +550,7 @@ namespace MerchantTribe.Commerce.Storage
             }
             return u;
         }
+
         public static string ProductAdditionalImageUrlSmall(long storeId, string productId, string imageId, string productImage, bool isSecure)
         {
             string u = BaseImageUrl().ToString();
@@ -554,6 +568,7 @@ namespace MerchantTribe.Commerce.Storage
             }
             return u;
         }
+        
         public static string ProductAdditionalImageUrlTiny(long storeId, string productId, string imageId, string productImage, bool isSecure)
         {
             string u = BaseImageUrl().ToString();
@@ -573,7 +588,7 @@ namespace MerchantTribe.Commerce.Storage
         }
 
         public static string ProductVariantImageUrlMedium(long storeId, string productId, string productImage, string variantId, bool isSecure)
-        {            
+        {
             if (VariantImageExists(storeId, productId, variantId))
             {
                 string variantImage = string.Empty;
@@ -602,7 +617,7 @@ namespace MerchantTribe.Commerce.Storage
             else
             {
                 return ProductImageUrlMedium(storeId, productId, productImage, isSecure);
-            }                                    
+            }
         }
 
         private static bool VariantImageExists(long storeId, string productId, string variantId)
@@ -702,7 +717,7 @@ namespace MerchantTribe.Commerce.Storage
 
             if (result)
             {
-                result = Utilities.ImageProcessing.ShrinkToSmall(saveLocation);                
+                result = Utilities.ImageProcessing.ShrinkToSmall(saveLocation);
             }
 
             return result;
@@ -801,6 +816,7 @@ namespace MerchantTribe.Commerce.Storage
 
             return result;
         }
+
         private static bool WriteBytesToPath(string saveLocation, byte[] data)
         {
             bool result = true;
@@ -813,7 +829,7 @@ namespace MerchantTribe.Commerce.Storage
                     {
                         Directory.CreateDirectory(Path.GetDirectoryName(saveLocation));
                     }
-                    File.WriteAllBytes(saveLocation, data);                    
+                    File.WriteAllBytes(saveLocation, data);
                 }
             }
             catch (Exception ex)
@@ -824,6 +840,7 @@ namespace MerchantTribe.Commerce.Storage
 
             return result;
         }
+
         private static bool WriteFileToPath(string saveLocation, System.IO.FileStream stream)
         {
             bool result = true;
@@ -841,7 +858,7 @@ namespace MerchantTribe.Commerce.Storage
                     using (FileStream fileStream = System.IO.File.Create(saveLocation, (int)stream.Length))
                     {
                         // Fill the bytes[] array with the stream data
-                        byte[] bytesInStream = new byte[stream.Length];                        
+                        byte[] bytesInStream = new byte[stream.Length];
                         stream.Read(bytesInStream, 0, (int)bytesInStream.Length);
 
                         // Use FileStream object to write to the specified file
@@ -857,7 +874,7 @@ namespace MerchantTribe.Commerce.Storage
 
             return result;
         }
-     
+
         public static string StoreLogoOriginalUrl(long storeId, long logorevision, string logoimage)
         {
             return StoreLogoOriginalUrl(storeId, logorevision, logoimage, false);
@@ -906,7 +923,7 @@ namespace MerchantTribe.Commerce.Storage
             {
                 return false;
             }
-            
+
             if (s != null)
             {
                 int newRevision = s.Settings.LogoRevision + 1;
@@ -962,8 +979,8 @@ namespace MerchantTribe.Commerce.Storage
                     return true;
                 }
                 catch (Exception ex)
-                {                    
-                    EventLog.LogEvent(ex);                    
+                {
+                    EventLog.LogEvent(ex);
                 }
             }
 
@@ -979,7 +996,7 @@ namespace MerchantTribe.Commerce.Storage
 
             string destFolder = WebAppSettings.BaseImagePhysicalPath;
             destFolder += storeId.ToString() + "/products/" + newId + "/";
-            
+
             if (Directory.Exists(sourceFolder))
             {
                 if (!Directory.Exists(destFolder))
@@ -1027,7 +1044,7 @@ namespace MerchantTribe.Commerce.Storage
 
             return result;
         }
-        
+
         public static bool DestroyAllFilesForStore(long storeId)
         {
             bool result = true;
@@ -1093,10 +1110,10 @@ namespace MerchantTribe.Commerce.Storage
         }
 
         #region Assets
-        
+
         protected static string AssetPhysicalPath(long storeId, string themeId)
         {
-            return BaseStoreThemePhysicalPath(storeId, themeId) + "assets\\";            
+            return BaseStoreThemePhysicalPath(storeId, themeId) + "assets\\";
         }
         public static string AssetUrl(long storeId, string themeId, string fileName, bool isSecure)
         {
@@ -1118,7 +1135,7 @@ namespace MerchantTribe.Commerce.Storage
             }
 
             return result;
-        }        
+        }
         public static bool UploadAsset(long storeId, string themeId, FileUpload file)
         {
             bool result = true;
@@ -1133,11 +1150,11 @@ namespace MerchantTribe.Commerce.Storage
             {
                 return false;
             }
-            
+
             string saveLocation = AssetPhysicalPath(storeId, themeId);
             saveLocation += System.IO.Path.GetFileName(MerchantTribe.Web.Text.CleanFileName(file.FileName));
             result = WriteFileToPath(saveLocation, file);
-            
+
             return result;
         }
         public static bool RemoveAsset(long storeId, string themeId, string fileName)
@@ -1150,7 +1167,7 @@ namespace MerchantTribe.Commerce.Storage
                 return true;
             }
             return false;
-        }        
+        }
 
         #endregion
 
@@ -1214,7 +1231,7 @@ namespace MerchantTribe.Commerce.Storage
                 return true;
             }
             return false;
-        }        
+        }
 
         #endregion
 
@@ -1311,7 +1328,7 @@ namespace MerchantTribe.Commerce.Storage
             if (!Directory.Exists(FileVaultPhysicalPath(storeId)))
             {
                 Directory.CreateDirectory(FileVaultPhysicalPath(storeId));
-            }            
+            }
 
             string saveLocation = FileVaultPhysicalPath(storeId);
             saveLocation += System.IO.Path.GetFileName(MerchantTribe.Web.Text.CleanFileName(diskFileName));
@@ -1355,15 +1372,15 @@ namespace MerchantTribe.Commerce.Storage
         {
             bool result = false;
 
-             // Ensure the directory exists
+            // Ensure the directory exists
             if (!Directory.Exists(FileVaultPhysicalPath(storeId)))
             {
                 Directory.CreateDirectory(FileVaultPhysicalPath(storeId));
             }
 
-             string saveLocation = FileVaultPhysicalPath(storeId);
-            saveLocation += System.IO.Path.GetFileName(MerchantTribe.Web.Text.CleanFileName(diskFileName));            
-         
+            string saveLocation = FileVaultPhysicalPath(storeId);
+            saveLocation += System.IO.Path.GetFileName(MerchantTribe.Web.Text.CleanFileName(diskFileName));
+
             if (isFirstPart)
             {
                 // Delete the old one if it exists and this is the first part upload
@@ -1375,7 +1392,7 @@ namespace MerchantTribe.Commerce.Storage
 
                 // Create New
                 FileStream fs = File.Create(saveLocation);
-                fs.Write(data, 0, data.Length);                
+                fs.Write(data, 0, data.Length);
                 fs.Flush();
                 fs.Close();
             }
@@ -1385,7 +1402,7 @@ namespace MerchantTribe.Commerce.Storage
                 using (FileStream writeStream = File.Open(saveLocation, FileMode.Append, FileAccess.Write, FileShare.None))
                 {
                     writeStream.Write(data, 0, data.Length);
-                }                               
+                }
             }
 
             result = true;
@@ -1434,7 +1451,7 @@ namespace MerchantTribe.Commerce.Storage
             return stream;
         }
         #endregion
-             
+
         private static bool WriteTextToFile(string saveLocation, string data)
         {
             bool result = true;
@@ -1458,7 +1475,7 @@ namespace MerchantTribe.Commerce.Storage
         public static bool WriteThemeFile(long storeId, string themeId, string fileName, string fileText)
         {
             bool result = true;
-            
+
             string saveLocation = BaseStoreThemePhysicalPath(storeId, themeId);
             if (Directory.Exists(saveLocation))
             {
@@ -1468,7 +1485,7 @@ namespace MerchantTribe.Commerce.Storage
 
             return result;
         }
-        public static string ReadThemeFile(long storeId,string themeId, string fileName)
+        public static string ReadThemeFile(long storeId, string themeId, string fileName)
         {
             string result = string.Empty;
             string location = BaseStoreThemePhysicalPath(storeId, themeId);
@@ -1500,17 +1517,17 @@ namespace MerchantTribe.Commerce.Storage
         {
             return ReadThemeFile(storeId, themeId, "styles.css");
         }
-        public static bool WriteStyleSheet(long storeId,string themeId, string css)
+        public static bool WriteStyleSheet(long storeId, string themeId, string css)
         {
             bool result = true;
 
-            result =  WriteThemeFile(storeId, themeId, "styles.css", css);
+            result = WriteThemeFile(storeId, themeId, "styles.css", css);
             MinifyStyleSheet(storeId, themeId);
 
             return result;
         }
-           
-        public static bool MinifyStyleSheet(long storeId,string themeId)
+
+        public static bool MinifyStyleSheet(long storeId, string themeId)
         {
             bool result = true;
             string css = ReadStyleSheet(storeId, themeId);
@@ -1521,14 +1538,14 @@ namespace MerchantTribe.Commerce.Storage
         }
 
         public static string GetMinifiedStyleSheet(long storeId, string themeId)
-        {            
+        {
             string css = ReadStyleSheet(storeId, themeId);
             //css = css.Replace("{{assets}}", BaseStoreThemeUrl(storeId, themeId, true) + "assets/");
             css = css.Replace("{{assets}}", "../../images/sites/" + storeId + "/themes/theme-" + themeId + "/assets/");
 
             // inject common themes
             string common = string.Empty;
-            string location = Path.Combine(WebAppSettings.ApplicationBuiltinThemesPath,"common.css");            
+            string location = Path.Combine(WebAppSettings.ApplicationBuiltinThemesPath, "common.css");
             if (File.Exists(location))
             {
                 common = File.ReadAllText(location);
@@ -1543,10 +1560,10 @@ namespace MerchantTribe.Commerce.Storage
                 commonupdates = File.ReadAllText(locationupdates);
             }
             css = css.Replace("{{commonupdates}}", commonupdates);
-            
+
             // minify
             string compressed = MerchantTribe.Web.Css.Compressor.Minify(css);
-            return compressed;            
+            return compressed;
         }
 
         public static string GetMinifiedAdminStyleSheet(string physicalFile, string baseUrl)
@@ -1573,9 +1590,9 @@ namespace MerchantTribe.Commerce.Storage
         {
             string[] result = { };
 
-            if (Directory.Exists(WebAppSettings.ApplicationBuiltinThemesPath)) 
+            if (Directory.Exists(WebAppSettings.ApplicationBuiltinThemesPath))
             {
-                result = Directory.GetDirectories(WebAppSettings.ApplicationBuiltinThemesPath); 
+                result = Directory.GetDirectories(WebAppSettings.ApplicationBuiltinThemesPath);
             }
 
             return result;
@@ -1599,7 +1616,7 @@ namespace MerchantTribe.Commerce.Storage
 
             string source = BuiltinThemesPath() + "\\theme-" + themeId;
             string destination = BaseStoreThemePhysicalPath(storeId, themeId);
-            
+
             // Delete the existing theme if it is there
             DeleteThemeFolder(storeId, themeId);
 

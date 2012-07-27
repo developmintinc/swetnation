@@ -114,6 +114,8 @@ namespace SwetNation.Web
                             MerchantTribe.Web.Geography.RegionSnapShot shippingRegionSnapShot = u.ShippingAddress.RegionData;
                             ddlShippingState.SelectedIndex = ddlShippingState.Items.IndexOf(ddlShippingState.Items.FindByValue(shippingRegionSnapShot.Abbreviation));
                             txtShippingPostalCode.Text = txtShippingPostalCode.Text == "" ? u.ShippingAddress.PostalCode : txtShippingPostalCode.Text;
+                            if (u.ShippingAddress.Phone != "")
+                                txtShippingPhoneNumber.Text = u.ShippingAddress.Phone;
                         }
 
                         ////////////////////////////////////////////////////////////////////
@@ -160,8 +162,7 @@ namespace SwetNation.Web
 
             // Copy customer addresses to order
             model.CurrentCustomer.ShippingAddress.CopyTo(model.CurrentOrder.ShippingAddress);
-            Address billAddr = model.CurrentCustomer.BillingAddress;
-            billAddr.CopyTo(model.CurrentOrder.BillingAddress);
+            model.CurrentCustomer.BillingAddress.CopyTo(model.CurrentOrder.BillingAddress);
 
             // Payment
             DisplayPaymentMethods(model);
@@ -183,7 +184,7 @@ namespace SwetNation.Web
             string uid = model.CurrentCustomer.Bvin;
             int points = MTApp.CustomerPointsManager.FindAvailablePoints(uid);
             decimal pointsValue = MTApp.CustomerPointsManager.DollarCreditForPoints(points);
-            if (points > 0 && MTApp.CurrentStore.Settings.RewardsPointsOnPurchasesActive)
+            if (points > 0 && MTApp.CurrentStore.Settings.RewardsPointsOnPurchasesActive && (pointsValue > model.CurrentOrder.TotalOrderAfterDiscounts))
             {
                 pnlShowRewards.Visible = true;
                 int potentialPointsToUse = MTApp.CustomerPointsManager.PointsNeededForPurchaseAmount(model.CurrentOrder.TotalOrderBeforeDiscounts);
@@ -346,11 +347,12 @@ namespace SwetNation.Web
                 s.City = txtShippingCity.Text;
                 s.PostalCode = txtShippingPostalCode.Text;
                 s.RegionData = shippingRegionSnapShot;
+                s.Phone = txtShippingPhoneNumber.Text;
 
                 Address b = new Address();
                 b.Bvin = hdfBillingAddressBvin.Value;
                 if (chkBillingSame.Checked)
-                {                    
+                {
                     b.FirstName = s.FirstName;
                     b.LastName = s.LastName;
                     b.Line1 = s.Line1;
@@ -389,6 +391,7 @@ namespace SwetNation.Web
 
         public void lnkPlaceOrder_Click(Object sender, EventArgs args)
         {
+            UpdateAddress();
             CheckoutViewModel model = IndexSetup();
             TagOrderWithAffiliate(model);
             LoadValuesFromForm(model);
@@ -415,15 +418,13 @@ namespace SwetNation.Web
 
         private void LoadValuesFromForm(CheckoutViewModel model)
         {
-            UpdateAddress();
-
-            CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
-            model.CurrentCustomer = u;
-            model.CurrentOrder.BillingAddress = u.BillingAddress;
-            model.CurrentOrder.ShippingAddress = u.ShippingAddress;
+            //CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
+            //model.CurrentCustomer = u;
+            //model.CurrentOrder.BillingAddress = u.BillingAddress;
+            //model.CurrentOrder.ShippingAddress = u.ShippingAddress;
 
             // Save addresses to customer account
-            MTApp.MembershipServices.Customers.Update(model.CurrentCustomer);
+            //MTApp.MembershipServices.Customers.Update(model.CurrentCustomer);
 
             //Shipping
             string shippingRateKey = Request.QueryString["shippingrate"];
@@ -706,12 +707,16 @@ namespace SwetNation.Web
                 rfvCCNumber.ValidationGroup = "";
                 rfvSecurityCode.ValidationGroup = "";
                 rfvCCCardHolder.ValidationGroup = "";
+                rfvCCExpMonth.ValidationGroup = "";
+                rfvCCExpYear.ValidationGroup = "";
             }
             else
             {
                 rfvCCNumber.ValidationGroup = "vgMyAccount";
                 rfvSecurityCode.ValidationGroup = "vgMyAccount";
                 rfvCCCardHolder.ValidationGroup = "vgMyAccount";
+                rfvCCExpMonth.ValidationGroup = "vgMyAccount";
+                rfvCCExpYear.ValidationGroup = "vgMyAccount";
             }
         }
 

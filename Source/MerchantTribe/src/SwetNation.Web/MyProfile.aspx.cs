@@ -42,7 +42,7 @@ namespace SwetNation.Web
             CustomerAccount u = MTApp.MembershipServices.Customers.Find(SessionManager.GetCurrentUserId(MTApp.CurrentStore));
             if (u != null)
             {
-                switch (u.ShippingAddress.IsEmpty() && u.BillingAddress.IsEmpty())
+                switch (u.ShippingAddress.IsEmpty())
                 {
                     case true:
                         ////////////////////////////////////////////////////////////////////
@@ -51,13 +51,6 @@ namespace SwetNation.Web
                         MerchantTribe.Commerce.Contacts.Address s = new MerchantTribe.Commerce.Contacts.Address();
                         s.Bvin = System.Guid.NewGuid().ToString();
                         hdfShippingAddressBvin.Value = s.Bvin;
-
-                        ////////////////////////////////////////////////////////////////////
-                        // BILLING ADDRESS
-                        ////////////////////////////////////////////////////////////////////
-                        MerchantTribe.Commerce.Contacts.Address b = new MerchantTribe.Commerce.Contacts.Address();
-                        b.Bvin = System.Guid.NewGuid().ToString();
-                        hdfBillingAddressBvin.Value = b.Bvin;
                         break;
                     default:
                         ////////////////////////////////////////////////////////////////////
@@ -76,23 +69,6 @@ namespace SwetNation.Web
                             txtShippingPostalCode.Text = u.ShippingAddress.PostalCode;
                             if (u.ShippingAddress.Phone != "")
                                 txtPhone.Text = u.ShippingAddress.Phone;
-                        }
-                        ////////////////////////////////////////////////////////////////////
-                        // BILLING ADDRESS
-                        ////////////////////////////////////////////////////////////////////
-                        if (u.BillingAddress != null)
-                        {
-                            hdfBillingAddressBvin.Value = u.BillingAddress.Bvin;
-                            txtBillingFirstName.Text = u.BillingAddress.FirstName;
-                            txtBillingLastName.Text = u.BillingAddress.LastName;
-                            txtBillingAddress1.Text = u.BillingAddress.Line1;
-                            txtBillingAddress2.Text = u.BillingAddress.Line2;
-                            txtBillingCity.Text = u.BillingAddress.City;
-                            MerchantTribe.Web.Geography.RegionSnapShot billingRegionSnapShot = u.BillingAddress.RegionData;
-                            ddlBillingState.SelectedIndex = ddlBillingState.Items.IndexOf(ddlBillingState.Items.FindByValue(billingRegionSnapShot.Abbreviation));
-                            txtBillingPostalCode.Text = u.BillingAddress.PostalCode;
-                            if (txtPhone.Text == "" && u.BillingAddress.Phone != "")
-                                txtPhone.Text = u.BillingAddress.Phone;
                         }
                         break;
                 }
@@ -119,10 +95,6 @@ namespace SwetNation.Web
                 shippingRegionSnapShot.Abbreviation = ddlShippingState.SelectedItem.Value;
                 shippingRegionSnapShot.Name = ddlShippingState.SelectedItem.Text;
 
-                MerchantTribe.Web.Geography.RegionSnapShot billingRegionSnapShot = new MerchantTribe.Web.Geography.RegionSnapShot();
-                billingRegionSnapShot.Abbreviation = ddlBillingState.SelectedItem.Value;
-                billingRegionSnapShot.Name = ddlBillingState.SelectedItem.Text;
-                
                 ////////////////////////////////////////////////////////////////////
                 // SAVE ADDRESSES
                 ////////////////////////////////////////////////////////////////////
@@ -137,22 +109,10 @@ namespace SwetNation.Web
                 s.Phone = txtPhone.Text;
                 s.RegionData = shippingRegionSnapShot;
 
-                Address b = new Address();
-                b.Bvin = hdfBillingAddressBvin.Value;
-                b.FirstName = txtBillingFirstName.Text;
-                b.LastName = txtBillingLastName.Text;
-                b.Line1 = txtBillingAddress1.Text;
-                b.Line2 = txtBillingAddress2.Text;
-                b.City = txtBillingCity.Text;
-                b.PostalCode = txtBillingPostalCode.Text;
-                b.Phone = txtPhone.Text;
-                b.RegionData = billingRegionSnapShot;
-
                 ////////////////////////////////////////////////////////////////////
                 // SAVE ADDRESS TO SHIPPING AND BILLING
                 ////////////////////////////////////////////////////////////////////
                 u.ShippingAddress = s;
-                u.BillingAddress = b;
 
                 ////////////////////////////////////////////////////////////////////
                 // SAVE USER PROFILE
@@ -165,31 +125,6 @@ namespace SwetNation.Web
                 LoadProfile();
                 LoadAddress();
             }            
-        }
-
-        protected void chkShippingSame_CheckedChanged(Object sender, EventArgs args)
-        {
-            CheckBox linkedItem = sender as CheckBox;
-            if (linkedItem.Checked)
-            {
-                txtShippingFirstName.Text = txtBillingFirstName.Text;
-                txtShippingLastName.Text = txtBillingLastName.Text;
-                txtShippingAddress1.Text = txtBillingAddress1.Text;
-                txtShippingAddress2.Text = txtBillingAddress2.Text;
-                txtShippingCity.Text = txtBillingCity.Text;
-                ddlShippingState.SelectedIndex = ddlBillingState.Items.IndexOf(ddlBillingState.Items.FindByText(ddlBillingState.SelectedItem.Text));
-                txtShippingPostalCode.Text = txtBillingPostalCode.Text;
-            }
-            else
-            {
-                txtShippingFirstName.Text = "";
-                txtShippingLastName.Text = "";
-                txtShippingAddress1.Text = "";
-                txtShippingAddress2.Text = "";
-                txtShippingCity.Text = "";
-                ddlShippingState.SelectedIndex = 0;
-                txtShippingPostalCode.Text = "";
-            }
         }
     }
 }

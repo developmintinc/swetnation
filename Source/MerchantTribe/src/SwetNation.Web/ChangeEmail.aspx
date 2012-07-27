@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Swet Nation - Change Email" Language="C#" MasterPageFile="~/RightSidebar.master" AutoEventWireup="true" CodeBehind="ChangeEmail.aspx.cs" Inherits="SwetNation.Web.ChangeEmail" %>
+<%@ OutputCache Duration="3600" VaryByParam="None" Location="Client" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <%@ Register Src="~/controls/MyAccountNav.ascx" TagName="MyAccountNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">

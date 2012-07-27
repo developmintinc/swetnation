@@ -99,7 +99,7 @@ namespace SwetNation.Web
             ProductPageViewModel model = new ProductPageViewModel();
             model.LocalProduct = ParseProductFromBvin(bvin);
             //RenderOptionsJavascript(model);
-            //CheckForBackOrder(model);
+            CheckForBackOrder(model);
             //model.MainImageUrl = MerchantTribe.Commerce.Storage.DiskStorage.ProductImageUrlMedium(MTApp.CurrentStore.Id, model.LocalProduct.Bvin, model.LocalProduct.ImageFileSmall, Request.IsSecureConnection);
             //model.MainImageAltText = model.LocalProduct.ImageFileSmallAlternateText;
             //RenderPrices(model);
