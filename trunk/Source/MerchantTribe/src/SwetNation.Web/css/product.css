@@ -1,0 +1,12 @@
+﻿/* December 1st update for additional images */
+.productimage {margin: 0px 0; height:440px;width:440px; }
+.additionalimages a {display:block;float:left;width:50px;height:50px;border:solid 1px #999;margin:0 3px 3px 0;}
+.modal2{position:absolute;top:0%;z-index:51;display: none;margin:30px auto;}
+.modal2 a {margin-left:10px;text-decoration:none;}
+.modal2 a:hover {text-decoration:underline;}
+.popoverframe2 {background:#000;width:900px;height:940px;padding:10px;-moz-border-radius:30px;-webkit-border-radius:30px;border-radius:30px;}
+.popoverframe2 a {color:#fff;}
+#popoverpage2 {width:900px;height:900px;}
+
+/* product page styles */
+.fullprice { text-decoration: line-through !important; font-weight: bold;}
