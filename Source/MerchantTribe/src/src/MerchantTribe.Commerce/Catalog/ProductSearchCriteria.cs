@@ -11,6 +11,7 @@ namespace MerchantTribe.Commerce.Catalog
 	{
        	private string _Keyword = string.Empty;
 		private string _ManufacturerId = string.Empty;
+        private bool _HasManufacturerId = false;
 		private string _VendorId = string.Empty;
 		private ProductStatus _Status = ProductStatus.NotSet;
 		private ProductInventoryStatus _InventoryStatus = ProductInventoryStatus.NotSet;
@@ -28,7 +29,12 @@ namespace MerchantTribe.Commerce.Catalog
 			get { return _ManufacturerId; }
 			set { _ManufacturerId = value; }
 		}
-		public string VendorId {
+        public bool HasManufacturerId
+        {
+            get { return _HasManufacturerId; }
+            set { _HasManufacturerId = value; }
+        }
+        public string VendorId {
 			get { return _VendorId; }
 			set { _VendorId = value; }
 		}
@@ -75,6 +81,7 @@ namespace MerchantTribe.Commerce.Catalog
 			result.InventoryStatus = this.InventoryStatus;
 			result.Keyword = this.Keyword;
 			result.ManufacturerId = this.ManufacturerId;
+            result.HasManufacturerId = this.HasManufacturerId;
 			result.NotCategoryId = this.NotCategoryId;
 			result.ProductTypeId = this.ProductTypeId;
 			result.Status = this.Status;

@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FooterNav.ascx.cs" Inherits="SwetNation.Web.controls.FooterNav" %>
+<%@ OutputCache Duration="300" VaryByParam="none" %>
 <div id="copyright-wrapper">
 	<!-- COPYRIGHTS WRAPPER STARTS-->
 	<div id="copyright">

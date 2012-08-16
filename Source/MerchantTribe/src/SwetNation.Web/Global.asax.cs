@@ -4,12 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using MerchantTribe.Commerce;
 using log4net;
 
 namespace SwetNation.Web
 {
     public class Global : System.Web.HttpApplication
     {
+        public override string GetVaryByCustomString(HttpContext context, string arg)
+        {
+            MerchantTribeApplication MTApp = MerchantTribeApplication.InstantiateForDataBase(new MerchantTribe.Commerce.RequestContext());
+            MTApp.CurrentStore = MerchantTribe.Commerce.Utilities.UrlHelper.ParseStoreFromUrl(System.Web.HttpContext.Current.Request.Url, MTApp.AccountServices);
+
+            if (arg == "UserSpecific")
+            {
+                string username = SessionManager.GetCurrentUserId(MTApp.CurrentStore);
+                return username;
+            }
+            return base.GetVaryByCustomString(context, arg);
+        }
 
         protected void Application_Start(object sender, EventArgs e)
         {

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
     <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
     <ExcludeApp_Data>true</ExcludeApp_Data>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -592,8 +593,11 @@
     <Content Include="SignUp.aspx" />
     <Content Include="TermsOfUse.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="Test.html" />
     <Content Include="TestNoMaster.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
