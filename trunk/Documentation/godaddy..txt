@@ -12,3 +12,8 @@ FTP User
 host: swetnation.com
 user: swetnationuser
 pass: Sammi0303
+
+
+Host Name — 50.63.25.89
+FTP User Name — swetnationuser
+FTP Password — Sammi0303

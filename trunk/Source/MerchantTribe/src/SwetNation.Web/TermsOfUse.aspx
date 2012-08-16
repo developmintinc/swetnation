@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Swet Nation Terms of Use" Language="C#" MasterPageFile="~/RightSidebar.master" AutoEventWireup="true" CodeBehind="TermsOfUse.aspx.cs" Inherits="SwetNation.Web.TermsOfUse" %>
-<%@ OutputCache Duration="3600" VaryByParam="None" Location="Client" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <%@ Register Src="~/controls/RightSidebarNav.ascx" TagName="RightSidebarNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">

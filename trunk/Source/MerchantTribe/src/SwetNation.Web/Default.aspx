@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SwetNation.Web.Index" %>
-<%@ OutputCache Duration="300" VaryByParam="None" Location="Client" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainHeadContent" runat="Server">
     <!--[if IE]>
         <link rel="stylesheet" type="text/css" href="css/ie.css" />

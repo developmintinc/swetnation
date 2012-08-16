@@ -37,7 +37,7 @@ namespace SwetNation.Web
             }
             */
 
-            CreatePromoForInvitedFriend(email);
+            //CreatePromoForInvitedFriend(email);
         }
 
         private void CreatePromoForInvitedFriend(string email)

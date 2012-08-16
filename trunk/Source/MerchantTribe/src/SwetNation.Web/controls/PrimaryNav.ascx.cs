@@ -23,52 +23,78 @@ namespace SwetNation.Web.controls
 
         private void BuildNavigation()
         {
-            string navigation = "";
-            IEnumerable<CategorySnapshot> categories = MTApp.CatalogServices.Categories.FindAll().OrderBy(x => x.SortOrder).Where(x => !x.Hidden);
-            foreach(CategorySnapshot category in categories)
-            {                
-                string categoryName = category.Name;
-                string categoryId = category.Bvin;
-                string secondaryName = "Sales";
-                navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "' class='primary-navigation'>" + categoryName + "<span>" + secondaryName + "</span></a><ul>";
-
-                List<CategoryProductAssociation> categoryProductAssociations = MTApp.CatalogServices.CategoriesXProducts.FindForCategory(category.Bvin, 1, 1000);
-                List<string> manufacturerIds = new List<string>();
-                foreach(CategoryProductAssociation categoryProductAssociation in categoryProductAssociations)
-                {
-                    string productId = categoryProductAssociation.ProductId;
-                    string manufacturerId = MTApp.CatalogServices.Products.Find(productId).ManufacturerId;
-                    if (manufacturerId.Trim().ToLower() != "- no manufacturer -")
-                        manufacturerIds.Add(manufacturerId);
-                }
-
-                manufacturerIds.Sort();
-                Int32 index = 0;
-                while (index < manufacturerIds.Count - 1)
-                {
-                    if (manufacturerIds[index] == manufacturerIds[index + 1])
-                        manufacturerIds.RemoveAt(index);
-                    else
-                        index++;
-                }
-
-                foreach(string manufacturerId in manufacturerIds)
-                {
-                    if (manufacturerId != "- No Manufacturer -")
-                    {
-                        MerchantTribe.Commerce.Contacts.VendorManufacturer vendorManufacturer = MTApp.ContactServices.Manufacturers.Find(manufacturerId);
-                        if (vendorManufacturer != null)
-                        {
-                            string brandName = vendorManufacturer.DisplayName;
-                            navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "&ManufacturerId=" + manufacturerId + "'>" + brandName + "</a></li>";
-                        }                        
-                    }                    
-                }
-
-                navigation += "</ul></li>";
+            string cachedPrimaryNav = SessionManager.GetOrAddToCache;
+            if (!String.IsNullOrEmpty(cachedPrimaryNav))
+            {
+                litNavigation.Text = cachedPrimaryNav;
             }
+            else
+            {
+                string navigation = "";
+                IEnumerable<CategorySnapshot> categories = MTApp.CatalogServices.Categories.FindAll().OrderBy(x => x.SortOrder).Where(x => !x.Hidden);
+                foreach (CategorySnapshot category in categories)
+                {
+                    string categoryName = category.Name;
+                    string categoryId = category.Bvin;
+                    string secondaryName = "Sales";
+                    navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "' class='primary-navigation'>" + categoryName + "<span>" + secondaryName + "</span></a><ul>";
 
-            litNavigation.Text = navigation;
+                    //List<CategoryProductAssociation> categoryProductAssociations = MTApp.CatalogServices.CategoriesXProducts.FindForCategory(category.Bvin, 1, 1000);
+                    List<string> manufacturerIds = new List<string>();
+
+                    ProductSearchCriteria productSearchCriteria = new ProductSearchCriteria();
+                    productSearchCriteria.CategoryId = categoryId;
+                    //productSearchCriteria.DisplayInactiveProducts = false;
+                    //productSearchCriteria.InventoryStatus = ProductInventoryStatus.Available;
+                    productSearchCriteria.Status = ProductStatus.Active;
+                    productSearchCriteria.HasManufacturerId = true;
+
+                    int recordOut = 0;
+                    var products = MTApp.CatalogServices.Products.FindByCriteria(productSearchCriteria, 1, 500, ref recordOut);
+                    foreach (var product in products)
+                    {
+                        manufacturerIds.Add(product.ManufacturerId);
+                    }
+
+                    /*
+                    foreach(CategoryProductAssociation categoryProductAssociation in categoryProductAssociations)
+                    {
+                        string productId = categoryProductAssociation.ProductId;
+                        string manufacturerId = MTApp.CatalogServices.Products.Find(productId).ManufacturerId;
+                        if (manufacturerId.Trim().ToLower() != "- no manufacturer -")
+                            manufacturerIds.Add(manufacturerId);
+                    }
+                    */
+
+                    manufacturerIds.Sort();
+                    Int32 index = 0;
+                    while (index < manufacturerIds.Count - 1)
+                    {
+                        if (manufacturerIds[index] == manufacturerIds[index + 1])
+                            manufacturerIds.RemoveAt(index);
+                        else
+                            index++;
+                    }
+
+                    foreach (string manufacturerId in manufacturerIds)
+                    {
+                        if (manufacturerId != "- No Manufacturer -")
+                        {
+                            MerchantTribe.Commerce.Contacts.VendorManufacturer vendorManufacturer = MTApp.ContactServices.Manufacturers.Find(manufacturerId);
+                            if (vendorManufacturer != null)
+                            {
+                                string brandName = vendorManufacturer.DisplayName;
+                                navigation += "<li><a href='Products.aspx?CategoryId=" + categoryId + "&ManufacturerId=" + manufacturerId + "'>" + brandName + "</a></li>";
+                            }
+                        }
+                    }
+
+                    navigation += "</ul></li>";
+                }
+
+                litNavigation.Text = navigation;
+                SessionManager.GetOrAddToCache = navigation;
+            }            
         }
 
         public void CheckShoppingCart()

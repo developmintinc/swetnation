@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Swet Nation Return Policy" Language="C#" MasterPageFile="~/RightSidebar.master" AutoEventWireup="true" CodeBehind="ReturnPolicy.aspx.cs" Inherits="SwetNation.Web.ReturnPolicy" %>
-<%@ OutputCache Duration="3600" VaryByParam="None" Location="Client" %>
 <%@ Register Src="~/controls/BreadcrumbBar.ascx" TagName="BreadcrumbBar" TagPrefix="uc" %>
 <%@ Register Src="~/controls/RightSidebarNav.ascx" TagName="RightSidebarNav" TagPrefix="uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TopBodyContent" runat="server">

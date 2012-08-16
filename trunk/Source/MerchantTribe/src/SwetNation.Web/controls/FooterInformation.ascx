@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FooterInformation.ascx.cs" Inherits="SwetNation.Web.controls.FooterInformation" %>
+<%@ OutputCache Duration="300" VaryByParam="none" %>
 <!-- FOOTER WRAPPER STARTS-->
 <div id="footer-wrapper">
 	<!-- FOOTER CONTAINER STARTS-->

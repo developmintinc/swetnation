@@ -396,6 +396,10 @@ namespace MerchantTribe.Commerce.Catalog
             {
                 items = items.Where(y => y.ManufacturerID == criteria.ManufacturerId);
             }
+            if (criteria.HasManufacturerId)
+            {
+                items = items.Where(y => y.ManufacturerID != "- No Manufacturer -");
+            }
             // Vendor
             if (criteria.VendorId != string.Empty)
             {

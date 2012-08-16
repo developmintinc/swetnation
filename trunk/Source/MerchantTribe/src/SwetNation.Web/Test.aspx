@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Test.aspx.cs" Inherits="SwetNation.Web.Test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Test.master" AutoEventWireup="true" CodeBehind="Test.aspx.cs" Inherits="SwetNation.Web.Test" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="SiteContentPlaceHolder" runat="server">
     <div id="content">
 	    <div class="one">

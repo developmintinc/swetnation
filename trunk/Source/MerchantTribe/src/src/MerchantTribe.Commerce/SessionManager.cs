@@ -12,6 +12,7 @@ namespace MerchantTribe.Commerce
 
         }
 
+        private const string PrimaryNavCacheKey = "PrimaryNav";
         private const string CurrentUserIdSessionVariable = "Bvc5CurrentUserId";
         private const string ImageBrowserLastFolderVariable = "Bvc5ImageBrowserLastFolder";
         private const string CategoryLastIdVariable = "Bvc5CategoryLastVisited";
@@ -368,6 +369,27 @@ namespace MerchantTribe.Commerce
         {
             get { return GetSessionString(_AdminUserSearchCriteriaEmail); }
             set { SetSessionString(_AdminUserSearchCriteriaEmail, value); }
+        }
+
+        public static string GetOrAddToCache
+        {
+            get 
+            {
+                string returnValue = HttpContext.Current.Cache[PrimaryNavCacheKey] as string;
+                return returnValue;
+            }
+            set 
+            {
+                HttpContext.Current.Cache.Add(
+                            PrimaryNavCacheKey,
+                            value,
+                            null,
+                            System.Web.Caching.Cache.NoAbsoluteExpiration,
+                            new TimeSpan(0, 5, 0),
+                            System.Web.Caching.CacheItemPriority.Normal,
+                            null);
+            }
+            
         }
 
         private static Orders.Order CachedShoppingCart
