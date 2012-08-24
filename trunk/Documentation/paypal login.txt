@@ -1,0 +1,10 @@
+Hey here is the PayPal login:
+
+manager.paypal.com
+
+Logins:
+
+Partner: PayPal
+Merchant Log in: swetnation
+User: swetnation
+PW: Sammi0303!
